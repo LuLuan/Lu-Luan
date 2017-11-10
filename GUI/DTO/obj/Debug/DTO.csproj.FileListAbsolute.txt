@@ -1,0 +1,15 @@
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DTO\bin\Debug\DTO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DTO\bin\Debug\DTO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DTO\obj\Debug\DTO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DTO\obj\Debug\DTO.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DTO\bin\Debug\DTO.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DTO\bin\Debug\DTO.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DTO\obj\Debug\DTO.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DTO\obj\Debug\DTO.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DTO\bin\Debug\DTO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DTO\bin\Debug\DTO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DTO\obj\Debug\DTO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DTO\obj\Debug\DTO.pdb

@@ -1,0 +1,27 @@
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\BUS\bin\Debug\BUS.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\BUS\bin\Debug\BUS.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\BUS\bin\Debug\DAO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\BUS\bin\Debug\DTO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\BUS\bin\Debug\DAO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\BUS\bin\Debug\DTO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\BUS\obj\Debug\BUS.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\BUS\obj\Debug\BUS.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\BUS\bin\Debug\BUS.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\BUS\bin\Debug\BUS.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\BUS\bin\Debug\DAO.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\BUS\bin\Debug\DTO.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\BUS\bin\Debug\DAO.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\BUS\bin\Debug\DTO.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\BUS\obj\Debug\BUS.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\BUS\obj\Debug\BUS.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\BUS\bin\Debug\BUS.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\BUS\bin\Debug\BUS.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\BUS\bin\Debug\DAO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\BUS\bin\Debug\DTO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\BUS\bin\Debug\DAO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\BUS\bin\Debug\DTO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\BUS\obj\Debug\BUS.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\BUS\obj\Debug\BUS.pdb

@@ -1,0 +1,21 @@
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DAO\bin\Debug\DAO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DAO\bin\Debug\DAO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DAO\bin\Debug\DTO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DAO\bin\Debug\DTO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DAO\obj\Debug\DAO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\DAO\obj\Debug\DAO.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DAO\bin\Debug\DAO.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DAO\bin\Debug\DAO.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DAO\bin\Debug\DTO.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DAO\bin\Debug\DTO.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DAO\obj\Debug\DAO.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\DAO\obj\Debug\DAO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DAO\bin\Debug\DAO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DAO\bin\Debug\DAO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DAO\bin\Debug\DTO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DAO\bin\Debug\DTO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DAO\obj\Debug\DAO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DAO\obj\Debug\DAO.pdb

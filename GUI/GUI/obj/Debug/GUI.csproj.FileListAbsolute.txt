@@ -1,0 +1,80 @@
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\bin\Debug\GUI.exe.config
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\obj\Debug\GUI.FrmMain.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\obj\Debug\GUI.LoGo.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\bin\Debug\GUI.exe
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\bin\Debug\GUI.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\obj\Debug\GUI.exe
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\obj\Debug\GUI.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\bin\Debug\BUS.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\bin\Debug\DTO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\bin\Debug\DAO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\bin\Debug\BUS.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\bin\Debug\DTO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\bin\Debug\DAO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\obj\Debug\GUI.urcDangNhap.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\obj\Debug\GUI.urcThongTinNV.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWF\GUI\GUI\obj\Debug\GUI.urcQLNguyenLieu.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\bin\Debug\GUI.exe.config
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.exe
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\bin\Debug\GUI.exe
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\bin\Debug\GUI.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\bin\Debug\BUS.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\bin\Debug\DTO.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\bin\Debug\DAO.dll
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\bin\Debug\BUS.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\bin\Debug\DTO.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\bin\Debug\DAO.pdb
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.FrmMain.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.LoGo.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.urcDangNhap.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.urcQLNguyenLieu.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.backup.backupQLNhanVien.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.urcQLNhanVien.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.urcDanhSachNhanVien.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.Form1.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.urcThemNhanVien.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.urcDanhSachTaiKhoan.resources
+C:\Users\Vu Minh Luan\Desktop\WFNangCao\doan\A_DOAN\GUI\GUI\obj\Debug\GUI.backup.abc.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\bin\Debug\GUI.exe.config
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.exe
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\bin\Debug\GUI.exe
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\bin\Debug\GUI.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\bin\Debug\BUS.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\bin\Debug\DTO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\bin\Debug\DAO.dll
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\bin\Debug\BUS.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\bin\Debug\DTO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\bin\Debug\DAO.pdb
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.FrmMain.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.LoGo.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcDangNhap.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcDanhSachNhanVien.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcDanhSachTaiKhoan.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcQLNhanVien.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcThemNhanVien.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcQLSanPham.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcCongThucMonAn.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcDanhSachSanPham.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcQLKhoNguyenLieu.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcDanhSachNguyenLieu.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcDanhSachDonViTinh.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcDanhSachLoaiNguyenLieu.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcBanHang.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcQLBanHang.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcQLKhachHang.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcDanhSachKhachHang.resources
+E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\GUI\obj\Debug\GUI.urcDanhSachTheKhachHang.resources
+C:\DA_WF\Lu-Luan\GUI\GUI\bin\Debug\GUI.exe.config
+C:\DA_WF\Lu-Luan\GUI\GUI\obj\Debug\GUI.exe
+C:\DA_WF\Lu-Luan\GUI\GUI\obj\Debug\GUI.pdb
