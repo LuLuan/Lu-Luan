@@ -19,3 +19,10 @@ E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_21
 E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DAO\obj\Debug\DAO.dll
 E:\DOAN_LU\DA_2018_Ki1\DoAnWFnew\DA_WinForm_31102017_2131\DA_WinForm_31102017_2131\GUI\DAO\obj\Debug\DAO.pdb
+C:\DA_WF\Clone\GUI\DAO\bin\Debug\DAO.dll
+C:\DA_WF\Clone\GUI\DAO\bin\Debug\DAO.pdb
+C:\DA_WF\Clone\GUI\DAO\bin\Debug\DTO.dll
+C:\DA_WF\Clone\GUI\DAO\bin\Debug\DTO.pdb
+C:\DA_WF\Clone\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\DA_WF\Clone\GUI\DAO\obj\Debug\DAO.dll
+C:\DA_WF\Clone\GUI\DAO\obj\Debug\DAO.pdb

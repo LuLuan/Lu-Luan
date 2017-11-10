@@ -43,29 +43,73 @@ namespace GUI
         {
             // tạo ListViewItem 
             ListViewItem lvi = new ListViewItem(MonAn.TenMonAn);
-            lvi.SubItems.Add(MonAn.MaMonAn.ToString());
-            lvi.SubItems.Add(MonAn.MaLoaiMon);
+            lvi.SubItems.Add("Thuộc tính 1");
+            lvi.SubItems.Add("Thuộc tính 2");
+            lvi.SubItems.Add("Thuộc tính 3");
+            lvi.SubItems.Add("Thuộc tính 4");
+            lvi.SubItems.Add("Thuộc tính 5");
+            lvi.SubItems.Add("Thuộc tính 6");
+            //lvi.SubItems.Add(MonAn.MaMonAn.ToString());
+            //lvi.SubItems.Add(MonAn.MaLoaiMon);
+            //lvi.SubItems.Add(MonAn.MaDonViTinh);
+            
             //lvi.SubItems.Add(string.Format("{0:#,###}", tr.GiaNhap));
             //lvi.SubItems.Add(string.Format("{0:#,###}", tr.GiaBan));
             //lvi.SubItems.Add(tr.TheLoai);
             //lvi.SubItems.Add(tr.KieuTruyen);
             //lvi.SubItems.Add(tr.MaNXB);
             // xử lý HinhAnh
-            if (MonAn.AnhMonAn!=null)
+            if (MonAn.AnhMonAn != null)
             {
                 string url = MonAn.AnhMonAn;
                 if (url != "")
                 {
                     Bitmap bm = new Bitmap(url);
-                    //ilsLon.Images.Add(url, bm); // set key là url
-                    //ilsNho.Images.Add(url, bm);
+                    ilsLon.Images.Add(url, bm); // set key là url
+                    ilsNho.Images.Add(url, bm);
                     lvi.ImageKey = url;
                 }
+                else
+                    if (url == "")
+                    {
+                        //@"HinhAnh\AnhMonAn\no_picture.gif"; h×nh defaul
+
+                        Bitmap bm = new Bitmap(@"HinhAnh\AnhMonAn\no_picture.gif");
+                        ilsLon.Images.Add(url, bm); // set key là url
+                        ilsNho.Images.Add(url, bm);
+                        lvi.ImageKey = url;
+                    }
+
             }
-           
+
 
             // add lvi vào listview
             lswThucUong.Items.Add(lvi);
+        }
+
+        private void rdbLargeIcon_CheckedChanged(object sender, EventArgs e)
+        {
+            lswThucUong.View = View.LargeIcon;
+        }
+
+        private void rdbDetails_CheckedChanged(object sender, EventArgs e)
+        {
+            lswThucUong.View = View.Details;
+        }
+
+        private void rdbSmallIcon_CheckedChanged(object sender, EventArgs e)
+        {
+            lswThucUong.View = View.SmallIcon;
+        }
+
+        private void rdbList_CheckedChanged(object sender, EventArgs e)
+        {
+            lswThucUong.View = View.List;
+        }
+
+        private void rdbTile_CheckedChanged(object sender, EventArgs e)
+        {
+            lswThucUong.View = View.Tile;
         }
 
     }

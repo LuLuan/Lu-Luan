@@ -103,8 +103,8 @@ namespace GUI
 
         private void urcDangNhap_Load(object sender, EventArgs e)
         {
-            txtMatKhau.Text = "ql123";
-            txtTaiKhoan.Text = "N00022";
+            txtMatKhau.Text = "123";
+            txtTaiKhoan.Text = "N00009";
         }
     }
 }
