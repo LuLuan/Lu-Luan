@@ -87,19 +87,6 @@ namespace DAO
       return (cmd.ExecuteNonQuery() > 0);
     }
 
-    //public void ThemNhanVienVoid(clsNhanVien_DTO nhanVien)
-    //{
-    //  SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-    //  string query = "INSERT INTO NhanVien(ma_nhan_vien, ho_ten, ngay_sinh) VALUES(@ma_nhan_vien, @ho_ten, @ngay_sinh)";
-    //  //return ThaoTacDuLieu_DAO.ExcuteNonQuery(query);
-    //  SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
-
-    //  cmd.Parameters.AddWithValue("@ma_nhan_vien", nhanVien.MaNhanVien);
-    //  cmd.Parameters.AddWithValue("@ho_ten", nhanVien.HoTen);
-    //  cmd.Parameters.AddWithValue("@ngay_sinh", nhanVien.NgaySinh);
-    //  cmd.ExecuteNonQuery();
-    //}
-
     #endregion
 
 

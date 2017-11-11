@@ -18,3 +18,8 @@ C:\DA_WF\Clone\GUI\DTO\bin\Debug\DTO.pdb
 C:\DA_WF\Clone\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\DA_WF\Clone\GUI\DTO\obj\Debug\DTO.dll
 C:\DA_WF\Clone\GUI\DTO\obj\Debug\DTO.pdb
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\bin\Debug\DTO.dll
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\bin\Debug\DTO.pdb
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\obj\Debug\DTO.dll
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\obj\Debug\DTO.pdb

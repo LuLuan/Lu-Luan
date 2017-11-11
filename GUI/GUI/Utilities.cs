@@ -112,7 +112,7 @@ public void TrangThaiBanDau(GroupBox grbThongTin, GroupBox grbDanhSach)
       return @"HinhAnh\AnhDaiDien\" + DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetFileName(fd.FileName);
     }
 
-    public clsNhanVien_DTO TaoDoiTuongNhanVien(string ma, string hoTen, string anh, DateTime ngaySinh, bool gioiTinh, string diaChi, string sdt, DateTime ngayVaoLam, string chucVu, int trangThai)
+    public clsNhanVien_DTO TaoDoiTuongNhanVien(string ma, string hoTen, string anh, DateTime ngaySinh, bool gioiTinh, string diaChi, string sdt, DateTime ngayVaoLam, DateTime? ngayThoiViec, string chucVu, int trangThai)
     {
       clsNhanVien_DTO nhanVien = new clsNhanVien_DTO();
 
@@ -124,6 +124,7 @@ public void TrangThaiBanDau(GroupBox grbThongTin, GroupBox grbDanhSach)
       nhanVien.DiaChi = diaChi;
       nhanVien.SoDienThoai = sdt;
       nhanVien.NgayBatDauLam = ngayVaoLam;
+      nhanVien.NgayThoiViec = ngayThoiViec;
       nhanVien.MaChucVu = chucVu;
       nhanVien.TrangThai = trangThai;
 

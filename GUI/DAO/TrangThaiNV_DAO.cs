@@ -14,7 +14,7 @@ namespace DAO
         {
             List<clsTrangThaiNV_DTO> dsTrangThaiNV = new List<clsTrangThaiNV_DTO>();
             SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-            string cauTruyVan = "SELECT * FROM TrangThaiNhanVien";
+            string cauTruyVan = "SELECT TOP 3 * FROM TrangThaiNhanVien";
             SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(cauTruyVan, con);
             SqlDataReader reader = cmd.ExecuteReader();
 

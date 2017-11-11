@@ -66,9 +66,9 @@ namespace DTO
             get { return _NgayBatDauLam; }
             set { _NgayBatDauLam = value; }
         }
-        private DateTime _NgayThoiViec;
+        private DateTime? _NgayThoiViec;
 
-        public DateTime NgayThoiViec
+        public DateTime? NgayThoiViec
         {
             get { return _NgayThoiViec; }
             set { _NgayThoiViec = value; }
