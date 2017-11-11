@@ -10,10 +10,11 @@ namespace DAO
 {
   public class ThaoTacDuLieu_DAO
   {
-    //Data Source=W0Q5NTP4LWZVOB1\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True
-    //Liên Kết Của LU:  Data Source=W0Q5NTP4LWZVOB1\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True
+    
+    //Huy
     //private static string strCon = @"Data Source=W0Q5NTP4LWZVOB1\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
-      private static string strCon = @"Data Source=W0Q5NTP4LWZVOB1\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
+    //Luân
+    private static string strCon = @"Data Source=LUAN\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
     public static SqlConnection TaoKetNoi()
     {
       SqlConnection con = new SqlConnection(strCon);

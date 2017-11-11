@@ -26,3 +26,10 @@ C:\DA_WF\Clone\GUI\DAO\bin\Debug\DTO.pdb
 C:\DA_WF\Clone\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\DA_WF\Clone\GUI\DAO\obj\Debug\DAO.dll
 C:\DA_WF\Clone\GUI\DAO\obj\Debug\DAO.pdb
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\bin\Debug\DAO.dll
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\bin\Debug\DAO.pdb
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\bin\Debug\DTO.dll
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\bin\Debug\DTO.pdb
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\obj\Debug\DAO.dll
+D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\obj\Debug\DAO.pdb
