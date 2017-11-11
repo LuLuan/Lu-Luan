@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Mã Món Ăn");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Mã Loại Món Ăn");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Đơn Vị Tính");
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -56,6 +59,9 @@
             this.ilsNho = new System.Windows.Forms.ImageList(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.colMaMonAn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMaLoaiMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colDonViTinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -300,7 +306,15 @@
             // 
             // lswThucUong
             // 
+            this.lswThucUong.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colMaMonAn,
+            this.colMaLoaiMon,
+            this.colDonViTinh});
             this.lswThucUong.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lswThucUong.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
             this.lswThucUong.LargeImageList = this.ilsLon;
             this.lswThucUong.Location = new System.Drawing.Point(-4, 0);
             this.lswThucUong.MultiSelect = false;
@@ -340,6 +354,18 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MÓN ĂN";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // colMaMonAn
+            // 
+            this.colMaMonAn.Text = "Mã Món Ăn";
+            // 
+            // colMaLoaiMon
+            // 
+            this.colMaLoaiMon.Text = "Mã Loại Món";
+            // 
+            // colDonViTinh
+            // 
+            this.colDonViTinh.Text = "Đơn Vị Tính";
             // 
             // urcBanHang
             // 
@@ -391,5 +417,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonGia;
+        private System.Windows.Forms.ColumnHeader colMaMonAn;
+        private System.Windows.Forms.ColumnHeader colMaLoaiMon;
+        private System.Windows.Forms.ColumnHeader colDonViTinh;
     }
 }

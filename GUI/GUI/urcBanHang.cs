@@ -43,15 +43,9 @@ namespace GUI
         {
             // tạo ListViewItem 
             ListViewItem lvi = new ListViewItem(MonAn.TenMonAn);
-            lvi.SubItems.Add("Thuộc tính 1");
-            lvi.SubItems.Add("Thuộc tính 2");
-            lvi.SubItems.Add("Thuộc tính 3");
-            lvi.SubItems.Add("Thuộc tính 4");
-            lvi.SubItems.Add("Thuộc tính 5");
-            lvi.SubItems.Add("Thuộc tính 6");
-            //lvi.SubItems.Add(MonAn.MaMonAn.ToString());
-            //lvi.SubItems.Add(MonAn.MaLoaiMon);
-            //lvi.SubItems.Add(MonAn.MaDonViTinh);
+            lvi.SubItems.Add(MonAn.MaMonAn.ToString());
+            lvi.SubItems.Add(MonAn.MaLoaiMon);
+            lvi.SubItems.Add(MonAn.MaDonViTinh);
             
             //lvi.SubItems.Add(string.Format("{0:#,###}", tr.GiaNhap));
             //lvi.SubItems.Add(string.Format("{0:#,###}", tr.GiaBan));
