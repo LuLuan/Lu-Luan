@@ -36,7 +36,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colMaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.grbViewStyle = new System.Windows.Forms.GroupBox();
+            this.rdbList = new System.Windows.Forms.RadioButton();
+            this.rdbTile = new System.Windows.Forms.RadioButton();
+            this.rdbSmallIcon = new System.Windows.Forms.RadioButton();
+            this.rdbDetails = new System.Windows.Forms.RadioButton();
+            this.rdbLargeIcon = new System.Windows.Forms.RadioButton();
             this.lbTimNL = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -46,22 +56,12 @@
             this.ilsNho = new System.Windows.Forms.ImageList(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.grbViewStyle = new System.Windows.Forms.GroupBox();
-            this.rdbList = new System.Windows.Forms.RadioButton();
-            this.rdbTile = new System.Windows.Forms.RadioButton();
-            this.rdbSmallIcon = new System.Windows.Forms.RadioButton();
-            this.rdbDetails = new System.Windows.Forms.RadioButton();
-            this.rdbLargeIcon = new System.Windows.Forms.RadioButton();
-            this.colMaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.grbViewStyle.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.grbViewStyle.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -136,6 +136,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(190, 383);
             this.dataGridView1.TabIndex = 0;
             // 
+            // colMaMon
+            // 
+            this.colMaMon.HeaderText = "Mã Món";
+            this.colMaMon.Name = "colMaMon";
+            this.colMaMon.Width = 30;
+            // 
+            // colTenMon
+            // 
+            this.colTenMon.HeaderText = "Tên Món";
+            this.colTenMon.Name = "colTenMon";
+            this.colTenMon.Width = 77;
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.HeaderText = "SL";
+            this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.Width = 30;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.HeaderText = "Đơn Giá";
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.Width = 50;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -143,11 +167,87 @@
             this.panel2.Controls.Add(this.lbTimNL);
             this.panel2.Controls.Add(this.txtTimKiem);
             this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Location = new System.Drawing.Point(196, 0);
+            this.panel2.Location = new System.Drawing.Point(218, 18);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(734, 530);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // grbViewStyle
+            // 
+            this.grbViewStyle.Controls.Add(this.rdbList);
+            this.grbViewStyle.Controls.Add(this.rdbTile);
+            this.grbViewStyle.Controls.Add(this.rdbSmallIcon);
+            this.grbViewStyle.Controls.Add(this.rdbDetails);
+            this.grbViewStyle.Controls.Add(this.rdbLargeIcon);
+            this.grbViewStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbViewStyle.ForeColor = System.Drawing.Color.Maroon;
+            this.grbViewStyle.Location = new System.Drawing.Point(612, 3);
+            this.grbViewStyle.Name = "grbViewStyle";
+            this.grbViewStyle.Size = new System.Drawing.Size(119, 138);
+            this.grbViewStyle.TabIndex = 53;
+            this.grbViewStyle.TabStop = false;
+            this.grbViewStyle.Text = "View Style";
+            // 
+            // rdbList
+            // 
+            this.rdbList.AutoSize = true;
+            this.rdbList.Location = new System.Drawing.Point(17, 88);
+            this.rdbList.Name = "rdbList";
+            this.rdbList.Size = new System.Drawing.Size(52, 24);
+            this.rdbList.TabIndex = 11;
+            this.rdbList.TabStop = true;
+            this.rdbList.Text = "List";
+            this.rdbList.UseVisualStyleBackColor = true;
+            this.rdbList.CheckedChanged += new System.EventHandler(this.rdbList_CheckedChanged);
+            // 
+            // rdbTile
+            // 
+            this.rdbTile.AutoSize = true;
+            this.rdbTile.Location = new System.Drawing.Point(17, 106);
+            this.rdbTile.Name = "rdbTile";
+            this.rdbTile.Size = new System.Drawing.Size(51, 24);
+            this.rdbTile.TabIndex = 10;
+            this.rdbTile.TabStop = true;
+            this.rdbTile.Text = "Tile";
+            this.rdbTile.UseVisualStyleBackColor = true;
+            this.rdbTile.CheckedChanged += new System.EventHandler(this.rdbTile_CheckedChanged);
+            // 
+            // rdbSmallIcon
+            // 
+            this.rdbSmallIcon.AutoSize = true;
+            this.rdbSmallIcon.Location = new System.Drawing.Point(17, 69);
+            this.rdbSmallIcon.Name = "rdbSmallIcon";
+            this.rdbSmallIcon.Size = new System.Drawing.Size(99, 24);
+            this.rdbSmallIcon.TabIndex = 9;
+            this.rdbSmallIcon.TabStop = true;
+            this.rdbSmallIcon.Text = "Small icon";
+            this.rdbSmallIcon.UseVisualStyleBackColor = true;
+            this.rdbSmallIcon.CheckedChanged += new System.EventHandler(this.rdbSmallIcon_CheckedChanged);
+            // 
+            // rdbDetails
+            // 
+            this.rdbDetails.AutoSize = true;
+            this.rdbDetails.Location = new System.Drawing.Point(17, 47);
+            this.rdbDetails.Name = "rdbDetails";
+            this.rdbDetails.Size = new System.Drawing.Size(76, 24);
+            this.rdbDetails.TabIndex = 8;
+            this.rdbDetails.TabStop = true;
+            this.rdbDetails.Text = "Details";
+            this.rdbDetails.UseVisualStyleBackColor = true;
+            this.rdbDetails.CheckedChanged += new System.EventHandler(this.rdbDetails_CheckedChanged);
+            // 
+            // rdbLargeIcon
+            // 
+            this.rdbLargeIcon.AutoSize = true;
+            this.rdbLargeIcon.Location = new System.Drawing.Point(17, 25);
+            this.rdbLargeIcon.Name = "rdbLargeIcon";
+            this.rdbLargeIcon.Size = new System.Drawing.Size(101, 24);
+            this.rdbLargeIcon.TabIndex = 7;
+            this.rdbLargeIcon.TabStop = true;
+            this.rdbLargeIcon.Text = "Large icon";
+            this.rdbLargeIcon.UseVisualStyleBackColor = true;
+            this.rdbLargeIcon.CheckedChanged += new System.EventHandler(this.rdbLargeIcon_CheckedChanged);
             // 
             // lbTimNL
             // 
@@ -227,7 +327,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 54);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(628, 379);
+            this.tabPage2.Size = new System.Drawing.Size(720, 379);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "TOPPING";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -236,110 +336,10 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 54);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(628, 379);
+            this.tabPage3.Size = new System.Drawing.Size(720, 379);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MÓN ĂN";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // grbViewStyle
-            // 
-            this.grbViewStyle.Controls.Add(this.rdbList);
-            this.grbViewStyle.Controls.Add(this.rdbTile);
-            this.grbViewStyle.Controls.Add(this.rdbSmallIcon);
-            this.grbViewStyle.Controls.Add(this.rdbDetails);
-            this.grbViewStyle.Controls.Add(this.rdbLargeIcon);
-            this.grbViewStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbViewStyle.ForeColor = System.Drawing.Color.Maroon;
-            this.grbViewStyle.Location = new System.Drawing.Point(612, 3);
-            this.grbViewStyle.Name = "grbViewStyle";
-            this.grbViewStyle.Size = new System.Drawing.Size(119, 138);
-            this.grbViewStyle.TabIndex = 53;
-            this.grbViewStyle.TabStop = false;
-            this.grbViewStyle.Text = "View Style";
-            // 
-            // rdbList
-            // 
-            this.rdbList.AutoSize = true;
-            this.rdbList.Location = new System.Drawing.Point(17, 88);
-            this.rdbList.Name = "rdbList";
-            this.rdbList.Size = new System.Drawing.Size(52, 24);
-            this.rdbList.TabIndex = 11;
-            this.rdbList.TabStop = true;
-            this.rdbList.Text = "List";
-            this.rdbList.UseVisualStyleBackColor = true;
-            this.rdbList.CheckedChanged += new System.EventHandler(this.rdbList_CheckedChanged);
-            // 
-            // rdbTile
-            // 
-            this.rdbTile.AutoSize = true;
-            this.rdbTile.Location = new System.Drawing.Point(17, 106);
-            this.rdbTile.Name = "rdbTile";
-            this.rdbTile.Size = new System.Drawing.Size(51, 24);
-            this.rdbTile.TabIndex = 10;
-            this.rdbTile.TabStop = true;
-            this.rdbTile.Text = "Tile";
-            this.rdbTile.UseVisualStyleBackColor = true;
-            this.rdbTile.CheckedChanged += new System.EventHandler(this.rdbTile_CheckedChanged);
-            // 
-            // rdbSmallIcon
-            // 
-            this.rdbSmallIcon.AutoSize = true;
-            this.rdbSmallIcon.Location = new System.Drawing.Point(17, 69);
-            this.rdbSmallIcon.Name = "rdbSmallIcon";
-            this.rdbSmallIcon.Size = new System.Drawing.Size(99, 24);
-            this.rdbSmallIcon.TabIndex = 9;
-            this.rdbSmallIcon.TabStop = true;
-            this.rdbSmallIcon.Text = "Small icon";
-            this.rdbSmallIcon.UseVisualStyleBackColor = true;
-            this.rdbSmallIcon.CheckedChanged += new System.EventHandler(this.rdbSmallIcon_CheckedChanged);
-            // 
-            // rdbDetails
-            // 
-            this.rdbDetails.AutoSize = true;
-            this.rdbDetails.Location = new System.Drawing.Point(17, 47);
-            this.rdbDetails.Name = "rdbDetails";
-            this.rdbDetails.Size = new System.Drawing.Size(76, 24);
-            this.rdbDetails.TabIndex = 8;
-            this.rdbDetails.TabStop = true;
-            this.rdbDetails.Text = "Details";
-            this.rdbDetails.UseVisualStyleBackColor = true;
-            this.rdbDetails.CheckedChanged += new System.EventHandler(this.rdbDetails_CheckedChanged);
-            // 
-            // rdbLargeIcon
-            // 
-            this.rdbLargeIcon.AutoSize = true;
-            this.rdbLargeIcon.Location = new System.Drawing.Point(17, 25);
-            this.rdbLargeIcon.Name = "rdbLargeIcon";
-            this.rdbLargeIcon.Size = new System.Drawing.Size(101, 24);
-            this.rdbLargeIcon.TabIndex = 7;
-            this.rdbLargeIcon.TabStop = true;
-            this.rdbLargeIcon.Text = "Large icon";
-            this.rdbLargeIcon.UseVisualStyleBackColor = true;
-            this.rdbLargeIcon.CheckedChanged += new System.EventHandler(this.rdbLargeIcon_CheckedChanged);
-            // 
-            // colMaMon
-            // 
-            this.colMaMon.HeaderText = "Mã Món";
-            this.colMaMon.Name = "colMaMon";
-            this.colMaMon.Width = 30;
-            // 
-            // colTenMon
-            // 
-            this.colTenMon.HeaderText = "Tên Món";
-            this.colTenMon.Name = "colTenMon";
-            this.colTenMon.Width = 77;
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.HeaderText = "SL";
-            this.colSoLuong.Name = "colSoLuong";
-            this.colSoLuong.Width = 30;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.HeaderText = "Đơn Giá";
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.Width = 50;
             // 
             // urcBanHang
             // 
@@ -354,10 +354,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.grbViewStyle.ResumeLayout(false);
             this.grbViewStyle.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
