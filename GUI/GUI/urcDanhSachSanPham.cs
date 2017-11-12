@@ -179,10 +179,12 @@ namespace GUI
         {
             if (dgvDSSP.Rows.Count > 0)
             {
-                //Lấy mã kích thước món ăn khi chưa sửa 
+              //  DuongDanAnhMonAn = picAnhDaiDien.ImageLocation.ToString();
+              
                 string MaKichThuocCu = "";
                 DataGridViewRow dtvr = dgvDSSP.SelectedRows[0];
                 MaKichThuocCu = dtvr.Cells[4].Value.ToString();
+               
                 //
                 if (DuongDanAnhMonAn == "" || txtMaMonAn.Text == "" || txtGia.Text == "" || cbbKichThuoc.SelectedValue.ToString() == "" || txtTenMonAn.Text == "" || cbbDonViTinh.SelectedValue.ToString() == "" || cbbLoaiMonAn.SelectedValue.ToString() == "")
                 {
@@ -199,7 +201,7 @@ namespace GUI
                 //
                 //  MessageBox.Show(DuongDanAnhMonAn);
 
-
+               
 
                 clsMonAn_DTO itemUpMonAn = new clsMonAn_DTO();
                 itemUpMonAn.MaMonAn = MaMon;
@@ -215,7 +217,9 @@ namespace GUI
                 itemUpChiTietMonAn.GiaBan = float.Parse(Gia);
                 itemUpChiTietMonAn.MaKichThuoc = MaKichThuoc;
                 itemUpChiTietMonAn.TrangThai = true;
-
+                //
+             //   MessageBox.Show("``" + DuongDanAnhMonAn + "`" + txtMaMonAn.Text + "`" + txtGia.Text + "`" + cbbKichThuoc.SelectedValue.ToString() + "`" + txtTenMonAn.Text + "`" + cbbDonViTinh.SelectedValue.ToString() + "`" + cbbLoaiMonAn.SelectedValue.ToString()); return;
+                //Lấy mã kích thước món ăn khi chưa sửa 
                 //
                 if (BUS.MonAn_BUS.UpMonAn(itemUpMonAn) && BUS.MonAn_BUS.UpCTMonAn(itemUpChiTietMonAn, MaKichThuocCu))
                 {
@@ -366,6 +370,7 @@ namespace GUI
                     {
                         itemChiTietMonAn.MaKichThuoc = strMA[i];
                         BUS.MonAn_BUS.AddChiTietMonAn(itemChiTietMonAn);
+                        itemChiTietMonAn.GiaBan = (itemChiTietMonAn.GiaBan +3000);
                     }
                     MessageBox.Show("Đã thêm thành công nguyên liệu");
                     urcDanhSachSanPham_Load(sender, e);
@@ -446,6 +451,7 @@ namespace GUI
                     if (dvrSelected.Cells["colAnhMonAn"].Value != null)
                     {
                         picAnhDaiDien.Image = Image.FromFile(dvrSelected.Cells["colAnhMonAn"].Value.ToString());
+                        DuongDanAnhMonAn = dvrSelected.Cells["colAnhMonAn"].Value.ToString();
                     }
                     else
                     {
@@ -458,8 +464,6 @@ namespace GUI
             }
             catch (Exception)
             {
-
-
             }
 
 
@@ -480,9 +484,6 @@ namespace GUI
                 urcCongThucMonAn.Left = 0;
             }
             urcCongThucMonAn.BringToFront();
-
-
-
         }
 
         private void picExit_Click(object sender, EventArgs e)
@@ -505,8 +506,10 @@ namespace GUI
                         //&& BUS.MonAn_BUS.UpDeleteMonAn(MaMonAnDuocChon, false)
                         if (BUS.MonAn_BUS.UpDeleteCTMonAn(MaMonAnDuocChon, row.Cells["colTenKichThuoc"].Value.ToString(), false))
                         {
-                            if (BUS.MonAn_BUS.SoLuongMonAnChiTietMonAn(MaMonAnDuocChon) <= 1)// nếu chi tiết monan <0 thì false luôn có monan
+                            if (BUS.MonAn_BUS.SoLuongMonAnChiTietMonAn(MaMonAnDuocChon) <= 0)// đếm xem còn ở chi tiết không mới xóa ở sp
+                            {
                                 BUS.MonAn_BUS.UpDeleteMonAn(MaMonAnDuocChon, false);
+                            }
                             LamMoiDanhSach(strTimKiemMonAn);
                             LoadDuLieuLendgvMonAn();
                             MessageBox.Show("Đã xóa món ăn ");
@@ -542,9 +545,11 @@ namespace GUI
                     //&& BUS.MonAn_BUS.UpDeleteMonAn(MaMonAnDuocChon, false)
                     if (BUS.MonAn_BUS.UpDeleteCTMonAn(MaMonAnDuocChon, row.Cells["colTenKichThuoc"].Value.ToString(), false))
                     {
-                        if (BUS.MonAn_BUS.SoLuongMonAnChiTietMonAn(MaMonAnDuocChon) <= 1)// nếu chi tiết monan <0 thì false luôn có monan
-                            BUS.MonAn_BUS.UpDeleteMonAn(MaMonAnDuocChon, false);
-
+                        if (BUS.MonAn_BUS.SoLuongMonAnChiTietMonAn(MaMonAnDuocChon) <= 0)// đếm xem còn ở chi tiết không mới xóa ở sp
+                        {
+                            BUS.MonAn_BUS.UpDeleteMonAn(MaMonAnDuocChon, false); 
+                        }
+                         
                         LamMoiDanhSach(strTimKiemMonAn);
                         LoadDuLieuLendgvMonAn();
                         MessageBox.Show("Đã xóa món ăn ");

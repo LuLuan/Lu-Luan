@@ -51,9 +51,12 @@ namespace BUS
         {
             return DAO.MonAn_DAO.UpChiTietMonAn(CTMonAn, MaKichThuocCu);
         }
+        // Lấy giá tiền của 1 món ăn chi tiết
+        public static float GiaMonAnChiTiet(string MaMonAn, string KichThuocMonAn)
+        {
+            return DAO.MonAn_DAO.GiaMonAnChiTiet(MaMonAn, KichThuocMonAn);
+        }
         
-     
-        //
 
 
     }

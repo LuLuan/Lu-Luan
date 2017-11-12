@@ -144,3 +144,4 @@ D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\GUI\bin\Debug\BUS.pdb
 D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\GUI\bin\Debug\DTO.pdb
 D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\GUI\bin\Debug\DAO.pdb
 D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\DA_WF\Clone\GUI\GUI\obj\Debug\GUI.urcThanhToan.resources

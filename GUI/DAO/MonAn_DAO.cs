@@ -56,7 +56,7 @@ namespace DAO
         //Đếm số lượng món ăn ở chi tiết sản phẩm
         public static int SoLuongMonAnChiTietMonAn(string MaMonAn)
         {
-            string query = string.Format("select count(*) from ChiTietMonAn where ma_mon_an = N'{0}' ",MaMonAn);
+            string query = string.Format("select count(*) from ChiTietMonAn where ma_mon_an = N'{0}' AND trang_thai =N'True' ",MaMonAn);
             SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
             SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
             int TongSP = int.Parse(cmd.ExecuteScalar().ToString());
@@ -158,6 +158,16 @@ namespace DAO
             }
 
             return (ketqua == 1) ? true : false;
+        }
+        //Lấy giá tiền của chi tiết món ăn
+        public static float GiaMonAnChiTiet(string MaMonAn,string KichThuocMonAn)
+        {
+            string query = string.Format("select gia_ban from ChiTietMonAn where ma_mon_an = N'{0}' and ma_kich_thuoc= N'{1}' AND trang_thai =N'True' ", MaMonAn, KichThuocMonAn);
+            SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+            SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
+            float TongSP = float.Parse(cmd.ExecuteScalar().ToString());
+            ThaoTacDuLieu_DAO.DongKetNoi(con);
+            return TongSP;
         }
 
 

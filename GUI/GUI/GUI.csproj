@@ -164,6 +164,12 @@
     <Compile Include="urcQLNhanVien.Designer.cs">
       <DependentUpon>urcQLNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="urcThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcThanhToan.Designer.cs">
+      <DependentUpon>urcThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="urcThemNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="urcQLNhanVien.resx">
       <DependentUpon>urcQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcThanhToan.resx">
+      <DependentUpon>urcThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="urcThemNhanVien.resx">
       <DependentUpon>urcThemNhanVien.cs</DependentUpon>
@@ -506,6 +515,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Delete_52px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Receipt_25px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Paycheque_25px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Return_Purchase_25px_1.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Clear_Shopping_Cart_25px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checked_Checkbox_52px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checked_96px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checkmark_52px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Ok_25px.png" />
     <Content Include="Resources\COMEBUY-logo.png" />
     <Content Include="Resources\customer-card.png" />
   </ItemGroup>
