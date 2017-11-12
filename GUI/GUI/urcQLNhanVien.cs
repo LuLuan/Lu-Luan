@@ -41,7 +41,6 @@ namespace GUI
       else if (btn.Name == btnXemDSTheKH.Name)
       {
         urcDanhSachNhanVien.Visible = false;
-        //urcDanhSachTaiKhoan.Visible = true;
         if (!pnlContainer.Controls.ContainsKey("urcDanhSachTaiKhoan"))
         {
           pnlContainer.Controls.Add(urcDanhSachTaiKhoan);
@@ -62,6 +61,7 @@ namespace GUI
       }
     }
 
+
     private void urcQLNhanVien_Load(object sender, EventArgs e)
     {
       CaiDatPanelMenu(btnXemDSNV);
@@ -70,7 +70,6 @@ namespace GUI
     private void btnXemDSNV_Click(object sender, EventArgs e)
     {
       CaiDatPanelMenu(btnXemDSNV);
-      //urcDanhSachNhanVien.BringToFront();
       urcDanhSachNhanVien.urcDanhSachNhanVien_Load(sender, e);
       if (isClickedbtnMoMenu == true)
         btnMoMenu_Click(sender, e);

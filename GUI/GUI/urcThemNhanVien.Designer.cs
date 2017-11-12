@@ -199,9 +199,9 @@
       this.lblHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
       this.lblHoTen.Location = new System.Drawing.Point(33, 252);
       this.lblHoTen.Name = "lblHoTen";
-      this.lblHoTen.Size = new System.Drawing.Size(61, 17);
+      this.lblHoTen.Size = new System.Drawing.Size(56, 17);
       this.lblHoTen.TabIndex = 95;
-      this.lblHoTen.Text = "Họ Tên";
+      this.lblHoTen.Text = "Họ tên";
       // 
       // txtHoTen
       // 

@@ -39,14 +39,19 @@ namespace DAO
 
     public string LayMaNhanVien()
     {
-      SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+      //SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
       string query = "SELECT COUNT(*) FROM NhanVien";
-      SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
-      string maNV = cmd.ExecuteScalar().ToString();
+      //SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
+      //string maNV = cmd.ExecuteScalar().ToString();
+      string maNV = ThaoTacDuLieu_DAO.ExecuteScalar(query).ToString();
 
       return maNV;
     }
 
+    //public void LayMaNhanVien(int b)
+    //{
+
+    //}
 
     #region THÊM - XÓA - SỬA
 

@@ -230,10 +230,8 @@ namespace GUI
             }
             else MessageBox.Show("Thêm thất bại");
           }
-          catch (Exception)
-          {
-          }
-          TrangThaiBanDau();
+          catch (Exception) { }
+          //TrangThaiBanDau();
         }
         else
         {
@@ -396,7 +394,7 @@ namespace GUI
 
     private bool KiemTraNgaySinh()
     {
-      return (utl.KiemTraDateTimePicker(dtpNgaySinh) && utl.KiemTraNgaySinh(15, dtpNgaySinh));
+      return (utl.KiemTraDateTimePicker(dtpNgaySinh) && utl.KiemTraTuoi(15, dtpNgaySinh));
     }
 
     private bool KiemTraNgayVaoLam()
