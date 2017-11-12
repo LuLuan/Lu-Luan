@@ -20,10 +20,7 @@ namespace DAO
       if (maNhanVien != "")
         query = string.Format("select * from NhanVien where ma_nhan_vien ='{0}'", maNhanVien);
       else query = string.Format("select * from NhanVien where ma_trang_thai_nhan_vien != {0}", 4);
-      //SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
       return ThaoTacDuLieu_DAO.LayDanhSachNhanVien(query, con);
-      //ThaoTacDuLieu_DAO.DongKetNoi(con);
-      //return lstNhanVien;
     }
 
     public List<clsNhanVien_DTO> TimKiemNhanVien(string hoTen, string maChucVu, int gioiTinh, int trangThai)
@@ -38,7 +35,6 @@ namespace DAO
         query += string.Format(" AND ma_trang_thai_nhan_vien = {0}", trangThai);
 
       return ThaoTacDuLieu_DAO.LayDanhSachNhanVien(query, con);
-      //return lstNhanVien;
     }
 
     public string LayMaNhanVien()
@@ -56,18 +52,20 @@ namespace DAO
 
     public bool ThaoTacVoiDoiTuongNhanVien(clsNhanVien_DTO nhanVien, string command)
     {
+      //ngay_thoi_viec = @ngay_thoi_viec,
       SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
       string query = "";
       if (command == "Add")
-        query = "INSERT INTO NhanVien(ma_nhan_vien, ho_ten, anh_nhan_vien, ngay_sinh, gioi_tinh, dia_chi, so_dien_thoai, ngay_bat_dau_lam, ma_chuc_vu, ma_trang_thai_nhan_vien)"
-        + " VALUES(@ma_nhan_vien, @ho_ten, @anh_nhan_vien, @ngay_sinh, @gioi_tinh, @dia_chi, @so_dien_thoai, @ngay_bat_dau_lam, @ma_chuc_vu, @ma_trang_thai_nhan_vien)";
+        query = "INSERT INTO NhanVien(ma_nhan_vien, ho_ten, anh_nhan_vien, ngay_sinh, gioi_tinh, dia_chi, so_dien_thoai, ngay_bat_dau_lam, ngay_thoi_viec, ma_chuc_vu, ma_trang_thai_nhan_vien)"
+        + " VALUES(@ma_nhan_vien, @ho_ten, @anh_nhan_vien, @ngay_sinh, @gioi_tinh, @dia_chi, @so_dien_thoai, @ngay_bat_dau_lam, @ngay_thoi_viec, @ma_chuc_vu, @ma_trang_thai_nhan_vien)";
 
       else if (command == "Update")
         query = "UPDATE NhanVien SET"
-          + " ho_ten = @ho_ten, anh_nhan_vien = @anh_nhan_vien, ngay_sinh = @ngay_sinh, gioi_tinh = @gioi_tinh, dia_chi = @dia_chi, so_dien_thoai = @so_dien_thoai, ngay_bat_dau_lam = @ngay_bat_dau_lam, ma_chuc_vu = @ma_chuc_vu, ma_trang_thai_nhan_vien = @ma_trang_thai_nhan_vien"
+          + " ho_ten = @ho_ten, anh_nhan_vien = @anh_nhan_vien, ngay_sinh = @ngay_sinh, gioi_tinh = @gioi_tinh, dia_chi = @dia_chi, so_dien_thoai = @so_dien_thoai, ngay_bat_dau_lam = @ngay_bat_dau_lam, ngay_thoi_viec = @ngay_thoi_viec, ma_chuc_vu = @ma_chuc_vu, ma_trang_thai_nhan_vien = @ma_trang_thai_nhan_vien"
           + " WHERE ma_nhan_vien = @ma_nhan_vien";
       else if (command == "Delete")
         query = string.Format("UPDATE NhanVien SET ma_trang_thai_nhan_vien = {0} WHERE ma_nhan_vien = '{1}'", nhanVien.TrangThai, nhanVien.MaNhanVien);
+
       SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
 
       if(command == "Add" || command == "Update")
@@ -80,6 +78,9 @@ namespace DAO
         cmd.Parameters.AddWithValue("@dia_chi", nhanVien.DiaChi);
         cmd.Parameters.AddWithValue("@so_dien_thoai", nhanVien.SoDienThoai);
         cmd.Parameters.AddWithValue("@ngay_bat_dau_lam", nhanVien.NgayBatDauLam);
+        if (nhanVien.NgayThoiViec == null)
+          cmd.Parameters.AddWithValue("@ngay_thoi_viec", DBNull.Value);
+        else cmd.Parameters.AddWithValue("@ngay_thoi_viec", nhanVien.NgayThoiViec);
         cmd.Parameters.AddWithValue("@ma_chuc_vu", nhanVien.MaChucVu);
         cmd.Parameters.AddWithValue("@ma_trang_thai_nhan_vien", nhanVien.TrangThai);
       }

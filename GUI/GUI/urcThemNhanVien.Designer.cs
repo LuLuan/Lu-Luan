@@ -56,7 +56,6 @@
       this.label6 = new System.Windows.Forms.Label();
       this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
       this.chbKichHoatTK = new System.Windows.Forms.CheckBox();
-      this.chbDoiPheDuyet = new System.Windows.Forms.CheckBox();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.picAnhDaiDien)).BeginInit();
       this.SuspendLayout();
@@ -295,7 +294,6 @@
       // picAnhDaiDien
       // 
       this.picAnhDaiDien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      //this.picAnhDaiDien.Image = global::GUI.Properties.Resources.default_avatar;
       this.picAnhDaiDien.Location = new System.Drawing.Point(36, 58);
       this.picAnhDaiDien.Name = "picAnhDaiDien";
       this.picAnhDaiDien.Size = new System.Drawing.Size(88, 91);
@@ -367,23 +365,11 @@
       this.chbKichHoatTK.Text = "Kích hoạt tài khoản";
       this.chbKichHoatTK.UseVisualStyleBackColor = true;
       // 
-      // chbDoiPheDuyet
-      // 
-      this.chbDoiPheDuyet.AutoSize = true;
-      this.chbDoiPheDuyet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.chbDoiPheDuyet.Location = new System.Drawing.Point(375, 191);
-      this.chbDoiPheDuyet.Name = "chbDoiPheDuyet";
-      this.chbDoiPheDuyet.Size = new System.Drawing.Size(149, 21);
-      this.chbDoiPheDuyet.TabIndex = 127;
-      this.chbDoiPheDuyet.Text = "Không cần duyệt";
-      this.chbDoiPheDuyet.UseVisualStyleBackColor = true;
-      // 
       // urcThemNhanVien
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.Controls.Add(this.chbDoiPheDuyet);
       this.Controls.Add(this.chbKichHoatTK);
       this.Controls.Add(this.label6);
       this.Controls.Add(this.dtpNgayVaoLam);
@@ -452,6 +438,5 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpNgayVaoLam;
         private System.Windows.Forms.CheckBox chbKichHoatTK;
-        private System.Windows.Forms.CheckBox chbDoiPheDuyet;
     }
 }

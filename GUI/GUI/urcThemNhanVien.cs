@@ -221,20 +221,14 @@ namespace GUI
 
           try
           {
-            if (busNhanVien.ThaoTacVoiDoiTuongNhanVien(NV, "Add") && busTaiKhoan.ThemTaiKhoan(TK))
+            if (busNhanVien.ThaoTacVoiDoiTuongNhanVien(NV, "Add") && busTaiKhoan.ThaoTacVoiTaiKhoan(TK, "Add"))
             {
               File.Copy(fd.FileName, destFileName);
               MessageBox.Show("Đã thên nhân viên mới");
               TrangThaiBanDau();
-              if (LoadLaiDSNhanVienDele != null)
-              {
-                LoadLaiDSNhanVienDele(true);
-              }
-              // deleload laij form
-              //urcDanhSachNhanVien urcDSNV = new urcDanhSachNhanVien();
-              //urcDSNV.urcDanhSachNhanVien_Load(sender, e);
 
             }
+            else MessageBox.Show("Thêm thất bại");
           }
           catch (Exception)
           {
@@ -271,9 +265,9 @@ namespace GUI
       string sdt = txtSoDienThoai.Text;
       DateTime ngayBatDauLam = dtpNgayVaoLam.Value;
       string maChucVu = cboChucVu.SelectedValue.ToString().Trim();
-      int trangThai = (chbDoiPheDuyet.Checked ? 1 : 3);
-      DateTime? mytime = null;
-      return utl.TaoDoiTuongNhanVien(ma, hoTen, anh, ngaySinh, gioiTinh, diaChi, sdt, ngayBatDauLam, mytime, maChucVu, trangThai);
+      int trangThai = (dtpNgayVaoLam.Value <= DateTime.Now ? 1 : 3);
+      DateTime? ngayThoiViec = null;
+      return utl.TaoDoiTuongNhanVien(ma, hoTen, anh, ngaySinh, gioiTinh, diaChi, sdt, ngayBatDauLam, ngayThoiViec, maChucVu, trangThai);
     }
 
     private clsTaiKhoan_DTO TaoDoiTuongTaiKhoanNhanVien()
@@ -286,8 +280,6 @@ namespace GUI
       bool trangThai = (chbKichHoatTK.Checked ? true : false);
 
       return utl.TaoDoiTuongTaiKhoanNhanVien(maDN, matKhau, ngayTao, maQuyenDangNhap, maKhanCap, trangThai);
-
-
     }
 
 
@@ -441,6 +433,7 @@ namespace GUI
       //string str = @"^((?!.*[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\""|\;|\:]).{15,250})$";
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQDiaChi(), txtDiaChi);
     }
+
 
 
     //private bool KiemTraBieuThucChinhQuy(string bieuThuc, Control ctr)

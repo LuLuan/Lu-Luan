@@ -21,11 +21,18 @@ namespace BUS
       return dao.LayDanhSachTaiKhoan(hoTenNV);
     }
 
-    public bool ThemTaiKhoan(clsTaiKhoan_DTO taiKhoan)
+
+    public bool ThaoTacVoiTaiKhoan(clsTaiKhoan_DTO TK, string command)
     {
       TaiKhoan_DAO dao = new TaiKhoan_DAO();
-      return dao.ThemTaiKhoan(taiKhoan);
+      return dao.ThaoTacVoiTaiKhoan(TK, command);
     }
+
+    //public bool ThemTaiKhoan(clsTaiKhoan_DTO taiKhoan)
+    //{
+    //  TaiKhoan_DAO dao = new TaiKhoan_DAO();
+    //  return dao.ThemTaiKhoan(taiKhoan);
+    //}
 
   }
 }

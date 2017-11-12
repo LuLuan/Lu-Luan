@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       this.dgvDSTK = new System.Windows.Forms.DataGridView();
       this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.colMaDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,14 +66,14 @@
       // 
       this.dgvDSTK.AllowUserToAddRows = false;
       this.dgvDSTK.AllowUserToDeleteRows = false;
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvDSTK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvDSTK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
       this.dgvDSTK.ColumnHeadersHeight = 50;
       this.dgvDSTK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colHoTen,
@@ -87,18 +87,18 @@
       this.dgvDSTK.MultiSelect = false;
       this.dgvDSTK.Name = "dgvDSTK";
       this.dgvDSTK.ReadOnly = true;
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvDSTK.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvDSTK.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
       this.dgvDSTK.RowHeadersVisible = false;
-      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.dgvDSTK.RowsDefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.dgvDSTK.RowsDefaultCellStyle = dataGridViewCellStyle6;
       this.dgvDSTK.RowTemplate.Height = 40;
       this.dgvDSTK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.dgvDSTK.Size = new System.Drawing.Size(888, 265);
@@ -331,6 +331,7 @@
       this.txtMaKhanCap.Name = "txtMaKhanCap";
       this.txtMaKhanCap.Size = new System.Drawing.Size(180, 23);
       this.txtMaKhanCap.TabIndex = 4;
+      this.txtMaKhanCap.TextChanged += new System.EventHandler(this.txtMaKhanCap_TextChanged);
       this.txtMaKhanCap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaKhanCap_KeyPress);
       // 
       // label2
@@ -345,10 +346,11 @@
       // txtMatKhau
       // 
       this.txtMatKhau.Location = new System.Drawing.Point(506, 38);
-      this.txtMatKhau.MaxLength = 6;
+      this.txtMatKhau.MaxLength = 20;
       this.txtMatKhau.Name = "txtMatKhau";
       this.txtMatKhau.Size = new System.Drawing.Size(180, 23);
       this.txtMatKhau.TabIndex = 2;
+      this.txtMatKhau.TextChanged += new System.EventHandler(this.txtMatKhau_TextChanged);
       // 
       // label1
       // 

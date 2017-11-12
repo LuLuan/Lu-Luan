@@ -20,10 +20,9 @@ namespace GUI
       InitializeComponent();
     }
 
-    private void urcDanhSachKhachHang_Load(object sender, EventArgs e)
+    public void urcDanhSachKhachHang_Load(object sender, EventArgs e)
     {
       HienThiDSKhachHang();
-
     }
 
 
@@ -294,9 +293,9 @@ namespace GUI
         txtMaKH.Text = r.Cells["colMaKH"].Value.ToString();
         txtHoTen.Text = r.Cells["colTenKH"].Value.ToString();
         txtDiaChi.Text = r.Cells["colDiaChi"].Value.ToString();
-        txtSoDienThoai.Text = r.Cells["colSDT"].Value.ToString();
+        txtSoDienThoai.Text = r.Cells["colSDT"].Value.ToString().Trim();
         if (r.Cells["colEmail"].Value != null)
-          txtEmail.Text = r.Cells["colEmail"].Value.ToString();
+          //txtEmail.Text = r.Cells["colEmail"].Value.ToString();
 
         if (Convert.ToBoolean(r.Cells["colGioiTinh"].Value.ToString()) == true)
           rdbGioiTinhNam.Checked = true;
@@ -311,6 +310,11 @@ namespace GUI
 
         TrangThaiKhiChonMotKhachHang();
       }
+    }
+
+    private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+    {
+      e.Handled = (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar));
     }
 
 

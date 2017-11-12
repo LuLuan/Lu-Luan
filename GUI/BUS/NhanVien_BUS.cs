@@ -48,12 +48,6 @@ namespace BUS
       return dao.ThaoTacVoiDoiTuongNhanVien(nhanVien, command);
     }
 
-    //public void ThemNhanVienVoid(clsNhanVien_DTO nhanVien)
-    //{
-    //  NhanVien_DAO dao = new NhanVien_DAO();
-    //  dao.ThemNhanVienVoid(nhanVien);
-    //}
-
 
 
 

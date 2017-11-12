@@ -22,7 +22,7 @@ namespace GUI
         ThaoTacChung ttc = new ThaoTacChung();
 
 
-        private void urcDanhSachTheKhachHang_Load(object sender, EventArgs e)
+        public void urcDanhSachTheKhachHang_Load(object sender, EventArgs e)
         {
             HienThiDSTheKhachHang();
             //TrangThaiBanDau();

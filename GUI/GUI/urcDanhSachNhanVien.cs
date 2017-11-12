@@ -42,6 +42,8 @@ namespace GUI
       HienThiDSTrangThai(cboTrangThai_TK);
       //delegate
       tnv.LoadLaiDSNhanVienDele = new urcThemNhanVien.LoadLaiDanhSachNhanVien(LoadLaiMain);
+
+      //MessageBox.Show(dtpNgayThoiViec.Value.ToShortDateString());
     }
 
 
@@ -168,7 +170,7 @@ namespace GUI
           destFileName = TaoDuongDanAnh(); // Lưu đường dẫn ảnh trước khi TaoNhanVien
           clsNhanVien_DTO NV = TaoDoiTuongNhanVien();
 
-          try
+          //try
           {
             if (busNhanVien.ThaoTacVoiDoiTuongNhanVien(NV, "Update"))
             {
@@ -179,15 +181,15 @@ namespace GUI
               HienThiDSNhanVien();
             }
           }
-          catch (Exception)
-          {
-            throw;
-          }
+          //catch (Exception)
+          //{
+          //  throw;
+          //}
 
         }
         else MessageBox.Show("Hủy thao tác");
       }
-      else MessageBox.Show(strError, "Lỗi cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      else MessageBox.Show(strError, "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
       strError = "";
       destFileName = "";
@@ -225,16 +227,16 @@ namespace GUI
       //  flag = false;
       //  strError += " *Không được để trống hình ảnh\n";
       //}
-      if (!KiemTraChucVu())
-      {
-        flag = false;
-        strError += " *Không được để trống chức vụ\n";
-      }
-      if (!KiemTraTrangThai())
-      {
-        flag = false;
-        strError += " *Không được để trống trạng thái\n";
-      }
+      //if (!KiemTraChucVu())
+      //{
+      //  flag = false;
+      //  strError += " *Không được để trống chức vụ\n";
+      //}
+      //if (!KiemTraTrangThai())
+      //{
+      //  flag = false;
+      //  strError += " *Không được để trống trạng thái\n";
+      //}
 
       if (!KiemTraNgaySinh())
       {
@@ -278,15 +280,19 @@ namespace GUI
 
       DateTime? ngayThoiViec;
       DateTime? nullDateTime = null;
-      ngayThoiViec = (dtpNgayThoiViec.Format != DateTimePickerFormat.Custom ? dtpNgayThoiViec.Value : nullDateTime);
-      
+      ngayThoiViec = (dtpNgayThoiViec.Format == DateTimePickerFormat.Custom ? nullDateTime : dtpNgayThoiViec.Value);
 
       string maChucVu = cboChucVu.SelectedValue.ToString().Trim();
-      int trangThai = (dtpNgayThoiViec.Value <= DateTime.Now ? 2 : 1);
+      int trangThai = (int)cboTrangThai.SelectedValue;
 
       return utl.TaoDoiTuongNhanVien(ma, hoTen, anh, ngaySinh, gioiTinh, diaChi, sdt, ngayBatDauLam, ngayThoiViec, maChucVu, trangThai);
     }
 
+    private bool KiemTraNhanVienDaVaoLam()
+    {
+      return (ngayVaoLamTrongDGV <= DateTime.Now ?  true : false);
+    }
+    
 
 
 
@@ -322,15 +328,15 @@ namespace GUI
     //{
     //  return (utl.KiemTraFileDialog(fd) && utl.KiemTraPictuerBox(picAnhDaiDien));
     //}
-    private bool KiemTraChucVu()
-    {
-      return (cboChucVu.SelectedIndex > -1);
-    }
+    //private bool KiemTraChucVu()
+    //{
+    //  return (cboChucVu.SelectedIndex > -1);
+    //}
 
-    private bool KiemTraTrangThai()
-    {
-      return (cboTrangThai.SelectedIndex > -1);
-    }
+    //private bool KiemTraTrangThai()
+    //{
+    //  return (cboTrangThai.SelectedIndex > -1);
+    //}
 
     private bool KiemTraNgaySinh()
     {
@@ -368,7 +374,7 @@ namespace GUI
     #region Xóa nhân viên (cập nhật lại trạng thái)
     private void dgvDSNV_KeyUp(object sender, KeyEventArgs e)
     {
-      if (dgvDSNV.Rows.Count > 0)
+      if (dgvDSNV.Rows.Count > 0 && dgvDSNV.SelectedRows.Count > 0)
       {
         DataGridViewRow row = dgvDSNV.SelectedRows[0];
         int rowIndex = row.Index;
@@ -378,6 +384,9 @@ namespace GUI
           if (DialogResult.Yes == MessageBox.Show("Bạn muốn xóa nhân viên " + txtHoTen.Text + " ?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
           {
             clsNhanVien_DTO NV = new clsNhanVien_DTO();
+            clsTaiKhoan_DTO TK = new clsTaiKhoan_DTO();
+            TK.MaDangNhap = lblMaNV.Text;
+            TK.TrangThai = false;
             NV.MaNhanVien = lblMaNV.Text;
             NV.TrangThai = 4;
             NhanVien_BUS busNV = new NhanVien_BUS();
@@ -460,6 +469,7 @@ namespace GUI
         if (ctr is DateTimePicker)
         {
           DateTimePicker DateTimePicker = (DateTimePicker)ctr;
+
           DateTimePicker.CustomFormat = " ";
           DateTimePicker.Format = DateTimePickerFormat.Custom;
           DateTimePicker.Enabled = false;
@@ -510,11 +520,11 @@ namespace GUI
           e.Value = DateTime.Parse(e.Value.ToString()).ToShortDateString();
       }
 
-      //if (dgvDSNV.Columns[e.ColumnIndex].Name == "colNgayThoiViec")
-      //{
-      //  if (DateTime.Parse(e.Value.ToString()).ToShortDateString() != "01/01/0001")
-      //    e.Value = DateTime.Parse(e.Value.ToString()).ToShortDateString();
-      //}
+      if (dgvDSNV.Columns[e.ColumnIndex].Name == "colNgayThoiViec")
+      {
+        if (e.Value != null)
+          e.Value = DateTime.Parse(e.Value.ToString()).ToShortDateString();
+      }
 
 
       if (dgvDSNV.Columns[e.ColumnIndex].Name == "colGioiTinh")
@@ -622,19 +632,28 @@ namespace GUI
         if (ctr is ComboBox)
         {
           ComboBox ComboBox = (ComboBox)ctr;
-          ComboBox.Enabled = true;
+          if (ComboBox.Name != cboTrangThai.Name)
+            ComboBox.Enabled = true;
+          else
+          {
+            if ((int)cboTrangThai.SelectedValue == 2)
+              ComboBox.Enabled = true;
+            else ComboBox.Enabled = false;
+          }
+
         }
         if (ctr is DateTimePicker)
         {
           DateTimePicker DateTimePicker = (DateTimePicker)ctr;
-          
-          if(DateTimePicker.Name == dtpNgayThoiViec.Name)
-          {
-            if (cboTrangThai.SelectedIndex == 1)
-              DateTimePicker.Enabled = true;
-            else DateTimePicker.Enabled = false;
-          }
-          else DateTimePicker.Enabled = true;
+
+          //if(DateTimePicker.Name == dtpNgayThoiViec.Name)
+          //{
+          //  if (cboTrangThai.SelectedIndex == 1)
+          //    DateTimePicker.Enabled = true;
+          //  else DateTimePicker.Enabled = false;
+          //}
+          //else
+          DateTimePicker.Enabled = true;
 
         }
       }
@@ -643,7 +662,7 @@ namespace GUI
 
     private void LayNgayTrongDataGridViewLenDateTimePicker(DateTimePicker dtp, DateTime? dt)
     {
-      if (dt <= DateTime.MinValue || dt >= DateTime.MaxValue ||dt == null)
+      if (dt <= DateTime.MinValue || dt >= DateTime.MaxValue || dt == null)
       {
         XoaThoiGianTrenDateTimePicker(dtp);
       }
@@ -672,26 +691,132 @@ namespace GUI
     #region Chuyển định dạng Ngày Tháng Năm DateTimePicker về Short khi chọn một ngày nào đó
     private void dtpNgaySinh_ValueChanged_1(object sender, EventArgs e)
     {
-      dtpNgaySinh.Format = DateTimePickerFormat.Short;
+      //dtpNgaySinh.Format = DateTimePickerFormat.Short;
     }
+
+
 
     private void dtpNgayVaoLam_ValueChanged_1(object sender, EventArgs e)
     {
+
+      if(!dtpNgayVaoLam.Focused)
+      {
+        return;
+      }
+
       dtpNgayVaoLam.Format = DateTimePickerFormat.Short;
+
+      if(KiemTraNhanVienDaVaoLam()) // DateTime < = DateTime.Now
+      {
+        if (dtpNgayVaoLam.Value > DateTime.Now && (ngayThoiViecTrongDGV == null || (ngayThoiViecTrongDGV != null && dtpNgayVaoLam.Value < ngayThoiViecTrongDGV)))
+          cboTrangThai.SelectedValue = 3;
+        else if (ngayThoiViecTrongDGV != null && dtpNgayVaoLam.Value >= ngayThoiViecTrongDGV)
+        {
+          MessageBox.Show("Không thể chọn thời gian này vì nhân viên đã nghỉ việc");
+          dtpNgayVaoLam.Value = ngayVaoLamTrongDGV;
+
+          if(ngayThoiViecTrongDGV <= DateTime.Now)
+            cboTrangThai.SelectedValue = 2;
+          else cboTrangThai.SelectedValue = 1;
+        }
+        else if(dtpNgayVaoLam.Value <= DateTime.Now)
+          cboTrangThai.SelectedValue = 1;
+
+      }
+
+      else // Nhân viên chưa vào làm
+      {
+        if (dtpNgayVaoLam.Value <= DateTime.Now && (ngayThoiViecTrongDGV == null || (ngayThoiViecTrongDGV != null && dtpNgayVaoLam.Value < ngayThoiViecTrongDGV)))
+          cboTrangThai.SelectedValue = 1;
+        else if ((ngayThoiViecTrongDGV != null && dtpNgayVaoLam.Value >= ngayThoiViecTrongDGV))
+        {
+          MessageBox.Show("Không thể chọn thời gian này vì nhân viên đã nghỉ việc từ " + ngayThoiViecTrongDGV.ToString());
+          dtpNgayVaoLam.Value = ngayVaoLamTrongDGV;
+          cboTrangThai.SelectedValue = 3;
+        }
+        else if (dtpNgayVaoLam.Value > DateTime.Now && (ngayThoiViecTrongDGV == null || (ngayThoiViecTrongDGV != null && dtpNgayVaoLam.Value < ngayThoiViecTrongDGV)))
+          cboTrangThai.SelectedValue = 3;
+      }
+
+
+
+
     }
 
     private void dtpNgayThoiViec_ValueChanged(object sender, EventArgs e)
     {
-      
+
+      // -- Giải thích: Khi chưa Focus vào dtpNgayThoiViec -> Chưa làm gì cả
+      // -- Khi focus (Chọn ngày tháng năm):
+      //----- Trong trường hợp Nhân viên đã vào làm (dtpNgayVaoLam.Value >= DateTime.Now):
+      //------- Nếu chọn ngày tháng năm nghỉ việc < = Ngày vào làm -> Sai
+      //-------- Nếu chưa nghỉ việc (Chưa có ngày thôi việc) -> Xóa ngày tháng trên dtpNgayThoiViec && gán dtpNgayThoiViec.Value = DateTime.Now cho dễ quản lý (Vì DateTimePicker Bắt buộc phải có giá trị)
+      //-------- Nếu đã có ngày thôi việc từ trước -> gán lại ngày thôi việc đó cho dtpNgayThoiViec
+
+      if (!dtpNgayThoiViec.Focused)
+        return;
+
       dtpNgayThoiViec.Format = DateTimePickerFormat.Short;
-      if(dtpNgayThoiViec.Format != DateTimePickerFormat.Custom)
+      if(KiemTraNhanVienDaVaoLam()) // Nếu nhân viên đã vào làm (Ngày tháng năm trên DateTimePicker NgayVaoLam <= DateTime.Now)
       {
-        if (dtpNgayThoiViec.Value <= DateTime.Now)
+        
+        if (dtpNgayThoiViec.Value <= dtpNgayVaoLam.Value && dtpNgayThoiViec.Format != DateTimePickerFormat.Custom)
+        {
+          MessageBox.Show("Nhân viên ĐÃ vào làm từ " + dtpNgayVaoLam.Value.ToShortDateString());
+          if (ngayThoiViecTrongDGV == null)
+          {
+            dtpNgayThoiViec.Value = DateTime.Now;
+            dtpNgayThoiViec.CustomFormat = " ";
+            dtpNgayThoiViec.Format = DateTimePickerFormat.Custom;
+          }
+          else
+          {
+            dtpNgayThoiViec.Format = DateTimePickerFormat.Short;
+            LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayThoiViec, ngayThoiViecTrongDGV);
+          }
+        }
+        if (dtpNgayThoiViec.Value > ngayVaoLamTrongDGV && dtpNgayThoiViec.Value <= DateTime.Now)
+        {
+          cboTrangThai.SelectedValue = 2;
+        }
+        else if (dtpNgayThoiViec.Value > ngayVaoLamTrongDGV && dtpNgayThoiViec.Value > DateTime.Now)
           cboTrangThai.SelectedValue = 1;
+        
       }
+
+      // ---- Nếu nhân viên chưa vào làm (dtpNgayVaoLam.value > DateTime.Now)
+      else // Chưa vào làm
+      {
+        //dtpNgayThoiViec.Format = DateTimePickerFormat.Short;
+        if (dtpNgayThoiViec.Value <= dtpNgayVaoLam.Value && dtpNgayThoiViec.Format != DateTimePickerFormat.Custom)
+        {
+          MessageBox.Show("Nhân viên SẼ vào làm từ " + dtpNgayVaoLam.Value.ToShortDateString());
+          if (ngayThoiViecTrongDGV == null)
+          {
+
+            //dtpNgayThoiViec.Value = DateTime.Now;
+            MessageBox.Show(dtpNgayThoiViec.Value.ToShortDateString());
+            dtpNgayThoiViec.CustomFormat = " ";
+            dtpNgayThoiViec.Format = DateTimePickerFormat.Custom;
+          }
+          else
+          {
+            dtpNgayThoiViec.Format = DateTimePickerFormat.Short;
+            LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayThoiViec, ngayThoiViecTrongDGV);
+          }
+        }
+        if (dtpNgayThoiViec.Value > ngayVaoLamTrongDGV && dtpNgayThoiViec.Value <= DateTime.Now)
+        {
+          cboTrangThai.SelectedValue = 2;
+        }
+        else if (dtpNgayThoiViec.Value > ngayVaoLamTrongDGV && dtpNgayThoiViec.Value > DateTime.Now)
+          cboTrangThai.SelectedValue = 3;
+
+      }
+
     }
 
-    
+
 
 
 
@@ -772,6 +897,9 @@ namespace GUI
       e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
     }
 
+    DateTime? ngayThoiViecTrongDGV = null; // lưu lại ngày thôi việc trong DataGridView nếu có
+    int trangThaiNVTrongDGV;
+    DateTime ngayVaoLamTrongDGV;
     private void dgvDSNV_SelectionChanged(object sender, EventArgs e)
     {
       try
@@ -795,31 +923,40 @@ namespace GUI
           else rdbNu.Checked = true;
 
           cboChucVu.SelectedValue = r.Cells["colChucVu"].Value.ToString();
-          cboTrangThai.SelectedValue = r.Cells["colTrangThai"].Value.ToString();
+
+          trangThaiNVTrongDGV = Convert.ToInt32(r.Cells["colTrangThai"].Value.ToString());
+          //cboTrangThai.SelectedValue = r.Cells["colTrangThai"].Value.ToString();
           cboTrangThai.SelectedValue = Convert.ToInt32(r.Cells["colTrangThai"].Value.ToString());
 
           DateTime ngaySinh = DateTime.Parse(r.Cells["colNgaySinh"].Value.ToString());
           LayNgayTrongDataGridViewLenDateTimePicker(dtpNgaySinh, ngaySinh);
+
+          ngayVaoLamTrongDGV = DateTime.Parse(r.Cells["colNgayVaoLam"].Value.ToString());
           DateTime ngayVaoLam = DateTime.Parse(r.Cells["colNgayVaoLam"].Value.ToString());
           LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayVaoLam, ngayVaoLam);
 
+
+
           if (r.Cells["colNgayThoiViec"].Value == null)
           {
-            //dtpNgayThoiViec.CustomFormat = " ";
-            //dtpNgayThoiViec.Format = DateTimePickerFormat.Custom;
+            dtpNgayThoiViec.Value = DateTime.Now;
+            dtpNgayThoiViec.CustomFormat = " ";
+            dtpNgayThoiViec.Format = DateTimePickerFormat.Custom;
+            //MessageBox.Show(dtpNgayThoiViec.Value.ToShortDateString());
           }
           else
           {
-            dtpNgayThoiViec.Format = DateTimePickerFormat.Short;
-            DateTime? ngayThoiViec = null;
-            ngayThoiViec = DateTime.Parse(r.Cells["colNgayThoiViec"].Value.ToString());
-            LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayThoiViec, ngayThoiViec);
+            ngayThoiViecTrongDGV = DateTime.Parse(r.Cells["colNgayThoiViec"].Value.ToString());
+            //dtpNgayThoiViec.Format = DateTimePickerFormat.Short;
+            DateTime? ngayThoiViec2 = null;
+            ngayThoiViec2 = DateTime.Parse(r.Cells["colNgayThoiViec"].Value.ToString());
+            LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayThoiViec, ngayThoiViec2);
           }
           //if (dtpNgayThoiViec.Format == DateTimePickerFormat.Custom)
           //  MessageBox.Show("custom");
           //else MessageBox.Show("Short");
-            
-          
+
+
 
           TrangThaiKhiChonMotNhanVien();
         }
@@ -832,16 +969,31 @@ namespace GUI
 
     private void cboTrangThai_SelectedIndexChanged(object sender, EventArgs e)
     {
-      //ComboBox ComboBox = (ComboBox)sender;
       if (!cboTrangThai.Focused)
         return;
-      if ((int)cboTrangThai.SelectedValue == 2)
+
+      if ((int)cboTrangThai.SelectedValue == 1)
       {
-        //dtpNgayThoiViec.Value = DateTime.Now;
+        if (ngayThoiViecTrongDGV <= DateTime.Now)
+        {
+          dtpNgayThoiViec.CustomFormat = " ";
+          dtpNgayThoiViec.Format = DateTimePickerFormat.Custom;
+        }
       }
+      else if((int)cboTrangThai.SelectedValue == 2)
+      {
+        LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayThoiViec, ngayThoiViecTrongDGV);
+        dtpNgayVaoLam.Value = ngayVaoLamTrongDGV;
+      }
+      else
+      {
+        dtpNgayVaoLam.CustomFormat = " ";
+        dtpNgayVaoLam.Format = DateTimePickerFormat.Custom;
+      }
+        
     }
 
-    
+
 
 
 

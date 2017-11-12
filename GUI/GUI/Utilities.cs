@@ -9,9 +9,9 @@ using System.IO;
 using System.Text.RegularExpressions;
 namespace GUI
 {
-    public class Utilities
-    {
-public void TrangThaiBanDau(GroupBox grbThongTin, GroupBox grbDanhSach)
+  public class Utilities
+  {
+    public void TrangThaiBanDau(GroupBox grbThongTin, GroupBox grbDanhSach)
     {
       foreach (Control ctr in grbThongTin.Controls)
       {
@@ -166,12 +166,12 @@ public void TrangThaiBanDau(GroupBox grbThongTin, GroupBox grbDanhSach)
 
     public bool KiemTraNgaySinh(int tuoiLamViec, DateTimePicker dtp)
     {
-      return (dtp.Value < DateTime.Now.AddYears(-tuoiLamViec));
+      return (dtp.Value <= DateTime.Now.AddYears(-tuoiLamViec));
     }
 
     public bool KiemTraNgayVaoLam(int soNgay, DateTimePicker dtp)
     {
-      return (DateTime.Now <= dtp.Value && dtp.Value <= DateTime.Now.AddDays(soNgay));
+      return (DateTime.Parse(DateTime.Now.ToShortDateString()) <= DateTime.Parse(dtp.Value.ToShortDateString()) && DateTime.Parse(dtp.Value.ToShortDateString()) <= DateTime.Parse(DateTime.Now.AddDays(7).ToShortDateString()));
     }
 
     public bool KiemTraComboBox(ComboBox cbo)
@@ -185,7 +185,7 @@ public void TrangThaiBanDau(GroupBox grbThongTin, GroupBox grbDanhSach)
     }
 
 
-    
+
     public string BTCQMatKhau()
     {
       return @"^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[_|*|@])([a-zA-Z0-9*_@]){5,20})$";
@@ -241,35 +241,35 @@ public void TrangThaiBanDau(GroupBox grbThongTin, GroupBox grbDanhSach)
 
 
 
-        public static void ResetAllControls(Control form)
+    public static void ResetAllControls(Control form)
+    {
+      foreach (Control control in form.Controls)
+      {
+        if (control is TextBox)
         {
-            foreach (Control control in form.Controls)
-            {
-                if (control is TextBox)
-                {
-                    TextBox textBox = (TextBox)control;
-                    textBox.Text = null;
-                }
+          TextBox textBox = (TextBox)control;
+          textBox.Text = null;
+        }
 
-                if (control is ComboBox)
-                {
-                    ComboBox comboBox = (ComboBox)control;
-                    if (comboBox.Items.Count > 0)
-                        comboBox.SelectedIndex = -1;
-                }
+        if (control is ComboBox)
+        {
+          ComboBox comboBox = (ComboBox)control;
+          if (comboBox.Items.Count > 0)
+            comboBox.SelectedIndex = -1;
+        }
 
-                if (control is CheckBox)
-                {
-                    CheckBox checkBox = (CheckBox)control;
-                    checkBox.Checked = false;
-                }
+        if (control is CheckBox)
+        {
+          CheckBox checkBox = (CheckBox)control;
+          checkBox.Checked = false;
+        }
 
-                if (control is ListBox)
-                {
-                    ListBox listBox = (ListBox)control;
-                    listBox.ClearSelected();
-                }
-            }
-        }      
+        if (control is ListBox)
+        {
+          ListBox listBox = (ListBox)control;
+          listBox.ClearSelected();
+        }
+      }
     }
+  }
 }
