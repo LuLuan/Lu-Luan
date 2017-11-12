@@ -23,6 +23,7 @@ namespace GUI
 
     urcDanhSachKhachHang urcDanhSachKhachHang = new urcDanhSachKhachHang();
     urcDanhSachTheKhachHang urcDanhSachTheKhachHang = new urcDanhSachTheKhachHang();
+    urcThemKhachHang urcThemKhachHang = new urcThemKhachHang();
     private void CaiDatPanelMenu(Button btn)
     {
 
@@ -47,7 +48,21 @@ namespace GUI
         }
         urcDanhSachTheKhachHang.Visible = true;
       }
+
+      else if(btn.Name == btnThemKhachHang.Name)
+      {
+        if (!pnlContainer.Controls.ContainsKey("urcThemKhachHang"))
+        {
+          pnlContainer.Controls.Add(urcThemKhachHang);
+          urcThemKhachHang.BackColor = Color.White;
+          urcThemKhachHang.Top = 50;
+          urcThemKhachHang.Left = 200;
+        }
+        urcThemKhachHang.BringToFront();
+      }
     }
+
+    
 
     private void urcQLKhachHang_Load(object sender, EventArgs e)
     {
@@ -80,7 +95,12 @@ namespace GUI
         btnMoMenu_Click(sender, e);
     }
 
-
+    private void btnThemKhachHang_Click(object sender, EventArgs e)
+    {
+      CaiDatPanelMenu(btnThemKhachHang);
+      //if (isClickedbtnMoMenu == true)
+      //    btnMoMenu_Click(sender, e);
+    }
 
 
 
@@ -128,6 +148,10 @@ namespace GUI
         }
       }
     }
+
+    
+
+    
 
 
 

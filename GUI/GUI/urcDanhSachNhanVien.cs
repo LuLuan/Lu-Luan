@@ -340,7 +340,7 @@ namespace GUI
 
     private bool KiemTraNgaySinh()
     {
-      return (utl.KiemTraDateTimePicker(dtpNgaySinh) && utl.KiemTraNgaySinh(15, dtpNgaySinh));
+      return (utl.KiemTraDateTimePicker(dtpNgaySinh) && utl.KiemTraTuoi(15, dtpNgaySinh));
     }
 
     private bool KiemTraNgayVaoLam()

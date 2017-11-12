@@ -145,6 +145,34 @@ namespace GUI
       return taiKhoan;
     }
 
+    public clsKhachHang_DTO TaoDoiTuongKhachHang(string maKH, string hoTen, bool gioiTinh, DateTime ngaySinh, string SDT, string diaChi, bool trangThai)
+    {
+      clsKhachHang_DTO khacHang = new clsKhachHang_DTO();
+
+      khacHang.MaKhachHang = maKH;
+      khacHang.TenKhachHang = hoTen;
+      khacHang.GioiTinh = gioiTinh;
+      khacHang.NgaySinh = ngaySinh;
+      khacHang.SoDienThoai = SDT;
+      khacHang.DiaChi = diaChi;
+      khacHang.TrangThai = trangThai;
+
+      return khacHang;
+    }
+
+    public clsTheKhachHang TaoDoiThuongTheKhachHang(string maThe, string maKH, string maLoaiThe, DateTime ngayDK, bool trangThai)
+    {
+      clsTheKhachHang theKH = new clsTheKhachHang();
+
+      theKH.MaThe = maThe;
+      theKH.MaKhachHang = maKH;
+      theKH.MaLoaiThe = maLoaiThe;
+      theKH.NgayDangKy = ngayDK;
+      theKH.TrangThai = trangThai;
+
+      return theKH;
+    }
+
     public bool KiemTraFileDialog(FileDialog fd)
     {
       return (fd.FileName != "" ? true : false);
@@ -164,7 +192,7 @@ namespace GUI
       // Khi chọn một ngày nào đó, Format của DateTimePicker chuyển thành Short (ngày/tháng/năm)
     }
 
-    public bool KiemTraNgaySinh(int tuoiLamViec, DateTimePicker dtp)
+    public bool KiemTraTuoi(int tuoiLamViec, DateTimePicker dtp)
     {
       return (dtp.Value <= DateTime.Now.AddYears(-tuoiLamViec));
     }
