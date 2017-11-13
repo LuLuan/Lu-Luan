@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4778E898-1757-498F-A368-6F22AB9C5373}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoGo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoGo.Designer.cs">
+      <DependentUpon>LoGo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThaoTacChung.cs" />
+    <Compile Include="urcBanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcBanHang.Designer.cs">
+      <DependentUpon>urcBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcCongThucMonAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcCongThucMonAn.Designer.cs">
+      <DependentUpon>urcCongThucMonAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcDangNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDangNhap.Designer.cs">
+      <DependentUpon>urcDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcDanhSachDonViTinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDanhSachDonViTinh.Designer.cs">
+      <DependentUpon>urcDanhSachDonViTinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcDanhSachKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDanhSachKhachHang.Designer.cs">
+      <DependentUpon>urcDanhSachKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcDanhSachLoaiNguyenLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDanhSachLoaiNguyenLieu.Designer.cs">
+      <DependentUpon>urcDanhSachLoaiNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcDanhSachNguyenLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDanhSachNguyenLieu.Designer.cs">
+      <DependentUpon>urcDanhSachNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcDanhSachNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDanhSachNhanVien.Designer.cs">
+      <DependentUpon>urcDanhSachNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcDanhSachSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDanhSachSanPham.Designer.cs">
+      <DependentUpon>urcDanhSachSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcDanhSachTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDanhSachTaiKhoan.Designer.cs">
+      <DependentUpon>urcDanhSachTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcDanhSachTheKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDanhSachTheKhachHang.Designer.cs">
+      <DependentUpon>urcDanhSachTheKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcQLKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcQLKhachHang.Designer.cs">
+      <DependentUpon>urcQLKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcQLKhoNguyenLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcQLKhoNguyenLieu.Designer.cs">
+      <DependentUpon>urcQLKhoNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcQLBanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcQLBanHang.Designer.cs">
+      <DependentUpon>urcQLBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcQLSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcQLSanPham.Designer.cs">
+      <DependentUpon>urcQLSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcQLNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcQLNhanVien.Designer.cs">
+      <DependentUpon>urcQLNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcThanhToan.Designer.cs">
+      <DependentUpon>urcThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcThemNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcThemNhanVien.Designer.cs">
+      <DependentUpon>urcThemNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcXemLichSuBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcXemLichSuBan.Designer.cs">
+      <DependentUpon>urcXemLichSuBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities.cs" />
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoGo.resx">
+      <DependentUpon>LoGo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="urcBanHang.resx">
+      <DependentUpon>urcBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcCongThucMonAn.resx">
+      <DependentUpon>urcCongThucMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcDangNhap.resx">
+      <DependentUpon>urcDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcDanhSachDonViTinh.resx">
+      <DependentUpon>urcDanhSachDonViTinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcDanhSachKhachHang.resx">
+      <DependentUpon>urcDanhSachKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcDanhSachLoaiNguyenLieu.resx">
+      <DependentUpon>urcDanhSachLoaiNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcDanhSachNguyenLieu.resx">
+      <DependentUpon>urcDanhSachNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcDanhSachNhanVien.resx">
+      <DependentUpon>urcDanhSachNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcDanhSachSanPham.resx">
+      <DependentUpon>urcDanhSachSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcDanhSachTaiKhoan.resx">
+      <DependentUpon>urcDanhSachTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcDanhSachTheKhachHang.resx">
+      <DependentUpon>urcDanhSachTheKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcQLKhachHang.resx">
+      <DependentUpon>urcQLKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcQLKhoNguyenLieu.resx">
+      <DependentUpon>urcQLKhoNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcQLBanHang.resx">
+      <DependentUpon>urcQLBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcQLSanPham.resx">
+      <DependentUpon>urcQLSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcQLNhanVien.resx">
+      <DependentUpon>urcQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcThanhToan.resx">
+      <DependentUpon>urcThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcThemNhanVien.resx">
+      <DependentUpon>urcThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcXemLichSuBan.resx">
+      <DependentUpon>urcXemLichSuBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_100pxxx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ursDangNhapNew0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contacts_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_100pxxx1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logintrangden_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logintrangden_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Male User_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password 1_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_50p3x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Close Window-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{451e0229-34f7-49eb-9af8-1b6e882238ae}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{a10b7549-41ae-46e0-bed1-96e1c3b9f451}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\Delete_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\CN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\Settings_32pxW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\Subtract_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\Delete_50pxtrongtrongrong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\ThoatMouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\Mouse_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhCacLabel\Login_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cleaner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-menu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add-account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-OK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ok_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user-20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more-20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_Property_64px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_File_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_50px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checked_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Forward_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Forward_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Forward_52px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_50px_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_50px_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_CCleaner_50px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Forward_52px_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_List_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_List_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_List_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Restaurant_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Close_Window_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Close_Window_25px_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Replace_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_48px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\CN0006.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Replace_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_25px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_File_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_New_Copy_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_File_35px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Cancel_35px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Delete_52px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Receipt_25px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Paycheque_25px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Return_Purchase_25px_1.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Clear_Shopping_Cart_25px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checked_Checkbox_52px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checked_96px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checkmark_52px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Ok_25px.png" />
+    <Content Include="Resources\COMEBUY-logo.png" />
+    <Content Include="Resources\customer-card.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
