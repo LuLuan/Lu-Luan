@@ -176,11 +176,19 @@
     <Compile Include="urcQLNhanVien.Designer.cs">
       <DependentUpon>urcQLNhanVien.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="urcThanhToan.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="urcThanhToan.Designer.cs">
       <DependentUpon>urcThanhToan.cs</DependentUpon>
+=======
+    <Compile Include="urcThemKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcThemKhachHang.Designer.cs">
+      <DependentUpon>urcThemKhachHang.cs</DependentUpon>
+>>>>>>> 17afeb1212fa70280cc4c149e019708b0f1faa8e
     </Compile>
     <Compile Include="urcThemKhachHang.cs">
       <SubType>UserControl</SubType>
@@ -265,8 +273,13 @@
     <EmbeddedResource Include="urcQLNhanVien.resx">
       <DependentUpon>urcQLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="urcThanhToan.resx">
       <DependentUpon>urcThanhToan.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="urcThemKhachHang.resx">
+      <DependentUpon>urcThemKhachHang.cs</DependentUpon>
+>>>>>>> 17afeb1212fa70280cc4c149e019708b0f1faa8e
     </EmbeddedResource>
     <EmbeddedResource Include="urcThemKhachHang.resx">
       <DependentUpon>urcThemKhachHang.cs</DependentUpon>
