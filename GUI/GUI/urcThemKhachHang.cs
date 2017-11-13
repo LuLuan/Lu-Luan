@@ -136,6 +136,8 @@ namespace GUI
       string maKH = txtMaKhachHang.Text;
       string maLoaiThe = "1234567890";
       DateTime ngayDK = DateTime.Now;
+      MessageBox.Show(ngayDK.ToString());
+
       bool trangThai = true;
 
       return utl.TaoDoiThuongTheKhachHang(maThe, maKH, maLoaiThe, ngayDK, trangThai);

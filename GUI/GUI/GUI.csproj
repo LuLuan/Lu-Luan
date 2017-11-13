@@ -116,6 +116,12 @@
     <Compile Include="urcDanhSachNhanVien.Designer.cs">
       <DependentUpon>urcDanhSachNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="urcDanhSachPhanCong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDanhSachPhanCong.Designer.cs">
+      <DependentUpon>urcDanhSachPhanCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="urcDanhSachSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +158,12 @@
     <Compile Include="urcQLBanHang.Designer.cs">
       <DependentUpon>urcQLBanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="urcQLPhanCong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcQLPhanCong.Designer.cs">
+      <DependentUpon>urcQLPhanCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="urcQLSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +181,12 @@
     </Compile>
     <Compile Include="urcThanhToan.Designer.cs">
       <DependentUpon>urcThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcThemKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcThemKhachHang.Designer.cs">
+      <DependentUpon>urcThemKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="urcThemNhanVien.cs">
       <SubType>UserControl</SubType>
@@ -217,6 +235,9 @@
     <EmbeddedResource Include="urcDanhSachNhanVien.resx">
       <DependentUpon>urcDanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="urcDanhSachPhanCong.resx">
+      <DependentUpon>urcDanhSachPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="urcDanhSachSanPham.resx">
       <DependentUpon>urcDanhSachSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +256,9 @@
     <EmbeddedResource Include="urcQLBanHang.resx">
       <DependentUpon>urcQLBanHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="urcQLPhanCong.resx">
+      <DependentUpon>urcQLPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="urcQLSanPham.resx">
       <DependentUpon>urcQLSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="urcThanhToan.resx">
       <DependentUpon>urcThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcThemKhachHang.resx">
+      <DependentUpon>urcThemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="urcThemNhanVien.resx">
       <DependentUpon>urcThemNhanVien.cs</DependentUpon>

@@ -73,6 +73,7 @@ namespace DAO
         cmd.Parameters.AddWithValue("@ma_loai_the", TKH.MaLoaiThe);
         cmd.Parameters.AddWithValue("@ngay_dang_ky", TKH.NgayDangKy);
         cmd.Parameters.AddWithValue("@trang_thai", TKH.TrangThai);
+
       }
 
       return (cmd.ExecuteNonQuery() > 0);

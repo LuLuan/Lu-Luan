@@ -24,6 +24,11 @@ namespace GUI
     urcDanhSachTaiKhoan urcDanhSachTaiKhoan = new urcDanhSachTaiKhoan();
     urcThemNhanVien urcThemNhanVien = new urcThemNhanVien();
 
+    private void urcQLNhanVien_Load(object sender, EventArgs e)
+    {
+      CaiDatPanelMenu(btnXemDSNV);
+    }
+
 
     private void CaiDatPanelMenu(Button btn)
     {
@@ -62,10 +67,7 @@ namespace GUI
     }
 
 
-    private void urcQLNhanVien_Load(object sender, EventArgs e)
-    {
-      CaiDatPanelMenu(btnXemDSNV);
-    }
+    
 
     private void btnXemDSNV_Click(object sender, EventArgs e)
     {

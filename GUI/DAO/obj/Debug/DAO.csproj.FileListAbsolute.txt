@@ -40,3 +40,10 @@ D:\GitHub-Reposities\WF_12112017_1312\Lu-Luan\GUI\DAO\bin\Debug\DTO.pdb
 D:\GitHub-Reposities\WF_12112017_1312\Lu-Luan\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 D:\GitHub-Reposities\WF_12112017_1312\Lu-Luan\GUI\DAO\obj\Debug\DAO.dll
 D:\GitHub-Reposities\WF_12112017_1312\Lu-Luan\GUI\DAO\obj\Debug\DAO.pdb
+D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\bin\Debug\DAO.dll
+D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\bin\Debug\DAO.pdb
+D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\bin\Debug\DTO.dll
+D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\bin\Debug\DTO.pdb
+D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\obj\Debug\DAO.dll
+D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\obj\Debug\DAO.pdb
