@@ -24,11 +24,14 @@ namespace GUI
     urcDanhSachTaiKhoan urcDanhSachTaiKhoan = new urcDanhSachTaiKhoan();
     urcThemNhanVien urcThemNhanVien = new urcThemNhanVien();
 
+<<<<<<< HEAD
     private void urcQLNhanVien_Load(object sender, EventArgs e)
     {
       CaiDatPanelMenu(btnXemDSNV);
     }
 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 
     private void CaiDatPanelMenu(Button btn)
     {
@@ -46,6 +49,10 @@ namespace GUI
       else if (btn.Name == btnXemDSTheKH.Name)
       {
         urcDanhSachNhanVien.Visible = false;
+<<<<<<< HEAD
+=======
+        //urcDanhSachTaiKhoan.Visible = true;
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
         if (!pnlContainer.Controls.ContainsKey("urcDanhSachTaiKhoan"))
         {
           pnlContainer.Controls.Add(urcDanhSachTaiKhoan);
@@ -66,12 +73,23 @@ namespace GUI
       }
     }
 
+<<<<<<< HEAD
 
     
+=======
+    private void urcQLNhanVien_Load(object sender, EventArgs e)
+    {
+      CaiDatPanelMenu(btnXemDSNV);
+    }
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 
     private void btnXemDSNV_Click(object sender, EventArgs e)
     {
       CaiDatPanelMenu(btnXemDSNV);
+<<<<<<< HEAD
+=======
+      //urcDanhSachNhanVien.BringToFront();
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       urcDanhSachNhanVien.urcDanhSachNhanVien_Load(sender, e);
       if (isClickedbtnMoMenu == true)
         btnMoMenu_Click(sender, e);

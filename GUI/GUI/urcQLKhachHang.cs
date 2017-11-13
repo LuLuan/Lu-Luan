@@ -23,7 +23,10 @@ namespace GUI
 
     urcDanhSachKhachHang urcDanhSachKhachHang = new urcDanhSachKhachHang();
     urcDanhSachTheKhachHang urcDanhSachTheKhachHang = new urcDanhSachTheKhachHang();
+<<<<<<< HEAD
     urcThemKhachHang urcThemKhachHang = new urcThemKhachHang();
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     private void CaiDatPanelMenu(Button btn)
     {
 
@@ -48,6 +51,7 @@ namespace GUI
         }
         urcDanhSachTheKhachHang.Visible = true;
       }
+<<<<<<< HEAD
 
       else if(btn.Name == btnThemKhachHang.Name)
       {
@@ -64,6 +68,10 @@ namespace GUI
 
     
 
+=======
+    }
+
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     private void urcQLKhachHang_Load(object sender, EventArgs e)
     {
       CaiDatPanelMenu(btnXemDSKH);
@@ -95,12 +103,16 @@ namespace GUI
         btnMoMenu_Click(sender, e);
     }
 
+<<<<<<< HEAD
     private void btnThemKhachHang_Click(object sender, EventArgs e)
     {
       CaiDatPanelMenu(btnThemKhachHang);
       //if (isClickedbtnMoMenu == true)
       //    btnMoMenu_Click(sender, e);
     }
+=======
+
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 
 
 
@@ -149,10 +161,13 @@ namespace GUI
       }
     }
 
+<<<<<<< HEAD
     
 
     
 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 
 
 

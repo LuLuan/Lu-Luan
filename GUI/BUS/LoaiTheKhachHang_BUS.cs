@@ -15,8 +15,11 @@ namespace BUS
             LoaiTheKhachHang_DAO dao = new LoaiTheKhachHang_DAO();
             return dao.LayLoaiTheKhachHang();
         }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     }
 }

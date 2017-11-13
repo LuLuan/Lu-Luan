@@ -116,12 +116,15 @@
     <Compile Include="urcDanhSachNhanVien.Designer.cs">
       <DependentUpon>urcDanhSachNhanVien.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="urcDanhSachPhanCong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="urcDanhSachPhanCong.Designer.cs">
       <DependentUpon>urcDanhSachPhanCong.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     <Compile Include="urcDanhSachSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,12 +161,15 @@
     <Compile Include="urcQLBanHang.Designer.cs">
       <DependentUpon>urcQLBanHang.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="urcQLPhanCong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="urcQLPhanCong.Designer.cs">
       <DependentUpon>urcQLPhanCong.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     <Compile Include="urcQLSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,18 +188,30 @@
     <Compile Include="urcThanhToan.Designer.cs">
       <DependentUpon>urcThanhToan.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="urcThemKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="urcThemKhachHang.Designer.cs">
       <DependentUpon>urcThemKhachHang.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     <Compile Include="urcThemNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="urcThemNhanVien.Designer.cs">
       <DependentUpon>urcThemNhanVien.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="urcXemLichSuBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcXemLichSuBan.Designer.cs">
+      <DependentUpon>urcXemLichSuBan.cs</DependentUpon>
+    </Compile>
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -235,9 +253,12 @@
     <EmbeddedResource Include="urcDanhSachNhanVien.resx">
       <DependentUpon>urcDanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="urcDanhSachPhanCong.resx">
       <DependentUpon>urcDanhSachPhanCong.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     <EmbeddedResource Include="urcDanhSachSanPham.resx">
       <DependentUpon>urcDanhSachSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,9 +277,12 @@
     <EmbeddedResource Include="urcQLBanHang.resx">
       <DependentUpon>urcQLBanHang.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="urcQLPhanCong.resx">
       <DependentUpon>urcQLPhanCong.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     <EmbeddedResource Include="urcQLSanPham.resx">
       <DependentUpon>urcQLSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,12 +292,21 @@
     <EmbeddedResource Include="urcThanhToan.resx">
       <DependentUpon>urcThanhToan.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="urcThemKhachHang.resx">
       <DependentUpon>urcThemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="urcThemNhanVien.resx">
       <DependentUpon>urcThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <EmbeddedResource Include="urcThemNhanVien.resx">
+      <DependentUpon>urcThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcXemLichSuBan.resx">
+      <DependentUpon>urcXemLichSuBan.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

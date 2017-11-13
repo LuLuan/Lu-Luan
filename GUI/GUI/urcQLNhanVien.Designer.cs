@@ -30,15 +30,25 @@
         {
       this.components = new System.ComponentModel.Container();
       this.pnlMenu = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
       this.pnlTieuDe = new System.Windows.Forms.Panel();
       this.lblTieuDe = new System.Windows.Forms.Label();
       this.timerMenu = new System.Windows.Forms.Timer(this.components);
       this.pnlContainer = new System.Windows.Forms.Panel();
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.btnHome = new System.Windows.Forms.Button();
       this.btnMoMenu = new System.Windows.Forms.Button();
       this.btnThemNhanVien = new System.Windows.Forms.Button();
       this.btnXemDSNV = new System.Windows.Forms.Button();
       this.btnXemDSTheKH = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
+      this.pnlTieuDe = new System.Windows.Forms.Panel();
+      this.lblTieuDe = new System.Windows.Forms.Label();
+      this.timerMenu = new System.Windows.Forms.Timer(this.components);
+      this.pnlContainer = new System.Windows.Forms.Panel();
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.pnlMenu.SuspendLayout();
       this.pnlTieuDe.SuspendLayout();
       this.SuspendLayout();
@@ -56,6 +66,7 @@
       this.pnlMenu.Size = new System.Drawing.Size(40, 570);
       this.pnlMenu.TabIndex = 0;
       // 
+<<<<<<< HEAD
       // pnlTieuDe
       // 
       this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
@@ -89,6 +100,8 @@
       this.pnlContainer.Size = new System.Drawing.Size(930, 530);
       this.pnlContainer.TabIndex = 2;
       // 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       // btnHome
       // 
       this.btnHome.BackgroundImage = global::GUI.Properties.Resources.Home_96px;
@@ -169,6 +182,42 @@
       this.btnXemDSTheKH.UseVisualStyleBackColor = true;
       this.btnXemDSTheKH.Click += new System.EventHandler(this.btnXemDSTK_Click);
       // 
+<<<<<<< HEAD
+=======
+      // pnlTieuDe
+      // 
+      this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+      this.pnlTieuDe.Controls.Add(this.lblTieuDe);
+      this.pnlTieuDe.Location = new System.Drawing.Point(0, 0);
+      this.pnlTieuDe.Name = "pnlTieuDe";
+      this.pnlTieuDe.Size = new System.Drawing.Size(930, 40);
+      this.pnlTieuDe.TabIndex = 1;
+      // 
+      // lblTieuDe
+      // 
+      this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.lblTieuDe.ForeColor = System.Drawing.Color.White;
+      this.lblTieuDe.Location = new System.Drawing.Point(0, 0);
+      this.lblTieuDe.Name = "lblTieuDe";
+      this.lblTieuDe.Size = new System.Drawing.Size(903, 40);
+      this.lblTieuDe.TabIndex = 0;
+      this.lblTieuDe.Text = "QUẢN LÝ NHÂN VIÊN";
+      this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      // 
+      // timerMenu
+      // 
+      this.timerMenu.Interval = 1;
+      this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
+      // 
+      // pnlContainer
+      // 
+      this.pnlContainer.BackColor = System.Drawing.Color.White;
+      this.pnlContainer.Location = new System.Drawing.Point(0, 40);
+      this.pnlContainer.Name = "pnlContainer";
+      this.pnlContainer.Size = new System.Drawing.Size(930, 530);
+      this.pnlContainer.TabIndex = 2;
+      // 
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       // urcQLNhanVien
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

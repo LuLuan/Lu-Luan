@@ -23,6 +23,7 @@ D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\bin\Debug\DTO.pdb
 D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\obj\Debug\DTO.dll
 D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\obj\Debug\DTO.pdb
+<<<<<<< HEAD
 D:\GitHub-Reposities\WF_12112017_1312\Lu-Luan\GUI\DTO\bin\Debug\DTO.dll
 D:\GitHub-Reposities\WF_12112017_1312\Lu-Luan\GUI\DTO\bin\Debug\DTO.pdb
 D:\GitHub-Reposities\WF_12112017_1312\Lu-Luan\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
@@ -33,3 +34,5 @@ D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DTO\bin\Debug\DTO.pdb
 D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DTO\obj\Debug\DTO.dll
 D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DTO\obj\Debug\DTO.pdb
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49

@@ -10,6 +10,7 @@ namespace DAO
 {
   public class ThaoTacDuLieu_DAO
   {
+<<<<<<< HEAD
     //Huy
     //private static string strCon = @"Data Source=W0Q5NTP4LWZVOB1\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
     //Luân
@@ -32,6 +33,28 @@ namespace DAO
       SqlConnection con = new SqlConnection(strCon);
       con.Open();
 
+=======
+
+    //Huy
+    private static string strCon = @"Data Source=W0Q5NTP4LWZVOB1\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
+    //Luân
+    private static string strConL = @"Data Source=LUAN\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
+    public static SqlConnection TaoKetNoi()
+    {
+        SqlConnection con;
+        try
+        {
+            con = new SqlConnection(strCon);
+            con.Open();
+        }
+        catch (Exception)
+        {
+            con = new SqlConnection(strConL);
+            con.Open();
+           
+        }
+      
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       return con;
     }
     public static SqlCommand TruyVan(string Query, SqlConnection con)
@@ -85,6 +108,7 @@ namespace DAO
     }
 
 
+<<<<<<< HEAD
     public static object ExecuteScalar(string query)
     {
       SqlConnection con = TaoKetNoi();
@@ -93,6 +117,8 @@ namespace DAO
     }
 
 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 
 
   }

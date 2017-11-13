@@ -110,7 +110,11 @@ namespace GUI
 
         private void lswThucUong_SelectedIndexChanged(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             if (lswThucUong.SelectedItems.Count > 0) // Xử lý khi có item được chọn
             {
                 txtSoLuong.Enabled = true;
@@ -139,6 +143,10 @@ namespace GUI
 
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             if (txtSoLuong.Text!="")
             {
                 txtGia.Text = (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString(); //String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text)))); 
@@ -147,16 +155,28 @@ namespace GUI
 
         private void cbbKichThuocMonAn_SelectionChangeCommitted(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
+=======
+            if (txtTenMon.Text=="")return;
+            
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             txtGia.Text = (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString(); String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text)))); // 
             
         }
         void TaoDataTable()
         {
+<<<<<<< HEAD
             DataColumn dc = new DataColumn("colMaMon", typeof(String));
             dt.Columns.Add(dc);
 
             dc = new DataColumn("colTenMon", typeof(String));
+=======
+            DataColumn dc = new DataColumn("colTenMon", typeof(String));
+            dt.Columns.Add(dc);
+
+            dc = new DataColumn("colDonGia", typeof(String));
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             dt.Columns.Add(dc);
 
             dc = new DataColumn("colSL", typeof(String));
@@ -164,12 +184,18 @@ namespace GUI
 
             dc = new DataColumn("colGia", typeof(String));
             dt.Columns.Add(dc);
+<<<<<<< HEAD
+=======
+            dc = new DataColumn("colMaMon", typeof(String));
+            dt.Columns.Add(dc);
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
         }
         private void txtThemSanPham_Click(object sender, EventArgs e)
         {
             int iTongtien = 0;
             bool flag = true;
             DataRow dr = dt.NewRow();
+<<<<<<< HEAD
 
             dr[0] = ItemDuocChon[0].SubItems[1].Text;
             dr[1] = txtTenMon.Text+"("+cbbKichThuocMonAn.Text+")";
@@ -179,6 +205,18 @@ namespace GUI
             {
               //  MessageBox.Show(dgvGioHang.Rows[i].Cells[1].Value.ToString());
                 if (dgvGioHang.Rows[i].Cells[1].Value.ToString() == dr[1].ToString())
+=======
+            //ItemDuocChon[0].SubItems[1].Text;
+            dr[0] =  txtTenMon.Text + "(" + cbbKichThuocMonAn.Text + ")";
+            dr[1] = (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString())).ToString();
+            dr[2] = txtSoLuong.Text ;
+            dr[3] = txtGia.Text ;
+            dr[4] = ItemDuocChon[0].SubItems[1].Text;
+            for (int i = 0; i < dgvGioHang.Rows.Count; i++)
+            {
+              //  MessageBox.Show(dgvGioHang.Rows[i].Cells[1].Value.ToString());
+                if (dgvGioHang.Rows[i].Cells[0].Value.ToString() == dr[0].ToString())
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
                 {
                     flag = false;
                     float newTien = (float.Parse(dgvGioHang.Rows[i].Cells[3].Value.ToString())) + float.Parse(dr[3].ToString());
@@ -203,20 +241,42 @@ namespace GUI
                 iTongtien += int.Parse(String.Format("{0:0}",dgvGioHang.Rows[i].Cells[3].Value.ToString()));
             }
             tongtien = float.Parse(iTongtien.ToString());
+<<<<<<< HEAD
             txtTongTien.Text = String.Format("{0:C0}", iTongtien); 
+=======
+            txtTongTien.Text = String.Format("{0:C0}", iTongtien);
+         //   MessageBox.Show();
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
         }
 
 
         private void btnThanhToan_Click_1(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             urcThanhToan urcThanhToan = new urcThanhToan();
             urcThanhToan.xulyui = new GUI.urcThanhToan.XuLyUI(XuLiTruotleftPanel);
+=======
+            if (dgvGioHang.Rows.Count<=0) return;
+            urcThanhToan urcThanhToan = new urcThanhToan();
+            urcThanhToan.xulyui = new GUI.urcThanhToan.XuLyUI(XuLiTruotleftPanel);
+            urcThanhToan.xulytaothanhconghoadon = new GUI.urcThanhToan.XuLyTaoThanhCongHoaDon(XuLyTaoThanhCongHoaDon);
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             pnlright.Controls.Add(urcThanhToan);
             urcThanhToan.BringToFront();
             XuLiTruotleftPanel(true);
             //this.Visible = true;
 
         }
+<<<<<<< HEAD
+=======
+        void XuLyTaoThanhCongHoaDon(bool isAddOk)
+        {
+            if (isAddOk)
+            {
+                ResetHoaDon();
+            }
+        }
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
         void XuLiTruotleftPanel(bool isAppear)
         {
 
@@ -254,6 +314,13 @@ namespace GUI
 
         private void btnHuyBo_Click_1(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            ResetHoaDon();
+        }
+        void ResetHoaDon()
+        {
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             do
             {
                 foreach (DataGridViewRow row in dgvGioHang.Rows)
@@ -271,9 +338,28 @@ namespace GUI
             {
                 iTongtien += int.Parse(String.Format("{0:0}", dgvGioHang.Rows[i].Cells[3].Value.ToString()));
             }
+<<<<<<< HEAD
             tongtien =  float.Parse(iTongtien.ToString());
             txtTongTien.Text = String.Format("{0:C0}", iTongtien); 
         }
 
+=======
+            tongtien = float.Parse(iTongtien.ToString());
+            txtTongTien.Text = String.Format("{0:C0}", iTongtien); 
+        }
+
+        private void txtTenMon_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTenMon.Text=="")
+              txtThemSanPham.Enabled = false;else txtThemSanPham.Enabled = true;
+            
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     }
 }

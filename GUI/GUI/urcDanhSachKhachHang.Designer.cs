@@ -41,8 +41,13 @@
       this.panel1 = new System.Windows.Forms.Panel();
       this.rdbTrangThaiCoSan = new System.Windows.Forms.RadioButton();
       this.rdbTrangThaiDaXoa = new System.Windows.Forms.RadioButton();
+<<<<<<< HEAD
       this.rdbNu = new System.Windows.Forms.RadioButton();
       this.rdbNam = new System.Windows.Forms.RadioButton();
+=======
+      this.rdbGioiTinhNu = new System.Windows.Forms.RadioButton();
+      this.rdbGioiTinhNam = new System.Windows.Forms.RadioButton();
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.btnThemTheKH = new System.Windows.Forms.Button();
       this.btnCapNhat = new System.Windows.Forms.Button();
       this.btnHuyThaoTac = new System.Windows.Forms.Button();
@@ -81,9 +86,15 @@
       this.grbDSKhachHang.Controls.Add(this.txtHoTen_TK);
       this.grbDSKhachHang.Controls.Add(this.dgvDSKH);
       this.grbDSKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+<<<<<<< HEAD
       this.grbDSKhachHang.Location = new System.Drawing.Point(15, 188);
       this.grbDSKhachHang.Name = "grbDSKhachHang";
       this.grbDSKhachHang.Size = new System.Drawing.Size(900, 339);
+=======
+      this.grbDSKhachHang.Location = new System.Drawing.Point(15, 201);
+      this.grbDSKhachHang.Name = "grbDSKhachHang";
+      this.grbDSKhachHang.Size = new System.Drawing.Size(900, 326);
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.grbDSKhachHang.TabIndex = 1;
       this.grbDSKhachHang.TabStop = false;
       this.grbDSKhachHang.Text = "Danh sách khách hàng";
@@ -99,7 +110,10 @@
       this.rdbTrangThaiCoSan_TK.TabStop = true;
       this.rdbTrangThaiCoSan_TK.Text = "Có sẵn";
       this.rdbTrangThaiCoSan_TK.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
       this.rdbTrangThaiCoSan_TK.Visible = false;
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.rdbTrangThaiCoSan_TK.CheckedChanged += new System.EventHandler(this.rdbTrangThaiCoSan_TK_CheckedChanged);
       // 
       // rdbTrangThaiDaXoa_TK
@@ -113,7 +127,10 @@
       this.rdbTrangThaiDaXoa_TK.TabStop = true;
       this.rdbTrangThaiDaXoa_TK.Text = "Đã xóa";
       this.rdbTrangThaiDaXoa_TK.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
       this.rdbTrangThaiDaXoa_TK.Visible = false;
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.rdbTrangThaiDaXoa_TK.CheckedChanged += new System.EventHandler(this.rdbTrangThaiDaXoa_TK_CheckedChanged);
       // 
       // label8
@@ -125,7 +142,10 @@
       this.label8.Size = new System.Drawing.Size(83, 17);
       this.label8.TabIndex = 89;
       this.label8.Text = "Trạng thái";
+<<<<<<< HEAD
       this.label8.Visible = false;
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       // 
       // label7
       // 
@@ -180,7 +200,11 @@
       this.dgvDSKH.RowsDefaultCellStyle = dataGridViewCellStyle2;
       this.dgvDSKH.RowTemplate.Height = 40;
       this.dgvDSKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+<<<<<<< HEAD
       this.dgvDSKH.Size = new System.Drawing.Size(888, 265);
+=======
+      this.dgvDSKH.Size = new System.Drawing.Size(888, 252);
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.dgvDSKH.TabIndex = 0;
       this.dgvDSKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKH_CellClick);
       this.dgvDSKH.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDSKH_CellFormatting);
@@ -192,8 +216,13 @@
       // grbTTKhachHang
       // 
       this.grbTTKhachHang.Controls.Add(this.panel1);
+<<<<<<< HEAD
       this.grbTTKhachHang.Controls.Add(this.rdbNu);
       this.grbTTKhachHang.Controls.Add(this.rdbNam);
+=======
+      this.grbTTKhachHang.Controls.Add(this.rdbGioiTinhNu);
+      this.grbTTKhachHang.Controls.Add(this.rdbGioiTinhNam);
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.grbTTKhachHang.Controls.Add(this.btnThemTheKH);
       this.grbTTKhachHang.Controls.Add(this.btnCapNhat);
       this.grbTTKhachHang.Controls.Add(this.btnHuyThaoTac);
@@ -212,7 +241,11 @@
       this.grbTTKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
       this.grbTTKhachHang.Location = new System.Drawing.Point(15, 0);
       this.grbTTKhachHang.Name = "grbTTKhachHang";
+<<<<<<< HEAD
       this.grbTTKhachHang.Size = new System.Drawing.Size(900, 182);
+=======
+      this.grbTTKhachHang.Size = new System.Drawing.Size(900, 195);
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.grbTTKhachHang.TabIndex = 0;
       this.grbTTKhachHang.TabStop = false;
       this.grbTTKhachHang.Text = "Thông tin khách hàng";
@@ -250,6 +283,7 @@
       this.rdbTrangThaiDaXoa.Text = "Đã xóa";
       this.rdbTrangThaiDaXoa.UseVisualStyleBackColor = true;
       // 
+<<<<<<< HEAD
       // rdbNu
       // 
       this.rdbNu.AutoSize = true;
@@ -271,6 +305,30 @@
       this.rdbNam.TabStop = true;
       this.rdbNam.Text = "Nam";
       this.rdbNam.UseVisualStyleBackColor = true;
+=======
+      // rdbGioiTinhNu
+      // 
+      this.rdbGioiTinhNu.AutoSize = true;
+      this.rdbGioiTinhNu.Location = new System.Drawing.Point(281, 76);
+      this.rdbGioiTinhNu.Name = "rdbGioiTinhNu";
+      this.rdbGioiTinhNu.Size = new System.Drawing.Size(46, 21);
+      this.rdbGioiTinhNu.TabIndex = 93;
+      this.rdbGioiTinhNu.TabStop = true;
+      this.rdbGioiTinhNu.Text = "Nữ";
+      this.rdbGioiTinhNu.UseVisualStyleBackColor = true;
+      // 
+      // rdbGioiTinhNam
+      // 
+      this.rdbGioiTinhNam.AutoSize = true;
+      this.rdbGioiTinhNam.Location = new System.Drawing.Point(217, 76);
+      this.rdbGioiTinhNam.Name = "rdbGioiTinhNam";
+      this.rdbGioiTinhNam.Size = new System.Drawing.Size(58, 21);
+      this.rdbGioiTinhNam.TabIndex = 92;
+      this.rdbGioiTinhNam.TabStop = true;
+      this.rdbGioiTinhNam.Text = "Nam";
+      this.rdbGioiTinhNam.UseVisualStyleBackColor = true;
+      this.rdbGioiTinhNam.CheckedChanged += new System.EventHandler(this.rdbGioiTinhNam_CheckedChanged);
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       // 
       // btnThemTheKH
       // 
@@ -356,7 +414,10 @@
       this.txtDiaChi.Name = "txtDiaChi";
       this.txtDiaChi.Size = new System.Drawing.Size(440, 23);
       this.txtDiaChi.TabIndex = 83;
+<<<<<<< HEAD
       this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       // 
       // label1
       // 
@@ -396,7 +457,10 @@
       this.txtSoDienThoai.ShortcutsEnabled = false;
       this.txtSoDienThoai.Size = new System.Drawing.Size(156, 23);
       this.txtSoDienThoai.TabIndex = 75;
+<<<<<<< HEAD
       this.txtSoDienThoai.TextChanged += new System.EventHandler(this.txtSoDienThoai_TextChanged);
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.txtSoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoDienThoai_KeyPress);
       // 
       // label9
@@ -447,7 +511,10 @@
       this.txtHoTen.Name = "txtHoTen";
       this.txtHoTen.Size = new System.Drawing.Size(156, 23);
       this.txtHoTen.TabIndex = 68;
+<<<<<<< HEAD
       this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       // 
       // colMaKH
       // 
@@ -518,7 +585,10 @@
       this.colTrangThai.HeaderText = "Trạng Thái";
       this.colTrangThai.Name = "colTrangThai";
       this.colTrangThai.ReadOnly = true;
+<<<<<<< HEAD
       this.colTrangThai.Visible = false;
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
       this.colTrangThai.Width = 113;
       // 
       // urcDanhSachKhachHang
@@ -569,8 +639,13 @@
         private System.Windows.Forms.RadioButton rdbTrangThaiCoSan_TK;
         private System.Windows.Forms.RadioButton rdbTrangThaiDaXoa_TK;
         private System.Windows.Forms.Button btnThemTheKH;
+<<<<<<< HEAD
         private System.Windows.Forms.RadioButton rdbNam;
         private System.Windows.Forms.RadioButton rdbNu;
+=======
+        private System.Windows.Forms.RadioButton rdbGioiTinhNam;
+        private System.Windows.Forms.RadioButton rdbGioiTinhNu;
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenKH;

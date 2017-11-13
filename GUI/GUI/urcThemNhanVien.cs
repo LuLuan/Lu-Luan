@@ -230,8 +230,15 @@ namespace GUI
             }
             else MessageBox.Show("Thêm thất bại");
           }
+<<<<<<< HEAD
           catch (Exception) { }
           //TrangThaiBanDau();
+=======
+          catch (Exception)
+          {
+          }
+          TrangThaiBanDau();
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
         }
         else
         {
@@ -394,7 +401,11 @@ namespace GUI
 
     private bool KiemTraNgaySinh()
     {
+<<<<<<< HEAD
       return (utl.KiemTraDateTimePicker(dtpNgaySinh) && utl.KiemTraTuoi(15, dtpNgaySinh));
+=======
+      return (utl.KiemTraDateTimePicker(dtpNgaySinh) && utl.KiemTraNgaySinh(15, dtpNgaySinh));
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     }
 
     private bool KiemTraNgayVaoLam()

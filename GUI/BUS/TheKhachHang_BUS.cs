@@ -8,6 +8,7 @@ using DAO;
 
 namespace BUS
 {
+<<<<<<< HEAD
   public class TheKhachHang_BUS
   {
     public List<clsTheKhachHang> LayDanhSachTheKH()
@@ -47,4 +48,14 @@ namespace BUS
 
 
   }
+=======
+    public class TheKhachHang_BUS
+    {
+        public List<clsTheKhachHang> LayDanhSachTheKH()
+        {
+            TheKhachHang_DAO dao = new TheKhachHang_DAO();
+            return dao.LayDanhSachTheKH();
+        }
+    }
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 }

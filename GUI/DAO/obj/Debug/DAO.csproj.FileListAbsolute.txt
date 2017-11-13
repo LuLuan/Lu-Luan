@@ -33,6 +33,7 @@ D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\bin\Debug\DTO.pdb
 D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\obj\Debug\DAO.dll
 D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DAO\obj\Debug\DAO.pdb
+<<<<<<< HEAD
 D:\GitHub-Reposities\WF_12112017_1312\Lu-Luan\GUI\DAO\bin\Debug\DAO.dll
 D:\GitHub-Reposities\WF_12112017_1312\Lu-Luan\GUI\DAO\bin\Debug\DAO.pdb
 D:\GitHub-Reposities\WF_12112017_1312\Lu-Luan\GUI\DAO\bin\Debug\DTO.dll
@@ -47,3 +48,12 @@ D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\bin\Debug\DTO.pdb
 D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\obj\Debug\DAO.dll
 D:\GitHub-Reposities\WF_13112017_0622\Lu-Luan\GUI\DAO\obj\Debug\DAO.pdb
+=======
+C:\DA_WF\Clone\1311_0438\GUI\DAO\bin\Debug\DAO.dll
+C:\DA_WF\Clone\1311_0438\GUI\DAO\bin\Debug\DAO.pdb
+C:\DA_WF\Clone\1311_0438\GUI\DAO\bin\Debug\DTO.dll
+C:\DA_WF\Clone\1311_0438\GUI\DAO\bin\Debug\DTO.pdb
+C:\DA_WF\Clone\1311_0438\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\DA_WF\Clone\1311_0438\GUI\DAO\obj\Debug\DAO.dll
+C:\DA_WF\Clone\1311_0438\GUI\DAO\obj\Debug\DAO.pdb
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49

@@ -36,6 +36,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlright = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
+=======
+            this.lblTongTienHide = new System.Windows.Forms.Label();
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             this.grbThongTinThemMonAnVaoHoaDon = new System.Windows.Forms.GroupBox();
             this.picAnhMonAn = new System.Windows.Forms.PictureBox();
             this.txtGia = new System.Windows.Forms.TextBox();
@@ -71,11 +75,18 @@
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.dgvGioHang = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
             this.colMaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTongTienHide = new System.Windows.Forms.Label();
+=======
+            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             this.pnlright.SuspendLayout();
             this.grbThongTinThemMonAnVaoHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhMonAn)).BeginInit();
@@ -102,6 +113,18 @@
             this.pnlright.TabIndex = 1;
             this.pnlright.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+<<<<<<< HEAD
+=======
+            // lblTongTienHide
+            // 
+            this.lblTongTienHide.AutoSize = true;
+            this.lblTongTienHide.ForeColor = System.Drawing.Color.MintCream;
+            this.lblTongTienHide.Location = new System.Drawing.Point(11, 3);
+            this.lblTongTienHide.Name = "lblTongTienHide";
+            this.lblTongTienHide.Size = new System.Drawing.Size(0, 13);
+            this.lblTongTienHide.TabIndex = 55;
+            // 
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             // grbThongTinThemMonAnVaoHoaDon
             // 
             this.grbThongTinThemMonAnVaoHoaDon.Controls.Add(this.picAnhMonAn);
@@ -163,6 +186,10 @@
             this.txtSoLuong.Text = "1";
             this.txtSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
+<<<<<<< HEAD
+=======
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             // 
             // label3
             // 
@@ -201,6 +228,10 @@
             // 
             this.txtThemSanPham.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.txtThemSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+<<<<<<< HEAD
+=======
+            this.txtThemSanPham.Enabled = false;
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             this.txtThemSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtThemSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtThemSanPham.Location = new System.Drawing.Point(551, 19);
@@ -220,6 +251,10 @@
             this.txtTenMon.Name = "txtTenMon";
             this.txtTenMon.Size = new System.Drawing.Size(207, 30);
             this.txtTenMon.TabIndex = 64;
+<<<<<<< HEAD
+=======
+            this.txtTenMon.TextChanged += new System.EventHandler(this.txtTenMon_TextChanged);
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             // 
             // label1
             // 
@@ -514,8 +549,13 @@
             this.dgvGioHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGioHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGioHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+<<<<<<< HEAD
             this.colMaMon,
             this.colTenMon,
+=======
+            this.colTenMon,
+            this.colDonGia,
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             this.colSL,
             this.colGia});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -537,6 +577,7 @@
             this.dgvGioHang.Size = new System.Drawing.Size(274, 355);
             this.dgvGioHang.TabIndex = 7;
             // 
+<<<<<<< HEAD
             // colMaMon
             // 
             this.colMaMon.DataPropertyName = "colMaMon";
@@ -544,13 +585,28 @@
             this.colMaMon.Name = "colMaMon";
             this.colMaMon.Width = 50;
             // 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             // colTenMon
             // 
             this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colTenMon.DataPropertyName = "colTenMon";
+<<<<<<< HEAD
             this.colTenMon.HeaderText = "Tên Món";
             this.colTenMon.Name = "colTenMon";
             // 
+=======
+            this.colTenMon.HeaderText = "Tên món";
+            this.colTenMon.Name = "colTenMon";
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.DataPropertyName = "colDonGia";
+            this.colDonGia.HeaderText = "Đơn giá";
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.Width = 50;
+            // 
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             // colSL
             // 
             this.colSL.DataPropertyName = "colSL";
@@ -565,6 +621,7 @@
             this.colGia.Name = "colGia";
             this.colGia.Width = 50;
             // 
+<<<<<<< HEAD
             // lblTongTienHide
             // 
             this.lblTongTienHide.AutoSize = true;
@@ -574,6 +631,8 @@
             this.lblTongTienHide.Size = new System.Drawing.Size(0, 13);
             this.lblTongTienHide.TabIndex = 55;
             // 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
             // urcBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -634,14 +693,24 @@
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label lblTongTien;
         private System.Windows.Forms.PictureBox picAnhMonAn;
+<<<<<<< HEAD
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSL;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGia;
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
         private System.Windows.Forms.GroupBox grbChuNangThanhToan;
         private System.Windows.Forms.Button btnHuyBo;
         private System.Windows.Forms.Button btnTraSP;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Label lblTongTienHide;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGia;
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     }
 }

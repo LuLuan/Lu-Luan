@@ -39,6 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Include="ChiTietHoaDonBan_BUS.cs" />
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     <Compile Include="ChiTietMonAn_BUS.cs" />
     <Compile Include="ChucNang_BUS.cs" />
     <Compile Include="ChucVu_BUS.cs" />

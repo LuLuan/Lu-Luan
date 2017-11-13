@@ -17,7 +17,11 @@ namespace GUI
         public delegate void GetKetQuaDangNhap(bool bolKetQuaDN);
         public delegate void GetThongTinNV(List<clsNhanVien_DTO> bolKetQuaDN);
         public delegate void GetQuyenDangNhap(List<clsQuyenDangNhap_DTO> lstQuyenDN);
+<<<<<<< HEAD
 
+=======
+        public static string strMaNhanVien ="";
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 
         public GetKetQuaDangNhap LayKetQuaDangNhap;
         public GetThongTinNV LayThongTinNV;
@@ -43,6 +47,10 @@ namespace GUI
             {
                 if (LayKetQuaDangNhap != null && LayThongTinNV != null)
                 {
+<<<<<<< HEAD
+=======
+                    strMaNhanVien = TaiKhoan;
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
                     List<clsNhanVien_DTO> lstTTNV = BUS.NhanVien_BUS.LayNhanVienTheoMa(TaiKhoan);
                     //List<clsQuyenDangNhap_DTO> lstQDN = BUS.TaiKhoan_BUS.LayQuyenDangNhap(TaiKhoan);
                     List<clsQuyenDangNhap_DTO> lstQDN = BUS.QuyenDangNhap_BUS.LayQuyenDangNhapTheoMaNV(TaiKhoan);

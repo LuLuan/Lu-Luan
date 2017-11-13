@@ -145,6 +145,7 @@ namespace GUI
       return taiKhoan;
     }
 
+<<<<<<< HEAD
     public clsKhachHang_DTO TaoDoiTuongKhachHang(string maKH, string hoTen, bool gioiTinh, DateTime ngaySinh, string SDT, string diaChi, bool trangThai)
     {
       clsKhachHang_DTO khacHang = new clsKhachHang_DTO();
@@ -173,6 +174,8 @@ namespace GUI
       return theKH;
     }
 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     public bool KiemTraFileDialog(FileDialog fd)
     {
       return (fd.FileName != "" ? true : false);
@@ -192,7 +195,11 @@ namespace GUI
       // Khi chọn một ngày nào đó, Format của DateTimePicker chuyển thành Short (ngày/tháng/năm)
     }
 
+<<<<<<< HEAD
     public bool KiemTraTuoi(int tuoiLamViec, DateTimePicker dtp)
+=======
+    public bool KiemTraNgaySinh(int tuoiLamViec, DateTimePicker dtp)
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     {
       return (dtp.Value <= DateTime.Now.AddYears(-tuoiLamViec));
     }

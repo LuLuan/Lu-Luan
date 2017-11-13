@@ -20,7 +20,10 @@ namespace GUI
       InitializeComponent();
     }
 
+<<<<<<< HEAD
     Utilities utl = new Utilities();
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     public void urcDanhSachKhachHang_Load(object sender, EventArgs e)
     {
       HienThiDSKhachHang();
@@ -35,12 +38,16 @@ namespace GUI
       dgvDSKH.DataSource = lstKH;
     }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     #region CÁC NÚT CHỨC NĂNG (Cập nhật, Hủy thao tác)
 
     private void btnThemTheKH_Click(object sender, EventArgs e)
     {
+<<<<<<< HEAD
       TheKhachHang_BUS bus = new TheKhachHang_BUS();
 
       if (bus.KiemTraKhachHangDaCoThe(txtMaKH.Text))
@@ -112,6 +119,17 @@ namespace GUI
     }
 
     
+=======
+      MessageBox.Show("Thêm thẻ cho khách hàng " + txtHoTen.Text);
+
+    }
+
+    private void btnCapNhat_Click(object sender, EventArgs e)
+    {
+
+    }
+
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     private void btnHuyThaoTac_Click(object sender, EventArgs e)
     {
       TrangThaiBanDau();
@@ -120,6 +138,7 @@ namespace GUI
 
     #endregion
 
+<<<<<<< HEAD
     private clsKhachHang_DTO TaoDoiTuongKhachHang()
     {
       string maKH = txtMaKH.Text;
@@ -187,6 +206,8 @@ namespace GUI
       return (utl.KiemTraDateTimePicker(dtpNgaySinh) && utl.KiemTraTuoi(15, dtpNgaySinh));
     }
 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 
 
     #region CÁC SỰ KIỆN DATAGRIDVIEW
@@ -213,6 +234,7 @@ namespace GUI
           e.Value = "Có sẵn";
         else e.Value = "Đã xóa";
       }
+<<<<<<< HEAD
 
       if (dgvDSKH.Columns[e.ColumnIndex].Name.ToString() == "colNgaySinh")
       {
@@ -228,6 +250,10 @@ namespace GUI
       }
     }
     
+=======
+    }
+
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     private void dgvDSKH_KeyUp(object sender, KeyEventArgs e)
     {
       if (e.KeyCode == Keys.Delete)
@@ -348,7 +374,11 @@ namespace GUI
     }
     #endregion
 
+<<<<<<< HEAD
     #region Tìm kiếm
+=======
+
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     private void TimKiem()
     {
       string hoTen = txtHoTen_TK.Text;
@@ -379,8 +409,11 @@ namespace GUI
       TimKiem();
     }
 
+<<<<<<< HEAD
     #endregion
 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
     private void dgvDSKH_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
     {
       var grid = sender as DataGridView;
@@ -426,6 +459,13 @@ namespace GUI
       //}
     }
 
+<<<<<<< HEAD
+=======
+    private void rdbGioiTinhNam_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 
     private void dgvDSKH_SelectionChanged(object sender, EventArgs e)
     {
@@ -441,8 +481,13 @@ namespace GUI
           //txtEmail.Text = r.Cells["colEmail"].Value.ToString();
 
         if (Convert.ToBoolean(r.Cells["colGioiTinh"].Value.ToString()) == true)
+<<<<<<< HEAD
           rdbNam.Checked = true;
         else rdbNu.Checked = true;
+=======
+          rdbGioiTinhNam.Checked = true;
+        else rdbGioiTinhNu.Checked = true;
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 
         if (Convert.ToBoolean(r.Cells["colTrangThai"].Value.ToString()) == true)
           rdbTrangThaiCoSan.Checked = true;
@@ -464,6 +509,7 @@ namespace GUI
 
 
 
+<<<<<<< HEAD
     private void txtHoTen_TextChanged(object sender, EventArgs e)
     {
       if (KiemTraHoTen())
@@ -489,6 +535,8 @@ namespace GUI
 
 
 
+=======
+>>>>>>> 38685e361bee85e4892fd054845db2ff2c79ca49
 
 
 
