@@ -374,20 +374,20 @@ namespace GUI
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 0)
             {
                 lswThucUong.Items.Clear();
-                Task1_TimKiem_TextChange(txtTimKiem.Text, lstMonAn); 
+              //  Task1_TimKiem_TextChange(txtTimKiem.Text, lstMonAn); 
                 LoadDulieuLenListView(lswThucUong);
             }
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 1)
             {
                 lswTopping.Items.Clear();
-                Task1_TimKiem_TextChange(txtTimKiem.Text, lstMonAn); 
+            //    Task1_TimKiem_TextChange(txtTimKiem.Text, lstMonAn); 
                 LoadDulieuLenListView(lswTopping);
 
             }
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 2)
             {
                 lswMonAn.Items.Clear();
-                Task1_TimKiem_TextChange(txtTimKiem.Text, lstMonAn); 
+             //   Task1_TimKiem_TextChange(txtTimKiem.Text, lstMonAn); 
                 LoadDulieuLenListView(lswMonAn);
             }
         }
