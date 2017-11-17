@@ -32,15 +32,15 @@
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Mã Món Ăn");
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Mã Loại Món Ăn");
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Đơn Vị Tính");
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Mã Món Ăn");
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Mã Loại Món Ăn");
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Đơn Vị Tính");
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Mã Món Ăn");
             System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Mã Loại Món Ăn");
             System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Đơn Vị Tính");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlright = new System.Windows.Forms.Panel();
             this.lblTongTienHide = new System.Windows.Forms.Label();
             this.grbThongTinThemMonAnVaoHoaDon = new System.Windows.Forms.GroupBox();
@@ -68,7 +68,16 @@
             this.colDonViTinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ilsLon = new System.Windows.Forms.ImageList(this.components);
             this.ilsNho = new System.Windows.Forms.ImageList(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lswTopping = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lswMonAn = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.grbChuNangThanhToan = new System.Windows.Forms.GroupBox();
             this.btnHuyBo = new System.Windows.Forms.Button();
@@ -81,31 +90,24 @@
             this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lswTopping = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lswMonAn = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlright.SuspendLayout();
             this.grbThongTinThemMonAnVaoHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhMonAn)).BeginInit();
             this.grbViewStyle.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grbChuNangThanhToan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGioHang)).BeginInit();
-            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlright
             // 
             this.pnlright.BackColor = System.Drawing.Color.MintCream;
+            this.pnlright.Controls.Add(this.comboBox1);
             this.pnlright.Controls.Add(this.lblTongTienHide);
             this.pnlright.Controls.Add(this.grbThongTinThemMonAnVaoHoaDon);
             this.pnlright.Controls.Add(this.grbViewStyle);
@@ -411,6 +413,54 @@
             this.ilsNho.ImageSize = new System.Drawing.Size(48, 48);
             this.ilsNho.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.lswTopping);
+            this.tabPage2.Location = new System.Drawing.Point(4, 74);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(636, 276);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "TOPPING";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lswTopping
+            // 
+            this.lswTopping.BackColor = System.Drawing.Color.White;
+            this.lswTopping.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lswTopping.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lswTopping.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lswTopping.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
+            this.lswTopping.LargeImageList = this.ilsLon;
+            this.lswTopping.Location = new System.Drawing.Point(-3, -2);
+            this.lswTopping.MultiSelect = false;
+            this.lswTopping.Name = "lswTopping";
+            this.lswTopping.Size = new System.Drawing.Size(642, 280);
+            this.lswTopping.SmallImageList = this.ilsNho;
+            this.lswTopping.TabIndex = 1;
+            this.lswTopping.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã Món Ăn";
+            this.columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Mã Loại Món";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đơn Vị Tính";
+            this.columnHeader3.Width = 150;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.lswMonAn);
@@ -420,6 +470,43 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MÓN ĂN";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lswMonAn
+            // 
+            this.lswMonAn.BackColor = System.Drawing.Color.White;
+            this.lswMonAn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lswMonAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.lswMonAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lswMonAn.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
+            this.lswMonAn.LargeImageList = this.ilsLon;
+            this.lswMonAn.Location = new System.Drawing.Point(-3, -2);
+            this.lswMonAn.MultiSelect = false;
+            this.lswMonAn.Name = "lswMonAn";
+            this.lswMonAn.Size = new System.Drawing.Size(642, 280);
+            this.lswMonAn.SmallImageList = this.ilsNho;
+            this.lswMonAn.TabIndex = 1;
+            this.lswMonAn.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Mã Món Ăn";
+            this.columnHeader4.Width = 150;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Mã Loại Món";
+            this.columnHeader5.Width = 150;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Đơn Vị Tính";
+            this.columnHeader6.Width = 150;
             // 
             // panel1
             // 
@@ -587,90 +674,14 @@
             this.colGia.Name = "colGia";
             this.colGia.Width = 50;
             // 
-            // tabPage2
+            // comboBox1
             // 
-            this.tabPage2.Controls.Add(this.lswTopping);
-            this.tabPage2.Location = new System.Drawing.Point(4, 74);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(636, 276);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "TOPPING";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // lswTopping
-            // 
-            this.lswTopping.BackColor = System.Drawing.Color.White;
-            this.lswTopping.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lswTopping.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.lswTopping.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lswTopping.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
-            this.lswTopping.LargeImageList = this.ilsLon;
-            this.lswTopping.Location = new System.Drawing.Point(-3, -2);
-            this.lswTopping.MultiSelect = false;
-            this.lswTopping.Name = "lswTopping";
-            this.lswTopping.Size = new System.Drawing.Size(642, 280);
-            this.lswTopping.SmallImageList = this.ilsNho;
-            this.lswTopping.TabIndex = 1;
-            this.lswTopping.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã Món Ăn";
-            this.columnHeader1.Width = 150;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Mã Loại Món";
-            this.columnHeader2.Width = 150;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đơn Vị Tính";
-            this.columnHeader3.Width = 150;
-            // 
-            // lswMonAn
-            // 
-            this.lswMonAn.BackColor = System.Drawing.Color.White;
-            this.lswMonAn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lswMonAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.lswMonAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lswMonAn.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
-            this.lswMonAn.LargeImageList = this.ilsLon;
-            this.lswMonAn.Location = new System.Drawing.Point(-3, -2);
-            this.lswMonAn.MultiSelect = false;
-            this.lswMonAn.Name = "lswMonAn";
-            this.lswMonAn.Size = new System.Drawing.Size(642, 280);
-            this.lswMonAn.SmallImageList = this.ilsNho;
-            this.lswMonAn.TabIndex = 1;
-            this.lswMonAn.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Mã Món Ăn";
-            this.columnHeader4.Width = 150;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Mã Loại Món";
-            this.columnHeader5.Width = 150;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Đơn Vị Tính";
-            this.columnHeader6.Width = 150;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(506, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 40);
+            this.comboBox1.TabIndex = 56;
             // 
             // urcBanHang
             // 
@@ -690,12 +701,12 @@
             this.grbViewStyle.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.grbChuNangThanhToan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGioHang)).EndInit();
-            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -751,5 +762,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
