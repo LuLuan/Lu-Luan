@@ -19,6 +19,7 @@ namespace GUI
         {
             InitializeComponent();
         }
+        private string MaMonAnDuocChon = "";
         private string ChuoiTimKiem = "";
         private string AnhNguyenLieu = "";
         List<clsNguyenLieu_DTO> lstNguyenLieu;
@@ -65,6 +66,26 @@ namespace GUI
                
             }
         }
+        private string TaoRaMaNguyenLieuMoi(int iSoLuongMa)
+        {
+            string MaNL = "";
+            iSoLuongMa += 1;
+
+            int DoDaiSoThuTu = iSoLuongMa.ToString().Length;
+            if (DoDaiSoThuTu <= 10)
+                MaNL = "NL000" + iSoLuongMa.ToString();
+            else if (DoDaiSoThuTu <= 100)
+                MaNL = "NL00" + iSoLuongMa.ToString();
+            else if (DoDaiSoThuTu <= 1000)
+                MaNL = "NL0" + iSoLuongMa.ToString();
+            else if (DoDaiSoThuTu < 10000)
+                MaNL = "NL" + iSoLuongMa.ToString();
+            else if (DoDaiSoThuTu >= 9999)
+                MessageBox.Show("Tràn mã nguyên liệu, xin liên hệ hãy liên hệ adm Lu : 01634699175");
+
+            return MaNL;
+        }
+ 
 
         public void LoadTatCaCBB()// load tất cả combobox
         {
@@ -102,6 +123,7 @@ namespace GUI
             btnNhapNL.Enabled = false;
             btnThemMoiNL.Enabled = false;
             btnLuu.Enabled = true;
+            btnAnhNguyenLieu.Enabled = true;
         }
 
         private void btnNhapNL_Click(object sender, EventArgs e)
@@ -110,6 +132,10 @@ namespace GUI
             btnChinhSuaNL.Enabled = false;
             btnThemMoiNL.Enabled = false;
             btnLuu.Enabled = true;
+            lbNCC.Visible = true;
+            cbbNCC.Visible = true;
+            picAddNhaCungCap.Visible = true;
+            
         }
 
         private void btnThemMoiNL_Click(object sender, EventArgs e)
@@ -118,91 +144,12 @@ namespace GUI
             btnChinhSuaNL.Enabled = false;
             btnNhapNL.Enabled = false;
             btnLuu.Enabled = true;
-
-
+            btnAnhNguyenLieu.Enabled = true;
+            Utilities.ResetAllControls(grbThongTinSP);
 
             isEnableControls(true);
         }
-        private string TaoRaMaNguyenLieuMoi(int iSoLuongMa)
-        {
-            string MaNL = "";
-            iSoLuongMa += 1;
-
-            int DoDaiSoThuTu = iSoLuongMa.ToString().Length;
-            if (DoDaiSoThuTu <=10)
-                MaNL = "NL000" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu<=100)
-                MaNL = "NL00" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu <= 1000)
-                MaNL = "NL0" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu < 10000)
-                MaNL = "NL" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu >= 9999)
-                MessageBox.Show("Tràn mã nguyên liệu, xin liên hệ hãy liên hệ adm Lu : 01634699175");
-            
-            return MaNL;
-        }
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-
-            clsNguyenLieu_DTO NguyenLieu = new clsNguyenLieu_DTO();
-            NguyenLieu.MaNguyenLieu = TaoRaMaNguyenLieuMoi(lstNguyenLieu.Count);
-            NguyenLieu.AnhNguyenLieu = AnhNguyenLieu;
-
-
-            if (txtTenNL.Text == "")
-            {
-                MessageBox.Show("Thiếu dữ liệu tên "); return;
-            }
-            NguyenLieu.TenNguyenLieu = txtTenNL.Text;
-            if (txtSoLuongNL.Text == "")
-            {
-                MessageBox.Show("Thiếu dữ liệu số lượng "); return;
-            }
-            NguyenLieu.TongSoLuong = float.Parse(txtSoLuongNL.Text);
-            if (txtDonGiaNL.Text == "")
-            {
-                MessageBox.Show("Thiếu dữ liệu đơn giá "); return;
-            }
-            NguyenLieu.DonGia = float.Parse(txtDonGiaNL.Text);
-            if (cbbDVTinhNL.SelectedValue == null)
-            {
-                MessageBox.Show("Thiếu dữ liệu đơn vị tính"); return;
-            }
-            NguyenLieu.DonViTinh = cbbDVTinhNL.SelectedValue.ToString();
-            if (cbbLoaiNL.SelectedValue == null)
-            {
-                MessageBox.Show("Thiếu dữ liệu loại nguyên liệu"); return;
-            }
-            NguyenLieu.MaLoaiNguyenLieu = cbbLoaiNL.SelectedValue.ToString().Trim();
-            //  NguyenLieu.TrangThai = (bool)cbbTrangThai.SelectedValue;
-            NguyenLieu.TrangThai = true; // tạm thời để là true chưa sửa 
-
-            if (btnHuyBoThemMoi.Visible==true)// Đang thêm mới
-            {
-
-                if (BUS.NguyenLieu_BUS.InsertNguyenLieu(NguyenLieu))
-                {
-                    MessageBox.Show("Đã thêm thành công nguyên liệu");
-                    urcDanhSachNguyenLieu_Load(sender, e);
-                    btnHuyBoThemMoi_Click(sender, e);
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại vui lòng thử lại");
-                }
-
-            }
-            if (btnHuyBoNhapHang.Visible==true)//Đang nhập hàng thêm vào
-            {
-                
-            }
-            if (btnChinhSuaNL.Visible==true)//Đang chỉnh sửa thông tin nguyên liệu
-            {
-                
-            }
-        }
-
+       
 
 
         private void btnHuyBoThemMoi_Click(object sender, EventArgs e)
@@ -211,6 +158,9 @@ namespace GUI
             btnChinhSuaNL.Enabled = true;
             btnNhapNL.Enabled = true;
             btnLuu.Enabled = false;
+            isEnableControls(false);
+            Utilities.ResetAllControls(grbThongTinSP);
+      
         }
 
         private void btnHuyBoNhapHang_Click(object sender, EventArgs e)
@@ -219,6 +169,11 @@ namespace GUI
             btnChinhSuaNL.Enabled = true;
             btnThemMoiNL.Enabled = true;
             btnLuu.Enabled = false;
+            lbNCC.Visible = false;
+            cbbNCC.Visible = false;
+            picAddNhaCungCap.Visible = false;
+            isEnableControls(false);
+            ss
         }
 
         private void btnHuyBoChinhSua_Click(object sender, EventArgs e)
@@ -227,6 +182,8 @@ namespace GUI
             btnNhapNL.Enabled = true;
             btnThemMoiNL.Enabled = true;
             btnLuu.Enabled = false;
+            isEnableControls(false);
+            Utilities.ResetAllControls(grbThongTinSP);
         }
 
         private void btnAnhNguyenLieu_Click(object sender, EventArgs e)
@@ -277,6 +234,125 @@ namespace GUI
             }
             urcLoaiNguyenLieu.BringToFront();
         }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+            clsNguyenLieu_DTO NguyenLieu = new clsNguyenLieu_DTO();
+            NguyenLieu.MaNguyenLieu = TaoRaMaNguyenLieuMoi(lstNguyenLieu.Count);
+            NguyenLieu.AnhNguyenLieu = AnhNguyenLieu;
+
+
+            if (txtTenNL.Text == "")
+            {
+                MessageBox.Show("Thiếu dữ liệu tên "); return;
+            }
+            NguyenLieu.TenNguyenLieu = txtTenNL.Text;
+            if (txtSoLuongNL.Text == "")
+            {
+                MessageBox.Show("Thiếu dữ liệu số lượng "); return;
+            }
+            NguyenLieu.TongSoLuong = float.Parse(txtSoLuongNL.Text);
+            if (txtDonGiaNL.Text == "")
+            {
+                MessageBox.Show("Thiếu dữ liệu đơn giá "); return;
+            }
+            NguyenLieu.DonGia = float.Parse(txtDonGiaNL.Text);
+            if (cbbDVTinhNL.SelectedValue == null)
+            {
+                MessageBox.Show("Thiếu dữ liệu đơn vị tính"); return;
+            }
+            NguyenLieu.DonViTinh = cbbDVTinhNL.SelectedValue.ToString();
+            if (cbbLoaiNL.SelectedValue == null)
+            {
+                MessageBox.Show("Thiếu dữ liệu loại nguyên liệu"); return;
+            }
+            NguyenLieu.MaLoaiNguyenLieu = cbbLoaiNL.SelectedValue.ToString().Trim();
+            //  NguyenLieu.TrangThai = (bool)cbbTrangThai.SelectedValue;
+            NguyenLieu.TrangThai = true; // tạm thời để là true chưa sửa 
+
+            if (btnHuyBoThemMoi.Visible == true)// Đang thêm mới
+            {
+
+                if (BUS.NguyenLieu_BUS.InsertNguyenLieu(NguyenLieu))
+                {
+                    MessageBox.Show("Đã thêm thành công nguyên liệu");
+                    urcDanhSachNguyenLieu_Load(sender, e);
+                    btnHuyBoThemMoi_Click(sender, e);
+                    Utilities.ResetAllControls(grbThongTinSP);
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại vui lòng thử lại");
+                }
+
+            }
+            if (btnHuyBoNhapHang.Visible == true)//Đang nhập hàng thêm vào
+            {
+
+
+                if (cbbNCC.SelectedText == "")
+                {
+                    MessageBox.Show("Thiếu tên nhà cung cấp bồ ơi"); return;
+                }
+                MessageBox.Show("Lưu nhập nguyên liệu thành công");
+                lbNCC.Visible = false;
+                cbbNCC.Visible = false;
+                picAddNhaCungCap.Visible = false;
+
+            }
+            if (btnChinhSuaNL.Visible == true)//Đang chỉnh sửa thông tin nguyên liệu
+            {
+
+            }
+        }
+
+        private void dgvDSNguyenLieu_SelectionChanged(object sender, EventArgs e)
+        {
+            
+                try
+                {
+
+                    if (dgvDSNguyenLieu.Rows.Count > 0)
+                    {
+                        DataGridViewRow dvrSelected = dgvDSNguyenLieu.SelectedRows[0];
+
+                        txtTenNL.Text = dvrSelected.Cells["colTenNguyenLieu"].Value.ToString();
+                        txtSoLuongNL.Text = dvrSelected.Cells["colTongSoLuongCon"].Value.ToString();
+                        txtDonGiaNL.Text = dvrSelected.Cells["colDonGia"].Value.ToString();
+                        cbbDVTinhNL.SelectedValue = dvrSelected.Cells["colDonViTinh"].Value.ToString();
+                       cbbLoaiNL.SelectedValue = dvrSelected.Cells["colLoaiNguyenLieu"].Value.ToString();
+                      cbbTrangThai.SelectedValue = dvrSelected.Cells["colTrangThai"].Value.ToString();
+                        //
+                        MaMonAnDuocChon = dvrSelected.Cells["colMaMonAn"].Value.ToString();
+                       
+                        picAnhDaiDien.Image = new Bitmap(@"HinhAnh\AnhMonAn\no_picture.gif");
+                        //DataGridViewRow 
+
+                        //colAnhMonAn
+
+                        if (dvrSelected.Cells["colAnhNguyenLieu"].Value != null)
+                        {
+                            picAnhDaiDien.Image = Image.FromFile(dvrSelected.Cells["colAnhNguyenLieu"].Value.ToString());
+                            AnhNguyenLieu = dvrSelected.Cells["colAnhNguyenLieu"].Value.ToString();
+                        }
+                        else
+                        {
+                            picAnhDaiDien.Image = new Bitmap(@"HinhAnh\AnhMonAn\no_picture.gif");
+                        }
+                    }
+                    else
+                        picAnhDaiDien.Image = null;
+
+                }
+                catch (Exception)
+                {
+                }
+
+
+            
+        }
+
 
     }
 }

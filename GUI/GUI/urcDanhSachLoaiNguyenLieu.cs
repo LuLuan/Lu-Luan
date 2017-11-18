@@ -32,14 +32,13 @@ namespace GUI
             string Ma = "";
             iSoLuongMa += 1;
 
-            int DoDaiSoThuTu = iSoLuongMa.ToString().Length;
-            if (DoDaiSoThuTu < 10)
+            if (iSoLuongMa < 10)
                 Ma = "LNL00" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu < 100)
+            else if (iSoLuongMa < 100)
                 Ma = "LNL0" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu < 1000)
+            else if (iSoLuongMa < 1000)
                 Ma = "LNL" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu >= 999)
+            else if (iSoLuongMa >= 999)
                 MessageBox.Show("Tràn mã nguyên liệu, xin liên hệ hãy liên hệ adm Lu : 01634699175");
 
             return Ma;
@@ -116,6 +115,7 @@ namespace GUI
 
 
                     MessageBox.Show("Đã thêm loại nguyên liệu thành công ");
+                    txtTenLoaiNL.Text = "";
                     urcDanhSachLoaiNguyenLieu_Load(sender, e);
                 }
                 else

@@ -31,13 +31,11 @@ namespace GUI
         {
             string Ma = "";
             iSoLuongMa += 1;
-
-            int DoDaiSoThuTu = iSoLuongMa.ToString().Length;
-            if (DoDaiSoThuTu <= 10)
+            if (iSoLuongMa < 10)
                 Ma = "DVT0" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu < 100)
+            else if (iSoLuongMa < 100)
                 Ma = "DVT" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu >= 99)
+            else if (iSoLuongMa >= 99)
                 MessageBox.Show("Tràn mã nguyên liệu, xin liên hệ hãy liên hệ adm Lu : 01634699175");
 
             return Ma;
@@ -93,7 +91,7 @@ namespace GUI
                 //
                 clsDonViTinh_DTO DonViTinh = new clsDonViTinh_DTO();
 
-                DonViTinh.MaDonViTinh= TaoRaMa(lstDonViTinh.Count);
+                DonViTinh.MaDonViTinh= TaoRaMa(lstDonViTinh.Count).ToString();
                 if (txtTenDonViTinh.Text=="")
                 {
                     MessageBox.Show("Chưa nhập tên đơn vị mới ");
@@ -102,7 +100,7 @@ namespace GUI
 
                 DonViTinh.TenDonViTinh = txtTenDonViTinh.Text;
                 DonViTinh.TrangThai = true;//tạm thời là true sửa trong thời gian update tới !
-                MessageBox.Show(DonViTinh.MaDonViTinh.ToString() + "-" + DonViTinh.TenDonViTinh + "-" + DonViTinh.TrangThai.ToString()); return;
+               // MessageBox.Show(DonViTinh.MaDonViTinh.ToString() + "-" + DonViTinh.TenDonViTinh + "-" + DonViTinh.TrangThai.ToString()); return;
                 if (BUS.DonViTinh_BUS.InsertDonViTinh(DonViTinh))
                 {
                     txtTenDonViTinh.Enabled = false;
