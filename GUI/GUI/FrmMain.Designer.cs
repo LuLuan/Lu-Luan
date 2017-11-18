@@ -192,8 +192,8 @@
             // itemMnLogOut
             // 
             this.itemMnLogOut.Name = "itemMnLogOut";
-            this.itemMnLogOut.Size = new System.Drawing.Size(105, 22);
-            this.itemMnLogOut.Text = "Thoát";
+            this.itemMnLogOut.Size = new System.Drawing.Size(152, 22);
+            this.itemMnLogOut.Text = "Đăng xuất";
             this.itemMnLogOut.Click += new System.EventHandler(this.itemMnLogOut_Click);
             // 
             // itemMnClose

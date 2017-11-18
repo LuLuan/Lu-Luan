@@ -107,17 +107,17 @@
     <Compile Include="urcDangNhap.Designer.cs">
       <DependentUpon>urcDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="urcDanhSachDonViTinh.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="urcDanhSachDonViTinh.Designer.cs">
-      <DependentUpon>urcDanhSachDonViTinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="urcDanhSachKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="urcDanhSachKhachHang.Designer.cs">
       <DependentUpon>urcDanhSachKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcDanhSachDonViTinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcDanhSachDonViTinh.Designer.cs">
+      <DependentUpon>urcDanhSachDonViTinh.cs</DependentUpon>
     </Compile>
     <Compile Include="urcDanhSachLoaiNguyenLieu.cs">
       <SubType>UserControl</SubType>
@@ -160,6 +160,12 @@
     </Compile>
     <Compile Include="urcDanhSachTheKhachHang.Designer.cs">
       <DependentUpon>urcDanhSachTheKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcNhapNguyenLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcNhapNguyenLieu.Designer.cs">
+      <DependentUpon>urcNhapNguyenLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="urcQLKhachHang.cs">
       <SubType>UserControl</SubType>
@@ -260,11 +266,11 @@
     <EmbeddedResource Include="urcDangNhap.resx">
       <DependentUpon>urcDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="urcDanhSachDonViTinh.resx">
-      <DependentUpon>urcDanhSachDonViTinh.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="urcDanhSachKhachHang.resx">
       <DependentUpon>urcDanhSachKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcDanhSachDonViTinh.resx">
+      <DependentUpon>urcDanhSachDonViTinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="urcDanhSachLoaiNguyenLieu.resx">
       <DependentUpon>urcDanhSachLoaiNguyenLieu.cs</DependentUpon>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="urcDanhSachTheKhachHang.resx">
       <DependentUpon>urcDanhSachTheKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcNhapNguyenLieu.resx">
+      <DependentUpon>urcNhapNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="urcQLKhachHang.resx">
       <DependentUpon>urcQLKhachHang.cs</DependentUpon>
@@ -607,6 +616,7 @@
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checked_96px.png" />
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checkmark_52px.png" />
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Ok_25px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_64px %282%29.png" />
     <Content Include="Resources\COMEBUY-logo.png" />
     <Content Include="Resources\customer-card.png" />
   </ItemGroup>

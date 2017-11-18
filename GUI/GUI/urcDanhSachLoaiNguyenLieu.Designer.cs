@@ -39,21 +39,22 @@
             this.colTenLoaiNguyenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbDSLoaiNL = new System.Windows.Forms.GroupBox();
-            this.picExit = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTenLoaiNL = new System.Windows.Forms.TextBox();
+            this.cbbDVTinhNL = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbTenLoaiNL = new System.Windows.Forms.Label();
             this.btnHuyBoChinhSua = new System.Windows.Forms.Button();
             this.btnHuyBoThemMoi = new System.Windows.Forms.Button();
             this.btnChinhSuaLoaiNL = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThemLoaiNL = new System.Windows.Forms.Button();
-            this.lbTenLoaiNL = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbbDVTinhNL = new System.Windows.Forms.ComboBox();
-            this.txtTenLoaiNL = new System.Windows.Forms.TextBox();
+            this.picExit = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLoaiNguyenLieu)).BeginInit();
             this.grbDSLoaiNL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -124,7 +125,7 @@
             this.dgvDSLoaiNguyenLieu.RowTemplate.ReadOnly = true;
             this.dgvDSLoaiNguyenLieu.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDSLoaiNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSLoaiNguyenLieu.Size = new System.Drawing.Size(432, 383);
+            this.dgvDSLoaiNguyenLieu.Size = new System.Drawing.Size(432, 364);
             this.dgvDSLoaiNguyenLieu.TabIndex = 0;
             // 
             // Column6
@@ -158,22 +159,12 @@
             this.grbDSLoaiNL.Controls.Add(this.label1);
             this.grbDSLoaiNL.Controls.Add(this.txtTimKiem);
             this.grbDSLoaiNL.Controls.Add(this.dgvDSLoaiNguyenLieu);
-            this.grbDSLoaiNL.Location = new System.Drawing.Point(10, 33);
+            this.grbDSLoaiNL.Location = new System.Drawing.Point(10, 74);
             this.grbDSLoaiNL.Name = "grbDSLoaiNL";
-            this.grbDSLoaiNL.Size = new System.Drawing.Size(476, 481);
+            this.grbDSLoaiNL.Size = new System.Drawing.Size(476, 440);
             this.grbDSLoaiNL.TabIndex = 54;
             this.grbDSLoaiNL.TabStop = false;
             this.grbDSLoaiNL.Text = "Danh sách  nguyên liệu";
-            // 
-            // picExit
-            // 
-            this.picExit.BackgroundImage = global::GUI.Properties.Resources.icons8_Close_Window_25px_3;
-            this.picExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picExit.Location = new System.Drawing.Point(10, 5);
-            this.picExit.Name = "picExit";
-            this.picExit.Size = new System.Drawing.Size(22, 22);
-            this.picExit.TabIndex = 56;
-            this.picExit.TabStop = false;
             // 
             // groupBox1
             // 
@@ -186,11 +177,56 @@
             this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.btnThemLoaiNL);
             this.groupBox1.Controls.Add(this.lbTenLoaiNL);
-            this.groupBox1.Location = new System.Drawing.Point(504, 33);
+            this.groupBox1.Location = new System.Drawing.Point(504, 74);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(414, 481);
+            this.groupBox1.Size = new System.Drawing.Size(414, 440);
             this.groupBox1.TabIndex = 57;
             this.groupBox1.TabStop = false;
+            // 
+            // txtTenLoaiNL
+            // 
+            this.txtTenLoaiNL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenLoaiNL.Enabled = false;
+            this.txtTenLoaiNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenLoaiNL.Location = new System.Drawing.Point(116, 31);
+            this.txtTenLoaiNL.Name = "txtTenLoaiNL";
+            this.txtTenLoaiNL.Size = new System.Drawing.Size(273, 27);
+            this.txtTenLoaiNL.TabIndex = 90;
+            // 
+            // cbbDVTinhNL
+            // 
+            this.cbbDVTinhNL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDVTinhNL.Enabled = false;
+            this.cbbDVTinhNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbDVTinhNL.FormattingEnabled = true;
+            this.cbbDVTinhNL.Location = new System.Drawing.Point(116, 65);
+            this.cbbDVTinhNL.Name = "cbbDVTinhNL";
+            this.cbbDVTinhNL.Size = new System.Drawing.Size(273, 28);
+            this.cbbDVTinhNL.TabIndex = 89;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.label2.Location = new System.Drawing.Point(18, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.TabIndex = 88;
+            this.label2.Text = "Trạng thái";
+            // 
+            // lbTenLoaiNL
+            // 
+            this.lbTenLoaiNL.AutoSize = true;
+            this.lbTenLoaiNL.Enabled = false;
+            this.lbTenLoaiNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbTenLoaiNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.lbTenLoaiNL.Location = new System.Drawing.Point(18, 41);
+            this.lbTenLoaiNL.Name = "lbTenLoaiNL";
+            this.lbTenLoaiNL.Size = new System.Drawing.Size(92, 17);
+            this.lbTenLoaiNL.TabIndex = 81;
+            this.lbTenLoaiNL.Text = "Tên loại NL";
             // 
             // btnHuyBoChinhSua
             // 
@@ -287,55 +323,33 @@
             this.btnThemLoaiNL.UseVisualStyleBackColor = true;
             this.btnThemLoaiNL.Click += new System.EventHandler(this.btnThemLoaiNL_Click_1);
             // 
-            // lbTenLoaiNL
+            // picExit
             // 
-            this.lbTenLoaiNL.AutoSize = true;
-            this.lbTenLoaiNL.Enabled = false;
-            this.lbTenLoaiNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTenLoaiNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.lbTenLoaiNL.Location = new System.Drawing.Point(18, 41);
-            this.lbTenLoaiNL.Name = "lbTenLoaiNL";
-            this.lbTenLoaiNL.Size = new System.Drawing.Size(92, 17);
-            this.lbTenLoaiNL.TabIndex = 81;
-            this.lbTenLoaiNL.Text = "Tên loại NL";
+            this.picExit.BackgroundImage = global::GUI.Properties.Resources.icons8_Close_Window_25px_3;
+            this.picExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picExit.Location = new System.Drawing.Point(10, 5);
+            this.picExit.Name = "picExit";
+            this.picExit.Size = new System.Drawing.Size(22, 22);
+            this.picExit.TabIndex = 56;
+            this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Enabled = false;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.label2.Location = new System.Drawing.Point(18, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 17);
-            this.label2.TabIndex = 88;
-            this.label2.Text = "Trạng thái";
-            // 
-            // cbbDVTinhNL
-            // 
-            this.cbbDVTinhNL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbDVTinhNL.Enabled = false;
-            this.cbbDVTinhNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbbDVTinhNL.FormattingEnabled = true;
-            this.cbbDVTinhNL.Location = new System.Drawing.Point(116, 65);
-            this.cbbDVTinhNL.Name = "cbbDVTinhNL";
-            this.cbbDVTinhNL.Size = new System.Drawing.Size(273, 28);
-            this.cbbDVTinhNL.TabIndex = 89;
-            // 
-            // txtTenLoaiNL
-            // 
-            this.txtTenLoaiNL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTenLoaiNL.Enabled = false;
-            this.txtTenLoaiNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenLoaiNL.Location = new System.Drawing.Point(116, 31);
-            this.txtTenLoaiNL.Name = "txtTenLoaiNL";
-            this.txtTenLoaiNL.Size = new System.Drawing.Size(273, 27);
-            this.txtTenLoaiNL.TabIndex = 90;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.Green;
+            this.label3.Location = new System.Drawing.Point(346, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(284, 31);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "LOẠI NGUYÊN LIỆU";
             // 
             // urcDanhSachLoaiNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.picExit);
             this.Controls.Add(this.grbDSLoaiNL);
@@ -345,10 +359,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLoaiNguyenLieu)).EndInit();
             this.grbDSLoaiNL.ResumeLayout(false);
             this.grbDSLoaiNL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -372,5 +387,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbbDVTinhNL;
         private System.Windows.Forms.TextBox txtTenLoaiNL;
+        private System.Windows.Forms.Label label3;
     }
 }

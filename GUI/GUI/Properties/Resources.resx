@@ -130,8 +130,8 @@
   <data name="Cleaner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cleaner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Checked_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checked_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Home_100pxxx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home_100pxxx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,20 +160,20 @@
   <data name="icons8_Add_List_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_List_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Edit_File_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_File_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_Forward_52px_21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Forward_52px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Save_48px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_Checked_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checked_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="passs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\passs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_Edit_25px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_25px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_Save_50px_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_50px_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +190,9 @@
   <data name="white-menu2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white-menu2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Login_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Mouse_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\Mouse_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,14 +202,14 @@
   <data name="icons8_List_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_List_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_Paycheque_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Paycheque_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Menu_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_List_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_List_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Home_100pxxx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Home_100pxxx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_Receipt_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Receipt_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +223,8 @@
   <data name="Ok_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ok_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\CN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_Ok_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Ok_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_Forward_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Forward_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -231,9 +234,6 @@
   </data>
   <data name="icons8_Save_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_Add_List_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_List_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white-OK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white-OK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,6 +283,9 @@
   <data name="Menu_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_Add_50px_21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_50px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="white-menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white-menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -310,8 +313,8 @@
   <data name="icons8_CCleaner_50px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_CCleaner_50px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Add_50px_21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_50px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\CN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -334,14 +337,11 @@
   <data name="Male User_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Male User_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Save_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="white-close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white-close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AddImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_Edit_File_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_File_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_Save_48px_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_48px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -370,8 +370,8 @@
   <data name="Logintrangden_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logintrangden_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Login_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_Add_List_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_List_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Delete_50pxtrongtrongrong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\Delete_50pxtrongtrongrong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -394,8 +394,8 @@
   <data name="icons8_Edit_25px_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_25px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Paycheque_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Paycheque_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_Save_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ThoatMouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\ThoatMouse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -403,7 +403,10 @@
   <data name="icons8_New_Copy_35px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_New_Copy_35px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Ok_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Ok_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_Save_48px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_Add_64px (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_64px (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

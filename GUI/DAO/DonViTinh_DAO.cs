@@ -36,5 +36,15 @@ namespace DAO
             return dsDonVi;
         }
 
+         public static bool InsertDonViTinh(clsDonViTinh_DTO DonViTinh)
+        {
+            SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+            string query = string.Format("INSERT INTO DonViTinh  VALUES ('{0}',N'{1}',N'{2}')", DonViTinh.MaDonViTinh, DonViTinh.TenDonViTinh, DonViTinh.TrangThai);
+            SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
+            int ketqua = cmd.ExecuteNonQuery();
+            ThaoTacDuLieu_DAO.DongKetNoi(con);
+            return (ketqua == 1) ? true : false;
+        }
+
     }
 }

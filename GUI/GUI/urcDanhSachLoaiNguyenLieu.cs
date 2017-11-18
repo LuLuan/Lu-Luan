@@ -136,5 +136,10 @@ namespace GUI
             }
         }
 
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            this.Parent.Controls.Remove(this);
+        }
+
     }
 }

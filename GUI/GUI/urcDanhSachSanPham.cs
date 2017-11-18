@@ -300,11 +300,11 @@ namespace GUI
             iSoLuongMa += 1;
 
             // int DoDaiSoThuTu = iSoLuongMa.ToString().Length;
-            if (iSoLuongMa < 10)
+            if (iSoLuongMa <= 10)
                 MaNL = "M000" + iSoLuongMa.ToString();
-            else if (iSoLuongMa < 100)
+            else if (iSoLuongMa <= 100)
                 MaNL = "M00" + iSoLuongMa.ToString();
-            else if (iSoLuongMa < 1000)
+            else if (iSoLuongMa <= 1000)
                 MaNL = "M0" + iSoLuongMa.ToString();
             else if (iSoLuongMa < 10000)
                 MaNL = "M" + iSoLuongMa.ToString();

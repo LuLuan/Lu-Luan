@@ -13,5 +13,9 @@ namespace BUS
        {
            return DAO.DonViTinh_DAO.LaydsDonVi();
        }
+        public static bool InsertDonViTinh(clsDonViTinh_DTO DonViTinh)
+       {
+           return DAO.DonViTinh_DAO.InsertDonViTinh(DonViTinh);
+       }
     }
 }

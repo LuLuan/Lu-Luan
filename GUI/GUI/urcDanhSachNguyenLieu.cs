@@ -129,11 +129,11 @@ namespace GUI
             iSoLuongMa += 1;
 
             int DoDaiSoThuTu = iSoLuongMa.ToString().Length;
-            if (DoDaiSoThuTu <10)
+            if (DoDaiSoThuTu <=10)
                 MaNL = "NL000" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu<100)
+            else if (DoDaiSoThuTu<=100)
                 MaNL = "NL00" + iSoLuongMa.ToString();
-            else if (DoDaiSoThuTu < 1000)
+            else if (DoDaiSoThuTu <= 1000)
                 MaNL = "NL0" + iSoLuongMa.ToString();
             else if (DoDaiSoThuTu < 10000)
                 MaNL = "NL" + iSoLuongMa.ToString();
@@ -248,6 +248,34 @@ namespace GUI
                     AnhNguyenLieu = @"HinhAnh\AnhNguyenLieu\" + DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetFileName(fd.FileName);
                 }
             }
+        }
+
+        private void picAddDonViTinh_Click(object sender, EventArgs e)
+        {
+            urcDanhSachDonViTinh urcDanhSachDonViTinh = new urcDanhSachDonViTinh();
+            if (!this.Controls.ContainsKey("urcDanhSachDonViTinh"))
+            {
+                this.Controls.Add(urcDanhSachDonViTinh);
+                urcDanhSachDonViTinh.BackColor = Color.White;
+                urcDanhSachDonViTinh.Top = 0;
+                urcDanhSachDonViTinh.Left = 0;
+            }
+            urcDanhSachDonViTinh.BringToFront();
+        }
+
+        private void picAddLoaiNguyenLieu_Click(object sender, EventArgs e)
+        {
+          
+
+            urcDanhSachLoaiNguyenLieu urcLoaiNguyenLieu = new urcDanhSachLoaiNguyenLieu();
+            if (!this.Controls.ContainsKey("urcLoaiNguyenLieu"))
+            {
+                this.Controls.Add(urcLoaiNguyenLieu);
+                urcLoaiNguyenLieu.BackColor = Color.White;
+                urcLoaiNguyenLieu.Top = 0;
+                urcLoaiNguyenLieu.Left = 0;
+            }
+            urcLoaiNguyenLieu.BringToFront();
         }
 
     }
