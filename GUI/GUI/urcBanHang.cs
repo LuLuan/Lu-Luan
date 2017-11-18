@@ -21,7 +21,7 @@ namespace GUI
         public static float tongtien = 0;
         public static DataTable dt = new DataTable();
         List<clsKichThuocMonAn_DTO> lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
-        List<clsMonAn_DTO> lstMonAn = BUS.MonAn_BUS.DSMonAn("");
+        List<clsMonAn_DTO> lstMonAn = BUS.MonAn_BUS.DSMonAn("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = 'NMA02'");
         ListView.SelectedListViewItemCollection ItemDuocChon;
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -36,7 +36,7 @@ namespace GUI
             dgvGioHang.Columns["colGia"].DefaultCellStyle.Format = "#,### đ";
 
             TaoDataTable();
-
+            LoadcbbLoaiTimKiem();
 
         }
         private void LoadDulieuLenListView(ListView lstView)
@@ -105,26 +105,24 @@ namespace GUI
         private void rdbLargeIcon_CheckedChanged(object sender, EventArgs e)
         {
             lswThucUong.View = View.LargeIcon;
+            lswTopping.View = View.LargeIcon;
+            lswMonAn.View = View.LargeIcon;
         }
 
         private void rdbDetails_CheckedChanged(object sender, EventArgs e)
         {
             lswThucUong.View = View.Details;
+            lswTopping.View = View.Details;
+            lswMonAn.View = View.Details;
         }
 
-        private void rdbSmallIcon_CheckedChanged(object sender, EventArgs e)
-        {
-            lswThucUong.View = View.SmallIcon;
-        }
 
-        private void rdbList_CheckedChanged(object sender, EventArgs e)
-        {
-            lswThucUong.View = View.List;
-        }
 
         private void rdbTile_CheckedChanged(object sender, EventArgs e)
         {
             lswThucUong.View = View.Tile;
+            lswTopping.View = View.Tile;
+            lswMonAn.View = View.Tile;
         }
 
         private void lswThucUong_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,7 +162,12 @@ namespace GUI
                 txtGia.Text = (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString(); //String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text)))); 
             } 
         }
-
+        private void LoadcbbLoaiTimKiem()
+        {
+            cbbLoaiTimKiem.Items.Add("Tên món");
+            cbbLoaiTimKiem.Items.Add("Mã món");
+            cbbLoaiTimKiem.SelectedIndex = 0;
+        }
         private void cbbKichThuocMonAn_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (txtTenMon.Text=="")return;
@@ -338,13 +341,14 @@ namespace GUI
         int vitritabcu = 0;
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //luu lai tu tim kiem
-            //chuyen noi dung
-            //MessageBox.Show(tabControl1.TabPages.IndexOf(tabControl1.SelectedTab).ToString());
-            if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab)==0)
+           // NMA01 thức ăn
+            // NMA02 thức uống
+            // NMA03 TOPPING
+             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab)==0)
             {
                 lswThucUong.Items.Clear();
-                string query = string.Format("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = 'NMA02'");
+                Task1_TimKiem_TextChange("NMA02", "");
+                LoadDulieuLenListView(lswThucUong);
                 timkiem[vitritabcu] = txtTimKiem.Text;
                 vitritabcu = tabControl1.TabPages.IndexOf(tabControl1.SelectedTab);
                 txtTimKiem.Text = timkiem[vitritabcu].ToString();
@@ -352,7 +356,8 @@ namespace GUI
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 1)
             {
                 lswTopping.Items.Clear();
-                string query = string.Format("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = 'NMA01'");
+                Task1_TimKiem_TextChange("NMA03", "");
+                LoadDulieuLenListView(lswTopping);
                 timkiem[vitritabcu] = txtTimKiem.Text ;
                 vitritabcu = tabControl1.TabPages.IndexOf(tabControl1.SelectedTab);
                 txtTimKiem.Text = timkiem[vitritabcu].ToString();
@@ -361,7 +366,8 @@ namespace GUI
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 2)
             {
                 lswMonAn.Items.Clear();
-                string query = string.Format("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = 'NMA03'");
+                Task1_TimKiem_TextChange("NMA01", "");
+                LoadDulieuLenListView(lswMonAn);
                 timkiem[vitritabcu] = txtTimKiem.Text;
                 vitritabcu = tabControl1.TabPages.IndexOf(tabControl1.SelectedTab);
                 txtTimKiem.Text = timkiem[vitritabcu].ToString();
@@ -374,26 +380,35 @@ namespace GUI
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 0)
             {
                 lswThucUong.Items.Clear();
-              //  Task1_TimKiem_TextChange(txtTimKiem.Text, lstMonAn); 
+                Task1_TimKiem_TextChange( "NMA02",txtTimKiem.Text); 
                 LoadDulieuLenListView(lswThucUong);
             }
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 1)
             {
                 lswTopping.Items.Clear();
-            //    Task1_TimKiem_TextChange(txtTimKiem.Text, lstMonAn); 
+                Task1_TimKiem_TextChange("NMA03",txtTimKiem.Text); 
                 LoadDulieuLenListView(lswTopping);
 
             }
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 2)
             {
                 lswMonAn.Items.Clear();
-             //   Task1_TimKiem_TextChange(txtTimKiem.Text, lstMonAn); 
+                Task1_TimKiem_TextChange("NMA01",txtTimKiem.Text ); 
                 LoadDulieuLenListView(lswMonAn);
             }
         }
-        private void Task1_TimKiem_TextChange(string strTimKiem,List<clsMonAn_DTO> _lstMonAn,string _MaNhomMonAn)
+        private void Task1_TimKiem_TextChange(string _MaNhomMonAn, string strTimKiem)
         {
-            string query = string.Format("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = '{0}' AND ten_mon_an LIKE '%{1}%'  ",_MaNhomMonAn, txtTimKiem.Text);
+            string query = "";
+            if (cbbLoaiTimKiem.SelectedIndex==0)
+            {
+                 query = string.Format("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = '{0}' AND ten_mon_an LIKE N'%{1}%'  ", _MaNhomMonAn, strTimKiem);
+            }
+            else
+            {
+                query = string.Format("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = '{0}' AND ma_mon_an LIKE N'%{1}%'  ", _MaNhomMonAn, strTimKiem);
+            }
+           
             lstMonAn = BUS.MonAn_BUS.DSMonAn(query);
         }
 
