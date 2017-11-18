@@ -58,6 +58,7 @@
     <Compile Include="clsQuyenDangNhap_DTO.cs" />
     <Compile Include="clsTaiKhoan_DTO.cs" />
     <Compile Include="clsTheKhachHang.cs" />
+    <Compile Include="clsTrangThaiBanPhanCong_DTO.cs" />
     <Compile Include="clsTrangThaiNV_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

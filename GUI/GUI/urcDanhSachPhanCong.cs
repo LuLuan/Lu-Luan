@@ -215,17 +215,6 @@ namespace GUI
 
     }
 
-    //private void UncheckAutomaticallyCheckBox()
-    //{
-    //  foreach (Control ctr in grbDanhSachNVDuocChon.Controls)
-    //  {
-    //    if (ctr is CheckBox)
-    //    {
-    //      CheckBox chb = (CheckBox)ctr;
-    //      chb.Checked = false;
-    //    }
-    //  }
-    //}
 
     CheckBox CreateCheckbox(string ten, int x, int y, int sizeX, int sizeY)
     {
@@ -243,6 +232,13 @@ namespace GUI
       GenerateDateAutomatically();
       //AutoGenerateLabel();
       AutoGenerateCheckBox();
+    }
+
+    private bool KiemTraChonNgayThangHopLe()
+    {
+      if (dtpNgayBatDau.Value > DateTime.Now.AddDays(7))
+        return false;
+      else return true;
     }
 
     private void DeleteCheckBoxes(GroupBox grb)
@@ -276,20 +272,18 @@ namespace GUI
 
     private void button3_Click(object sender, EventArgs e)
     {
-
-      
       // Nếu có nhân viên được chọn
       if (listviewDanhSachChon.Items.Count > 0)
       {
 
+        
+
+
         if (DialogResult.Yes == MessageBox.Show("Thêm bản phân công mới" + dtpNgayBatDau.Value.ToString(), "Thêm", MessageBoxButtons.YesNo))
         {
-          ChiTietBanPhanCong_BUS busChiTietBPC = new ChiTietBanPhanCong_BUS();
+          int count = 0; // Đếm và kiểm tra xem đã thêm được bao nhiêu records
+          ChiTietBanPhanCong_BUS bus = new ChiTietBanPhanCong_BUS();
 
-          //if (busBPC.TaoBanPhanCong(banPhanCong))
-          //{
-          //  MessageBox.Show("ThemThanhCong");
-          //}
 
           ////Duyệt qua từng nhân viên đã chọn
           foreach (ListViewItem lvItem in listviewDanhSachChon.Items)
@@ -298,38 +292,26 @@ namespace GUI
             ////Duyệt Control trong Groupbox, lấy ra các control là CheckBox
             foreach (Control ctr in grbDanhSachNVDuocChon.Controls)
             {
-
-
-
               if (ctr is CheckBox)
               {
                 CheckBox chb = (CheckBox)ctr;
                 string checkBoxName = "chbsang";
                 int temp = 0;
+                
                 for (int i = 0; i < 14; i++)
                 {
                   DateTime ngayBatDau = dtpNgayBatDau.Value;
 
                   if (chb.Name == checkBoxName + ngayBatDau.AddDays(temp).ToString("ddMMyyyy") && chb.Checked)
                   {
-                    
                     string maNV = lvItem.Text;
-                    string ngayLam = chb.Name.Substring(chb.Name.Length - 8);
-
-                    //DateTime ngayLamViec = DateTime.Parse(ngayLam.Substring(0, 2) + "/" + ngayLam.Substring(2, 2) + "/" + ngayLam.Substring(4));
-                    //MessageBox.Show(ngayLamViec.ToString());
-
-
-
-                    //MessageBox.Show(lvItem.Text.Substring(lvItem.Text.LastIndexOf("-") + 1).Trim() + " Làm vào " + chb.Name );
-
-                    //Tao doi tuong phan cong
-                    //clsChiTietBanPhanCong_DTO chiTietBPC = TaoDoiBanChiTietPhanCong(chb.Name);
-                    //if(busChiTietBPC.ThemChiTietPhanCong(chiTietBPC))
-                    //{
-                    //  MessageBox.Show("hihi");
-                    //}
-
+                    
+                    clsChiTietBanPhanCong_DTO chiTietBPC = TaoDoiBanChiTietPhanCong(chb.Name, maNV);
+                    if (bus.ThemChiTietPhanCong(chiTietBPC))
+                    {
+                      count++;
+                    }
+                    //MessageBox.Show("Nhân viên có " + chiTietBPC.MaNhanVien + " Làm việc vào thời gian: " + chiTietBPC.NgayLamViec.ToShortDateString() + " trong ca " + chiTietBPC.MaCaLamViec + " nhân viên tạo: " + urcDangNhap.strMaNhanVien);
                   }
                   temp++;
                   if ((i + 1) % 7 == 0)
@@ -337,7 +319,8 @@ namespace GUI
                     checkBoxName = "chbchieu";
                     temp = 0;
                   }
-                }
+                } // Kết thúc for duyệt 14 checkbox
+                
 
               } /*End if*/
 
@@ -345,46 +328,132 @@ namespace GUI
             } /*End Foreach*/
 
           } /// Foreach duyệt qua từng nhân viên
-
-        } //End messsagebox.show
+          if (count > 0)
+          {
+            MessageBox.Show("Thêm thành công");
+            List<clsChiTietBanPhanCong_DTO> lstCTBPC = bus.LayDSPCTheoNgayVaCa(DateTime.Now, "", "ngayThem");
+            dgvDSPCTrongNgay.AutoGenerateColumns = false;
+            dgvDSPCTrongNgay.DataSource = lstCTBPC;
+            //LayDSPCTheoNgay(DateTime ngay)
+          }
+          else MessageBox.Show("Thêm thất bại");
+        } //End messsagebox.show "Có muốn thêm hay không"
       } /*End if*/
-      
+
+
+
+
+
     } /*Kết thúc hàm*/
 
 
 
-    //private clsChiTietBanPhanCong_DTO TaoDoiBanChiTietPhanCong(string checkboxName, string maNV)
-    //{
+    private clsChiTietBanPhanCong_DTO TaoDoiBanChiTietPhanCong(string checkboxName, string maNV)
+    {
+      ChiTietBanPhanCong_BUS busCTBPC = new ChiTietBanPhanCong_BUS();
 
-    //  //clsChiTietBanPhanCong_DTO CTBPC = new clsChiTietBanPhanCong_DTO();
+      string ma = busCTBPC.LayMaTuDong();
+      string maNhanVien = maNV.Substring(maNV.LastIndexOf("-") + 1).Trim();
 
-    //  //CTBPC.MaBanGhi = "00002";
-    //  //CTBPC.MaNhanVien = "N00004";
-    //  //CTBPC.MaCaLamViec = "Ca001";
-    //  //CTBPC.NgayLamViec = DateTime.Parse(ngay.Substring(0,2)+"/"+ngay.Substring(2,2)+"/"+ngay.Substring(4));
-    //  //CTBPC.CoMat = true;
-    //  //return CTBPC;
+      string maCa = "Ca001";
+      if (checkboxName.Contains("chieu"))
+        maCa = "Ca002";
 
+      string strNgayLamCheckBox = checkboxName.Substring(checkboxName.Length - 8);
+      DateTime ngayLamViec = DateTime.Parse(strNgayLamCheckBox.Substring(0, 2) + "/" + strNgayLamCheckBox.Substring(2, 2) + "/" + strNgayLamCheckBox.Substring(4));
 
-    //  ChiTietBanPhanCong_BUS busCTBPC = new ChiTietBanPhanCong_BUS();
+      string maNVTao = urcDangNhap.strMaNhanVien;
+      DateTime ngayThemBanChiTietPhanCong = DateTime.Now;
+      bool coMat = false;
+      bool nghiCoPhep = false;
+      int trangThai = 5;
 
-    //  string ma = busCTBPC.LayMaTuDong();
-    //  string maNhanVien = maNV.Substring(maNV.LastIndexOf("-") + 1).Trim();
-    //  string maCa = "Ca001";
-    //  if (checkboxName.Contains("sang"))
-    //    maCa = "Ca002";
-    //  string strNgayLamCheckBox = checkboxName.Substring(checkboxName.Length - 8);
-    //  DateTime ngayLamViec = DateTime.Parse(strNgayLamCheckBox.Substring(0, 2) + "/" + strNgayLamCheckBox.Substring(2, 2) + "/" + strNgayLamCheckBox.Substring(4));
+      return utl.TaoDoiTuongChiTietBanPhanCong(ma, maNhanVien, maCa, ngayLamViec, maNVTao, ngayThemBanChiTietPhanCong, coMat, nghiCoPhep, trangThai);
 
-    //  string maNVTao = urcDangNhap.maNhanVien;
+    }
 
+    private void linklblNumber1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
 
+    }
 
+    private void linklblNumber2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
 
+    }
 
+    private void btnLamMoi_Click(object sender, EventArgs e)
+    {
+      UncheckCheckBoxAutomatically();
+      listviewDanhSachChon.Items.Clear();
+      foreach (ListViewItem lvItem in listviewNhanVien.Items)
+        lvItem.ForeColor = Color.Black;
+    }
 
-    //}
+    private void UncheckCheckBoxAutomatically()
+    {
+      foreach (Control ctr in grbDanhSachNVDuocChon.Controls)
+      {
+        if (ctr is CheckBox)
+        {
+          CheckBox CheckBox = (CheckBox)ctr;
+          CheckBox.Checked = false;
+        }
+      }
+    }
 
+    private void dgvDSPCTrongNgay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+
+    }
+
+    private void dgvDSPCTrongNgay_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+    {
+
+      if (dgvDSPCTrongNgay.Rows.Count > 0)
+      {
+        if (dgvDSPCTrongNgay.Columns[e.ColumnIndex].Name == "colHoTen")
+        {
+          NhanVien_BUS bus = new NhanVien_BUS();
+          List<clsNhanVien_DTO> lstNhanVien = bus.LayNhanVienTheoTenHoacMaa("", "");
+          clsNhanVien_DTO dtoNhanVien = lstNhanVien.Find(u => u.MaNhanVien == e.Value.ToString());
+          e.Value = dtoNhanVien.HoTen;
+        }
+
+        if (dgvDSPCTrongNgay.Columns[e.ColumnIndex].Name == "colTT")
+        {
+          TrangThaiBanPhanCong_BUS bus = new TrangThaiBanPhanCong_BUS();
+          List<clsTrangThaiBanPhanCong_DTO> listTTBPC = bus.LayDSTrangThaiBPC();
+          clsTrangThaiBanPhanCong_DTO dtoTTBPC = listTTBPC.Find(u => u.MaTrangThaiBanPhanCong == (int)e.Value);
+          e.Value = dtoTTBPC.TenTrangThaiBanPhanCong;
+        }
+
+        //foreach(DataGridViewRow row in dgvDSPCTrongNgay.Rows)
+        //{
+        //  if (!Convert.ToBoolean(row.Cells["colTT"].Value.ToString()))
+        //    row.DefaultCellStyle.ForeColor = Color.Gray;
+        //  else row.DefaultCellStyle.ForeColor = Color.Black;
+        //}
+
+      }
+    }
+
+    private void dgvDSPCTrongNgay_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+    {
+      var grid = sender as DataGridView;
+      var rowIdx = (e.RowIndex + 1).ToString();
+
+      var centerFormat = new StringFormat()
+      {
+        Alignment = StringAlignment.Center,
+        LineAlignment = StringAlignment.Center
+      };
+
+      var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+      e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+    }
+
+    
 
 
 

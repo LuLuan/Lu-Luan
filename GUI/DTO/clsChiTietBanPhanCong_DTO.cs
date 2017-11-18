@@ -22,7 +22,10 @@ namespace DTO
      * 
      * co_mat bit
      * nghi_co_phep bit
-     * trang_thai bit
+     * trang_thai int
+     * => 1: Đã chấm công
+     * => 2: Chưa chấm
+     * => 3: Đã xóa
      */
 
 
@@ -94,9 +97,9 @@ namespace DTO
       set { _NghiCoPhep = value; }
     }
 
-    private bool _TrangThai;
+    private int _TrangThai;
 
-    public bool TrangThai
+    public int TrangThai
     {
       get { return _TrangThai; }
       set { _TrangThai = value; }

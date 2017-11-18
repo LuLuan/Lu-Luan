@@ -267,7 +267,7 @@ namespace GUI
 
     
 
-    public clsChiTietBanPhanCong_DTO TaoDoiTuongChiTietBanPhanCong(string maCTBPC, string maNV, string maCa, DateTime ngayLamViec, string nhanVienTao, DateTime ngayThem, bool coMat, bool nghiCoPhep, bool trangThai)
+    public clsChiTietBanPhanCong_DTO TaoDoiTuongChiTietBanPhanCong(string maCTBPC, string maNV, string maCa, DateTime ngayLamViec, string nhanVienTao, DateTime ngayThem, bool coMat, bool nghiCoPhep, int trangThai)
     {
       clsChiTietBanPhanCong_DTO CTBPC = new clsChiTietBanPhanCong_DTO();
 

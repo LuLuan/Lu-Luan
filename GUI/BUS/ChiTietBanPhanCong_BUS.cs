@@ -28,5 +28,18 @@ namespace BUS
       return ma;
     }
 
+
+    public List<clsChiTietBanPhanCong_DTO> LayDSPCTheoNgayVaCa(DateTime ngay, string ca, string loaiNgay)
+    {
+      ChiTietBanPhanCong_DAO dao = new ChiTietBanPhanCong_DAO();
+      return dao.LayDSPCTheoNgayVaCa(ngay, ca, loaiNgay);
+    }
+
+    public bool Update(string maBanGhi, int trangThai)
+    {
+      ChiTietBanPhanCong_DAO dao = new ChiTietBanPhanCong_DAO();
+      return dao.Update(maBanGhi, trangThai);
+    }
+
   }
 }

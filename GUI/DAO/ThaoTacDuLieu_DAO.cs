@@ -12,24 +12,13 @@ namespace DAO
   {
 
     //Huy
-    private static string strCon = @"Data Source=W0Q5NTP4LWZVOB1\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
+    //private static string strCon = @"Data Source=W0Q5NTP4LWZVOB1\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
     //Luân
     private static string strConL = @"Data Source=LUAN\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
     public static SqlConnection TaoKetNoi()
     {
-        SqlConnection con;
-        try
-        {
-            con = new SqlConnection(strCon);
-            con.Open();
-        }
-        catch (Exception)
-        {
-            con = new SqlConnection(strConL);
-            con.Open();
-           
-        }
-      
+      SqlConnection con = new SqlConnection(strConL);
+      con.Open();
       return con;
     }
     public static SqlCommand TruyVan(string Query, SqlConnection con)
