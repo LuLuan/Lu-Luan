@@ -18,6 +18,9 @@ namespace BUS
        {
            return DAO.NguyenLieu_DAO.InsertNguyenLieu(NguyenLieu);
        }
-
+          public static bool UpdateNguyenLieu(clsNguyenLieu_DTO NguyenLieu)
+       {
+           return DAO.NguyenLieu_DAO.UpdateNguyenLieu(NguyenLieu);
+       }
     }
 }

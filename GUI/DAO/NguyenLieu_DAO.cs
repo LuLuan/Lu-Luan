@@ -59,7 +59,15 @@ namespace DAO
             ThaoTacDuLieu_DAO.DongKetNoi(con);
             return (ketqua == 1) ? true : false;
         }
-
+        public static bool UpdateNguyenLieu(clsNguyenLieu_DTO NguyenLieu)
+        {
+            SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+            string query = string.Format("UPDATE NguyenLieu Set anh_nguyen_lieu=N'{0}', ten_nguyen_lieu=N'{1}', tong_so_luong=N'{2}',don_vi_tinh=N'{3}',don_gia=N'{4}',ma_loai_nguyen_lieu=N'{5}',trang_thai=N'{6}' where  ma_nguyen_lieu=N'{7}'",  NguyenLieu.AnhNguyenLieu, NguyenLieu.TenNguyenLieu, NguyenLieu.TongSoLuong, NguyenLieu.DonViTinh, NguyenLieu.DonGia, NguyenLieu.MaLoaiNguyenLieu, NguyenLieu.TrangThai,NguyenLieu.MaNguyenLieu);
+            SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
+            int ketqua = cmd.ExecuteNonQuery();
+            ThaoTacDuLieu_DAO.DongKetNoi(con);
+            return (ketqua == 1) ? true : false;
+        }
 
     }
 }
