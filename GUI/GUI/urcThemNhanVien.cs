@@ -204,7 +204,7 @@ namespace GUI
 
     string destFileName = ""; // Đường dân + Thời gian (năm-tháng-ngày-giờ-phút-giây) + Tên ảnh
     string strError = ""; // Thông bó lỗi nếu sai Biểu thức chính quy
-    //string strWarning = ""; // Cảnh báo trường dữ liệu nhập có thể sai. Nhưng vẫn thêm được vào cơ sở dữ liệu.
+    string strWarning = ""; // Cảnh báo trường dữ liệu nhập có thể sai. Nhưng vẫn thêm được vào cơ sở dữ liệu.
     private void btnDongY_Click(object sender, EventArgs e)
     {
       if (KiemTraDuLieuHopLe())

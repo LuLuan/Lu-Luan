@@ -233,9 +233,21 @@ namespace GUI
     {
       return @"^(([0-9]){10,13})$";
     }
+
+    /// ///////////////// Có min max
+    public string BTCQSoDienThoai(int min, int max)
+    {
+      return @"^(([0-9]){" + min + "," + max + "})$";
+    }
     public string BTCQDiaChi()
     {
       return @"^((?!.*[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\""|\;|\:]).{15,250})$";
+    }
+
+    /// ///////////////// Có min max
+    public string BTCQDiaChi(int min, int max)
+    {
+      return @"^((?!.*[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\""|\;|\:]).{"+min+","+max+"})$";
     }
 
 

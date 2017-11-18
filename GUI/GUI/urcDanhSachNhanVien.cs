@@ -160,12 +160,23 @@ namespace GUI
 
 
     string destFileName = ""; // Đường dân + Thời gian (năm-tháng-ngày-giờ-phút-giây) + Tên ảnh
-    string strError = ""; // Thông bó lỗi nếu sai Biểu thức chính quy
+    string strError = ""; // Thông báo lỗi nếu sai Biểu thức chính quy
+    string strWarning = ""; // Cảnh báo nếu chưa đầy đủ thông tin nào đó : Số điện thoại, Địa chỉ
+
+
     private void btnCapNhat_Click(object sender, EventArgs e)
     {
       if (KiemTraDuLieuHopLe())
       {
-        if (DialogResult.Yes == MessageBox.Show("Bạn muốn cập nhật nhân viên " + txtHoTen.Text, "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        string strThongBao = "Cập nhật nhân viên " + txtHoTen.Text+"\n";
+        MessageBoxIcon MBIcon = MessageBoxIcon.Question;
+        if(strWarning != "")
+        {
+          strThongBao = strWarning + "\n  Vẫn muốn tiếp tục?";
+          MBIcon = MessageBoxIcon.Warning;
+        }
+
+        if (DialogResult.Yes == MessageBox.Show(strThongBao, "Xác nhận cập nhật", MessageBoxButtons.YesNo, MBIcon))
         {
           NhanVien_BUS busNhanVien = new NhanVien_BUS();
           destFileName = TaoDuongDanAnh(); // Lưu đường dẫn ảnh trước khi TaoNhanVien
@@ -192,9 +203,13 @@ namespace GUI
         }
         else MessageBox.Show("Hủy thao tác");
       }
-      else MessageBox.Show(strError, "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      else
+      {
+        MessageBox.Show(strError, "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
 
       strError = "";
+      strWarning = "";
       destFileName = "";
 
 
@@ -215,15 +230,23 @@ namespace GUI
         flag = false;
         strError += " *Họ tên phải dài từ 5 tới 50 kí tự, không bao gồm chữ số và kí tự đặc biệt\n";
       }
-      if (!KiemTraSDT())
+      if (!KiemTraSDT(10, 13))
       {
-        flag = false;
-        strError += " *Số điện thoại phải dài từ 10 tới 13 kí tự là những chữ số\n";
+        if(!KiemTraSDT(0,0))
+        {
+          flag = false;
+          strError += " *Số điện thoại phải dài từ 10 tới 13 kí tự là những chữ số\n";
+        }
+        else strWarning += " *Chưa thêm số điện thoại cho nhân viên\n";
       }
-      if (!KiemTraDiaChi())
+      if (!KiemTraDiaChi(15, 250))
       {
-        flag = false;
-        strError += " *Địa chỉ phải dài từ 15 tới 250 kí tự, chỉ được phép sử dụng chữ cái, chữ số và các kí tự dặc biệt (\" , . / ( ) \")\n";
+        if (!KiemTraDiaChi(0, 0))
+        {
+          flag = false;
+          strError += " *Địa chỉ phải dài từ 15 tới 250 kí tự, chỉ được phép sử dụng chữ cái, chữ số và các kí tự dặc biệt (\" , . / ( ) \")\n";
+        }
+        else strWarning += " *Chưa thêm địa chỉ cho nhân viên\n";
       }
       //if (!KiemTraHinhAnh())
       //{
@@ -310,14 +333,14 @@ namespace GUI
 
     private void txtSoDienThoai_TextChanged(object sender, EventArgs e)
     {
-      if (KiemTraSDT())
+      if (KiemTraSDT(10, 13))
         txtSoDienThoai.ForeColor = Color.Black;
       else txtSoDienThoai.ForeColor = Color.Red;
     }
 
     private void txtDiaChi_TextChanged(object sender, EventArgs e)
     {
-      if (KiemTraDiaChi())
+      if (KiemTraDiaChi(15, 250))
         txtDiaChi.ForeColor = Color.Black;
       else txtDiaChi.ForeColor = Color.Red;
     }
@@ -357,13 +380,13 @@ namespace GUI
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQHoTen(), txtHoTen);
     }
 
-    private bool KiemTraSDT()
+    private bool KiemTraSDT(int min, int max)
     {
-      return utl.KiemTraBieuThucChinhQuy(utl.BTCQSoDienThoai(), txtSoDienThoai);
+      return utl.KiemTraBieuThucChinhQuy(utl.BTCQSoDienThoai(min, max), txtSoDienThoai);
     }
-    private bool KiemTraDiaChi()
+    private bool KiemTraDiaChi(int min, int max)
     {
-      return utl.KiemTraBieuThucChinhQuy(utl.BTCQDiaChi(), txtDiaChi);
+      return utl.KiemTraBieuThucChinhQuy(utl.BTCQDiaChi(min, max), txtDiaChi);
     }
 
 
@@ -694,7 +717,7 @@ namespace GUI
     #region Chuyển định dạng Ngày Tháng Năm DateTimePicker về Short khi chọn một ngày nào đó
     private void dtpNgaySinh_ValueChanged_1(object sender, EventArgs e)
     {
-      //dtpNgaySinh.Format = DateTimePickerFormat.Short;
+      dtpNgaySinh.Format = DateTimePickerFormat.Short;
     }
 
 
