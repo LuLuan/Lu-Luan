@@ -33,12 +33,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grbThongTinSP = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnHuyBoNhapHang = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnNhapNL = new System.Windows.Forms.Button();
             this.cbbLoaiNL = new System.Windows.Forms.ComboBox();
             this.cbbDVTinhNL = new System.Windows.Forms.ComboBox();
             this.cbbTrangThai = new System.Windows.Forms.ComboBox();
+            this.btnAnhNguyenLieu = new System.Windows.Forms.Button();
             this.txtDonGiaNL = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSoLuongNL = new System.Windows.Forms.TextBox();
+            this.picAnhDaiDien = new System.Windows.Forms.PictureBox();
             this.lbTenMonAn = new System.Windows.Forms.Label();
             this.txtTenNL = new System.Windows.Forms.TextBox();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,18 +65,11 @@
             this.colMaNguyenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDSNguyenLieu = new System.Windows.Forms.DataGridView();
             this.grbDSNL = new System.Windows.Forms.GroupBox();
-            this.btnHuyBoNhapHang = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnNhapNL = new System.Windows.Forms.Button();
-            this.btnAnhNguyenLieu = new System.Windows.Forms.Button();
-            this.picAnhDaiDien = new System.Windows.Forms.PictureBox();
             this.picExit = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.grbThongTinSP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnhDaiDien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNguyenLieu)).BeginInit();
             this.grbDSNL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnhDaiDien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +103,47 @@
             this.grbThongTinSP.TabIndex = 55;
             this.grbThongTinSP.TabStop = false;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Enabled = false;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(248, 190);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(200, 28);
+            this.comboBox2.TabIndex = 76;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Enabled = false;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.label7.Location = new System.Drawing.Point(170, 196);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 17);
+            this.label7.TabIndex = 75;
+            this.label7.Text = "NSX";
+            // 
+            // btnHuyBoNhapHang
+            // 
+            this.btnHuyBoNhapHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHuyBoNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuyBoNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHuyBoNhapHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnHuyBoNhapHang.Image = global::GUI.Properties.Resources.icons8_Cancel_35px_2;
+            this.btnHuyBoNhapHang.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuyBoNhapHang.Location = new System.Drawing.Point(740, 70);
+            this.btnHuyBoNhapHang.Name = "btnHuyBoNhapHang";
+            this.btnHuyBoNhapHang.Size = new System.Drawing.Size(152, 45);
+            this.btnHuyBoNhapHang.TabIndex = 74;
+            this.btnHuyBoNhapHang.Text = "   Hủy bỏ";
+            this.btnHuyBoNhapHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHuyBoNhapHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuyBoNhapHang.UseVisualStyleBackColor = true;
+            this.btnHuyBoNhapHang.Visible = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -134,6 +175,42 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(101, 37);
             this.comboBox1.TabIndex = 70;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuu.Enabled = false;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLuu.ForeColor = System.Drawing.Color.Green;
+            this.btnLuu.Image = global::GUI.Properties.Resources.icons8_Save_35px;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuu.Location = new System.Drawing.Point(740, 121);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(152, 45);
+            this.btnLuu.TabIndex = 68;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLuu.UseVisualStyleBackColor = true;
+            // 
+            // btnNhapNL
+            // 
+            this.btnNhapNL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNhapNL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhapNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnNhapNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnNhapNL.Image = global::GUI.Properties.Resources.icons8_New_Copy_35px;
+            this.btnNhapNL.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNhapNL.Location = new System.Drawing.Point(740, 19);
+            this.btnNhapNL.Name = "btnNhapNL";
+            this.btnNhapNL.Size = new System.Drawing.Size(152, 45);
+            this.btnNhapNL.TabIndex = 71;
+            this.btnNhapNL.Text = "   Nhập hàng";
+            this.btnNhapNL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhapNL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNhapNL.UseVisualStyleBackColor = true;
+            this.btnNhapNL.Click += new System.EventHandler(this.btnNhapNL_Click);
             // 
             // cbbLoaiNL
             // 
@@ -167,6 +244,19 @@
             this.cbbTrangThai.Name = "cbbTrangThai";
             this.cbbTrangThai.Size = new System.Drawing.Size(119, 28);
             this.cbbTrangThai.TabIndex = 37;
+            // 
+            // btnAnhNguyenLieu
+            // 
+            this.btnAnhNguyenLieu.BackgroundImage = global::GUI.Properties.Resources.AddImage;
+            this.btnAnhNguyenLieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAnhNguyenLieu.Enabled = false;
+            this.btnAnhNguyenLieu.FlatAppearance.BorderSize = 0;
+            this.btnAnhNguyenLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnhNguyenLieu.Location = new System.Drawing.Point(140, 167);
+            this.btnAnhNguyenLieu.Name = "btnAnhNguyenLieu";
+            this.btnAnhNguyenLieu.Size = new System.Drawing.Size(17, 17);
+            this.btnAnhNguyenLieu.TabIndex = 28;
+            this.btnAnhNguyenLieu.UseVisualStyleBackColor = true;
             // 
             // txtDonGiaNL
             // 
@@ -249,6 +339,18 @@
             this.txtSoLuongNL.Name = "txtSoLuongNL";
             this.txtSoLuongNL.Size = new System.Drawing.Size(200, 27);
             this.txtSoLuongNL.TabIndex = 10;
+            // 
+            // picAnhDaiDien
+            // 
+            this.picAnhDaiDien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picAnhDaiDien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picAnhDaiDien.Enabled = false;
+            this.picAnhDaiDien.Location = new System.Drawing.Point(62, 90);
+            this.picAnhDaiDien.Name = "picAnhDaiDien";
+            this.picAnhDaiDien.Size = new System.Drawing.Size(98, 96);
+            this.picAnhDaiDien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAnhDaiDien.TabIndex = 8;
+            this.picAnhDaiDien.TabStop = false;
             // 
             // lbTenMonAn
             // 
@@ -411,84 +513,6 @@
             this.grbDSNL.TabStop = false;
             this.grbDSNL.Text = "Danh sách  nguyên liệu";
             // 
-            // btnHuyBoNhapHang
-            // 
-            this.btnHuyBoNhapHang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHuyBoNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuyBoNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnHuyBoNhapHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnHuyBoNhapHang.Image = global::GUI.Properties.Resources.icons8_Cancel_35px_2;
-            this.btnHuyBoNhapHang.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHuyBoNhapHang.Location = new System.Drawing.Point(740, 70);
-            this.btnHuyBoNhapHang.Name = "btnHuyBoNhapHang";
-            this.btnHuyBoNhapHang.Size = new System.Drawing.Size(152, 45);
-            this.btnHuyBoNhapHang.TabIndex = 74;
-            this.btnHuyBoNhapHang.Text = "   Hủy bỏ";
-            this.btnHuyBoNhapHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuyBoNhapHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHuyBoNhapHang.UseVisualStyleBackColor = true;
-            this.btnHuyBoNhapHang.Visible = false;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLuu.Enabled = false;
-            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLuu.ForeColor = System.Drawing.Color.Green;
-            this.btnLuu.Image = global::GUI.Properties.Resources.icons8_Save_35px;
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.Location = new System.Drawing.Point(740, 121);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(152, 45);
-            this.btnLuu.TabIndex = 68;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLuu.UseVisualStyleBackColor = true;
-            // 
-            // btnNhapNL
-            // 
-            this.btnNhapNL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNhapNL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhapNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnNhapNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnNhapNL.Image = global::GUI.Properties.Resources.icons8_New_Copy_35px;
-            this.btnNhapNL.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNhapNL.Location = new System.Drawing.Point(740, 19);
-            this.btnNhapNL.Name = "btnNhapNL";
-            this.btnNhapNL.Size = new System.Drawing.Size(152, 45);
-            this.btnNhapNL.TabIndex = 71;
-            this.btnNhapNL.Text = "   Nhập hàng";
-            this.btnNhapNL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapNL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNhapNL.UseVisualStyleBackColor = true;
-            // 
-            // btnAnhNguyenLieu
-            // 
-            this.btnAnhNguyenLieu.BackgroundImage = global::GUI.Properties.Resources.AddImage;
-            this.btnAnhNguyenLieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAnhNguyenLieu.Enabled = false;
-            this.btnAnhNguyenLieu.FlatAppearance.BorderSize = 0;
-            this.btnAnhNguyenLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnhNguyenLieu.Location = new System.Drawing.Point(140, 167);
-            this.btnAnhNguyenLieu.Name = "btnAnhNguyenLieu";
-            this.btnAnhNguyenLieu.Size = new System.Drawing.Size(17, 17);
-            this.btnAnhNguyenLieu.TabIndex = 28;
-            this.btnAnhNguyenLieu.UseVisualStyleBackColor = true;
-            // 
-            // picAnhDaiDien
-            // 
-            this.picAnhDaiDien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picAnhDaiDien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAnhDaiDien.Enabled = false;
-            this.picAnhDaiDien.Location = new System.Drawing.Point(62, 90);
-            this.picAnhDaiDien.Name = "picAnhDaiDien";
-            this.picAnhDaiDien.Size = new System.Drawing.Size(98, 96);
-            this.picAnhDaiDien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAnhDaiDien.TabIndex = 8;
-            this.picAnhDaiDien.TabStop = false;
-            // 
             // picExit
             // 
             this.picExit.BackgroundImage = global::GUI.Properties.Resources.icons8_Close_Window_25px_3;
@@ -498,29 +522,6 @@
             this.picExit.Size = new System.Drawing.Size(22, 22);
             this.picExit.TabIndex = 56;
             this.picExit.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Enabled = false;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.label7.Location = new System.Drawing.Point(170, 196);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 17);
-            this.label7.TabIndex = 75;
-            this.label7.Text = "NSX";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Enabled = false;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(248, 190);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 28);
-            this.comboBox2.TabIndex = 76;
             // 
             // urcNhapNguyenLieu
             // 
@@ -533,9 +534,9 @@
             this.Size = new System.Drawing.Size(930, 530);
             this.grbThongTinSP.ResumeLayout(false);
             this.grbThongTinSP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnhDaiDien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNguyenLieu)).EndInit();
             this.grbDSNL.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAnhDaiDien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             this.ResumeLayout(false);
 

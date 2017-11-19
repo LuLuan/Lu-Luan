@@ -50,6 +50,7 @@
     <Compile Include="LoaiNguyenLieu_DAO.cs" />
     <Compile Include="LoaiTheKhachHang_DAO.cs" />
     <Compile Include="NguyenLieu_DAO.cs" />
+    <Compile Include="NhaCungCap_DAO.cs" />
     <Compile Include="ThanhPhanMonAn_DAO.cs" />
     <Compile Include="DonViTinh_DAO.cs" />
     <Compile Include="KichThuocMonAn_DAO.cs" />

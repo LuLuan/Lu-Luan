@@ -567,6 +567,11 @@ namespace GUI
             }
         }
 
+        private void txtGia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }

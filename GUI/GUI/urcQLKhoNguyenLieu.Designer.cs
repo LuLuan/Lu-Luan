@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlTieuDe = new System.Windows.Forms.Panel();
+            this.lblTieuDe = new System.Windows.Forms.Label();
+            this.timerMenu = new System.Windows.Forms.Timer(this.components);
+            this.pnlContainer = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnMoMenu = new System.Windows.Forms.Button();
             this.btnThemNhanVien = new System.Windows.Forms.Button();
             this.btnXemDSNV = new System.Windows.Forms.Button();
             this.btnXemDSTK = new System.Windows.Forms.Button();
-            this.pnlTieuDe = new System.Windows.Forms.Panel();
-            this.lblTieuDe = new System.Windows.Forms.Label();
-            this.timerMenu = new System.Windows.Forms.Timer(this.components);
-            this.pnlContainer = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.pnlTieuDe.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,39 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(40, 570);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // pnlTieuDe
+            // 
+            this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.pnlTieuDe.Controls.Add(this.lblTieuDe);
+            this.pnlTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.pnlTieuDe.Name = "pnlTieuDe";
+            this.pnlTieuDe.Size = new System.Drawing.Size(930, 40);
+            this.pnlTieuDe.TabIndex = 1;
+            // 
+            // lblTieuDe
+            // 
+            this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTieuDe.ForeColor = System.Drawing.Color.White;
+            this.lblTieuDe.Location = new System.Drawing.Point(125, 0);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(663, 40);
+            this.lblTieuDe.TabIndex = 0;
+            this.lblTieuDe.Text = "QUẢN LÝ KHO NGUYÊN LIỆU";
+            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timerMenu
+            // 
+            this.timerMenu.Interval = 1;
+            this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
+            // 
+            // pnlContainer
+            // 
+            this.pnlContainer.BackColor = System.Drawing.Color.White;
+            this.pnlContainer.Location = new System.Drawing.Point(0, 40);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.Size = new System.Drawing.Size(930, 530);
+            this.pnlContainer.TabIndex = 2;
             // 
             // btnHome
             // 
@@ -89,13 +122,13 @@
             this.btnThemNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThemNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnThemNhanVien.Image = global::GUI.Properties.Resources.icons8_Add_List_25px;
+            this.btnThemNhanVien.Image = global::GUI.Properties.Resources.icons8_Import_20px_2;
             this.btnThemNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemNhanVien.Location = new System.Drawing.Point(2, 143);
+            this.btnThemNhanVien.Location = new System.Drawing.Point(10, 143);
             this.btnThemNhanVien.Name = "btnThemNhanVien";
             this.btnThemNhanVien.Size = new System.Drawing.Size(209, 34);
             this.btnThemNhanVien.TabIndex = 4;
-            this.btnThemNhanVien.Text = "    Thêm nhân viên";
+            this.btnThemNhanVien.Text = "   Nhà cung cấp";
             this.btnThemNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemNhanVien.UseVisualStyleBackColor = true;
             this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
@@ -107,13 +140,13 @@
             this.btnXemDSNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXemDSNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXemDSNV.ForeColor = System.Drawing.Color.White;
-            this.btnXemDSNV.Image = global::GUI.Properties.Resources.icons8_Restaurant_25px;
+            this.btnXemDSNV.Image = global::GUI.Properties.Resources.icons8_Meat_20px;
             this.btnXemDSNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemDSNV.Location = new System.Drawing.Point(1, 72);
+            this.btnXemDSNV.Location = new System.Drawing.Point(5, 72);
             this.btnXemDSNV.Name = "btnXemDSNV";
             this.btnXemDSNV.Size = new System.Drawing.Size(209, 34);
             this.btnXemDSNV.TabIndex = 4;
-            this.btnXemDSNV.Text = "    Nhân viên";
+            this.btnXemDSNV.Text = "    Kho nguyên liệu";
             this.btnXemDSNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXemDSNV.UseVisualStyleBackColor = true;
             this.btnXemDSNV.Click += new System.EventHandler(this.btnXemDSNV_Click);
@@ -125,49 +158,16 @@
             this.btnXemDSTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXemDSTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXemDSTK.ForeColor = System.Drawing.Color.White;
-            this.btnXemDSTK.Image = global::GUI.Properties.Resources.list_20px;
+            this.btnXemDSTK.Image = global::GUI.Properties.Resources.icons8_Import_20px_1;
             this.btnXemDSTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXemDSTK.Location = new System.Drawing.Point(6, 106);
             this.btnXemDSTK.Name = "btnXemDSTK";
             this.btnXemDSTK.Size = new System.Drawing.Size(209, 34);
             this.btnXemDSTK.TabIndex = 4;
-            this.btnXemDSTK.Text = "    Tài khoản";
+            this.btnXemDSTK.Text = "     Loại nguyên liệu";
             this.btnXemDSTK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXemDSTK.UseVisualStyleBackColor = true;
             this.btnXemDSTK.Click += new System.EventHandler(this.btnXemDSTK_Click);
-            // 
-            // pnlTieuDe
-            // 
-            this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.pnlTieuDe.Controls.Add(this.lblTieuDe);
-            this.pnlTieuDe.Location = new System.Drawing.Point(0, 0);
-            this.pnlTieuDe.Name = "pnlTieuDe";
-            this.pnlTieuDe.Size = new System.Drawing.Size(930, 40);
-            this.pnlTieuDe.TabIndex = 1;
-            // 
-            // lblTieuDe
-            // 
-            this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTieuDe.ForeColor = System.Drawing.Color.White;
-            this.lblTieuDe.Location = new System.Drawing.Point(125, 0);
-            this.lblTieuDe.Name = "lblTieuDe";
-            this.lblTieuDe.Size = new System.Drawing.Size(663, 40);
-            this.lblTieuDe.TabIndex = 0;
-            this.lblTieuDe.Text = "QUẢN LÝ KHO NGUYÊN LIỆU";
-            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // timerMenu
-            // 
-            this.timerMenu.Interval = 1;
-            this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
-            // 
-            // pnlContainer
-            // 
-            this.pnlContainer.BackColor = System.Drawing.Color.White;
-            this.pnlContainer.Location = new System.Drawing.Point(0, 40);
-            this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(930, 530);
-            this.pnlContainer.TabIndex = 2;
             // 
             // urcQLKhoNguyenLieu
             // 
