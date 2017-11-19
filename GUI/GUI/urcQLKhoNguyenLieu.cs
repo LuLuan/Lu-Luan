@@ -23,7 +23,7 @@ namespace GUI
         urcCongThucMonAn urcCongThucMonAn = new urcCongThucMonAn();
         urcDanhSachNguyenLieu urcDanhSachNguyenLieu = new urcDanhSachNguyenLieu();
         urcDanhSachLoaiNguyenLieu urcDanhSachLoaiNguyenLieu = new urcDanhSachLoaiNguyenLieu();
-        
+        urcNhaCungCap urcNhaCungCap = new urcNhaCungCap();
         private void CaiDatPanelMenu(Button btn)
         {
             if (btn.Name == btnXemDSNV.Name)
@@ -61,11 +61,13 @@ namespace GUI
         private void urcQLNhanVien_Load(object sender, EventArgs e)
         {
             CaiDatPanelMenu(btnXemDSNV);
+
         }
 
         private void btnXemDSNV_Click(object sender, EventArgs e)
         {
             CaiDatPanelMenu(btnXemDSNV);
+            urcDanhSachNguyenLieu.BringToFront();
             if(isClickedbtnMoMenu == true)
                 btnMoMenu_Click(sender, e);
         }
@@ -73,6 +75,7 @@ namespace GUI
         private void btnXemDSTK_Click(object sender, EventArgs e)
         {
             CaiDatPanelMenu(btnXemDSTK);
+            urcDanhSachLoaiNguyenLieu.BringToFront();
             if (isClickedbtnMoMenu == true)
                 btnMoMenu_Click(sender, e);
         }
@@ -80,15 +83,15 @@ namespace GUI
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
             CaiDatPanelMenu(btnThemNhanVien);
-            
-            if (!pnlContainer.Controls.ContainsKey("urcThemNhanVien"))
+
+            if (!pnlContainer.Controls.ContainsKey("urcNhaCungCap"))
             {
-                pnlContainer.Controls.Add(urcCongThucMonAn);
-                urcCongThucMonAn.BackColor = Color.White;
-                urcCongThucMonAn.Top = 100;
-                urcCongThucMonAn.Left = 300;
+                pnlContainer.Controls.Add(urcNhaCungCap);
+                urcNhaCungCap.BackColor = Color.White;
+                urcNhaCungCap.Top = 0;
+                urcNhaCungCap.Left = 0;
             }
-            urcCongThucMonAn.BringToFront();
+            urcNhaCungCap.BringToFront();
             if (isClickedbtnMoMenu == true)
                 btnMoMenu_Click(sender, e);
         }

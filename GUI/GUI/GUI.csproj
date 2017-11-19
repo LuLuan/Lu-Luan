@@ -161,6 +161,12 @@
     <Compile Include="urcDanhSachTheKhachHang.Designer.cs">
       <DependentUpon>urcDanhSachTheKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="urcNhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcNhaCungCap.Designer.cs">
+      <DependentUpon>urcNhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="urcNhapNguyenLieu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="urcDanhSachTheKhachHang.resx">
       <DependentUpon>urcDanhSachTheKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcNhaCungCap.resx">
+      <DependentUpon>urcNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="urcNhapNguyenLieu.resx">
       <DependentUpon>urcNhapNguyenLieu.cs</DependentUpon>
@@ -617,6 +626,10 @@
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Checkmark_52px.png" />
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Ok_25px.png" />
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_64px %282%29.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Import_20px_1.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Database_Import_20px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Meat_20px.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Import_20px_2.png" />
     <Content Include="Resources\COMEBUY-logo.png" />
     <Content Include="Resources\customer-card.png" />
   </ItemGroup>

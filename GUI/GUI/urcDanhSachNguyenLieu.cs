@@ -102,7 +102,9 @@ namespace GUI
             cbbLoaiNL.ValueMember = "MaLoaiNguyenLieu";
             cbbLoaiNL.SelectedValue = "";
             /// Load cbb Loại món ăn
-
+            cbbNCC.DataSource = BUS.NhaCungCap_BUS.DSNhaCungCap("");
+            cbbNCC.DisplayMember = "TenNhaCungCap";
+            cbbNCC.ValueMember = "MaNhaCungCap";
         }
 
         public void isEnableControls(bool isEnable)
@@ -403,6 +405,31 @@ namespace GUI
 
 
            
+        }
+
+        private void picAddNhaCungCap_Click(object sender, EventArgs e)
+        {
+            urcNhaCungCap urcNhaCungCap = new urcNhaCungCap();
+            if (!this.Controls.ContainsKey("urcNhaCungCap"))
+            {
+                this.Controls.Add(urcNhaCungCap);
+                urcNhaCungCap.BackColor = Color.White;
+                urcNhaCungCap.Top = 0;
+                urcNhaCungCap.Left = 0;
+            }
+            urcNhaCungCap.BringToFront();
+        }
+
+        private void cbbNCC_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string query = string.Format("Select * from NhaCungCap where ten_nha_cung_cap like N'%{0}%'", cbbNCC.Text);
+            cbbNCC.DataSource = BUS.NhaCungCap_BUS.DSNhaCungCap(query);
+        }
+
+        private void cbbNCC_TextChanged(object sender, EventArgs e)
+        {
+            string query = string.Format("Select * from NhaCungCap where ten_nha_cung_cap like N'%{0}%'", cbbNCC.Text);
+            cbbNCC.DataSource = BUS.NhaCungCap_BUS.DSNhaCungCap(query);
         }
 
 
