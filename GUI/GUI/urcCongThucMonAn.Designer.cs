@@ -45,6 +45,8 @@
             this.colAnhNguyenLieu = new System.Windows.Forms.DataGridViewImageColumn();
             this.colLoaiNguyenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDonViTinhNguyenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThemNguyenLieu = new System.Windows.Forms.Button();
+            this.picAnhNLNL = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenNLNL = new System.Windows.Forms.TextBox();
@@ -56,8 +58,11 @@
             this.grbCongThuc = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnChinhSua = new System.Windows.Forms.Button();
             this.txtDonVi = new System.Windows.Forms.TextBox();
+            this.btnTroVeBanDau = new System.Windows.Forms.Button();
             this.lbDonVi = new System.Windows.Forms.Label();
+            this.btnLuuChinhSuaSanPham = new System.Windows.Forms.Button();
             this.txtSoLuongTP = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenNLTP = new System.Windows.Forms.TextBox();
@@ -69,27 +74,22 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.picAnhMonAnTP = new System.Windows.Forms.PictureBox();
             this.txtTongSoNLTP = new System.Windows.Forms.TextBox();
             this.txtMaMonAnTP = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTenMonAnTP = new System.Windows.Forms.TextBox();
             this.lbGiaTriSoLuongBanDau = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
-            this.btnChinhSua = new System.Windows.Forms.Button();
-            this.btnTroVeBanDau = new System.Windows.Forms.Button();
-            this.btnLuuChinhSuaSanPham = new System.Windows.Forms.Button();
-            this.picAnhMonAnTP = new System.Windows.Forms.PictureBox();
-            this.btnThemNguyenLieu = new System.Windows.Forms.Button();
-            this.picAnhNLNL = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTongSoNL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnhNLNL)).BeginInit();
             this.grbCongThuc.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhPhanCT)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhMonAnTP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnhNLNL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -130,6 +130,7 @@
             // txtMaNLNL
             // 
             this.txtMaNLNL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaNLNL.Enabled = false;
             this.txtMaNLNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMaNLNL.Location = new System.Drawing.Point(205, 128);
             this.txtMaNLNL.Multiline = true;
@@ -240,6 +241,33 @@
             this.colDonViTinhNguyenLieu.Name = "colDonViTinhNguyenLieu";
             this.colDonViTinhNguyenLieu.ReadOnly = true;
             // 
+            // btnThemNguyenLieu
+            // 
+            this.btnThemNguyenLieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnThemNguyenLieu.Enabled = false;
+            this.btnThemNguyenLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemNguyenLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThemNguyenLieu.Image = global::GUI.Properties.Resources.icons8_Forward_52px_21;
+            this.btnThemNguyenLieu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemNguyenLieu.Location = new System.Drawing.Point(400, 185);
+            this.btnThemNguyenLieu.Name = "btnThemNguyenLieu";
+            this.btnThemNguyenLieu.Size = new System.Drawing.Size(130, 70);
+            this.btnThemNguyenLieu.TabIndex = 46;
+            this.btnThemNguyenLieu.Text = "Thêm";
+            this.btnThemNguyenLieu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnThemNguyenLieu.UseVisualStyleBackColor = true;
+            this.btnThemNguyenLieu.Click += new System.EventHandler(this.btnThemNguyenLieu_Click);
+            // 
+            // picAnhNLNL
+            // 
+            this.picAnhNLNL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picAnhNLNL.Location = new System.Drawing.Point(12, 128);
+            this.picAnhNLNL.Name = "picAnhNLNL";
+            this.picAnhNLNL.Size = new System.Drawing.Size(111, 127);
+            this.picAnhNLNL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAnhNLNL.TabIndex = 31;
+            this.picAnhNLNL.TabStop = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -265,6 +293,7 @@
             // txtTenNLNL
             // 
             this.txtTenNLNL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenNLNL.Enabled = false;
             this.txtTenNLNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenNLNL.Location = new System.Drawing.Point(205, 162);
             this.txtTenNLNL.Multiline = true;
@@ -286,6 +315,7 @@
             // txtDonViNLNL
             // 
             this.txtDonViNLNL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDonViNLNL.Enabled = false;
             this.txtDonViNLNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDonViNLNL.Location = new System.Drawing.Point(205, 228);
             this.txtDonViNLNL.Multiline = true;
@@ -366,6 +396,19 @@
             this.label6.TabIndex = 55;
             this.label6.Text = "Tên NL";
             // 
+            // btnChinhSua
+            // 
+            this.btnChinhSua.BackgroundImage = global::GUI.Properties.Resources.icons8_Edit_25px_11;
+            this.btnChinhSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChinhSua.FlatAppearance.BorderSize = 0;
+            this.btnChinhSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChinhSua.Location = new System.Drawing.Point(316, 20);
+            this.btnChinhSua.Name = "btnChinhSua";
+            this.btnChinhSua.Size = new System.Drawing.Size(25, 25);
+            this.btnChinhSua.TabIndex = 42;
+            this.btnChinhSua.UseVisualStyleBackColor = true;
+            this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
+            // 
             // txtDonVi
             // 
             this.txtDonVi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -377,6 +420,21 @@
             this.txtDonVi.Size = new System.Drawing.Size(191, 27);
             this.txtDonVi.TabIndex = 53;
             // 
+            // btnTroVeBanDau
+            // 
+            this.btnTroVeBanDau.BackgroundImage = global::GUI.Properties.Resources.icons8_Replace_25px_1;
+            this.btnTroVeBanDau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTroVeBanDau.Enabled = false;
+            this.btnTroVeBanDau.FlatAppearance.BorderSize = 0;
+            this.btnTroVeBanDau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTroVeBanDau.Location = new System.Drawing.Point(313, 84);
+            this.btnTroVeBanDau.Name = "btnTroVeBanDau";
+            this.btnTroVeBanDau.Size = new System.Drawing.Size(27, 27);
+            this.btnTroVeBanDau.TabIndex = 57;
+            this.btnTroVeBanDau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTroVeBanDau.UseVisualStyleBackColor = true;
+            this.btnTroVeBanDau.Click += new System.EventHandler(this.btnTroVeBanDau_Click);
+            // 
             // lbDonVi
             // 
             this.lbDonVi.AutoSize = true;
@@ -387,6 +445,20 @@
             this.lbDonVi.Size = new System.Drawing.Size(36, 17);
             this.lbDonVi.TabIndex = 52;
             this.lbDonVi.Text = "Tên";
+            // 
+            // btnLuuChinhSuaSanPham
+            // 
+            this.btnLuuChinhSuaSanPham.BackgroundImage = global::GUI.Properties.Resources.icons8_Save_48px_2;
+            this.btnLuuChinhSuaSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLuuChinhSuaSanPham.Enabled = false;
+            this.btnLuuChinhSuaSanPham.FlatAppearance.BorderSize = 0;
+            this.btnLuuChinhSuaSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuuChinhSuaSanPham.Location = new System.Drawing.Point(313, 51);
+            this.btnLuuChinhSuaSanPham.Name = "btnLuuChinhSuaSanPham";
+            this.btnLuuChinhSuaSanPham.Size = new System.Drawing.Size(27, 27);
+            this.btnLuuChinhSuaSanPham.TabIndex = 53;
+            this.btnLuuChinhSuaSanPham.UseVisualStyleBackColor = true;
+            this.btnLuuChinhSuaSanPham.Click += new System.EventHandler(this.btnLuuChinhSuaSanPham_Click);
             // 
             // txtSoLuongTP
             // 
@@ -535,6 +607,16 @@
             this.label9.TabIndex = 63;
             this.label9.Text = "Tên Món";
             // 
+            // picAnhMonAnTP
+            // 
+            this.picAnhMonAnTP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picAnhMonAnTP.Location = new System.Drawing.Point(260, 14);
+            this.picAnhMonAnTP.Name = "picAnhMonAnTP";
+            this.picAnhMonAnTP.Size = new System.Drawing.Size(87, 93);
+            this.picAnhMonAnTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAnhMonAnTP.TabIndex = 49;
+            this.picAnhMonAnTP.TabStop = false;
+            // 
             // txtTongSoNLTP
             // 
             this.txtTongSoNLTP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -605,85 +687,6 @@
             this.picExit.TabStop = false;
             this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
-            // btnChinhSua
-            // 
-            this.btnChinhSua.BackgroundImage = global::GUI.Properties.Resources.icons8_Edit_25px_11;
-            this.btnChinhSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChinhSua.FlatAppearance.BorderSize = 0;
-            this.btnChinhSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChinhSua.Location = new System.Drawing.Point(316, 20);
-            this.btnChinhSua.Name = "btnChinhSua";
-            this.btnChinhSua.Size = new System.Drawing.Size(25, 25);
-            this.btnChinhSua.TabIndex = 42;
-            this.btnChinhSua.UseVisualStyleBackColor = true;
-            this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
-            // 
-            // btnTroVeBanDau
-            // 
-            this.btnTroVeBanDau.BackgroundImage = global::GUI.Properties.Resources.icons8_Replace_25px_1;
-            this.btnTroVeBanDau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTroVeBanDau.Enabled = false;
-            this.btnTroVeBanDau.FlatAppearance.BorderSize = 0;
-            this.btnTroVeBanDau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTroVeBanDau.Location = new System.Drawing.Point(313, 84);
-            this.btnTroVeBanDau.Name = "btnTroVeBanDau";
-            this.btnTroVeBanDau.Size = new System.Drawing.Size(27, 27);
-            this.btnTroVeBanDau.TabIndex = 57;
-            this.btnTroVeBanDau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnTroVeBanDau.UseVisualStyleBackColor = true;
-            this.btnTroVeBanDau.Click += new System.EventHandler(this.btnTroVeBanDau_Click);
-            // 
-            // btnLuuChinhSuaSanPham
-            // 
-            this.btnLuuChinhSuaSanPham.BackgroundImage = global::GUI.Properties.Resources.icons8_Save_48px_2;
-            this.btnLuuChinhSuaSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLuuChinhSuaSanPham.Enabled = false;
-            this.btnLuuChinhSuaSanPham.FlatAppearance.BorderSize = 0;
-            this.btnLuuChinhSuaSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuuChinhSuaSanPham.Location = new System.Drawing.Point(313, 51);
-            this.btnLuuChinhSuaSanPham.Name = "btnLuuChinhSuaSanPham";
-            this.btnLuuChinhSuaSanPham.Size = new System.Drawing.Size(27, 27);
-            this.btnLuuChinhSuaSanPham.TabIndex = 53;
-            this.btnLuuChinhSuaSanPham.UseVisualStyleBackColor = true;
-            this.btnLuuChinhSuaSanPham.Click += new System.EventHandler(this.btnLuuChinhSuaSanPham_Click);
-            // 
-            // picAnhMonAnTP
-            // 
-            this.picAnhMonAnTP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAnhMonAnTP.Location = new System.Drawing.Point(260, 14);
-            this.picAnhMonAnTP.Name = "picAnhMonAnTP";
-            this.picAnhMonAnTP.Size = new System.Drawing.Size(87, 93);
-            this.picAnhMonAnTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAnhMonAnTP.TabIndex = 49;
-            this.picAnhMonAnTP.TabStop = false;
-            // 
-            // btnThemNguyenLieu
-            // 
-            this.btnThemNguyenLieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnThemNguyenLieu.Enabled = false;
-            this.btnThemNguyenLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemNguyenLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThemNguyenLieu.Image = global::GUI.Properties.Resources.icons8_Forward_52px_21;
-            this.btnThemNguyenLieu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemNguyenLieu.Location = new System.Drawing.Point(400, 185);
-            this.btnThemNguyenLieu.Name = "btnThemNguyenLieu";
-            this.btnThemNguyenLieu.Size = new System.Drawing.Size(130, 70);
-            this.btnThemNguyenLieu.TabIndex = 46;
-            this.btnThemNguyenLieu.Text = "Thêm";
-            this.btnThemNguyenLieu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnThemNguyenLieu.UseVisualStyleBackColor = true;
-            this.btnThemNguyenLieu.Click += new System.EventHandler(this.btnThemNguyenLieu_Click);
-            // 
-            // picAnhNLNL
-            // 
-            this.picAnhNLNL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAnhNLNL.Location = new System.Drawing.Point(12, 128);
-            this.picAnhNLNL.Name = "picAnhNLNL";
-            this.picAnhNLNL.Size = new System.Drawing.Size(111, 127);
-            this.picAnhNLNL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAnhNLNL.TabIndex = 31;
-            this.picAnhNLNL.TabStop = false;
-            // 
             // urcCongThucMonAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -700,15 +703,15 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTongSoNL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnhNLNL)).EndInit();
             this.grbCongThuc.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhPhanCT)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhMonAnTP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnhNLNL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

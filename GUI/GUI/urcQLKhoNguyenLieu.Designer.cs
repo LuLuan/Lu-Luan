@@ -124,7 +124,7 @@
             this.btnThemNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnThemNhanVien.Image = global::GUI.Properties.Resources.icons8_Import_20px_2;
             this.btnThemNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemNhanVien.Location = new System.Drawing.Point(7, 143);
+            this.btnThemNhanVien.Location = new System.Drawing.Point(10, 143);
             this.btnThemNhanVien.Name = "btnThemNhanVien";
             this.btnThemNhanVien.Size = new System.Drawing.Size(209, 34);
             this.btnThemNhanVien.TabIndex = 4;
@@ -164,7 +164,7 @@
             this.btnXemDSTK.Name = "btnXemDSTK";
             this.btnXemDSTK.Size = new System.Drawing.Size(209, 34);
             this.btnXemDSTK.TabIndex = 4;
-            this.btnXemDSTK.Text = "     Nhập hàng";
+            this.btnXemDSTK.Text = "     Loại nguyên liệu";
             this.btnXemDSTK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXemDSTK.UseVisualStyleBackColor = true;
             this.btnXemDSTK.Click += new System.EventHandler(this.btnXemDSTK_Click);

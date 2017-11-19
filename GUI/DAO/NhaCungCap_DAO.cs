@@ -12,7 +12,7 @@ namespace DAO
     {
         public static List<clsNhaCungCap_DTO> LayDSNhaCungCap(string ChuoiTimKiem)
         {
-            string query = string.Format("select * from NhaCungCap");
+            string query = string.Format("select * from NhaCungCap where trang_thai = 'True' ");
             if (ChuoiTimKiem != "")
             {
                 query = ChuoiTimKiem;

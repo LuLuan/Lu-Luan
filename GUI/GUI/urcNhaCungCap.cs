@@ -144,8 +144,17 @@ namespace GUI
         {
             lstNhaCungCap = BUS.NhaCungCap_BUS.DSNhaCungCap("");
             dgvDSNhaCungCap.AutoGenerateColumns = false;
-            MessageBox.Show(lstNhaCungCap.Count.ToString());
             dgvDSNhaCungCap.DataSource = lstNhaCungCap;
+        }
+
+        private void txtSoDienThoaiNCC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSoDienThoaiNCC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

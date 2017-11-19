@@ -54,33 +54,33 @@
             this.txtSoLuongNL = new System.Windows.Forms.TextBox();
             this.lbTenMonAn = new System.Windows.Forms.Label();
             this.grbThongTinSP = new System.Windows.Forms.GroupBox();
-            this.picAddNhaCungCap = new System.Windows.Forms.PictureBox();
-            this.picAddLoaiNguyenLieu = new System.Windows.Forms.PictureBox();
-            this.picAddDonViTinh = new System.Windows.Forms.PictureBox();
             this.cbbNCC = new System.Windows.Forms.ComboBox();
             this.lbNCC = new System.Windows.Forms.Label();
-            this.btnHuyBoChinhSua = new System.Windows.Forms.Button();
-            this.btnHuyBoNhapHang = new System.Windows.Forms.Button();
-            this.btnHuyBoThemMoi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtTenNL = new System.Windows.Forms.TextBox();
+            this.picExit = new System.Windows.Forms.PictureBox();
+            this.picAddNhaCungCap = new System.Windows.Forms.PictureBox();
+            this.picAddLoaiNguyenLieu = new System.Windows.Forms.PictureBox();
+            this.picAddDonViTinh = new System.Windows.Forms.PictureBox();
+            this.btnHuyBoChinhSua = new System.Windows.Forms.Button();
+            this.btnHuyBoNhapHang = new System.Windows.Forms.Button();
+            this.btnHuyBoThemMoi = new System.Windows.Forms.Button();
             this.btnChinhSuaNL = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnNhapNL = new System.Windows.Forms.Button();
             this.btnThemMoiNL = new System.Windows.Forms.Button();
             this.btnAnhNguyenLieu = new System.Windows.Forms.Button();
             this.picAnhNguyenLieu = new System.Windows.Forms.PictureBox();
-            this.txtTenNL = new System.Windows.Forms.TextBox();
-            this.picExit = new System.Windows.Forms.PictureBox();
             this.grbDSNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNguyenLieu)).BeginInit();
             this.grbThongTinSP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddNhaCungCap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddLoaiNguyenLieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddDonViTinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhNguyenLieu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             this.SuspendLayout();
             // 
             // grbDSNL
@@ -387,6 +387,84 @@
             this.grbThongTinSP.TabIndex = 46;
             this.grbThongTinSP.TabStop = false;
             // 
+            // cbbNCC
+            // 
+            this.cbbNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbNCC.FormattingEnabled = true;
+            this.cbbNCC.Location = new System.Drawing.Point(235, 186);
+            this.cbbNCC.Name = "cbbNCC";
+            this.cbbNCC.Size = new System.Drawing.Size(200, 28);
+            this.cbbNCC.TabIndex = 77;
+            this.cbbNCC.Visible = false;
+            // 
+            // lbNCC
+            // 
+            this.lbNCC.AutoSize = true;
+            this.lbNCC.Enabled = false;
+            this.lbNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.lbNCC.Location = new System.Drawing.Point(157, 192);
+            this.lbNCC.Name = "lbNCC";
+            this.lbNCC.Size = new System.Drawing.Size(39, 17);
+            this.lbNCC.TabIndex = 76;
+            this.lbNCC.Text = "NCC";
+            this.lbNCC.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(15, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 29);
+            this.label1.TabIndex = 68;
+            this.label1.Text = "Tìm Kiếm:";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTimKiem.ForeColor = System.Drawing.Color.Blue;
+            this.txtTimKiem.Location = new System.Drawing.Point(189, 27);
+            this.txtTimKiem.Multiline = true;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(406, 36);
+            this.txtTimKiem.TabIndex = 69;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(601, 26);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(101, 37);
+            this.comboBox1.TabIndex = 70;
+            // 
+            // txtTenNL
+            // 
+            this.txtTenNL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenNL.Enabled = false;
+            this.txtTenNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenNL.Location = new System.Drawing.Point(235, 87);
+            this.txtTenNL.Multiline = true;
+            this.txtTenNL.Name = "txtTenNL";
+            this.txtTenNL.Size = new System.Drawing.Size(200, 27);
+            this.txtTenNL.TabIndex = 5;
+            // 
+            // picExit
+            // 
+            this.picExit.BackgroundImage = global::GUI.Properties.Resources.icons8_Close_Window_25px_3;
+            this.picExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picExit.Location = new System.Drawing.Point(10, 5);
+            this.picExit.Name = "picExit";
+            this.picExit.Size = new System.Drawing.Size(22, 22);
+            this.picExit.TabIndex = 53;
+            this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
+            // 
             // picAddNhaCungCap
             // 
             this.picAddNhaCungCap.BackgroundImage = global::GUI.Properties.Resources.icons8_Add_64px__2_;
@@ -420,30 +498,6 @@
             this.picAddDonViTinh.TabIndex = 78;
             this.picAddDonViTinh.TabStop = false;
             this.picAddDonViTinh.Click += new System.EventHandler(this.picAddDonViTinh_Click);
-            // 
-            // cbbNCC
-            // 
-            this.cbbNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbbNCC.FormattingEnabled = true;
-            this.cbbNCC.Location = new System.Drawing.Point(235, 186);
-            this.cbbNCC.Name = "cbbNCC";
-            this.cbbNCC.Size = new System.Drawing.Size(200, 28);
-            this.cbbNCC.TabIndex = 77;
-            this.cbbNCC.Visible = false;
-            // 
-            // lbNCC
-            // 
-            this.lbNCC.AutoSize = true;
-            this.lbNCC.Enabled = false;
-            this.lbNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.lbNCC.Location = new System.Drawing.Point(157, 192);
-            this.lbNCC.Name = "lbNCC";
-            this.lbNCC.Size = new System.Drawing.Size(39, 17);
-            this.lbNCC.TabIndex = 76;
-            this.lbNCC.Text = "NCC";
-            this.lbNCC.Visible = false;
             // 
             // btnHuyBoChinhSua
             // 
@@ -501,38 +555,6 @@
             this.btnHuyBoThemMoi.UseVisualStyleBackColor = true;
             this.btnHuyBoThemMoi.Visible = false;
             this.btnHuyBoThemMoi.Click += new System.EventHandler(this.btnHuyBoThemMoi_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(15, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 29);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "Tìm Kiếm:";
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTimKiem.ForeColor = System.Drawing.Color.Blue;
-            this.txtTimKiem.Location = new System.Drawing.Point(189, 27);
-            this.txtTimKiem.Multiline = true;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(406, 36);
-            this.txtTimKiem.TabIndex = 69;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(601, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(101, 37);
-            this.comboBox1.TabIndex = 70;
             // 
             // btnChinhSuaNL
             // 
@@ -633,27 +655,6 @@
             this.picAnhNguyenLieu.TabIndex = 8;
             this.picAnhNguyenLieu.TabStop = false;
             // 
-            // txtTenNL
-            // 
-            this.txtTenNL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTenNL.Enabled = false;
-            this.txtTenNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenNL.Location = new System.Drawing.Point(235, 87);
-            this.txtTenNL.Multiline = true;
-            this.txtTenNL.Name = "txtTenNL";
-            this.txtTenNL.Size = new System.Drawing.Size(200, 27);
-            this.txtTenNL.TabIndex = 5;
-            // 
-            // picExit
-            // 
-            this.picExit.BackgroundImage = global::GUI.Properties.Resources.icons8_Close_Window_25px_3;
-            this.picExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picExit.Location = new System.Drawing.Point(10, 5);
-            this.picExit.Name = "picExit";
-            this.picExit.Size = new System.Drawing.Size(22, 22);
-            this.picExit.TabIndex = 53;
-            this.picExit.TabStop = false;
-            // 
             // urcDanhSachNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -668,11 +669,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNguyenLieu)).EndInit();
             this.grbThongTinSP.ResumeLayout(false);
             this.grbThongTinSP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddNhaCungCap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddLoaiNguyenLieu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddDonViTinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhNguyenLieu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             this.ResumeLayout(false);
 
         }

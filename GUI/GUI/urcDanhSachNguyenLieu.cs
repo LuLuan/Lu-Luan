@@ -154,7 +154,8 @@ namespace GUI
             Utilities.ResetAllControls(grbThongTinSP);
             isEnableControls(true);
             dgvDSNguyenLieu.Enabled = false;
-
+            txtSoLuongNL.Enabled = false;
+            picAnhNguyenLieu.Image = null;
         }
 
 
@@ -261,11 +262,7 @@ namespace GUI
                 MessageBox.Show("Thiếu dữ liệu tên "); return;
             }
             NguyenLieu.TenNguyenLieu = txtTenNL.Text;
-            if (txtSoLuongNL.Text == "")
-            {
-                MessageBox.Show("Thiếu dữ liệu số lượng "); return;
-            }
-            NguyenLieu.TongSoLuong = float.Parse(txtSoLuongNL.Text);
+          
             if (txtDonGiaNL.Text == "")
             {
                 MessageBox.Show("Thiếu dữ liệu đơn giá "); return;
@@ -281,9 +278,9 @@ namespace GUI
                 MessageBox.Show("Thiếu dữ liệu loại nguyên liệu"); return;
             }
             NguyenLieu.MaLoaiNguyenLieu = cbbLoaiNL.SelectedValue.ToString().Trim();
+            NguyenLieu.TongSoLuong = 0;
             //  NguyenLieu.TrangThai = (bool)cbbTrangThai.SelectedValue;
             NguyenLieu.TrangThai = true; // tạm thời để là true chưa sửa 
-
             if (btnHuyBoThemMoi.Visible == true)// Đang thêm mới
             {
 
@@ -301,6 +298,11 @@ namespace GUI
                 }
 
             }
+            if (txtSoLuongNL.Text == "")
+            {
+                MessageBox.Show("Thiếu dữ liệu số lượng "); return;
+            }
+            NguyenLieu.TongSoLuong = float.Parse(txtSoLuongNL.Text);
             if (btnHuyBoNhapHang.Visible == true)//Đang nhập hàng thêm vào
             {
 
@@ -430,6 +432,11 @@ namespace GUI
         {
             string query = string.Format("Select * from NhaCungCap where ten_nha_cung_cap like N'%{0}%'", cbbNCC.Text);
             cbbNCC.DataSource = BUS.NhaCungCap_BUS.DSNhaCungCap(query);
+        }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            this.Parent.Controls.Remove(this);
         }
 
 
