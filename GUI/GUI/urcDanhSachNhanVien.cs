@@ -391,9 +391,6 @@ namespace GUI
 
 
 
-
-
-
     #endregion
 
 
@@ -416,9 +413,10 @@ namespace GUI
             NV.MaNhanVien = lblMaNV.Text;
             NV.TrangThai = 4;
             NhanVien_BUS busNV = new NhanVien_BUS();
+            TaiKhoan_BUS busTK = new TaiKhoan_BUS();
             try
             {
-              if (busNV.ThaoTacVoiDoiTuongNhanVien(NV, "Delete"))
+              if (busNV.ThaoTacVoiDoiTuongNhanVien(NV, "Delete") && (busTK.XoaTaiKhoanKhiXoaNhanVien(lblMaNV.Text)))
               {
                 MessageBox.Show("Đã xóa nhân viên " + txtHoTen.Text);
                 HienThiDSNhanVien();
@@ -1019,10 +1017,6 @@ namespace GUI
       }
         
     }
-
-
-
-
 
 
 

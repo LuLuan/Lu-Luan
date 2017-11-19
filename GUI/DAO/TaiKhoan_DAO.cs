@@ -26,7 +26,7 @@ namespace DAO
     {
       List<clsTaiKhoan_DTO> lstTaiKhoan = new List<clsTaiKhoan_DTO>();
       SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-      string query = string.Format("SELECT ma_dang_nhap, mat_khau, ngay_tao, ma_quyen_dang_nhap, ma_khan_cap, trang_thai FROM TaiKhoan, NhanVien WHERE TaiKhoan.ma_dang_nhap = NhanVien.ma_nhan_vien AND ho_ten LIKE N'%{0}%'", hoTenNV);
+      string query = string.Format("SELECT ma_dang_nhap, mat_khau, ngay_tao, ma_quyen_dang_nhap, ma_khan_cap, trang_thai FROM TaiKhoan, NhanVien WHERE TaiKhoan.ma_dang_nhap = NhanVien.ma_nhan_vien AND NhanVien.ma_trang_thai_nhan_vien != 4 AND ho_ten LIKE N'%{0}%'", hoTenNV);
       SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
       SqlDataReader reader = cmd.ExecuteReader();
 
@@ -106,6 +106,14 @@ namespace DAO
 
     #endregion
 
+
+    public bool XoaTaiKhoanKhiXoaNhanVien(string maNV)
+    {
+      SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+      string query = string.Format("UPDATE TaiKhoan SET trang_thai = 'false' WHERE ma_dang_nhap = '{0}'", maNV);
+      SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
+      return (cmd.ExecuteNonQuery() > 0);
+    }
 
 
 
