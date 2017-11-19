@@ -80,6 +80,14 @@ namespace DAO
     }
 
 
+    public bool Xoa(string maKH)
+    {
+      string query = string.Format("UPDATE TheKhachHang SET trang_thai = 'false' WHERE ma_khach_hang = '{0}'", maKH);
+      return ThaoTacDuLieu_DAO.ExecuteNonQuery(query);
+    }
+
+
+
 
 
 

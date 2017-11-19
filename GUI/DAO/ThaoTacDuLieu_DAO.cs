@@ -80,6 +80,13 @@ namespace DAO
       return cmd.ExecuteScalar();
     }
 
+    public static bool ExecuteNonQuery(string query)
+    {
+      SqlConnection con = TaoKetNoi();
+      SqlCommand cmd = TruyVan(query, con);
+      return (cmd.ExecuteNonQuery() > 0);
+    }
+
 
   }
 }

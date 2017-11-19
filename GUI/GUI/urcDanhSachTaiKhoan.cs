@@ -22,7 +22,7 @@ namespace GUI
 
     Utilities utl = new Utilities();
 
-    private void urcDanhSachTaiKhoan_Load(object sender, EventArgs e)
+    public void urcDanhSachTaiKhoan_Load(object sender, EventArgs e)
     {
       HienThiDSTaiKhoan();
       HienThiDSQuyenDangNhapComboBox();

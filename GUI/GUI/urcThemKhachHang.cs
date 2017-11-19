@@ -71,28 +71,35 @@ namespace GUI
     #region THÊM KHÁCH HÀNG
 
     private string strError = "";
+    private string strWarning = "";
+
     private void btnThem_Click(object sender, EventArgs e)
     {
       if (KiemTraDuLieuHopLe())
       {
-        if (DialogResult.Yes == MessageBox.Show("Bạn muốn thêm mới khách hàng " + txtHoTen.Text, "Xác nhận thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        string strThongBao = "Thêm khách hàng " + txtHoTen.Text;
+        MessageBoxButtons MBButton = MessageBoxButtons.OK;
+        MessageBoxIcon MBIcon = MessageBoxIcon.Question;
+        
+        if(strWarning != "")
         {
-          TheKhachHang_BUS theKH_bus = null;
-          clsTheKhachHang theKH = null;
+          strThongBao = strWarning += "\n Vẫn muốn tiếp tục";
+          MBButton = MessageBoxButtons.YesNo;
+          MBIcon = MessageBoxIcon.Warning;
+        }
+
+        if (DialogResult.Yes == MessageBox.Show(strThongBao, "Xác nhận thêm", MBButton, MBIcon))
+        {
+          TheKhachHang_BUS theKH_bus = new TheKhachHang_BUS();
+          clsTheKhachHang theKH = TaoDoiTuongTheKhachHang();
 
           KhachHang_BUS KH_bus = new KhachHang_BUS();
           clsKhachHang_DTO KH = TaoDoiTuongKhachHang();
 
           try
           {
-            if(KH_bus.ThaoTacVoiKhachHang(KH, "Add"))
+            if (KH_bus.ThaoTacVoiKhachHang(KH, "Add") && theKH_bus.ThaoTacVoiDoiTuongTheKhachHang(theKH, "Add"))
             {
-              if (chbLamTheNhanh.Checked)
-              {
-                theKH_bus = new TheKhachHang_BUS();
-                theKH = TaoDoiTuongTheKhachHang();
-                theKH_bus.ThaoTacVoiDoiTuongTheKhachHang(theKH, "Add");
-              }
               MessageBox.Show("Đã thêm khách hàng " + KH.TenKhachHang);
               TrangThaiBanDau();
               TuPhatSinhMaKhachHang();
@@ -110,8 +117,7 @@ namespace GUI
       else MessageBox.Show(strError, "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error );
 
       strError = "";
-
-
+      strWarning = "";
 
     }
 
@@ -136,7 +142,6 @@ namespace GUI
       string maKH = txtMaKhachHang.Text;
       string maLoaiThe = "1234567890";
       DateTime ngayDK = DateTime.Now;
-      MessageBox.Show(ngayDK.ToString());
 
       bool trangThai = true;
 
@@ -154,19 +159,27 @@ namespace GUI
         strError += " *Họ tên phải dài từ 5 tới 50 kí tự, không bao gồm chữ số và kí tự đặc biệt\n";
       }
 
-      if (!KiemTraSDT())
+      if (!KiemTraSDT(10, 13))
       {
-        flag = false;
-        strError += " *Số điện thoại phải dài từ 10 tới 13 kí tự là những chữ số\n";
+        if (!KiemTraSDT(0, 0))
+        {
+          flag = false;
+          strError += " *Số điện thoại phải dài từ 10 tới 13 kí tự là những chữ số\n";
+        }
+        else strWarning += " *Chưa có số điện thoại khách hàng\n";
       }
 
-      if (!KiemTraDiaChi())
+      if (!KiemTraDiaChi(15, 250))
       {
-        flag = false;
-        strError += " *Địa chỉ phải dài từ 15 tới 250 kí tự, chỉ được phép sử dụng chữ cái, chữ số và các kí tự dặc biệt (\" , . / ( ) \")\n";
+        if (!KiemTraDiaChi(0, 0))
+        {
+          flag = false;
+          strError += " *Địa chỉ phải dài từ 15 tới 250 kí tự, chỉ được phép sử dụng chữ cái, chữ số và các kí tự dặc biệt (\" , . / ( ) \")\n";
+        }
+        else strWarning += " *Chưa có địa chỉ khách hàng\n";
       }
 
-      if (!KiemTraNgaySinh())
+      if (!KiemTraNgaySinh(15))
       {
         flag = false;
         strError += " *Khách hàng chưa đủ 15 tuổi trở lên\n";
@@ -183,19 +196,19 @@ namespace GUI
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQHoTen(), txtHoTen);
     }
 
-    private bool KiemTraSDT()
+    private bool KiemTraSDT(int min, int max)
     {
-      return utl.KiemTraBieuThucChinhQuy(utl.BTCQSoDienThoai(), txtSoDienThoai);
+      return utl.KiemTraBieuThucChinhQuy(utl.BTCQSoDienThoai(min, max), txtSoDienThoai);
     }
 
-    private bool KiemTraDiaChi()
+    private bool KiemTraDiaChi(int min, int max)
     {
-      return utl.KiemTraBieuThucChinhQuy(utl.BTCQDiaChi(), txtDiaChi);
+      return utl.KiemTraBieuThucChinhQuy(utl.BTCQDiaChi(min, max), txtDiaChi);
     }
 
-    private bool KiemTraNgaySinh()
+    private bool KiemTraNgaySinh(int min)
     {
-      return (utl.KiemTraDateTimePicker(dtpNgaySinh) && utl.KiemTraTuoi(15, dtpNgaySinh));
+      return (utl.KiemTraDateTimePicker(dtpNgaySinh) && utl.KiemTraTuoi(min, dtpNgaySinh));
     }
 
 
@@ -206,7 +219,7 @@ namespace GUI
     #region Đổi màu chữ khi nhập sai dữ liệu
     private void txtSoDienThoai_TextChanged(object sender, EventArgs e)
     {
-      if (KiemTraSDT())
+      if (KiemTraSDT(10, 13))
         txtSoDienThoai.ForeColor = Color.Black;
       else txtSoDienThoai.ForeColor = Color.Red;
     }
@@ -220,7 +233,7 @@ namespace GUI
 
     private void txtDiaChi_TextChanged(object sender, EventArgs e)
     {
-      if (KiemTraDiaChi())
+      if (KiemTraDiaChi(15, 250))
         txtDiaChi.ForeColor = Color.Black;
       else txtDiaChi.ForeColor = Color.Red;
     }

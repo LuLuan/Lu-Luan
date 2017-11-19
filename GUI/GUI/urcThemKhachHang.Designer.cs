@@ -44,7 +44,6 @@
       this.txtSoDienThoai = new System.Windows.Forms.TextBox();
       this.label5 = new System.Windows.Forms.Label();
       this.txtDiaChi = new System.Windows.Forms.TextBox();
-      this.chbLamTheNhanh = new System.Windows.Forms.CheckBox();
       this.btnThem = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
@@ -221,19 +220,6 @@
       this.txtDiaChi.TabIndex = 139;
       this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
       // 
-      // chbLamTheNhanh
-      // 
-      this.chbLamTheNhanh.AutoSize = true;
-      this.chbLamTheNhanh.Checked = true;
-      this.chbLamTheNhanh.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chbLamTheNhanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.chbLamTheNhanh.Location = new System.Drawing.Point(174, 301);
-      this.chbLamTheNhanh.Name = "chbLamTheNhanh";
-      this.chbLamTheNhanh.Size = new System.Drawing.Size(164, 21);
-      this.chbLamTheNhanh.TabIndex = 141;
-      this.chbLamTheNhanh.Text = "Tạo thẻ thành viên";
-      this.chbLamTheNhanh.UseVisualStyleBackColor = true;
-      // 
       // btnThem
       // 
       this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -253,7 +239,6 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.btnThem);
-      this.Controls.Add(this.chbLamTheNhanh);
       this.Controls.Add(this.label5);
       this.Controls.Add(this.txtDiaChi);
       this.Controls.Add(this.label11);
@@ -269,7 +254,7 @@
       this.Controls.Add(this.txtMaKhachHang);
       this.Controls.Add(this.panel1);
       this.Name = "urcThemKhachHang";
-      this.Size = new System.Drawing.Size(423, 359);
+      this.Size = new System.Drawing.Size(423, 338);
       this.Load += new System.EventHandler(this.urcThemKhachHang_Load);
       this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.urcThemKhachHang_MouseDown);
       this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.urcThemKhachHang_MouseMove);
@@ -297,7 +282,6 @@
     private System.Windows.Forms.TextBox txtSoDienThoai;
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.TextBox txtDiaChi;
-    private System.Windows.Forms.CheckBox chbLamTheNhanh;
     private System.Windows.Forms.Button btnThem;
 
   }

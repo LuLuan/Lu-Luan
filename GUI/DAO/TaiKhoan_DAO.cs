@@ -52,7 +52,6 @@ namespace DAO
       return lstTaiKhoan;
     }
 
-
     #region THÊM - XÓA - SỬA
 
     //public bool ThemTaiKhoan(clsTaiKhoan_DTO taiKhoan)
@@ -101,11 +100,7 @@ namespace DAO
       return (cmd.ExecuteNonQuery() > 0);
     }
 
-    
-
-
     #endregion
-
 
     public bool XoaTaiKhoanKhiXoaNhanVien(string maNV)
     {
@@ -114,8 +109,6 @@ namespace DAO
       SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
       return (cmd.ExecuteNonQuery() > 0);
     }
-
-
 
   }
 }

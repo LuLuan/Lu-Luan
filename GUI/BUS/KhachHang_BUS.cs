@@ -38,5 +38,11 @@ namespace BUS
       return dao.ThaoTacVoiKhachHangg(KH, command);
     }
 
+    public bool Xoa(string maKH)
+    {
+      KhachHang_DAO dao = new KhachHang_DAO();
+      return dao.Xoa(maKH);
+    }
+
   }
 }

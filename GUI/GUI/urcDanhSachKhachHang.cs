@@ -23,6 +23,7 @@ namespace GUI
     Utilities utl = new Utilities();
     public void urcDanhSachKhachHang_Load(object sender, EventArgs e)
     {
+      TrangThaiBanDau();
       HienThiDSKhachHang();
     }
 
@@ -38,25 +39,6 @@ namespace GUI
 
 
     #region CÁC NÚT CHỨC NĂNG (Cập nhật, Hủy thao tác)
-
-    private void btnThemTheKH_Click(object sender, EventArgs e)
-    {
-      TheKhachHang_BUS bus = new TheKhachHang_BUS();
-
-      if (bus.KiemTraKhachHangDaCoThe(txtMaKH.Text))
-        MessageBox.Show("Khách hàng đã có thẻ");
-      else
-      {
-        if (DialogResult.Yes == MessageBox.Show("Thêm thẻ cho khách hàng " + txtHoTen.Text, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-        {
-          clsTheKhachHang theKH = TaoDoiTuongTheKhachHang();
-          if (bus.ThaoTacVoiDoiTuongTheKhachHang(theKH, "Add"))
-            MessageBox.Show("Thêm thẻ cho khách hàng thành công");
-        }
-      }
-    }
-
-
 
     private bool KiemTraKhachHangDaCoThe(string maKH)
     {
@@ -88,11 +70,24 @@ namespace GUI
 
 
     private string strError = "";
+    private string strWarning = "";
+
     private void btnCapNhat_Click(object sender, EventArgs e)
     {
       if (KiemTraDuLieuHopLe())
       {
-        if(DialogResult.Yes == MessageBox.Show("Cập nhật khách hàng " + txtHoTen.Text, "Cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        string strThongBao = "Cập nhật khách hàng  " + txtHoTen.Text;
+        MessageBoxIcon MBIcon = MessageBoxIcon.Question;
+        MessageBoxButtons MBButton = MessageBoxButtons.OK;
+
+        if(strWarning != "")
+        {
+          strThongBao = strWarning + "\n Vẫn muốn tiếp tục?";
+          MBIcon = MessageBoxIcon.Warning;
+          MBButton = MessageBoxButtons.YesNo;
+        }
+
+        if (DialogResult.Yes == MessageBox.Show(strThongBao, "Cập nhật", MBButton, MBIcon))
         {
 
           KhachHang_BUS bus = new KhachHang_BUS();
@@ -108,6 +103,8 @@ namespace GUI
         
       }
       else MessageBox.Show(strError, "Dữ liệu không chính xác", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+      strWarning = "";
+      strError = "";
 
     }
 
@@ -115,6 +112,7 @@ namespace GUI
     private void btnHuyThaoTac_Click(object sender, EventArgs e)
     {
       TrangThaiBanDau();
+      
       LamMoiDanhSach();
     }
 
@@ -143,16 +141,24 @@ namespace GUI
         strError += " *Họ tên phải dài từ 5 tới 50 kí tự, không bao gồm chữ số và kí tự đặc biệt\n";
       }
 
-      if (!KiemTraSDT())
+      if (!KiemTraSDT(10, 13))
       {
-        flag = false;
-        strError += " *Số điện thoại phải dài từ 10 tới 13 kí tự là những chữ số\n";
+        if (!KiemTraSDT(0, 0))
+        {
+          flag = false;
+          strError += " *Số điện thoại phải dài từ 10 tới 13 kí tự là những chữ số\n";
+        }
+        else strWarning += " *Khách hàng chưa có số điện thoại\n";
       }
 
-      if (!KiemTraDiaChi())
+      if (!KiemTraDiaChi(15, 250))
       {
-        flag = false;
-        strError += " *Địa chỉ phải dài từ 15 tới 250 kí tự, chỉ được phép sử dụng chữ cái, chữ số và các kí tự dặc biệt (\" , . / ( ) \")\n";
+        if (!KiemTraDiaChi(0, 0))
+        {
+          flag = false;
+          strError += " *Địa chỉ phải dài từ 15 tới 250 kí tự, chỉ được phép sử dụng chữ cái, chữ số và các kí tự dặc biệt (\" , . / ( ) \")\n";
+        }
+        else strWarning += " *Chưa có địa chỉ khách hàng\n";
       }
 
       if (!KiemTraNgaySinh())
@@ -172,14 +178,14 @@ namespace GUI
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQHoTen(), txtHoTen);
     }
 
-    private bool KiemTraSDT()
+    private bool KiemTraSDT(int min, int max)
     {
-      return utl.KiemTraBieuThucChinhQuy(utl.BTCQSoDienThoai(), txtSoDienThoai);
+      return utl.KiemTraBieuThucChinhQuy(utl.BTCQSoDienThoai(min, max), txtSoDienThoai);
     }
 
-    private bool KiemTraDiaChi()
+    private bool KiemTraDiaChi(int min, int max)
     {
-      return utl.KiemTraBieuThucChinhQuy(utl.BTCQDiaChi(), txtDiaChi);
+      return utl.KiemTraBieuThucChinhQuy(utl.BTCQDiaChi(min, max), txtDiaChi);
     }
 
     private bool KiemTraNgaySinh()
@@ -194,7 +200,7 @@ namespace GUI
 
     private void dgvDSKH_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
     {
-      //TrangThaiBanDau();
+      TrangThaiBanDau();
     }
 
 
@@ -232,8 +238,18 @@ namespace GUI
     {
       if (e.KeyCode == Keys.Delete)
       {
-        DataGridViewRow row = dgvDSKH.SelectedRows[0];
-        MessageBox.Show("Bạn muốn xóa khách hàng " + row.Cells["colMaKH"].Value.ToString() + "\nCó mã " + row.Cells["colHoTen"].Value.ToString());
+        if (DialogResult.Yes == MessageBox.Show("Xóa khách hàng?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        {
+          TheKhachHang_BUS busTheKH = new TheKhachHang_BUS();
+          KhachHang_BUS busKH = new KhachHang_BUS();
+          if (busKH.Xoa(txtMaKH.Text) && busTheKH.Xoa(txtMaKH.Text))
+          {
+            MessageBox.Show("Đã xóa khách hàng");
+            TrangThaiBanDau();
+            HienThiDSKhachHang();
+          }
+        }
+        else MessageBox.Show("Hủy thao tác");
       }
     }
 
@@ -278,7 +294,9 @@ namespace GUI
     private void TrangThaiBanDau()
     {
 
-      btnCapNhat.Enabled = btnThemTheKH.Enabled = false;
+      btnCapNhat.Enabled = false;
+      rdbTrangThaiCoSan.Checked = false;
+      rdbTrangThaiCoSan.Enabled = false;
       foreach (Control ctr in grbTTKhachHang.Controls)
       {
         if (ctr is TextBox)
@@ -320,7 +338,8 @@ namespace GUI
 
     private void TrangThaiKhiChonMotKhachHang()
     {
-      btnCapNhat.Enabled = btnThemTheKH.Enabled = true;
+      rdbTrangThaiCoSan.Enabled = true;
+      btnCapNhat.Enabled = true;
       foreach (Control ctr in grbTTKhachHang.Controls)
       {
         if (ctr is TextBox)
@@ -383,18 +402,17 @@ namespace GUI
 
     private void dgvDSKH_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
     {
-      var grid = sender as DataGridView;
-      var rowIdx = (e.RowIndex + 1).ToString();
+      //var grid = sender as DataGridView;
+      //var rowIdx = (e.RowIndex + 1).ToString();
 
-      var centerFormat = new StringFormat()
-      {
-        // right alignment might actually make more sense for numbers
-        Alignment = StringAlignment.Center,
-        LineAlignment = StringAlignment.Center
-      };
+      //var centerFormat = new StringFormat()
+      //{
+      //  Alignment = StringAlignment.Center,
+      //  LineAlignment = StringAlignment.Center
+      //};
 
-      var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-      e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+      //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+      //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
     }
 
 
@@ -429,6 +447,9 @@ namespace GUI
 
     private void dgvDSKH_SelectionChanged(object sender, EventArgs e)
     {
+      if (!dgvDSKH.Focused)
+        return;
+
       if (dgvDSKH.SelectedRows.Count > 0)
       {
         DataGridViewRow r = dgvDSKH.SelectedRows[0];
@@ -446,7 +467,7 @@ namespace GUI
 
         if (Convert.ToBoolean(r.Cells["colTrangThai"].Value.ToString()) == true)
           rdbTrangThaiCoSan.Checked = true;
-        else rdbTrangThaiDaXoa.Checked = true;
+        else rdbTrangThaiCoSan.Checked = false;
 
         DateTime dtNgaySinh = DateTime.Parse(r.Cells["colNgaySinh"].Value.ToString());
         LayNgayTrongDataGridViewLenDateTimePicker(dtpNgaySinh, dtNgaySinh);
@@ -473,14 +494,14 @@ namespace GUI
 
     private void txtSoDienThoai_TextChanged(object sender, EventArgs e)
     {
-      if (KiemTraSDT())
+      if (KiemTraSDT(10, 13))
         txtSoDienThoai.ForeColor = Color.Black;
       else txtSoDienThoai.ForeColor = Color.Red;
     }
 
     private void txtDiaChi_TextChanged(object sender, EventArgs e)
     {
-      if (KiemTraDiaChi())
+      if (KiemTraDiaChi(15, 250))
         txtDiaChi.ForeColor = Color.Black;
       else txtDiaChi.ForeColor = Color.Red;
     }

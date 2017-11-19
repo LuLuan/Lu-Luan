@@ -80,7 +80,7 @@ namespace GUI
     private void btnXemDSTK_Click(object sender, EventArgs e)
     {
       CaiDatPanelMenu(btnXemDSTheKH);
-      urcDanhSachNhanVien.urcDanhSachNhanVien_Load(sender, e);
+      urcDanhSachTaiKhoan.urcDanhSachTaiKhoan_Load(sender, e);
       if (isClickedbtnMoMenu == true)
         btnMoMenu_Click(sender, e);
     }

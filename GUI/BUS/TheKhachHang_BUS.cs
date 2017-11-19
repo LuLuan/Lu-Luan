@@ -43,6 +43,12 @@ namespace BUS
 
     }
 
+    public bool Xoa(string maKH)
+    {
+      TheKhachHang_DAO dao = new TheKhachHang_DAO();
+      return dao.Xoa(maKH);
+    }
+
 
 
 
