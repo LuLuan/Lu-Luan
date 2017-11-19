@@ -430,7 +430,7 @@ namespace GUI
               throw;
             }
 
-            dgvDSNV.FirstDisplayedScrollingRowIndex = rowIndex;
+            dgvDSNV.FirstDisplayedScrollingRowIndex = rowIndex - 1;
           }
 
         }

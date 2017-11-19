@@ -30,7 +30,8 @@ namespace GUI
       HienThiDSChucVu();
       HienThiDSQuyenDangNhap();
       TuPhatSinhMaNhanVien();
-
+      if (this.Focused)
+        TuPhatSinhMaNhanVien();
     }
 
     #region Hiển thị dữ liệu có sẵn
@@ -209,7 +210,15 @@ namespace GUI
     {
       if (KiemTraDuLieuHopLe())
       {
-        if (DialogResult.Yes == MessageBox.Show("Bạn muốn thêm mới nhân viên " + txtHoTen.Text, "Xác nhận thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        string strThongBao = "Thêm mới nhân viên " + txtHoTen.Text + "\n";
+        MessageBoxIcon MBIcon = MessageBoxIcon.Question;
+        if(strWarning != "")
+        {
+          strThongBao = strWarning + "\n Vẫn muốn tiếp tục?";
+          MBIcon = MessageBoxIcon.Warning;
+        }
+
+        if (DialogResult.Yes == MessageBox.Show(strThongBao, "Xác nhận thêm", MessageBoxButtons.YesNo, MBIcon))
         {
           NhanVien_BUS busNhanVien = new NhanVien_BUS();
           TaiKhoan_BUS busTaiKhoan = new TaiKhoan_BUS();
@@ -223,8 +232,10 @@ namespace GUI
           {
             if (busNhanVien.ThaoTacVoiDoiTuongNhanVien(NV, "Add") && busTaiKhoan.ThaoTacVoiTaiKhoan(TK, "Add"))
             {
-              File.Copy(fd.FileName, destFileName);
+              if(KiemTraHinhAnh())
+                File.Copy(fd.FileName, destFileName);
               MessageBox.Show("Đã thên nhân viên mới");
+              TuPhatSinhMaNhanVien();
               TrangThaiBanDau();
 
             }
@@ -245,11 +256,18 @@ namespace GUI
 
       strError = "";
       destFileName = "";
+      strWarning = "";
     }
 
     public string TaoDuongDanAnh()
     {
-      return utl.TaoDuongDanAnh(fd);
+      if (KiemTraHinhAnh())
+        return utl.TaoDuongDanAnh(fd);
+      else
+      {
+        string imageName = "no-image.jpg";
+        return @"HinhAnh\AnhDaiDien\" + imageName;
+      }
     }
 
     private clsNhanVien_DTO TaoDoiTuongNhanVien()
@@ -300,20 +318,29 @@ namespace GUI
         flag = false;
         strError += " *Họ tên phải dài từ 5 tới 50 kí tự, không bao gồm chữ số và kí tự đặc biệt\n";
       }
-      if (!KiemTraSDT())
+      if (!KiemTraSDT(10, 13))
       {
-        flag = false;
-        strError += " *Số điện thoại phải dài từ 10 tới 13 kí tự là những chữ số\n";
+        if (!KiemTraSDT(0, 0))
+        {
+          flag = false;
+          strError += " *Số điện thoại phải dài từ 10 tới 13 kí tự là những chữ số\n";
+        }
+        else strWarning += " *Nhân viên chưa có số điện thoại\n";
       }
-      if (!KiemTraDiaChi())
+      if (!KiemTraDiaChi(15, 250))
       {
-        flag = false;
-        strError += " *Địa chỉ phải dài từ 15 tới 250 kí tự, chỉ được phép sử dụng chữ cái, chữ số và các kí tự dặc biệt (\" , . / ( ) \")\n";
+        if (!KiemTraDiaChi(0, 0))
+        {
+          flag = false;
+          strError += " *Địa chỉ phải dài từ 15 tới 250 kí tự, chỉ được phép sử dụng chữ cái, chữ số và các kí tự dặc biệt (\" , . / ( ) \")\n";
+        }
+        else strWarning += " *Chưa nhập địa chỉ cho nhân viên\n";
       }
       if (!KiemTraHinhAnh())
       {
-        flag = false;
-        strError += " *Không được để trống hình ảnh\n";
+        //flag = false;
+        //strError += " *Không được để trống hình ảnh\n";
+        strWarning += " *Chưa chọn ảnh đại diện\n";
       }
       if (!KiemTraComboBoxChucVu())
       {
@@ -324,6 +351,11 @@ namespace GUI
       {
         flag = false;
         strError += " *Không được để trống quyền đăng nhập\n";
+      }
+
+      if(!KiemTraCheckBoxKichHoatTaiKhoan())
+      {
+        strWarning += " *Chưa muốn kích hoạt tài khoản?\n";
       }
 
       if (!KiemTraNgaySinh())
@@ -364,14 +396,14 @@ namespace GUI
 
     private void txtSoDienThoai_TextChanged(object sender, EventArgs e)
     {
-      if (KiemTraSDT())
+      if (KiemTraSDT(10, 13))
         txtSoDienThoai.ForeColor = Color.Black;
       else txtSoDienThoai.ForeColor = Color.Red;
     }
 
     private void txtDiaChi_TextChanged(object sender, EventArgs e)
     {
-      if (KiemTraDiaChi())
+      if (KiemTraDiaChi(15, 250))
         txtDiaChi.ForeColor = Color.Black;
       else txtDiaChi.ForeColor = Color.Red;
     }
@@ -381,6 +413,7 @@ namespace GUI
     private bool KiemTraHinhAnh()
     {
       return (utl.KiemTraFileDialog(fd) && utl.KiemTraPictuerBox(picAnhDaiDien));
+      //return (utl.KiemTraFileDialog(fd));
     }
     private bool KiemTraComboBoxQuyenDangNhap()
     {
@@ -390,6 +423,11 @@ namespace GUI
     private bool KiemTraComboBoxChucVu()
     {
       return utl.KiemTraComboBox(cboChucVu);
+    }
+
+    private bool KiemTraCheckBoxKichHoatTaiKhoan()
+    {
+      return utl.KiemTraCheckBox(chbKichHoatTK);
     }
 
     private bool KiemTraNgaySinh()
@@ -421,15 +459,15 @@ namespace GUI
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQHoTen(), txtHoTen);
     }
 
-    private bool KiemTraSDT()
+    private bool KiemTraSDT(int min, int max)
     {
       //string str = @"^(([0-9]){10,13})$";
-      return utl.KiemTraBieuThucChinhQuy(utl.BTCQSoDienThoai(), txtSoDienThoai);
+      return utl.KiemTraBieuThucChinhQuy(utl.BTCQSoDienThoai(min, max), txtSoDienThoai);
     }
-    private bool KiemTraDiaChi()
+    private bool KiemTraDiaChi(int min, int max)
     {
       //string str = @"^((?!.*[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\""|\;|\:]).{15,250})$";
-      return utl.KiemTraBieuThucChinhQuy(utl.BTCQDiaChi(), txtDiaChi);
+      return utl.KiemTraBieuThucChinhQuy(utl.BTCQDiaChi(min, max), txtDiaChi);
     }
 
 

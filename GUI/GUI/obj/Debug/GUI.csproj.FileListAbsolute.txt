@@ -232,3 +232,4 @@ D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
 D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\RdlCompile.cache
 D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\RdlCompile.compiled
 C:\DA_WF\Clone\GUI\GUI\obj\Debug\GUI.urcNhapNguyenLieu.resources
+D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcNhapNguyenLieu.resources

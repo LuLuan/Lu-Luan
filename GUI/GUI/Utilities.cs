@@ -212,6 +212,11 @@ namespace GUI
       return (rdb.Checked ? true : false);
     }
 
+    public bool KiemTraCheckBox(CheckBox chb)
+    {
+      return (chb.Checked ? true : false);
+    }
+
 
 
     public string BTCQMatKhau()
