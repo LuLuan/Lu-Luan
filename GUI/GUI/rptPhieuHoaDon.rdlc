@@ -369,7 +369,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>2.34231cm</Top>
+        <Top>2.2728cm</Top>
         <Left>0.42333cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -401,7 +401,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>4.42806cm</Top>
+        <Top>4.17863cm</Top>
         <Left>0.42333cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -431,7 +431,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>3.01639cm</Top>
+        <Top>2.90807cm</Top>
         <Left>0.42333cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -463,7 +463,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>3.72222cm</Top>
+        <Top>3.54335cm</Top>
         <Left>0.42333cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -495,7 +495,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>4.42806cm</Top>
+        <Top>4.17863cm</Top>
         <Left>5.96541cm</Left>
         <Height>0.6cm</Height>
         <Width>3.18792cm</Width>
@@ -527,7 +527,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>3.72222cm</Top>
+        <Top>3.54335cm</Top>
         <Left>5.96541cm</Left>
         <Height>0.6cm</Height>
         <Width>3.18792cm</Width>
@@ -559,7 +559,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>3.01639cm</Top>
+        <Top>2.90807cm</Top>
         <Left>5.96541cm</Left>
         <Height>0.6cm</Height>
         <Width>3.18792cm</Width>
@@ -591,7 +591,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>2.34231cm</Top>
+        <Top>2.2728cm</Top>
         <Left>5.96541cm</Left>
         <Height>0.6cm</Height>
         <Width>3.18792cm</Width>
@@ -607,13 +607,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.09375in</Height>
+    <Height>2.01042in</Height>
     <Style />
   </Body>
   <Width>3.83717in</Width>
   <Page>
     <PageHeader>
-      <Height>5.33674cm</Height>
+      <Height>4.93986cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -625,7 +625,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Parameters!paramDiaChiCH.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -691,11 +693,15 @@
               <TextRuns>
                 <TextRun>
                   <Value>SĐT: </Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value>=Parameters!paramSoDienThoaiCH.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -725,11 +731,15 @@
               <TextRuns>
                 <TextRun>
                   <Value>Ngày: </Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value>=string.Format("{0:dd}/{0:MM}/{0:yyyy}", DateTime.Now)</Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -812,11 +822,15 @@
               <TextRuns>
                 <TextRun>
                   <Value>Thu ngân: </Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value>=Parameters!paramTenNhanVien.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -895,17 +909,36 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Nếu quý khách có @!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</Value>
+                  <Value>- Nếu quý khách có thắc mắc về hóa đơn vui lòng mang hóa đơn tới quầy thu ngân trong vòng 24h kể từ lúc xuất hóa đơn. </Value>
                   <Style />
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Cảm ơn quý khách đã đồng hàng cùng COMBUY.
+Hẹn gặp lại quý khách! Xin cảm ơn.</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>
+--------------------------------------------------</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
           <Top>0.56029cm</Top>
           <Left>0.42333cm</Left>
-          <Height>2.29333cm</Height>
+          <Height>2.54909cm</Height>
           <Width>8.73cm</Width>
           <Style>
             <Border>
@@ -924,12 +957,14 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Mật khẩu wifi:</Value>
+                  <Value>Mật khẩu wifi: </Value>
                   <Style />
                 </TextRun>
                 <TextRun>
                   <Value>=Parameters!paramPassWifi.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
