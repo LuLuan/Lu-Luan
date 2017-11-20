@@ -31,9 +31,14 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.dgvDSTheKH = new System.Windows.Forms.DataGridView();
+      this.colMaThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colLoaiThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colNgayDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colGiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colDonViGiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.grbDSTheKH = new System.Windows.Forms.GroupBox();
-      this.cboTrangThai = new System.Windows.Forms.ComboBox();
-      this.label7 = new System.Windows.Forms.Label();
       this.label5 = new System.Windows.Forms.Label();
       this.textBox3 = new System.Windows.Forms.TextBox();
       this.label3 = new System.Windows.Forms.Label();
@@ -45,22 +50,11 @@
       this.rdbTrangThaiMo = new System.Windows.Forms.RadioButton();
       this.rdbTrangThaiDong = new System.Windows.Forms.RadioButton();
       this.label9 = new System.Windows.Forms.Label();
-      this.label6 = new System.Windows.Forms.Label();
-      this.dtpNgayHetHanTheKH = new System.Windows.Forms.DateTimePicker();
       this.label2 = new System.Windows.Forms.Label();
       this.txtTenKH = new System.Windows.Forms.TextBox();
       this.label4 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.txtMaTheKH = new System.Windows.Forms.TextBox();
-      this.colMaThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colLoaiThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colNgayDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colHanSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colDonViHSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colNgayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colGiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.dgvDSTheKH)).BeginInit();
       this.grbDSTheKH.SuspendLayout();
       this.grbTTTheKH.SuspendLayout();
@@ -84,10 +78,8 @@
             this.colTenKH,
             this.colLoaiThe,
             this.colNgayDangKy,
-            this.colHanSuDung,
-            this.colDonViHSD,
-            this.colNgayHetHan,
             this.colGiamGia,
+            this.colDonViGiamGia,
             this.colTrangThai});
       this.dgvDSTheKH.Location = new System.Drawing.Point(6, 58);
       this.dgvDSTheKH.MultiSelect = false;
@@ -104,10 +96,68 @@
       this.dgvDSTheKH.SelectionChanged += new System.EventHandler(this.dgvDSTheKH_SelectionChanged);
       this.dgvDSTheKH.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDSTheKH_KeyUp);
       // 
+      // colMaThe
+      // 
+      this.colMaThe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colMaThe.DataPropertyName = "MaThe";
+      this.colMaThe.HeaderText = "Mã Thẻ";
+      this.colMaThe.Name = "colMaThe";
+      this.colMaThe.ReadOnly = true;
+      this.colMaThe.Width = 80;
+      // 
+      // colTenKH
+      // 
+      this.colTenKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.colTenKH.DataPropertyName = "MaKhachHang";
+      this.colTenKH.HeaderText = "Tên KH";
+      this.colTenKH.Name = "colTenKH";
+      this.colTenKH.ReadOnly = true;
+      // 
+      // colLoaiThe
+      // 
+      this.colLoaiThe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colLoaiThe.DataPropertyName = "MaLoaiThe";
+      this.colLoaiThe.HeaderText = "Loại Thẻ";
+      this.colLoaiThe.Name = "colLoaiThe";
+      this.colLoaiThe.ReadOnly = true;
+      this.colLoaiThe.Width = 64;
+      // 
+      // colNgayDangKy
+      // 
+      this.colNgayDangKy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colNgayDangKy.DataPropertyName = "NgayDangKy";
+      this.colNgayDangKy.HeaderText = "Ngày Đăng Ký";
+      this.colNgayDangKy.Name = "colNgayDangKy";
+      this.colNgayDangKy.ReadOnly = true;
+      this.colNgayDangKy.Width = 108;
+      // 
+      // colGiamGia
+      // 
+      this.colGiamGia.DataPropertyName = "GiamGia";
+      dataGridViewCellStyle2.Format = "N1";
+      dataGridViewCellStyle2.NullValue = null;
+      this.colGiamGia.DefaultCellStyle = dataGridViewCellStyle2;
+      this.colGiamGia.HeaderText = "Giảm Giá";
+      this.colGiamGia.Name = "colGiamGia";
+      this.colGiamGia.ReadOnly = true;
+      // 
+      // colDonViGiamGia
+      // 
+      this.colDonViGiamGia.DataPropertyName = "DonViGiamGia";
+      this.colDonViGiamGia.HeaderText = "Đơn Vị Giảm Giá";
+      this.colDonViGiamGia.Name = "colDonViGiamGia";
+      this.colDonViGiamGia.ReadOnly = true;
+      // 
+      // colTrangThai
+      // 
+      this.colTrangThai.DataPropertyName = "TrangThai";
+      this.colTrangThai.HeaderText = "Trạng Thái";
+      this.colTrangThai.Name = "colTrangThai";
+      this.colTrangThai.ReadOnly = true;
+      // 
       // grbDSTheKH
       // 
-      this.grbDSTheKH.Controls.Add(this.cboTrangThai);
-      this.grbDSTheKH.Controls.Add(this.label7);
+      this.grbDSTheKH.BackColor = System.Drawing.Color.MintCream;
       this.grbDSTheKH.Controls.Add(this.label5);
       this.grbDSTheKH.Controls.Add(this.textBox3);
       this.grbDSTheKH.Controls.Add(this.label3);
@@ -120,23 +170,6 @@
       this.grbDSTheKH.TabIndex = 1;
       this.grbDSTheKH.TabStop = false;
       this.grbDSTheKH.Text = "Danh sách thẻ khách hàng";
-      // 
-      // cboTrangThai
-      // 
-      this.cboTrangThai.FormattingEnabled = true;
-      this.cboTrangThai.Location = new System.Drawing.Point(691, 29);
-      this.cboTrangThai.Name = "cboTrangThai";
-      this.cboTrangThai.Size = new System.Drawing.Size(147, 24);
-      this.cboTrangThai.TabIndex = 81;
-      // 
-      // label7
-      // 
-      this.label7.AutoSize = true;
-      this.label7.Location = new System.Drawing.Point(602, 35);
-      this.label7.Name = "label7";
-      this.label7.Size = new System.Drawing.Size(83, 17);
-      this.label7.TabIndex = 82;
-      this.label7.Text = "Trạng thái";
       // 
       // label5
       // 
@@ -172,14 +205,13 @@
       // 
       // grbTTTheKH
       // 
+      this.grbTTTheKH.BackColor = System.Drawing.Color.MintCream;
       this.grbTTTheKH.Controls.Add(this.txtLoaiThe);
       this.grbTTTheKH.Controls.Add(this.btnCapNhat);
       this.grbTTTheKH.Controls.Add(this.btnHuyThaoTac);
       this.grbTTTheKH.Controls.Add(this.rdbTrangThaiMo);
       this.grbTTTheKH.Controls.Add(this.rdbTrangThaiDong);
       this.grbTTTheKH.Controls.Add(this.label9);
-      this.grbTTTheKH.Controls.Add(this.label6);
-      this.grbTTTheKH.Controls.Add(this.dtpNgayHetHanTheKH);
       this.grbTTTheKH.Controls.Add(this.label2);
       this.grbTTTheKH.Controls.Add(this.txtTenKH);
       this.grbTTTheKH.Controls.Add(this.label4);
@@ -273,26 +305,6 @@
       this.label9.TabIndex = 75;
       this.label9.Text = "Trạng thái";
       // 
-      // label6
-      // 
-      this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(51, 96);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(105, 17);
-      this.label6.TabIndex = 74;
-      this.label6.Text = "Ngày hết hạn";
-      this.label6.Visible = false;
-      // 
-      // dtpNgayHetHanTheKH
-      // 
-      this.dtpNgayHetHanTheKH.Enabled = false;
-      this.dtpNgayHetHanTheKH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-      this.dtpNgayHetHanTheKH.Location = new System.Drawing.Point(188, 91);
-      this.dtpNgayHetHanTheKH.Name = "dtpNgayHetHanTheKH";
-      this.dtpNgayHetHanTheKH.Size = new System.Drawing.Size(180, 23);
-      this.dtpNgayHetHanTheKH.TabIndex = 73;
-      this.dtpNgayHetHanTheKH.Visible = false;
-      // 
       // label2
       // 
       this.label2.AutoSize = true;
@@ -336,89 +348,11 @@
       this.txtMaTheKH.Size = new System.Drawing.Size(180, 23);
       this.txtMaTheKH.TabIndex = 2;
       // 
-      // colMaThe
-      // 
-      this.colMaThe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colMaThe.DataPropertyName = "MaThe";
-      this.colMaThe.HeaderText = "Mã Thẻ";
-      this.colMaThe.Name = "colMaThe";
-      this.colMaThe.ReadOnly = true;
-      this.colMaThe.Width = 87;
-      // 
-      // colTenKH
-      // 
-      this.colTenKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.colTenKH.DataPropertyName = "MaKhachHang";
-      this.colTenKH.HeaderText = "Tên KH";
-      this.colTenKH.Name = "colTenKH";
-      this.colTenKH.ReadOnly = true;
-      // 
-      // colLoaiThe
-      // 
-      this.colLoaiThe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colLoaiThe.DataPropertyName = "TenTheKH";
-      this.colLoaiThe.HeaderText = "Loại Thẻ";
-      this.colLoaiThe.Name = "colLoaiThe";
-      this.colLoaiThe.ReadOnly = true;
-      this.colLoaiThe.Visible = false;
-      this.colLoaiThe.Width = 97;
-      // 
-      // colNgayDangKy
-      // 
-      this.colNgayDangKy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colNgayDangKy.DataPropertyName = "NgayDangKy";
-      this.colNgayDangKy.HeaderText = "Ngày Đăng Ký";
-      this.colNgayDangKy.Name = "colNgayDangKy";
-      this.colNgayDangKy.ReadOnly = true;
-      this.colNgayDangKy.Width = 108;
-      // 
-      // colHanSuDung
-      // 
-      this.colHanSuDung.DataPropertyName = "HanSuDung";
-      this.colHanSuDung.HeaderText = "Hạn Sử Dụng";
-      this.colHanSuDung.Name = "colHanSuDung";
-      this.colHanSuDung.ReadOnly = true;
-      this.colHanSuDung.Visible = false;
-      // 
-      // colDonViHSD
-      // 
-      this.colDonViHSD.DataPropertyName = "DonViHSD";
-      this.colDonViHSD.HeaderText = "Đơn Vị HSD";
-      this.colDonViHSD.Name = "colDonViHSD";
-      this.colDonViHSD.ReadOnly = true;
-      this.colDonViHSD.Visible = false;
-      // 
-      // colNgayHetHan
-      // 
-      this.colNgayHetHan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colNgayHetHan.HeaderText = "Ngày hết hạn";
-      this.colNgayHetHan.Name = "colNgayHetHan";
-      this.colNgayHetHan.ReadOnly = true;
-      this.colNgayHetHan.Visible = false;
-      this.colNgayHetHan.Width = 95;
-      // 
-      // colGiamGia
-      // 
-      this.colGiamGia.DataPropertyName = "PhanTramGiamGia";
-      dataGridViewCellStyle2.Format = "N1";
-      dataGridViewCellStyle2.NullValue = null;
-      this.colGiamGia.DefaultCellStyle = dataGridViewCellStyle2;
-      this.colGiamGia.HeaderText = "Giảm Giá (%)";
-      this.colGiamGia.Name = "colGiamGia";
-      this.colGiamGia.ReadOnly = true;
-      // 
-      // colTrangThai
-      // 
-      this.colTrangThai.DataPropertyName = "TrangThai";
-      this.colTrangThai.HeaderText = "Trạng Thái";
-      this.colTrangThai.Name = "colTrangThai";
-      this.colTrangThai.ReadOnly = true;
-      this.colTrangThai.Visible = false;
-      // 
       // urcDanhSachTheKhachHang
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.BackColor = System.Drawing.Color.MintCream;
       this.Controls.Add(this.grbTTTheKH);
       this.Controls.Add(this.grbDSTheKH);
       this.Name = "urcDanhSachTheKhachHang";
@@ -444,8 +378,6 @@
         private System.Windows.Forms.RadioButton rdbTrangThaiMo;
         private System.Windows.Forms.RadioButton rdbTrangThaiDong;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtpNgayHetHanTheKH;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.Button btnCapNhat;
@@ -455,16 +387,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtLoaiThe;
-        private System.Windows.Forms.ComboBox cboTrangThai;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaThe;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLoaiThe;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayDangKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHanSuDung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDonViHSD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayHetHan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiamGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDonViGiamGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }

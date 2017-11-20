@@ -18,8 +18,10 @@ namespace GUI
         {
             InitializeComponent();
         }
-        private string ChuoiTimKiem = "";
+        //private string ChuoiTimKiem = "";
         List<clsDonViTinh_DTO> lstDonViTinh;
+        public delegate void LoadDSDonVi(bool isload);
+        public LoadDSDonVi _LoadDSDonVi;
         private void urcDanhSachLoaiNguyenLieu_Load(object sender, EventArgs e)
         {
             dgvDSDonViTinh.AutoGenerateColumns = false;
@@ -113,6 +115,10 @@ namespace GUI
 
                     MessageBox.Show("Đã thêm đơn vị tính thành công ");
                     urcDanhSachLoaiNguyenLieu_Load(sender, e);
+                    if (_LoadDSDonVi!=null)
+                    {
+                      _LoadDSDonVi(true);
+                    }
                 }
                 else
                 {

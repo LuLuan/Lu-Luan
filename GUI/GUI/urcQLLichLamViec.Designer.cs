@@ -43,7 +43,7 @@
       // 
       // pnlContainer
       // 
-      this.pnlContainer.BackColor = System.Drawing.Color.DarkGreen;
+      this.pnlContainer.BackColor = System.Drawing.Color.MintCream;
       this.pnlContainer.Location = new System.Drawing.Point(0, 40);
       this.pnlContainer.Name = "pnlContainer";
       this.pnlContainer.Size = new System.Drawing.Size(930, 530);

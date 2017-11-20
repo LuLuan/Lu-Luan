@@ -6,48 +6,51 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class clsLoaiTheKhachHang
+  /*
+   * ma_loai_the char 10
+   * ten_loai_the_khach_hang nvarchar 30
+   * giam_gia float
+   * don_vi_giam_gia nvarchar 20
+   * trang_thai bit
+   */
+  public class clsLoaiTheKhachHang
+  {
+    private string _MaLoaiThe;
+    public string MaLoaiThe
     {
-        private string _MaLoaiThe;
-        public string MaLoaiThe
-        {
-            get { return _MaLoaiThe; }
-            set { _MaLoaiThe = value; }
-        }
-
-        private string _TenTheKH;
-        public string TenTheKH
-        {
-            get { return _TenTheKH; }
-            set { _TenTheKH = value; }
-        }
-
-        private int _HanSuDung;
-        public int HanSuDung
-        {
-            get { return _HanSuDung; }
-            set { _HanSuDung = value; }
-        }
-
-        private string _DonViHSD;
-        public string DonViHSD
-        {
-            get { return _DonViHSD; }
-            set { _DonViHSD = value; }
-        }
-
-        private float _PhanTramGiamGia;
-        public float PhanTramGiamGia
-        {
-            get { return _PhanTramGiamGia; }
-            set { _PhanTramGiamGia = value; }
-        }
-
-        private bool _TrangThai;
-        public bool TrangThai
-        {
-            get { return _TrangThai; }
-            set { _TrangThai = value; }
-        }
+      get { return _MaLoaiThe; }
+      set { _MaLoaiThe = value; }
     }
+
+    private string _TenLoaiTheKH;
+    public string TenLoaiTheKH
+    {
+      get { return _TenLoaiTheKH; }
+      set { _TenLoaiTheKH = value; }
+    }
+
+    
+
+    private float _GiamGia;
+    public float GiamGia
+    {
+      get { return _GiamGia; }
+      set { _GiamGia = value; }
+    }
+
+    private string _DonViGiamGia;
+    public string DonViGiamGia
+    {
+      get { return _DonViGiamGia; }
+      set { _DonViGiamGia = value; }
+    }
+
+
+    private bool _TrangThai;
+    public bool TrangThai
+    {
+      get { return _TrangThai; }
+      set { _TrangThai = value; }
+    }
+  }
 }

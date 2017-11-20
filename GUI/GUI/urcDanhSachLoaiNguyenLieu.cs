@@ -18,6 +18,8 @@ namespace GUI
         {
             InitializeComponent();
         }
+      public delegate void ReLoadDSNguyenLieu(bool isreload);
+      public ReLoadDSNguyenLieu _ReloadDSNguyenLieu;
         private string ChuoiTimKiem = "";
         List<clsLoaiNguyenLieu_DTO> lstLoaiNguyenLieu;
         private void urcDanhSachLoaiNguyenLieu_Load(object sender, EventArgs e)
@@ -117,6 +119,10 @@ namespace GUI
                     MessageBox.Show("Đã thêm loại nguyên liệu thành công ");
                     txtTenLoaiNL.Text = "";
                     urcDanhSachLoaiNguyenLieu_Load(sender, e);
+                    if (_ReloadDSNguyenLieu!=null)
+                    {
+                      _ReloadDSNguyenLieu(true);
+                    }
                 }
                 else
                 {

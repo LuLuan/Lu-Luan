@@ -234,3 +234,4 @@ D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\RdlCompile.compiled
 C:\DA_WF\Clone\GUI\GUI\obj\Debug\GUI.urcNhapNguyenLieu.resources
 D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcNhapNguyenLieu.resources
 C:\DA_WF\Clone\GUI\GUI\obj\Debug\GUI.urcNhaCungCap.resources
+D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcNhaCungCap.resources

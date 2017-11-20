@@ -162,7 +162,7 @@ namespace DAO
         //Lấy giá tiền của chi tiết món ăn
         public static float GiaMonAnChiTiet(string MaMonAn,string KichThuocMonAn)
         {
-            string query = string.Format("select gia_ban from ChiTietMonAn where ma_mon_an = N'{0}' and ma_kich_thuoc= N'{1}' AND trang_thai =N'True' ", MaMonAn, KichThuocMonAn);
+            string query = string.Format("select gia_ban from ChiTietMonAn where ma_mon_an = N'{0}' and ma_kich_thuoc= N'{1}' AND trang_thai = 'True' ", MaMonAn, KichThuocMonAn);
             SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
             SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
             float TongSP = float.Parse(cmd.ExecuteScalar().ToString());

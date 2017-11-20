@@ -31,27 +31,27 @@ namespace GUI
     private void HienThiDSTheKhachHang()
     {
       TheKhachHang_BUS theKH_BUS = new TheKhachHang_BUS();
-      List<clsTheKhachHang> lstTheKH = theKH_BUS.LayDanhSachTheKH();
-      LoaiTheKhachHang_BUS loaiTheKH_BUS = new LoaiTheKhachHang_BUS();
-      List<clsLoaiTheKhachHang> lstLoaiTheKH = loaiTheKH_BUS.LayLoaiTheKhachHang();
+      List<clsTheKhachHang> lstTheKH = theKH_BUS.LayDanhSachTheKH("", "");
+      //LoaiTheKhachHang_BUS loaiTheKH_BUS = new LoaiTheKhachHang_BUS();
+      //List<clsLoaiTheKhachHang> lstLoaiTheKH = loaiTheKH_BUS.LayLoaiTheKhachHang();
 
-      var query = from theKH in lstTheKH
-                  join loaiTheKH in lstLoaiTheKH
-                  on theKH.MaLoaiThe equals loaiTheKH.MaLoaiThe
-                  select new
-                  {
-                    theKH.MaThe,
-                    theKH.MaKhachHang,
-                    theKH.MaLoaiThe,
-                    theKH.NgayDangKy,
-                    theKH.TrangThai,
-                    loaiTheKH.TenTheKH,
-                    loaiTheKH.HanSuDung,
-                    loaiTheKH.DonViHSD,
-                    loaiTheKH.PhanTramGiamGia
-                  };
+      //var query = from theKH in lstTheKH
+      //            join loaiTheKH in lstLoaiTheKH
+      //            on theKH.MaLoaiThe equals loaiTheKH.MaLoaiThe
+      //            select new
+      //            {
+      //              theKH.MaThe,
+      //              theKH.MaKhachHang,
+      //              theKH.MaLoaiThe,
+      //              theKH.NgayDangKy,
+      //              theKH.TrangThai,
+      //              loaiTheKH.TenLoaiTheKH,
+      //              loaiTheKH.DonViGiamGia,
+      //              loaiTheKH.GiamGia
+      //            };
       dgvDSTheKH.AutoGenerateColumns = false;
-      dgvDSTheKH.DataSource = query.ToList();
+      dgvDSTheKH.DataSource = lstTheKH;
+      //dgvDSTheKH.DataSource = query.ToList();
 
 
     }
@@ -101,6 +101,7 @@ namespace GUI
         if (Convert.ToBoolean(e.Value) == true)
           e.Value = "Mở";
         else e.Value = "Khóa";
+
       if (dgvDSTheKH.Columns[e.ColumnIndex].Name.ToString() == "colTenKH")
       {
         KhachHang_BUS bus = new KhachHang_BUS();
@@ -108,6 +109,31 @@ namespace GUI
         clsKhachHang_DTO KH = lstKH.First(u => u.MaKhachHang == e.Value.ToString());
         e.Value = KH.TenKhachHang;
       }
+
+
+      LoaiTheKhachHang_BUS LoaiTheKH_bus = new LoaiTheKhachHang_BUS();
+      List<clsLoaiTheKhachHang> lstLoaiTheKH = LoaiTheKH_bus.LayLoaiTheKhachHang();
+
+      if (dgvDSTheKH.Columns[e.ColumnIndex].Name.ToString() == "colLoaiThe")
+      {
+        
+        clsLoaiTheKhachHang LoaiTheKH = lstLoaiTheKH.First(u => u.MaLoaiThe == e.Value.ToString());
+        e.Value = LoaiTheKH.TenLoaiTheKH;
+      }
+
+      //if (dgvDSTheKH.Columns[e.ColumnIndex].Name.ToString() == "colGiamGia")
+      //{
+      //  e.Value = lstLoaiTheKH[0].GiamGia;
+      //}
+
+      //if (dgvDSTheKH.Columns[e.ColumnIndex].Name.ToString() == "colDonViGiamGia")
+      //{
+      //  e.Value = lstLoaiTheKH[0].DonViGiamGia;
+      //}
+
+
+
+
 
       if (dgvDSTheKH.Columns[e.ColumnIndex].Name.ToString() == "colNgayDangKy")
       {
@@ -149,7 +175,7 @@ namespace GUI
     {
       btnCapNhat.Enabled = true;
       ttc.TrangThaiKhiChonMotDongTrongDataGridView(grbTTTheKH);
-      dtpNgayHetHanTheKH.Enabled = txtLoaiThe.Enabled = false;
+      txtLoaiThe.Enabled = false;
     }
 
     private void dgvDSTheKH_SelectionChanged(object sender, EventArgs e)
@@ -165,9 +191,6 @@ namespace GUI
           rdbTrangThaiMo.Checked = true;
         else rdbTrangThaiDong.Checked = true;
 
-        DateTime dtNgayDangKy = DateTime.Parse(r.Cells["colNgayDangKy"].Value.ToString());
-        DateTime dtNgayHetHan = dtNgayDangKy.AddDays(365);
-        ttc.LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayHetHanTheKH, dtNgayHetHan);
 
         TrangThaiKhiChonMotTheKH();
       }

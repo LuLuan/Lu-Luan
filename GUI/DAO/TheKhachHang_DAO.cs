@@ -10,12 +10,13 @@ namespace DAO
 {
   public class TheKhachHang_DAO
   {
-    public List<clsTheKhachHang> LayDanhSachTheKHH()
+    public List<clsTheKhachHang> LayDanhSachTheKHH(string maThe, string tenKH)
     {
       List<clsTheKhachHang> lstTheKH = new List<clsTheKhachHang>();
       SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-      string query = "SELECT * FROM TheKhachHang";
-
+      string query = string.Format("SELECT ma_the, TheKhachHang.ma_khach_hang, TheKhachHang.ma_loai_the, ngay_dang_ky, TheKhachHang.trang_thai FROM TheKhachHang, KhachHang WHERE TheKhachHang.ma_khach_hang = KhachHang.ma_khach_hang AND KhachHang.trang_thai != 'false' AND ma_the LIKE '%{0}%' AND ten_khach_hang LIKE N'%{1}%'", maThe, tenKH);
+      //AND KhachHang.trang_thai != 'false'
+      //string query = "SELECT * FROM TheKhachHang";
       SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
       SqlDataReader reader = cmd.ExecuteReader();
 

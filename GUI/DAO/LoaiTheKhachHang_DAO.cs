@@ -8,42 +8,39 @@ using System.Data.SqlClient;
 
 namespace DAO
 {
-    public class LoaiTheKhachHang_DAO
+  public class LoaiTheKhachHang_DAO
+  {
+    public List<clsLoaiTheKhachHang> LayLoaiTheKhachHang()
     {
-        public List<clsLoaiTheKhachHang> LayLoaiTheKhachHang()
-        {
-            List<clsLoaiTheKhachHang> lstLoaiTheKH = new List<clsLoaiTheKhachHang>();
-            SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-            string query = "SELECT * FROM LoaiTheKhachHang";
+      List<clsLoaiTheKhachHang> lstLoaiTheKH = new List<clsLoaiTheKhachHang>();
+      SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+      string query = "SELECT * FROM LoaiTheKhachHang";
 
-            SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
-            SqlDataReader reader = cmd.ExecuteReader();
+      SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
+      SqlDataReader reader = cmd.ExecuteReader();
 
-            while(reader.Read())
-            {
-                clsLoaiTheKhachHang loaiTheKH = new clsLoaiTheKhachHang();
-                if (!reader.IsDBNull(0))
-                    loaiTheKH.MaLoaiThe = (string)reader[0];
+      while (reader.Read())
+      {
+        clsLoaiTheKhachHang loaiTheKH = new clsLoaiTheKhachHang();
+        if (!reader.IsDBNull(0))
+          loaiTheKH.MaLoaiThe = (string)reader[0];
 
-                if (!reader.IsDBNull(1))
-                    loaiTheKH.TenTheKH = (string)reader[1];
+        if (!reader.IsDBNull(1))
+          loaiTheKH.TenLoaiTheKH = (string)reader[1];
 
-                if (!reader.IsDBNull(2))
-                    loaiTheKH.HanSuDung = (int)reader[2];
+        if (!reader.IsDBNull(2))
+          loaiTheKH.GiamGia = (float)(double)reader[2];
 
-                if (!reader.IsDBNull(3))
-                    loaiTheKH.DonViHSD = (string)reader[3];
+        if (!reader.IsDBNull(3))
+          loaiTheKH.DonViGiamGia = (string)reader[3];
 
-                if (!reader.IsDBNull(4))
-                    loaiTheKH.PhanTramGiamGia = (float)(double)reader[4];
+        if (!reader.IsDBNull(4))
+          loaiTheKH.TrangThai = (bool)reader[4];
 
-                if (!reader.IsDBNull(5))
-                    loaiTheKH.TrangThai = (bool)reader[5];
-
-                lstLoaiTheKH.Add(loaiTheKH);
-            }
-
-            return lstLoaiTheKH;
-        }
+        lstLoaiTheKH.Add(loaiTheKH);
+      }
+      ThaoTacDuLieu_DAO.DongKetNoi(con);
+      return lstLoaiTheKH;
     }
+  }
 }

@@ -153,6 +153,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap COMEBUY_logo2 {
+            get {
+                object obj = ResourceManager.GetObject("COMEBUY-logo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Contacts_50px {
             get {
                 object obj = ResourceManager.GetObject("Contacts_50px", resourceCulture);
@@ -1066,6 +1076,26 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap white_OK {
             get {
                 object obj = ResourceManager.GetObject("white-OK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap world_tea_shop {
+            get {
+                object obj = ResourceManager.GetObject("world-tea-shop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap world_tea_shop1 {
+            get {
+                object obj = ResourceManager.GetObject("world-tea-shop1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

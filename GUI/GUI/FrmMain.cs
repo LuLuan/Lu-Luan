@@ -190,6 +190,7 @@ namespace GUI
             {
                 TruotTrai(pnlMenu, 970);
                 MoTatCaTrenPnlMain();
+                //BackgroundImage.
             } 
         }
 

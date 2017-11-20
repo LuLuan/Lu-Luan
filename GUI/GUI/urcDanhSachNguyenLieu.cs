@@ -92,12 +92,12 @@ namespace GUI
         {
 
             /// Load cbb Đơn vị tính
-            cbbDVTinhNL.DataSource = lstDonViTinh;
+          cbbDVTinhNL.DataSource = BUS.DonViTinh_BUS.DSDonViTinh();
             cbbDVTinhNL.DisplayMember = "TenDonViTinh";
             cbbDVTinhNL.ValueMember = "MaDonViTinh";
             cbbDVTinhNL.SelectedValue = "";
             /// Load cbb Kích thước món ăn
-            cbbLoaiNL.DataSource = lstLoaiNguyenLieu;
+            cbbLoaiNL.DataSource = BUS.LoaiNguyenLieu_BUS.DSLoaiNguyenLieu("");
             cbbLoaiNL.DisplayMember = "TenLoaiNguyenLieu";
             cbbLoaiNL.ValueMember = "MaLoaiNguyenLieu";
             cbbLoaiNL.SelectedValue = "";
@@ -220,10 +220,15 @@ namespace GUI
                 }
             }
         }
-
+      public void  _reloadAllCbb(bool isreload)
+      {
+        LoadTatCaCBB();
+      }
         private void picAddDonViTinh_Click(object sender, EventArgs e)
         {
             urcDanhSachDonViTinh urcDanhSachDonViTinh = new urcDanhSachDonViTinh();
+            urcDanhSachDonViTinh._LoadDSDonVi = new urcDanhSachDonViTinh.LoadDSDonVi(_reloadAllCbb);
+
             if (!this.Controls.ContainsKey("urcDanhSachDonViTinh"))
             {
                 this.Controls.Add(urcDanhSachDonViTinh);
@@ -239,6 +244,7 @@ namespace GUI
 
 
             urcDanhSachLoaiNguyenLieu urcLoaiNguyenLieu = new urcDanhSachLoaiNguyenLieu();
+            urcLoaiNguyenLieu._ReloadDSNguyenLieu = new urcDanhSachLoaiNguyenLieu.ReLoadDSNguyenLieu(_reloadAllCbb);
             if (!this.Controls.ContainsKey("urcLoaiNguyenLieu"))
             {
                 this.Controls.Add(urcLoaiNguyenLieu);

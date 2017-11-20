@@ -10,10 +10,10 @@ namespace BUS
 {
   public class TheKhachHang_BUS
   {
-    public List<clsTheKhachHang> LayDanhSachTheKH()
+    public List<clsTheKhachHang> LayDanhSachTheKH(string maThe, string tenKH)
     {
       TheKhachHang_DAO dao = new TheKhachHang_DAO();
-      return dao.LayDanhSachTheKHH();
+      return dao.LayDanhSachTheKHH(maThe, tenKH);
     }
 
 

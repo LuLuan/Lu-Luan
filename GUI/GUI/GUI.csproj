@@ -630,6 +630,8 @@
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Database_Import_20px.png" />
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Meat_20px.png" />
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Import_20px_2.png" />
+    <None Include="bin\Debug\HinhAnh\AnhMonAn\COMEBUY-logo2.png" />
+    <None Include="bin\Debug\HinhAnh\AnhMonAn\world-tea-shop.jpg" />
     <Content Include="Resources\COMEBUY-logo.png" />
     <Content Include="Resources\customer-card.png" />
   </ItemGroup>
