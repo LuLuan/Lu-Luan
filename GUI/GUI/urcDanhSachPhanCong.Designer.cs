@@ -46,7 +46,6 @@
       this.btnCapNhat = new System.Windows.Forms.Button();
       this.btnLamMoi = new System.Windows.Forms.Button();
       this.btnThemBPC = new System.Windows.Forms.Button();
-      this.hoantatthem = new System.Windows.Forms.Button();
       this.label9 = new System.Windows.Forms.Label();
       this.label8 = new System.Windows.Forms.Label();
       this.label12 = new System.Windows.Forms.Label();
@@ -181,7 +180,6 @@
       this.grbDanhSachNVDuocChon.Controls.Add(this.btnCapNhat);
       this.grbDanhSachNVDuocChon.Controls.Add(this.btnLamMoi);
       this.grbDanhSachNVDuocChon.Controls.Add(this.btnThemBPC);
-      this.grbDanhSachNVDuocChon.Controls.Add(this.hoantatthem);
       this.grbDanhSachNVDuocChon.Controls.Add(this.label9);
       this.grbDanhSachNVDuocChon.Controls.Add(this.label8);
       this.grbDanhSachNVDuocChon.Controls.Add(this.label12);
@@ -224,16 +222,7 @@
       this.btnThemBPC.TabIndex = 19;
       this.btnThemBPC.Text = "Thêm";
       this.btnThemBPC.UseVisualStyleBackColor = true;
-      // 
-      // hoantatthem
-      // 
-      this.hoantatthem.Location = new System.Drawing.Point(462, 169);
-      this.hoantatthem.Name = "hoantatthem";
-      this.hoantatthem.Size = new System.Drawing.Size(32, 25);
-      this.hoantatthem.TabIndex = 18;
-      this.hoantatthem.Text = "button1";
-      this.hoantatthem.UseVisualStyleBackColor = true;
-      this.hoantatthem.Click += new System.EventHandler(this.button3_Click);
+      this.btnThemBPC.Click += new System.EventHandler(this.btnThemBPC_Click);
       // 
       // label9
       // 
@@ -434,7 +423,6 @@
     private System.Windows.Forms.CheckBox checkBox15;
     private System.Windows.Forms.Label label12;
     private System.Windows.Forms.Label label10;
-    private System.Windows.Forms.Button hoantatthem;
     private System.Windows.Forms.Button btnLamMoi;
     private System.Windows.Forms.Button btnThemBPC;
     private System.Windows.Forms.GroupBox grbThongTin;

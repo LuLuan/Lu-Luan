@@ -203,6 +203,12 @@
     <Compile Include="urcQLPhanCong.Designer.cs">
       <DependentUpon>urcQLPhanCong.cs</DependentUpon>
     </Compile>
+    <Compile Include="urcQLThongTinCH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcQLThongTinCH.Designer.cs">
+      <DependentUpon>urcQLThongTinCH.cs</DependentUpon>
+    </Compile>
     <Compile Include="urcQLSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -232,6 +238,12 @@
     </Compile>
     <Compile Include="urcThemNhanVien.Designer.cs">
       <DependentUpon>urcThemNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urcThongTinCuaHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcThongTinCuaHang.Designer.cs">
+      <DependentUpon>urcThongTinCuaHang.cs</DependentUpon>
     </Compile>
     <Compile Include="urcXemLichSuBan.cs">
       <SubType>UserControl</SubType>
@@ -320,6 +332,9 @@
     <EmbeddedResource Include="urcQLPhanCong.resx">
       <DependentUpon>urcQLPhanCong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="urcQLThongTinCH.resx">
+      <DependentUpon>urcQLThongTinCH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="urcQLSanPham.resx">
       <DependentUpon>urcQLSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="urcThemNhanVien.resx">
       <DependentUpon>urcThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcThongTinCuaHang.resx">
+      <DependentUpon>urcThongTinCuaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="urcXemLichSuBan.resx">
       <DependentUpon>urcXemLichSuBan.cs</DependentUpon>
@@ -632,6 +650,11 @@
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Import_20px_2.png" />
     <None Include="bin\Debug\HinhAnh\AnhMonAn\COMEBUY-logo2.png" />
     <None Include="bin\Debug\HinhAnh\AnhMonAn\world-tea-shop.jpg" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_25px_2.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Save_35px %282%29.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_File_35px_1 %282%29.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Cancel_35px %283%29.png" />
+    <None Include="bin\Debug\HinhAnh\AnhNguyenLieu\logo-comebuy.png" />
     <Content Include="Resources\COMEBUY-logo.png" />
     <Content Include="Resources\customer-card.png" />
   </ItemGroup>

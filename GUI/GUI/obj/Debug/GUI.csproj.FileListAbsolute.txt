@@ -235,3 +235,7 @@ C:\DA_WF\Clone\GUI\GUI\obj\Debug\GUI.urcNhapNguyenLieu.resources
 D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcNhapNguyenLieu.resources
 C:\DA_WF\Clone\GUI\GUI\obj\Debug\GUI.urcNhaCungCap.resources
 D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcNhaCungCap.resources
+C:\DA_WF\Clone\GUI\GUI\obj\Debug\GUI.urcQLThongTinCH.resources
+C:\DA_WF\Clone\GUI\GUI\obj\Debug\GUI.urcThongTinCuaHang.resources
+D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcQLThongTinCH.resources
+D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcThongTinCuaHang.resources

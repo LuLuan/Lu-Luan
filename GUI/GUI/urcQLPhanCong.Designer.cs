@@ -32,7 +32,6 @@
       this.pnlMenu = new System.Windows.Forms.Panel();
       this.btnHome = new System.Windows.Forms.Button();
       this.btnMoMenu = new System.Windows.Forms.Button();
-      this.btnThemNhanVien = new System.Windows.Forms.Button();
       this.btnPhanCong = new System.Windows.Forms.Button();
       this.btnChamCong = new System.Windows.Forms.Button();
       this.pnlTieuDe = new System.Windows.Forms.Panel();
@@ -48,7 +47,6 @@
       this.pnlMenu.BackColor = System.Drawing.Color.Black;
       this.pnlMenu.Controls.Add(this.btnHome);
       this.pnlMenu.Controls.Add(this.btnMoMenu);
-      this.pnlMenu.Controls.Add(this.btnThemNhanVien);
       this.pnlMenu.Controls.Add(this.btnPhanCong);
       this.pnlMenu.Controls.Add(this.btnChamCong);
       this.pnlMenu.Location = new System.Drawing.Point(930, 0);
@@ -81,23 +79,6 @@
       this.btnMoMenu.TabIndex = 5;
       this.btnMoMenu.UseVisualStyleBackColor = true;
       this.btnMoMenu.Click += new System.EventHandler(this.btnMoMenu_Click);
-      // 
-      // btnThemNhanVien
-      // 
-      this.btnThemNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btnThemNhanVien.FlatAppearance.BorderSize = 0;
-      this.btnThemNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnThemNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnThemNhanVien.ForeColor = System.Drawing.Color.White;
-      this.btnThemNhanVien.Image = global::GUI.Properties.Resources.add_user_20px;
-      this.btnThemNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnThemNhanVien.Location = new System.Drawing.Point(7, 143);
-      this.btnThemNhanVien.Name = "btnThemNhanVien";
-      this.btnThemNhanVien.Size = new System.Drawing.Size(209, 34);
-      this.btnThemNhanVien.TabIndex = 4;
-      this.btnThemNhanVien.Text = "    Thêm nhân viên";
-      this.btnThemNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.btnThemNhanVien.UseVisualStyleBackColor = true;
       // 
       // btnPhanCong
       // 
@@ -189,7 +170,6 @@
     private System.Windows.Forms.Panel pnlMenu;
     private System.Windows.Forms.Button btnHome;
     private System.Windows.Forms.Button btnMoMenu;
-    private System.Windows.Forms.Button btnThemNhanVien;
     private System.Windows.Forms.Button btnPhanCong;
     private System.Windows.Forms.Button btnChamCong;
     private System.Windows.Forms.Panel pnlTieuDe;

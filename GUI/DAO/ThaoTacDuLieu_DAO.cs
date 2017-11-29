@@ -12,9 +12,9 @@ namespace DAO
   {
 
     //Huy
-    private static string strCon = @"Data Source=W0Q5NTP4LWZVOB1\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
+    //private static string strCon = @"Data Source=W0Q5NTP4LWZVOB1\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
     //Luân
-    //private static string strCon = @"Data Source=LUAN\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
+    private static string strCon = @"Data Source=LUAN\SQLEXPRESS;Initial Catalog=QLCHTraSuaVaDoAnVat;Integrated Security=True";
     public static SqlConnection TaoKetNoi()
     {
       SqlConnection con = new SqlConnection(strCon);

@@ -210,7 +210,7 @@ namespace GUI
              * CN0009 = Bán hàng
              * CN0010 = Quản lý lịch làm việc
              * CN0011 = Quản lý lịch sử bán
-             * CN0012 = Quản lý lương
+             * CN0012 = Quản lý thông tin cửa hàng
              * CN0013 = Quản lý sản phẩm
              * CN0014 = Quản lý cửa hàng
              
@@ -312,6 +312,20 @@ namespace GUI
                     this.Controls.Add(urcQLLichLamViec);
                 }
             }
+            // CN0012 QL thông tin cửa hàng
+            if (btnMenu.Name == "CN0012")
+            {
+                TruotPhai(pnlMenu, 0);
+                TatTatCaTrenPnlMain(); //Chuyển về dạng miniMenu nhỏ
+                urcQLThongTinCH urcQLThongTinCH = new urcQLThongTinCH();
+                urcQLThongTinCH.bolNhanPhimHome = new urcQLThongTinCH.NhanPhimHome(isClickedHome);
+                if (KiemTraTonTaiCuaUrc(urcQLThongTinCH, this) == true)
+                {
+                    urcQLThongTinCH.BringToFront();
+                    this.Controls.Add(urcQLThongTinCH);
+                }
+            }
+
             //// chức năng 13 quản lý sản phẩm ( thức ăn)
             if (btnMenu.Name == "CN0013")
             {

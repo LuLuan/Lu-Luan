@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class urcQLBanHang
+    partial class urcQLThongTinCH
     {
         /// <summary> 
         /// Required designer variable.
@@ -89,11 +89,11 @@
       // 
       this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
       this.lblTieuDe.ForeColor = System.Drawing.Color.White;
-      this.lblTieuDe.Location = new System.Drawing.Point(0, 0);
+      this.lblTieuDe.Location = new System.Drawing.Point(125, 0);
       this.lblTieuDe.Name = "lblTieuDe";
-      this.lblTieuDe.Size = new System.Drawing.Size(930, 40);
+      this.lblTieuDe.Size = new System.Drawing.Size(663, 40);
       this.lblTieuDe.TabIndex = 0;
-      this.lblTieuDe.Text = "BÁN HÀNG";
+      this.lblTieuDe.Text = "QUẢN LÝ THÔNG TIN CỬA HÀNG";
       this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       // 
       // timerMenu
@@ -103,20 +103,20 @@
       // 
       // pnlContainer
       // 
-      this.pnlContainer.BackColor = System.Drawing.Color.Gray;
+      this.pnlContainer.BackColor = System.Drawing.Color.MintCream;
       this.pnlContainer.Location = new System.Drawing.Point(0, 40);
       this.pnlContainer.Name = "pnlContainer";
       this.pnlContainer.Size = new System.Drawing.Size(930, 530);
       this.pnlContainer.TabIndex = 2;
       // 
-      // urcQLBanHang
+      // urcQLThongTinCH
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.pnlMenu);
       this.Controls.Add(this.pnlContainer);
       this.Controls.Add(this.pnlTieuDe);
-      this.Name = "urcQLBanHang";
+      this.Name = "urcQLThongTinCH";
       this.Size = new System.Drawing.Size(970, 570);
       this.Load += new System.EventHandler(this.urcQLNhanVien_Load);
       this.pnlMenu.ResumeLayout(false);

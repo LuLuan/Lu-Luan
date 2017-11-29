@@ -34,7 +34,6 @@
       this.btnMoMenu = new System.Windows.Forms.Button();
       this.btnThemNhanVien = new System.Windows.Forms.Button();
       this.btnXemDSNV = new System.Windows.Forms.Button();
-      this.btnXemDSTK = new System.Windows.Forms.Button();
       this.pnlTieuDe = new System.Windows.Forms.Panel();
       this.lblTieuDe = new System.Windows.Forms.Label();
       this.timerMenu = new System.Windows.Forms.Timer(this.components);
@@ -50,7 +49,6 @@
       this.pnlMenu.Controls.Add(this.btnMoMenu);
       this.pnlMenu.Controls.Add(this.btnThemNhanVien);
       this.pnlMenu.Controls.Add(this.btnXemDSNV);
-      this.pnlMenu.Controls.Add(this.btnXemDSTK);
       this.pnlMenu.Location = new System.Drawing.Point(930, 0);
       this.pnlMenu.Name = "pnlMenu";
       this.pnlMenu.Size = new System.Drawing.Size(40, 570);
@@ -91,7 +89,7 @@
       this.btnThemNhanVien.ForeColor = System.Drawing.Color.White;
       this.btnThemNhanVien.Image = global::GUI.Properties.Resources.icons8_Add_List_25px;
       this.btnThemNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnThemNhanVien.Location = new System.Drawing.Point(2, 143);
+      this.btnThemNhanVien.Location = new System.Drawing.Point(0, 112);
       this.btnThemNhanVien.Name = "btnThemNhanVien";
       this.btnThemNhanVien.Size = new System.Drawing.Size(209, 34);
       this.btnThemNhanVien.TabIndex = 4;
@@ -117,24 +115,6 @@
       this.btnXemDSNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.btnXemDSNV.UseVisualStyleBackColor = true;
       this.btnXemDSNV.Click += new System.EventHandler(this.btnXemDSNV_Click);
-      // 
-      // btnXemDSTK
-      // 
-      this.btnXemDSTK.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btnXemDSTK.FlatAppearance.BorderSize = 0;
-      this.btnXemDSTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnXemDSTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnXemDSTK.ForeColor = System.Drawing.Color.White;
-      this.btnXemDSTK.Image = global::GUI.Properties.Resources.list_20px;
-      this.btnXemDSTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnXemDSTK.Location = new System.Drawing.Point(6, 106);
-      this.btnXemDSTK.Name = "btnXemDSTK";
-      this.btnXemDSTK.Size = new System.Drawing.Size(209, 34);
-      this.btnXemDSTK.TabIndex = 4;
-      this.btnXemDSTK.Text = "    Tài khoản";
-      this.btnXemDSTK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.btnXemDSTK.UseVisualStyleBackColor = true;
-      this.btnXemDSTK.Click += new System.EventHandler(this.btnXemDSTK_Click);
       // 
       // pnlTieuDe
       // 
@@ -196,7 +176,6 @@
         private System.Windows.Forms.Button btnThemNhanVien;
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnXemDSTK;
         //private urcDSNhanVien urcDSNhanVien;
     }
 }

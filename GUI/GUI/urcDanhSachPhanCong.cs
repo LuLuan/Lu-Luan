@@ -453,6 +453,76 @@ namespace GUI
       e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
     }
 
+    private void btnThemBPC_Click(object sender, EventArgs e)
+    {
+      // Nếu có nhân viên được chọn
+      if (listviewDanhSachChon.Items.Count > 0)
+      {
+
+        if (DialogResult.Yes == MessageBox.Show("Thêm bản phân công mới" + dtpNgayBatDau.Value.ToString(), "Thêm", MessageBoxButtons.YesNo))
+        {
+          int count = 0; // Đếm và kiểm tra xem đã thêm được bao nhiêu records
+          ChiTietBanPhanCong_BUS bus = new ChiTietBanPhanCong_BUS();
+
+
+          ////Duyệt qua từng nhân viên đã chọn
+          foreach (ListViewItem lvItem in listviewDanhSachChon.Items)
+          {
+
+            ////Duyệt Control trong Groupbox, lấy ra các control là CheckBox
+            foreach (Control ctr in grbDanhSachNVDuocChon.Controls)
+            {
+              if (ctr is CheckBox)
+              {
+                CheckBox chb = (CheckBox)ctr;
+                string checkBoxName = "chbsang";
+                int temp = 0;
+
+                for (int i = 0; i < 14; i++)
+                {
+                  DateTime ngayBatDau = dtpNgayBatDau.Value;
+
+                  if (chb.Name == checkBoxName + ngayBatDau.AddDays(temp).ToString("ddMMyyyy") && chb.Checked)
+                  {
+                    string maNV = lvItem.Text;
+
+                    clsChiTietBanPhanCong_DTO chiTietBPC = TaoDoiBanChiTietPhanCong(chb.Name, maNV);
+                    if (bus.ThemChiTietPhanCong(chiTietBPC))
+                    {
+                      count++;
+                    }
+                    //MessageBox.Show("Nhân viên có " + chiTietBPC.MaNhanVien + " Làm việc vào thời gian: " + chiTietBPC.NgayLamViec.ToShortDateString() + " trong ca " + chiTietBPC.MaCaLamViec + " nhân viên tạo: " + urcDangNhap.strMaNhanVien);
+                  }
+                  temp++;
+                  if ((i + 1) % 7 == 0)
+                  {
+                    checkBoxName = "chbchieu";
+                    temp = 0;
+                  }
+                } // Kết thúc for duyệt 14 checkbox
+
+
+              } /*End if*/
+
+
+            } /*End Foreach*/
+
+          } /// Foreach duyệt qua từng nhân viên
+          if (count > 0)
+          {
+            MessageBox.Show("Thêm thành công");
+            List<clsChiTietBanPhanCong_DTO> lstCTBPC = bus.LayDSPCTheoNgayVaCa(DateTime.Now, "", "ngayThem");
+            dgvDSPCTrongNgay.AutoGenerateColumns = false;
+            dgvDSPCTrongNgay.DataSource = lstCTBPC;
+            //LayDSPCTheoNgay(DateTime ngay)
+          }
+          else MessageBox.Show("Thêm thất bại");
+        } //End messsagebox.show "Có muốn thêm hay không"
+      } /*End if*/
+
+
+    }
+
     
 
 

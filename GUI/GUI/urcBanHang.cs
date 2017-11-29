@@ -18,6 +18,7 @@ namespace GUI
         {
             InitializeComponent();
         }
+        float giatien = 0; // giá tiền trước khi thêm?
         public static float tongtien = 0;
         public static DataTable dt = new DataTable();
         List<clsKichThuocMonAn_DTO> lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
@@ -142,7 +143,8 @@ namespace GUI
                 cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
                 cbbKichThuocMonAn.SelectedIndex = 0;
 
-                txtGia.Text = (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString(); // String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))));  //
+                giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString()); // String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))));  //
+                txtGia.Text = String.Format("{0:C0}", giatien);
             }
             else
             {
@@ -150,6 +152,7 @@ namespace GUI
                 txtTenMon.Clear();
                 txtSoLuong.Clear();
                 txtGia.Clear();
+              
                 txtSoLuong.Enabled = false;
             }
         }
@@ -171,8 +174,9 @@ namespace GUI
         private void cbbKichThuocMonAn_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (txtTenMon.Text=="")return;
-            
-            txtGia.Text = (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString(); String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text)))); // 
+
+            txtGia.Text = String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))));  //(BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString(); 
+           giatien    =   (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))); // 
             
         }
         void TaoDataTable()
@@ -200,7 +204,7 @@ namespace GUI
             dr[0] =  txtTenMon.Text + "(" + cbbKichThuocMonAn.Text + ")";
             dr[1] = (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString())).ToString();
             dr[2] = txtSoLuong.Text ;
-            dr[3] = txtGia.Text ;
+            dr[3] = String.Format("{0:0}", float.Parse(giatien.ToString())); // txtGia.Text ;
             dr[4] = ItemDuocChon[0].SubItems[1].Text;
             for (int i = 0; i < dgvGioHang.Rows.Count; i++)
             {
@@ -317,7 +321,7 @@ namespace GUI
                 iTongtien += int.Parse(String.Format("{0:0}", dgvGioHang.Rows[i].Cells[3].Value.ToString()));
             }
             tongtien = float.Parse(iTongtien.ToString());
-            txtTongTien.Text = String.Format("{0:C0}", iTongtien); 
+            txtTongTien.Text = String.Format("{0:C0}", iTongtien);
         }
 
         private void txtTenMon_TextChanged(object sender, EventArgs e)
@@ -410,6 +414,19 @@ namespace GUI
             }
            
             lstMonAn = BUS.MonAn_BUS.DSMonAn(query);
+        }
+
+        private void dgvGioHang_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvGioHang.Columns[e.ColumnIndex].Name == "colGia")
+                e.Value = String.Format("{0:C0}",int.Parse(e.Value.ToString()));
+            if (dgvGioHang.Columns[e.ColumnIndex].Name == "colDonGia")
+                e.Value = String.Format("{0:C0}", int.Parse(e.Value.ToString()));
+        }
+
+        private void cbbKichThuocMonAn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

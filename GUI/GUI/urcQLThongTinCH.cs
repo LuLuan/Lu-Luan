@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class urcQLSanPham : UserControl
+    public partial class urcQLThongTinCH : UserControl
     {
-        public urcQLSanPham()
+        public urcQLThongTinCH()
         {
             InitializeComponent();
         }
@@ -22,24 +22,25 @@ namespace GUI
 
         urcCongThucMonAn urcCongThucMonAn = new urcCongThucMonAn();
         urcDanhSachSanPham urcDanhSachSanPham = new urcDanhSachSanPham();
+        urcThongTinCuaHang urcThongTinCuaHang = new urcThongTinCuaHang();
 
         
         private void CaiDatPanelMenu(Button btn)
         {
-            if (btn.Name == btnXemDSNV.Name)
-            {
-                urcDanhSachSanPham.Visible = false;
-                if (!pnlContainer.Controls.ContainsKey("urcDanhSachSanPham"))
-                {
-                    pnlContainer.Controls.Add(urcDanhSachSanPham);
-                    urcDanhSachSanPham.Visible = true;
-                    urcDanhSachSanPham.Dock = DockStyle.Fill;
-                }
-                else
-                {
-                    urcDanhSachSanPham.Visible = true;
-                }
-            }
+          //if (btn.Name == btnXemDSNV.Name)
+          //{
+          //  //urcThongTinCuaHang.Visible = false;
+          //  if (!pnlContainer.Controls.ContainsKey("urcThongTinCuaHang"))
+          //  {
+          //    pnlContainer.Controls.Add(urcThongTinCuaHang);
+          //    urcThongTinCuaHang.Visible = true;
+          //    urcThongTinCuaHang.Dock = DockStyle.Fill;
+          //  }
+          //  else
+          //  {
+          //    urcThongTinCuaHang.Visible = true;
+          //  }
+          //}
 
             //else if(btn.Name == btnXemDSTK.Name)
             //{
@@ -60,45 +61,28 @@ namespace GUI
 
         private void urcQLNhanVien_Load(object sender, EventArgs e)
         {
-            CaiDatPanelMenu(btnXemDSNV);
+          //CaiDatPanelMenu(btnXemDSNV);
+          pnlContainer.Controls.Add(urcThongTinCuaHang);
         }
 
         private void btnXemDSNV_Click(object sender, EventArgs e)
         {
-            CaiDatPanelMenu(btnXemDSNV);
-            if(isClickedbtnMoMenu == true)
-                btnMoMenu_Click(sender, e);
+            //CaiDatPanelMenu(btnXemDSNV);
+            //if(isClickedbtnMoMenu == true)
+            //    btnMoMenu_Click(sender, e);
         }
 
-        //private void btnXemDSTK_Click(object sender, EventArgs e)
-        //{
-        //    CaiDatPanelMenu(btnXemDSTK);
-        //    if (isClickedbtnMoMenu == true)
-        //        btnMoMenu_Click(sender, e);
-        //}
-
-        private void btnThemNhanVien_Click(object sender, EventArgs e)
+        private void btnXemDSTK_Click(object sender, EventArgs e)
         {
-            CaiDatPanelMenu(btnThemNhanVien);
-            
-            if (!pnlContainer.Controls.ContainsKey("urcThemNhanVien"))
-            {
-                pnlContainer.Controls.Add(urcCongThucMonAn);
-                urcCongThucMonAn.BackColor = Color.White;
-                urcCongThucMonAn.Top = 100;
-                urcCongThucMonAn.Left = 300;
-            }
-            urcCongThucMonAn.BringToFront();
-            if (isClickedbtnMoMenu == true)
-                btnMoMenu_Click(sender, e);
+            //CaiDatPanelMenu(btnXemDSTK);
+            //if (isClickedbtnMoMenu == true)
+            //    btnMoMenu_Click(sender, e);
         }
+
 
 
 
         bool isClickedbtnMoMenu = false;
-
-
-        
 
         private void timerMenu_Tick(object sender, EventArgs e)
         {
@@ -146,12 +130,19 @@ namespace GUI
             timerMenu_Tick(sender, e);
         }
 
+
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             if (bolNhanPhimHome !=null)
             {
                 bolNhanPhimHome(true);
             }
+        }
+
+        private void btnThemNhanVien_Click(object sender, EventArgs e)
+        {
+
         }
 
         

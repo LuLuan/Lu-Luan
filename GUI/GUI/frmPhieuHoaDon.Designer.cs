@@ -37,7 +37,7 @@
             this.rptChiTietHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
             this.rptChiTietHoaDon.Location = new System.Drawing.Point(0, 0);
             this.rptChiTietHoaDon.Name = "rptChiTietHoaDon";
-            this.rptChiTietHoaDon.Size = new System.Drawing.Size(366, 499);
+            this.rptChiTietHoaDon.Size = new System.Drawing.Size(413, 499);
             this.rptChiTietHoaDon.TabIndex = 0;
             // 
             // btnHoanTat
@@ -49,9 +49,9 @@
             this.btnHoanTat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnHoanTat.Image = global::GUI.Properties.Resources.icons8_Ok_25px;
             this.btnHoanTat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHoanTat.Location = new System.Drawing.Point(0, 496);
+            this.btnHoanTat.Location = new System.Drawing.Point(0, 498);
             this.btnHoanTat.Name = "btnHoanTat";
-            this.btnHoanTat.Size = new System.Drawing.Size(366, 38);
+            this.btnHoanTat.Size = new System.Drawing.Size(413, 38);
             this.btnHoanTat.TabIndex = 77;
             this.btnHoanTat.Text = "Hoàn tất";
             this.btnHoanTat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -63,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 534);
+            this.ClientSize = new System.Drawing.Size(413, 536);
             this.Controls.Add(this.btnHoanTat);
             this.Controls.Add(this.rptChiTietHoaDon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;

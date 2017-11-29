@@ -40,13 +40,13 @@ namespace GUI
 
       this.rptChiTietHoaDon.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paramSoDienThoaiCH", lstCuaHang[0].SoDienThoai, false));
 
-      this.rptChiTietHoaDon.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paramTongTien", String.Format("{0:C}", float.Parse( urcBanHang.tongtien.ToString())), false));
+      this.rptChiTietHoaDon.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paramTongTien", String.Format("{0:C0}", float.Parse( urcBanHang.tongtien.ToString())), false));
 
-      this.rptChiTietHoaDon.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paramTienMat", String.Format("{0:C}", float.Parse(urcThanhToan.tienmat)), false));
+      this.rptChiTietHoaDon.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paramTienMat", String.Format("{0:C0}", float.Parse(urcThanhToan.tienmat)), false));
 
-      this.rptChiTietHoaDon.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paramTienTraLai", String.Format("{0:C}", float.Parse( urcThanhToan.tientralai)), false));
+      this.rptChiTietHoaDon.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paramTienTraLai", String.Format("{0:C0}", float.Parse( urcThanhToan.tientralai)), false));
 
-      this.rptChiTietHoaDon.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paramVAT", String.Format("{0:C}", float.Parse(urcThanhToan.VAT)), false));
+      this.rptChiTietHoaDon.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paramVAT", String.Format("{0:C0}", float.Parse(urcThanhToan.VAT)), false));
 
       this.rptChiTietHoaDon.RefreshReport();
     }

@@ -1018,6 +1018,42 @@ namespace GUI
         
     }
 
+    private void picAnhDaiDien_Click(object sender, EventArgs e)
+    {
+      //fd.Title = "Chọn ảnh đại diện nhân viên";
+      //fd.Filter = "Image Only (*.jpg; *.jpeg; *.gif; *.png; *.bmp) | *.jpg; *.jpeg; *.gif; *.bmp; *.png";
+      //if (fd.ShowDialog() == DialogResult.OK)
+      //{
+      //  if (fd.CheckFileExists)
+      //  {
+      //    picAnhDaiDien.Image = Image.FromFile(fd.FileName);
+
+      //    //picAnhDaiDien.SizeMode = PictureBoxSizeMode.StretchImage;
+      //    //MessageBox.Show(Path.GetFileName(fd.FileName));
+
+      //    //File.Copy(Path.GetFileName(fd.FileName), "HinhAnh/AnhDaiDien/" + Path.GetFileName(fd.FileName)); //Lưu ảnh lại folder
+      //  }
+      //}
+    }
+
+    private void picAnhDaiDien_DoubleClick(object sender, EventArgs e)
+    {
+      fd.Title = "Chọn ảnh đại diện nhân viên";
+      fd.Filter = "Image Only (*.jpg; *.jpeg; *.gif; *.png; *.bmp) | *.jpg; *.jpeg; *.gif; *.bmp; *.png";
+      if (fd.ShowDialog() == DialogResult.OK)
+      {
+        if (fd.CheckFileExists)
+        {
+          picAnhDaiDien.Image = Image.FromFile(fd.FileName);
+
+          //picAnhDaiDien.SizeMode = PictureBoxSizeMode.StretchImage;
+          //MessageBox.Show(Path.GetFileName(fd.FileName));
+
+          //File.Copy(Path.GetFileName(fd.FileName), "HinhAnh/AnhDaiDien/" + Path.GetFileName(fd.FileName)); //Lưu ảnh lại folder
+        }
+      }
+    }
+
 
 
 
