@@ -245,15 +245,24 @@ namespace GUI
 
         private void btnThanhToan_Click_1(object sender, EventArgs e)
         {
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    dt.Rows[i]["colDonGia"] = String.Format("{0:C0}", dt.Rows[i]["colDonGia"].ToString());
+            //    dt.Rows[i][3] = String.Format("{0:C0}", dt.Rows[i][3].ToString());
+            //}
             if (dgvGioHang.Rows.Count<=0) return;
             urcThanhToan urcThanhToan = new urcThanhToan();
             urcThanhToan.xulyui = new GUI.urcThanhToan.XuLyUI(XuLiTruotleftPanel);
+            //
+            
+            //
             urcThanhToan.xulytaothanhconghoadon = new GUI.urcThanhToan.XuLyTaoThanhCongHoaDon(XuLyTaoThanhCongHoaDon);
             pnlright.Controls.Add(urcThanhToan);
             urcThanhToan.BringToFront();
             XuLiTruotleftPanel(true);
             //this.Visible = true;
 
+           
         }
         void XuLyTaoThanhCongHoaDon(bool isAddOk)
         {

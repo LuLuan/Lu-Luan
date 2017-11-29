@@ -43,6 +43,10 @@ namespace GUI
         }
         public void LoadDgvThanhPhan()
         {
+            try
+            {
+
+            
           //  
           //  lstMonAnTP = BUS.ThanhPhanMonAn_BUS.LayCacThanhPhanCuaMon(MaDuocChon);
             dgvThanhPhanCT.DataSource = lstThanhPhanTP;
@@ -62,6 +66,11 @@ namespace GUI
             txtTenMonAnTP.Text = drv.Cells["colTenMonAn"].Value.ToString();
             txtMaMonAnTP.Text = drv.Cells["colMaMonAn"].Value.ToString();
             txtTongSoNLTP.Text = lstMonAnTP.Count.ToString();
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
         public void btnThemNguyenLieu_Click(object sender, EventArgs e)

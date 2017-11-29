@@ -18,6 +18,7 @@ namespace GUI
         {
             InitializeComponent();
         }
+        float TienTraLai = 0;
         float TienKhachDua = 0;
         public static string MaHD;
         string MaNhanVien = urcDangNhap.strMaNhanVien;
@@ -66,12 +67,14 @@ namespace GUI
 
         private void btnXacNhanThanhToan_Click(object sender, EventArgs e)
         {
+            
             //
-            if (int.Parse(txtTienTraLai.Text) < 0) return;
+            //if (float.Parse(String.Format("{0:0}",TienTraLai) < 0) return;
+            if (TienTraLai < 0) return;
             if (txtTienKhachDua.Text == "" || txtTienKhachDua.Text == "000") return;
             //
             tienmat = txtTienKhachDua.Text;
-            tientralai = txtTienTraLai.Text;
+            tientralai = TienTraLai.ToString();
 
 
             urcDangNhap urcDN = new urcDangNhap();
@@ -81,7 +84,8 @@ namespace GUI
             HoaDon.NgayLapHoaDon = DateTime.Now;
             HoaDon.TongTien = tongtien;
             HoaDon.TienDua = float.Parse(txtTienKhachDua.Text);
-            HoaDon.TienThoi = float.Parse(txtTienTraLai.Text);
+            //HoaDon.TienThoi = float.Parse(txtTienTraLai.Text);
+            HoaDon.TienThoi = TienTraLai;
 
             HoaDon.VAT = HoaDon.TongTien / 10;
             //
@@ -160,6 +164,7 @@ namespace GUI
 
               //  txtTienKhachDua.Text = String.Format("{0:C0}", tienkhachdua);
               //  txtTienKhachDua.TextChanged -= txtTienKhachDua_TextChanged;
+                TienTraLai = (float.Parse(String.Format("{0,0}",tienkhachdua)) - tongtien);
                 txtTienTraLai.Text = String.Format("{0:C0}", (float.Parse(String.Format("{0,0}",tienkhachdua)) - tongtien));
             }
             else

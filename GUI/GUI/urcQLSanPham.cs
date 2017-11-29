@@ -79,18 +79,18 @@ namespace GUI
 
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
-            CaiDatPanelMenu(btnThemNhanVien);
+            //CaiDatPanelMenu(btnThemNhanVien);
             
-            if (!pnlContainer.Controls.ContainsKey("urcThemNhanVien"))
-            {
-                pnlContainer.Controls.Add(urcCongThucMonAn);
-                urcCongThucMonAn.BackColor = Color.White;
-                urcCongThucMonAn.Top = 100;
-                urcCongThucMonAn.Left = 300;
-            }
-            urcCongThucMonAn.BringToFront();
-            if (isClickedbtnMoMenu == true)
-                btnMoMenu_Click(sender, e);
+            //if (!pnlContainer.Controls.ContainsKey("urcThemNhanVien"))
+            //{
+            //    pnlContainer.Controls.Add(urcCongThucMonAn);
+            //    urcCongThucMonAn.BackColor = Color.White;
+            //    urcCongThucMonAn.Top = 100;
+            //    urcCongThucMonAn.Left = 300;
+            //}
+            //urcCongThucMonAn.BringToFront();
+            //if (isClickedbtnMoMenu == true)
+            //    btnMoMenu_Click(sender, e);
         }
 
 
