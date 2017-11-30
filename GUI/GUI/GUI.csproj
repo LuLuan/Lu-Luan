@@ -245,6 +245,12 @@
     <Compile Include="urcThongTinCuaHang.Designer.cs">
       <DependentUpon>urcThongTinCuaHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="urcXemLichLamViec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcXemLichLamViec.Designer.cs">
+      <DependentUpon>urcXemLichLamViec.cs</DependentUpon>
+    </Compile>
     <Compile Include="urcXemLichSuBan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="urcThongTinCuaHang.resx">
       <DependentUpon>urcThongTinCuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcXemLichLamViec.resx">
+      <DependentUpon>urcXemLichLamViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="urcXemLichSuBan.resx">
       <DependentUpon>urcXemLichSuBan.cs</DependentUpon>

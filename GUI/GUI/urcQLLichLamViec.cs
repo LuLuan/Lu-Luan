@@ -17,6 +17,8 @@ namespace GUI
       InitializeComponent();
     }
 
+    urcXemLichLamViec urcXemLichLamViec = new urcXemLichLamViec();
+
     public delegate void NhanPhimHome(bool bolPhimHome);
     public NhanPhimHome bolNhanPhimHome;
 
@@ -28,6 +30,17 @@ namespace GUI
       }
     }
 
+    private void pnlContainer_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
+
+    private void urcQLLichLamViec_Load(object sender, EventArgs e)
+    {
+      this.pnlContainer.Controls.Add(urcXemLichLamViec);
+    }
+
 
   }
 }
+  

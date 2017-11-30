@@ -158,7 +158,7 @@
       this.btnHuyThaoTac.Name = "btnHuyThaoTac";
       this.btnHuyThaoTac.Size = new System.Drawing.Size(254, 49);
       this.btnHuyThaoTac.TabIndex = 7;
-      this.btnHuyThaoTac.Text = "Hủy bỏ";
+      this.btnHuyThaoTac.Text = "Hủy thao tác";
       this.btnHuyThaoTac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btnHuyThaoTac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.btnHuyThaoTac.UseVisualStyleBackColor = false;

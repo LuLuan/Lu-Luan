@@ -46,8 +46,9 @@
       this.pnlContainer.BackColor = System.Drawing.Color.MintCream;
       this.pnlContainer.Location = new System.Drawing.Point(0, 40);
       this.pnlContainer.Name = "pnlContainer";
-      this.pnlContainer.Size = new System.Drawing.Size(930, 530);
+      this.pnlContainer.Size = new System.Drawing.Size(931, 530);
       this.pnlContainer.TabIndex = 4;
+      this.pnlContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainer_Paint);
       // 
       // pnlTieuDe
       // 
@@ -167,6 +168,7 @@
       this.Controls.Add(this.pnlContainer);
       this.Name = "urcQLLichLamViec";
       this.Size = new System.Drawing.Size(970, 570);
+      this.Load += new System.EventHandler(this.urcQLLichLamViec_Load);
       this.pnlTieuDe.ResumeLayout(false);
       this.pnlMenu.ResumeLayout(false);
       this.ResumeLayout(false);

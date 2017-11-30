@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.listviewNhanVien = new System.Windows.Forms.ListView();
       this.colTenNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.colMaNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -275,6 +275,7 @@
       // dtpNgayBatDau
       // 
       this.dtpNgayBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
       this.dtpNgayBatDau.Location = new System.Drawing.Point(238, 172);
       this.dtpNgayBatDau.Name = "dtpNgayBatDau";
       this.dtpNgayBatDau.Size = new System.Drawing.Size(201, 21);
@@ -320,8 +321,8 @@
       this.dgvDSPCTrongNgay.Name = "dgvDSPCTrongNgay";
       this.dgvDSPCTrongNgay.ReadOnly = true;
       this.dgvDSPCTrongNgay.RowHeadersWidth = 35;
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvDSPCTrongNgay.RowsDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvDSPCTrongNgay.RowsDefaultCellStyle = dataGridViewCellStyle2;
       this.dgvDSPCTrongNgay.RowTemplate.Height = 35;
       this.dgvDSPCTrongNgay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.dgvDSPCTrongNgay.Size = new System.Drawing.Size(534, 162);

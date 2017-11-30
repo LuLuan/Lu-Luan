@@ -15,7 +15,7 @@ namespace DAO
             List<clsChucNang_DTO> dsChucNang = new List<clsChucNang_DTO>();
 
             SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-            string Query = string.Format("SELECT ChucNang.ma_chuc_nang, ten_chuc_nang, ghi_chu, ChucNang.trang_thai FROM NhanVien, ChucNang, ChucVu, ChiTietChucNang WHERE NhanVien.ma_nhan_vien='{0}' AND NhanVien.ma_chuc_vu = ChucVu.ma_chuc_vu AND ChiTietChucNang.ma_chuc_vu = ChucVu.ma_chuc_vu AND ChiTietChucNang.ma_chuc_nang = ChucNang.ma_chuc_nang ", maNhanVien);
+            string Query = string.Format("SELECT ChucNang.ma_chuc_nang, ten_chuc_nang, ghi_chu, ChucNang.trang_thai FROM NhanVien, ChucNang, ChucVu, ChiTietChucNang WHERE NhanVien.ma_nhan_vien='{0}' AND NhanVien.ma_chuc_vu = ChucVu.ma_chuc_vu AND ChiTietChucNang.ma_chuc_vu = ChucVu.ma_chuc_vu AND ChiTietChucNang.ma_chuc_nang = ChucNang.ma_chuc_nang AND ChiTietChucNang.trang_thai = {1} AND ChucNang.trang_thai = {1}", maNhanVien, 1);
             SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(Query, con);
             SqlDataReader rddtSV = cmd.ExecuteReader();
             while (rddtSV.Read())

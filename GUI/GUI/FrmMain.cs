@@ -210,7 +210,7 @@ namespace GUI
              * CN0009 = Bán hàng
              * CN0010 = Quản lý lịch làm việc
              * CN0011 = Quản lý lịch sử bán
-             * CN0012 = Quản lý thông tin cửa hàng
+             * CN0012 = Quản lý thông tin cửa hàng =>bỏ vì đã có CN0014 rồi :))
              * CN0013 = Quản lý sản phẩm
              * CN0014 = Quản lý cửa hàng
              
@@ -312,8 +312,8 @@ namespace GUI
                     this.Controls.Add(urcQLLichLamViec);
                 }
             }
-            // CN0012 QL thông tin cửa hàng
-            if (btnMenu.Name == "CN0012")
+            // CN0014 QL thông tin cửa hàng
+            if (btnMenu.Name == "CN0014")
             {
                 TruotPhai(pnlMenu, 0);
                 TatTatCaTrenPnlMain(); //Chuyển về dạng miniMenu nhỏ
