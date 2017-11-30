@@ -15,7 +15,8 @@ namespace DAO
             List<clsQuyenDangNhap_DTO> dsQuyenDangNhap = new List<clsQuyenDangNhap_DTO>();
 
             SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-            string query = string.Format("select QuyenDangNhap.ma_quyen_dang_nhap, QuyenDangNhap.ten_quyen_dang_nhap, QuyenDangNhap.trang_thai from QuyenDangNhap,TaiKhoan where TaiKhoan.ma_quyen_dang_nhap = QuyenDangNhap.ma_quyen_dang_nhap AND  ma_dang_nhap ='{0}'", maNhanVien);
+            string query = string.Format("select QuyenDangNhap.ma_quyen_dang_nhap, QuyenDangNhap.ten_quyen_dang_nhap, QuyenDangNhap.trang_thai from QuyenDangNhap,TaiKhoan where TaiKhoan.ma_quyen_dang_nhap = QuyenDangNhap.ma_quyen_dang_nhap AND ma_dang_nhap ='{0}' AND QuyenDangNhap.trang_thai = {1}", maNhanVien, 1);
+          ////
             SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
             SqlDataReader rddtSV = cmd.ExecuteReader();
             while (rddtSV.Read())
@@ -35,7 +36,7 @@ namespace DAO
             List<clsQuyenDangNhap_DTO> dsQuyenDangNhap = new List<clsQuyenDangNhap_DTO>();
 
             SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-            string query = string.Format("SELECT * FROM QuyenDangNhap WHERE ma_quyen_dang_nhap LIKE '%{0}%'", maQDN);
+            string query = string.Format("SELECT * FROM QuyenDangNhap WHERE ma_quyen_dang_nhap LIKE '%{0}%' AND trang_thai = {1}", maQDN, 1);
             SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())

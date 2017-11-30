@@ -97,9 +97,13 @@ namespace GUI
             var q = (from MonAn in lstMonAn
                      join ChiTietMonAn in lstCTMonAn
                      on MonAn.MaMonAn equals ChiTietMonAn.MaMonAn
+
                      //join LoaiMonAn in lstLoaiMonAn  on MonAn.MaLoaiMon equals LoaiMonAn.MaLoaiMonAn
+
                      //join DonViTinh in lstDonViTinh on MonAn.MaDonViTinh equals DonViTinh.MaDonViTinh
+
                      //join KichThuocMonAn in lstKichThuocMonAn on ChiTietMonAn.MaKichThuoc equals KichThuocMonAn.MaKichThuoc
+
                      select new
                      {
                          MonAn.MaMonAn,
@@ -316,10 +320,12 @@ namespace GUI
 
         private void btnAddSP_Click_1(object sender, EventArgs e)
         {
+          
             btnAddSP.Visible = false;
             isEnabledControls(true);
             picAnhDaiDien.Image = null;
             Utilities.ResetAllControls(grbThongTinSP);
+            btnChinhSua.Enabled = false;
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)

@@ -293,6 +293,7 @@
       // 
       // picAnhDaiDien
       // 
+      this.picAnhDaiDien.BackColor = System.Drawing.Color.White;
       this.picAnhDaiDien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.picAnhDaiDien.Location = new System.Drawing.Point(36, 58);
       this.picAnhDaiDien.Name = "picAnhDaiDien";

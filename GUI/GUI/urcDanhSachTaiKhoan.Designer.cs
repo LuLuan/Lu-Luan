@@ -66,8 +66,9 @@
       // 
       this.dgvDSTK.AllowUserToAddRows = false;
       this.dgvDSTK.AllowUserToDeleteRows = false;
+      this.dgvDSTK.BackgroundColor = System.Drawing.Color.White;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
       dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
       dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -83,6 +84,7 @@
             this.colQuyenDangNhap,
             this.colNgayTao,
             this.colTrangThai});
+      this.dgvDSTK.EnableHeadersVisualStyles = false;
       this.dgvDSTK.Location = new System.Drawing.Point(6, 88);
       this.dgvDSTK.MultiSelect = false;
       this.dgvDSTK.Name = "dgvDSTK";
@@ -186,7 +188,7 @@
       // txtHoTen_TK
       // 
       this.txtHoTen_TK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.txtHoTen_TK.Location = new System.Drawing.Point(204, 48);
+      this.txtHoTen_TK.Location = new System.Drawing.Point(191, 45);
       this.txtHoTen_TK.Name = "txtHoTen_TK";
       this.txtHoTen_TK.Size = new System.Drawing.Size(183, 23);
       this.txtHoTen_TK.TabIndex = 4;

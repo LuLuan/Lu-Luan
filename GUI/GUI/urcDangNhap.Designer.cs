@@ -99,6 +99,7 @@
       this.lbQuenMatKhau.Size = new System.Drawing.Size(153, 13);
       this.lbQuenMatKhau.TabIndex = 4;
       this.lbQuenMatKhau.Text = "Bạn đã lỡ quên mất mật khẩu?";
+      this.lbQuenMatKhau.Visible = false;
       // 
       // lbMKSai
       // 

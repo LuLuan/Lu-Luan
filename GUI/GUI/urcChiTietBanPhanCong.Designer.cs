@@ -30,6 +30,8 @@
     {
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
       this.grbChamCong = new System.Windows.Forms.GroupBox();
       this.rdbChuaChapCong = new System.Windows.Forms.RadioButton();
       this.btnLuuThayDoi = new System.Windows.Forms.Button();
@@ -124,6 +126,15 @@
       // 
       this.dgvDSNVCaChieu.AllowUserToAddRows = false;
       this.dgvDSNVCaChieu.AllowUserToDeleteRows = false;
+      this.dgvDSNVCaChieu.BackgroundColor = System.Drawing.Color.White;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvDSNVCaChieu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.dgvDSNVCaChieu.ColumnHeadersHeight = 40;
       this.dgvDSNVCaChieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaBanGhiChieu,
@@ -134,13 +145,14 @@
             this.colCoMatChieu,
             this.colNghiCoPhepChieu,
             this.colTrangThaiChieu});
+      this.dgvDSNVCaChieu.EnableHeadersVisualStyles = false;
       this.dgvDSNVCaChieu.Location = new System.Drawing.Point(455, 149);
       this.dgvDSNVCaChieu.MultiSelect = false;
       this.dgvDSNVCaChieu.Name = "dgvDSNVCaChieu";
       this.dgvDSNVCaChieu.ReadOnly = true;
       this.dgvDSNVCaChieu.RowHeadersWidth = 35;
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvDSNVCaChieu.RowsDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvDSNVCaChieu.RowsDefaultCellStyle = dataGridViewCellStyle2;
       this.dgvDSNVCaChieu.RowTemplate.Height = 35;
       this.dgvDSNVCaChieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.dgvDSNVCaChieu.Size = new System.Drawing.Size(425, 242);
@@ -221,6 +233,15 @@
       // 
       this.dgvDSNVCaSang.AllowUserToAddRows = false;
       this.dgvDSNVCaSang.AllowUserToDeleteRows = false;
+      this.dgvDSNVCaSang.BackgroundColor = System.Drawing.Color.White;
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvDSNVCaSang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
       this.dgvDSNVCaSang.ColumnHeadersHeight = 40;
       this.dgvDSNVCaSang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaBanGhiSang,
@@ -231,13 +252,14 @@
             this.colCoMatSang,
             this.colNghiCoPhepSang,
             this.colTrangThaiSang});
+      this.dgvDSNVCaSang.EnableHeadersVisualStyles = false;
       this.dgvDSNVCaSang.Location = new System.Drawing.Point(16, 149);
       this.dgvDSNVCaSang.MultiSelect = false;
       this.dgvDSNVCaSang.Name = "dgvDSNVCaSang";
       this.dgvDSNVCaSang.ReadOnly = true;
       this.dgvDSNVCaSang.RowHeadersWidth = 35;
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvDSNVCaSang.RowsDefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvDSNVCaSang.RowsDefaultCellStyle = dataGridViewCellStyle4;
       this.dgvDSNVCaSang.RowTemplate.Height = 35;
       this.dgvDSNVCaSang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.dgvDSNVCaSang.Size = new System.Drawing.Size(425, 242);

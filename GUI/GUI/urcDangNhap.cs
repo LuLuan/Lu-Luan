@@ -17,8 +17,8 @@ namespace GUI
         public delegate void GetKetQuaDangNhap(bool bolKetQuaDN);
         public delegate void GetThongTinNV(List<clsNhanVien_DTO> bolKetQuaDN);
         public delegate void GetQuyenDangNhap(List<clsQuyenDangNhap_DTO> lstQuyenDN);
-        public static string strMaNhanVien ="";
-		public static string maNhanVien="";
+        public static string strMaNhanVien = "";
+		    public static string maNhanVien = "";
         public GetKetQuaDangNhap LayKetQuaDangNhap;
         public GetThongTinNV LayThongTinNV;
         public GetQuyenDangNhap LayQuyenDangNhap;

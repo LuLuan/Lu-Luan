@@ -244,7 +244,7 @@ namespace GUI
           KhachHang_BUS busKH = new KhachHang_BUS();
           if (busKH.Xoa(txtMaKH.Text) && busTheKH.Xoa(txtMaKH.Text))
           {
-            MessageBox.Show("Đã xóa khách hàng");
+            //MessageBox.Show("Đã xóa khách hàng");
             TrangThaiBanDau();
             HienThiDSKhachHang();
           }

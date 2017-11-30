@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.listviewNhanVien = new System.Windows.Forms.ListView();
       this.colTenNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -308,6 +309,15 @@
       // 
       this.dgvDSPCTrongNgay.AllowUserToAddRows = false;
       this.dgvDSPCTrongNgay.AllowUserToDeleteRows = false;
+      this.dgvDSPCTrongNgay.BackgroundColor = System.Drawing.Color.White;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvDSPCTrongNgay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.dgvDSPCTrongNgay.ColumnHeadersHeight = 40;
       this.dgvDSPCTrongNgay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaBanGhi,
@@ -316,6 +326,7 @@
             this.colNgayLam,
             this.colCaLam,
             this.colTT});
+      this.dgvDSPCTrongNgay.EnableHeadersVisualStyles = false;
       this.dgvDSPCTrongNgay.Location = new System.Drawing.Point(6, 22);
       this.dgvDSPCTrongNgay.MultiSelect = false;
       this.dgvDSPCTrongNgay.Name = "dgvDSPCTrongNgay";

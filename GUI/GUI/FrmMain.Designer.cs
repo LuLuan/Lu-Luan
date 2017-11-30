@@ -43,6 +43,7 @@
       this.itemMnLogOut = new System.Windows.Forms.ToolStripMenuItem();
       this.itemMnClose = new System.Windows.Forms.ToolStripMenuItem();
       this.pnlChuaMenuDong = new System.Windows.Forms.Panel();
+      this.btnThoat = new System.Windows.Forms.Button();
       this.pnlMenu.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.btnThoatUngDung)).BeginInit();
       this.pnlMiniMenu.SuspendLayout();
@@ -55,6 +56,7 @@
       // pnlMenu
       // 
       this.pnlMenu.BackColor = System.Drawing.Color.Black;
+      this.pnlMenu.Controls.Add(this.btnThoat);
       this.pnlMenu.Controls.Add(this.btnThoatUngDung);
       this.pnlMenu.Controls.Add(this.btnClickToLogin);
       this.pnlMenu.Controls.Add(this.pnlMiniMenu);
@@ -215,6 +217,27 @@
       this.pnlChuaMenuDong.Size = new System.Drawing.Size(60, 494);
       this.pnlChuaMenuDong.TabIndex = 2;
       // 
+      // btnThoat
+      // 
+      this.btnThoat.BackColor = System.Drawing.Color.Transparent;
+      this.btnThoat.FlatAppearance.BorderSize = 0;
+      this.btnThoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+      this.btnThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+      this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnThoat.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.btnThoat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+      this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.btnThoat.Location = new System.Drawing.Point(469, 280);
+      this.btnThoat.Name = "btnThoat";
+      this.btnThoat.Size = new System.Drawing.Size(164, 32);
+      this.btnThoat.TabIndex = 6;
+      this.btnThoat.Text = "Esc để thoát";
+      this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.btnThoat.UseVisualStyleBackColor = false;
+      //this.btnThoat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.button1_KeyPress);
+      this.btnThoat.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnThoat_KeyUp);
+      // 
       // FrmMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +282,7 @@
         private System.Windows.Forms.ToolStripMenuItem itemMnClose;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox btnThoatUngDung;
+        private System.Windows.Forms.Button btnThoat;
     }
 }
 

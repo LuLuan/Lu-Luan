@@ -160,6 +160,8 @@ namespace GUI
             urcDN.LayKetQuaDangNhap = new urcDangNhap.GetKetQuaDangNhap(NhanKetQuaDangNhap);
             urcDN.LayThongTinNV = new urcDangNhap.GetThongTinNV(XuLyThongTinNV);
             urcDN.LayQuyenDangNhap = new urcDangNhap.GetQuyenDangNhap(LayQuyenDangNhap);
+            btnThoat.Visible = false;
+            btnThoat.Enabled = false;
             this.Controls.Add(urcDN);    
         }
         public void XuLyThongTinNV(List<clsNhanVien_DTO> lstNV)
@@ -420,6 +422,16 @@ namespace GUI
             {
                 this.Close();
             }
+        }
+
+        
+
+        private void btnThoat_KeyUp(object sender, KeyEventArgs e)
+        {
+          if (e.KeyCode == Keys.Escape)
+          {
+            this.Close();
+          }
         }
 
 

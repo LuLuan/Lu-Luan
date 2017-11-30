@@ -32,26 +32,26 @@ namespace GUI
     {
       TheKhachHang_BUS theKH_BUS = new TheKhachHang_BUS();
       List<clsTheKhachHang> lstTheKH = theKH_BUS.LayDanhSachTheKH("", "");
-      //LoaiTheKhachHang_BUS loaiTheKH_BUS = new LoaiTheKhachHang_BUS();
-      //List<clsLoaiTheKhachHang> lstLoaiTheKH = loaiTheKH_BUS.LayLoaiTheKhachHang();
+      LoaiTheKhachHang_BUS loaiTheKH_BUS = new LoaiTheKhachHang_BUS();
+      List<clsLoaiTheKhachHang> lstLoaiTheKH = loaiTheKH_BUS.LayLoaiTheKhachHang();
 
-      //var query = from theKH in lstTheKH
-      //            join loaiTheKH in lstLoaiTheKH
-      //            on theKH.MaLoaiThe equals loaiTheKH.MaLoaiThe
-      //            select new
-      //            {
-      //              theKH.MaThe,
-      //              theKH.MaKhachHang,
-      //              theKH.MaLoaiThe,
-      //              theKH.NgayDangKy,
-      //              theKH.TrangThai,
-      //              loaiTheKH.TenLoaiTheKH,
-      //              loaiTheKH.DonViGiamGia,
-      //              loaiTheKH.GiamGia
-      //            };
+      var query = from theKH in lstTheKH
+                  join loaiTheKH in lstLoaiTheKH
+                  on theKH.MaLoaiThe equals loaiTheKH.MaLoaiThe
+                  select new
+                  {
+                    theKH.MaThe,
+                    theKH.MaKhachHang,
+                    theKH.MaLoaiThe,
+                    theKH.NgayDangKy,
+                    theKH.TrangThai,
+                    loaiTheKH.TenLoaiTheKH,
+                    loaiTheKH.DonViGiamGia,
+                    loaiTheKH.GiamGia
+                  };
       dgvDSTheKH.AutoGenerateColumns = false;
-      dgvDSTheKH.DataSource = lstTheKH;
-      //dgvDSTheKH.DataSource = query.ToList();
+      //dgvDSTheKH.DataSource = lstTheKH;
+      dgvDSTheKH.DataSource = query.ToList();
 
 
     }
@@ -68,26 +68,6 @@ namespace GUI
 
     private void dgvDSTheKH_CellClick(object sender, DataGridViewCellEventArgs e)
     {
-      //if(dgvDSTheKH.SelectedRows.Count > 0)
-      //{
-
-      //    DataGridViewRow r = dgvDSTheKH.SelectedRows[0];
-      //    txtMaTheKH.Text = r.Cells["colMaThe"].Value.ToString();
-      //    txtTenKH.Text = r.Cells["colTenKH"].Value.ToString();
-      //    txtLoaiThe.Text = r.Cells["colLoaiThe"].Value.ToString();
-
-      //    if (Convert.ToBoolean(r.Cells["colTrangThai"].Value.ToString()))
-      //        rdbTrangThaiMo.Checked = true;
-      //    else rdbTrangThaiDong.Checked = true;
-
-      //    DateTime dtNgayDangKy = DateTime.Parse(r.Cells["colNgayDangKy"].Value.ToString());
-      //    DateTime dtNgayHetHan = dtNgayDangKy.AddDays(365);
-      //    ttc.LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayHetHanTheKH, dtNgayHetHan);
-
-
-
-      //    TrangThaiKhiChonMotTheKH();
-      //}
     }
 
     private void dgvDSTheKH_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -97,6 +77,7 @@ namespace GUI
 
     private void dgvDSTheKH_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
+      
       if (dgvDSTheKH.Columns[e.ColumnIndex].Name.ToString() == "colTrangThai")
         if (Convert.ToBoolean(e.Value) == true)
           e.Value = "Mở";
@@ -116,7 +97,7 @@ namespace GUI
 
       if (dgvDSTheKH.Columns[e.ColumnIndex].Name.ToString() == "colLoaiThe")
       {
-        
+
         clsLoaiTheKhachHang LoaiTheKH = lstLoaiTheKH.First(u => u.MaLoaiThe == e.Value.ToString());
         e.Value = LoaiTheKH.TenLoaiTheKH;
       }
@@ -153,48 +134,110 @@ namespace GUI
 
     #region Các nút chức năng (Cập nhật, Hủy thao tác)
 
+    private void btnXoaThe_Click(object sender, EventArgs e)
+    {
+      if (DialogResult.Yes == MessageBox.Show("Khóa thẻ khách hàng", "Xác nhận khóa thẻ", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+      {
+        clsTheKhachHang TheKH = TaoDoiTuongTheKhachHang(false);
+        TheKhachHang_BUS bus = new TheKhachHang_BUS();
+        if (bus.ThaoTacVoiDoiTuongTheKhachHang(TheKH, "Update"))
+        {
+          HienThiDSTheKhachHang();
+          TrangThaiBanDau();
+        }
+      }
+    }
+
+    private void btnMoThe_Click(object sender, EventArgs e)
+    {
+      if (DialogResult.Yes == MessageBox.Show("Mở thẻ khách hàng", "Xác nhận mở thẻ", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+      {
+        clsTheKhachHang TheKH = TaoDoiTuongTheKhachHang(true);
+        TheKhachHang_BUS bus = new TheKhachHang_BUS();
+        if (bus.ThaoTacVoiDoiTuongTheKhachHang(TheKH, "Update"))
+        {
+          HienThiDSTheKhachHang();
+          TrangThaiBanDau();
+        }
+      }
+    }
+
+
+
     private void btnHuyThaoTac_Click(object sender, EventArgs e)
     {
-
+      //HienThiDSTheKhachHang();
+      //TrangThaiBanDau();
     }
     private void btnCapNhat_Click(object sender, EventArgs e)
     {
-      MessageBox.Show("Cập nhật");
+      //if (DialogResult.Yes == MessageBox.Show("Cập nhật thẻ khách hàng", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+      //{
+      //  clsTheKhachHang TheKH = TaoDoiTuongTheKhachHang();
+      //  TheKhachHang_BUS bus = new TheKhachHang_BUS();
+      //  if (bus.ThaoTacVoiDoiTuongTheKhachHang(TheKH, "Update"))
+      //  {
+      //    HienThiDSTheKhachHang();
+      //  }
+      //}
     }
+
+    private clsTheKhachHang TaoDoiTuongTheKhachHang(bool trangThai)
+    {
+      clsTheKhachHang theKH = new clsTheKhachHang();
+      DataGridViewRow r = dgvDSTheKH.SelectedRows[0];
+      theKH.MaThe = r.Cells[0].Value.ToString();
+      theKH.MaKhachHang = r.Cells[1].Value.ToString();
+      theKH.MaLoaiThe = r.Cells[2].Value.ToString();
+      theKH.NgayDangKy = DateTime.Parse(r.Cells[3].Value.ToString());
+      theKH.TrangThai = trangThai;
+      return theKH;
+    }
+
 
     #endregion
 
 
     private void TrangThaiBanDau()
     {
-      btnCapNhat.Enabled = false;
-      ttc.TrangThaiBanDau(grbTTTheKH, grbDSTheKH);
+      //btnCapNhat.Enabled = false;
+      //ttc.TrangThaiBanDau(grbTTTheKH, grbDSTheKH);
     }
 
     private void TrangThaiKhiChonMotTheKH()
     {
-      btnCapNhat.Enabled = true;
-      ttc.TrangThaiKhiChonMotDongTrongDataGridView(grbTTTheKH);
-      txtLoaiThe.Enabled = false;
+      //btnCapNhat.Enabled = true;
+      //ttc.TrangThaiKhiChonMotDongTrongDataGridView(grbTTTheKH);
+      //txtLoaiThe.Enabled = false;
     }
 
     private void dgvDSTheKH_SelectionChanged(object sender, EventArgs e)
     {
+      if (!dgvDSTheKH.Focused) return;
       if (dgvDSTheKH.SelectedRows.Count > 0)
       {
         DataGridViewRow r = dgvDSTheKH.SelectedRows[0];
-        txtMaTheKH.Text = r.Cells["colMaThe"].Value.ToString();
-        txtTenKH.Text = r.Cells["colTenKH"].Value.ToString();
-        txtLoaiThe.Text = r.Cells["colLoaiThe"].Value.ToString();
+        //txtMaTheKH.Text = r.Cells["colMaThe"].Value.ToString();
+        //txtTenKH.Text = r.Cells["colTenKH"].Value.ToString();
+        //txtLoaiThe.Text = r.Cells["colLoaiThe"].Value.ToString();
 
         if (Convert.ToBoolean(r.Cells["colTrangThai"].Value.ToString()))
-          rdbTrangThaiMo.Checked = true;
-        else rdbTrangThaiDong.Checked = true;
+        {
+          btnXoaThe.Enabled = true;
+          btnMoThe.Enabled = false;
+        }
+        else
+        {
+          btnXoaThe.Enabled = false;
+          btnMoThe.Enabled = true;
+        }
 
 
-        TrangThaiKhiChonMotTheKH();
+        //TrangThaiKhiChonMotTheKH();
       }
     }
+
+    
 
 
 
