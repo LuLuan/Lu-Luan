@@ -100,7 +100,7 @@ namespace GUI
           {
             if (KH_bus.ThaoTacVoiKhachHang(KH, "Add") && theKH_bus.ThaoTacVoiDoiTuongTheKhachHang(theKH, "Add"))
             {
-              MessageBox.Show("Đã thêm khách hàng " + KH.TenKhachHang);
+              //MessageBox.Show("Đã thêm khách hàng " + KH.TenKhachHang);
               TrangThaiBanDau();
               TuPhatSinhMaKhachHang();
             }

@@ -14,5 +14,10 @@ namespace BUS
         {
             return DAO.KichThuocMonAn_DAO.LaydsKichThuoc();
         }
+
+        public static List<clsKichThuocMonAn_DTO> LaydsKichThuocTheoMaSanPham(string a, bool b)
+        {
+          return DAO.KichThuocMonAn_DAO.LaydsKichThuocTheoMaSanPham(a, b);
+        }
     }
 }

@@ -19,21 +19,24 @@ namespace GUI
       InitializeComponent();
     }
 
-    ThaoTacChung ttc = new ThaoTacChung();
 
 
     public void urcDanhSachTheKhachHang_Load(object sender, EventArgs e)
     {
-      HienThiDSTheKhachHang();
+      HienThiDSTheKhachHang("", "");
       TrangThaiBanDau();
     }
 
-    private void HienThiDSTheKhachHang()
+    //TheKhachHang_BUS theKH_BUS = new TheKhachHang_BUS();
+    //LoaiTheKhachHang_BUS loaiTheKH_BUS = new LoaiTheKhachHang_BUS();
+    //List<clsTheKhachHang> lstTheKH;
+    //List<clsLoaiTheKhachHang> lstLoaiTheKH;
+    private void HienThiDSTheKhachHang(string ma, string ten)
     {
       TheKhachHang_BUS theKH_BUS = new TheKhachHang_BUS();
-      List<clsTheKhachHang> lstTheKH = theKH_BUS.LayDanhSachTheKH("", "");
       LoaiTheKhachHang_BUS loaiTheKH_BUS = new LoaiTheKhachHang_BUS();
-      List<clsLoaiTheKhachHang> lstLoaiTheKH = loaiTheKH_BUS.LayLoaiTheKhachHang();
+      List<clsTheKhachHang>  lstTheKH = theKH_BUS.LayDanhSachTheKH(ma, ten);
+      List<clsLoaiTheKhachHang>  lstLoaiTheKH = loaiTheKH_BUS.LayLoaiTheKhachHang();
 
       var query = from theKH in lstTheKH
                   join loaiTheKH in lstLoaiTheKH
@@ -66,9 +69,6 @@ namespace GUI
         MessageBox.Show("Xóa thẻ ?");
     }
 
-    private void dgvDSTheKH_CellClick(object sender, DataGridViewCellEventArgs e)
-    {
-    }
 
     private void dgvDSTheKH_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
     {
@@ -77,7 +77,7 @@ namespace GUI
 
     private void dgvDSTheKH_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
-      
+
       if (dgvDSTheKH.Columns[e.ColumnIndex].Name.ToString() == "colTrangThai")
         if (Convert.ToBoolean(e.Value) == true)
           e.Value = "Mở";
@@ -142,7 +142,7 @@ namespace GUI
         TheKhachHang_BUS bus = new TheKhachHang_BUS();
         if (bus.ThaoTacVoiDoiTuongTheKhachHang(TheKH, "Update"))
         {
-          HienThiDSTheKhachHang();
+          HienThiDSTheKhachHang("", "");
           TrangThaiBanDau();
         }
       }
@@ -156,7 +156,7 @@ namespace GUI
         TheKhachHang_BUS bus = new TheKhachHang_BUS();
         if (bus.ThaoTacVoiDoiTuongTheKhachHang(TheKH, "Update"))
         {
-          HienThiDSTheKhachHang();
+          HienThiDSTheKhachHang("", "");
           TrangThaiBanDau();
         }
       }
@@ -200,8 +200,8 @@ namespace GUI
 
     private void TrangThaiBanDau()
     {
-      //btnCapNhat.Enabled = false;
-      //ttc.TrangThaiBanDau(grbTTTheKH, grbDSTheKH);
+      btnMoThe.Enabled = btnXoaThe.Enabled = false;
+      dgvDSTheKH.ClearSelection();
     }
 
     private void TrangThaiKhiChonMotTheKH()
@@ -237,7 +237,19 @@ namespace GUI
       }
     }
 
+    private void txtTimKiemTheKH_TextChanged(object sender, EventArgs e)
+    {
+      if (!txtTimKiemTheKH.Focused) return;
+      HienThiDSTheKhachHang(txtTimKiemTheKH.Text, txtTimKiemTheKH.Text);
+    }
+
+
+
+
     
+
+
+
 
 
 

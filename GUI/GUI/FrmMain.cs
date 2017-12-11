@@ -159,7 +159,7 @@ namespace GUI
             urcDangNhap urcDN = new urcDangNhap();
             urcDN.LayKetQuaDangNhap = new urcDangNhap.GetKetQuaDangNhap(NhanKetQuaDangNhap);
             urcDN.LayThongTinNV = new urcDangNhap.GetThongTinNV(XuLyThongTinNV);
-            urcDN.LayQuyenDangNhap = new urcDangNhap.GetQuyenDangNhap(LayQuyenDangNhap);
+            urcDN.LayQuyenDangNhap = new urcDangNhap.GetQuyenDangNhap(LayQuyenDangNhap); //
             btnThoat.Visible = false;
             btnThoat.Enabled = false;
             this.Controls.Add(urcDN);    
@@ -169,7 +169,7 @@ namespace GUI
             //clsNhanVien = lstNV;
             clsChucNang = BUS.ChucNang_BUS.LayChucNangTheoMaNhanVien(lstNV[0].MaNhanVien.ToString());
             KhiLoadPanelMain(clsChucNang);//load menu của panel main
-          TenNhanVien = lbTenNhanVien.Text = lstNV[0].HoTen.ToString();
+            TenNhanVien = lbTenNhanVien.Text = lstNV[0].HoTen.ToString();
             try
             {
                 btnThoatUngDung.Visible = false; // ẩn cái nút x ở ngoài màn hình đăng nhập

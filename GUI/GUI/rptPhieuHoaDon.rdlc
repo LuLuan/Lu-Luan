@@ -12,7 +12,7 @@
               <Width>0.88604cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.67979cm</Width>
+              <Width>2.34125cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -264,8 +264,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!colDonGia.Value</Value>
-                              <Style />
+                              <Value>=int32.Parse(Fields!colDonGia.Value)</Value>
+                              <Style>
+                                <Format>#,0'₫';(#,0'₫')</Format>
+                                <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -296,8 +299,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!colGia.Value</Value>
-                              <Style />
+                              <Value>=int32.Parse(Fields!colGia.Value)</Value>
+                              <Style>
+                                <Format>#,0'₫';(#,0'₫')</Format>
+                                <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -345,7 +351,7 @@
         <Top>0.68474cm</Top>
         <Left>0.42333cm</Left>
         <Height>1.2cm</Height>
-        <Width>8.73cm</Width>
+        <Width>9.39146cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -401,7 +407,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>4.17863cm</Top>
+        <Top>3.04919cm</Top>
         <Left>0.42333cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -424,15 +430,17 @@
             <TextRuns>
               <TextRun>
                 <Value>Tiền mặt</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>2.90807cm</Top>
-        <Left>0.42333cm</Left>
+        <Top>3.7903cm</Top>
+        <Left>0.39687cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>3</ZIndex>
@@ -463,8 +471,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>3.54335cm</Top>
-        <Left>0.42333cm</Left>
+        <Top>4.56669cm</Top>
+        <Left>0.39687cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>4</ZIndex>
@@ -495,10 +503,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>4.17863cm</Top>
-        <Left>5.96541cm</Left>
+        <Top>3.04919cm</Top>
+        <Left>5.99187cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.18792cm</Width>
+        <Width>3.82292cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -527,10 +535,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>3.54335cm</Top>
+        <Top>4.56669cm</Top>
         <Left>5.96541cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.18792cm</Width>
+        <Width>3.82292cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -559,10 +567,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>2.90807cm</Top>
+        <Top>3.7903cm</Top>
         <Left>5.96541cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.18792cm</Width>
+        <Width>3.82292cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -592,9 +600,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
         <Top>2.2728cm</Top>
-        <Left>5.96541cm</Left>
+        <Left>5.99187cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.18792cm</Width>
+        <Width>3.82292cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -607,10 +615,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.01042in</Height>
+    <Height>2.1875in</Height>
     <Style />
   </Body>
-  <Width>3.83717in</Width>
+  <Width>4.04117in</Width>
   <Page>
     <PageHeader>
       <Height>4.93986cm</Height>
@@ -639,7 +647,7 @@
           <Top>2.34694cm</Top>
           <Left>0.42333cm</Left>
           <Height>0.6cm</Height>
-          <Width>8.73cm</Width>
+          <Width>9.39146cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -711,7 +719,7 @@
           <Top>2.94694cm</Top>
           <Left>0.42333cm</Left>
           <Height>0.6cm</Height>
-          <Width>5.38396cm</Width>
+          <Width>4.55021cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -751,7 +759,7 @@
           <Top>3.54694cm</Top>
           <Left>0.42333cm</Left>
           <Height>0.6cm</Height>
-          <Width>4.0875cm</Width>
+          <Width>4.55021cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -785,9 +793,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
           <Top>3.54694cm</Top>
-          <Left>5.96541cm</Left>
+          <Left>5.34396cm</Left>
           <Height>0.6cm</Height>
-          <Width>3.18792cm</Width>
+          <Width>4.47083cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -878,7 +886,7 @@
           <Top>4.25277cm</Top>
           <Left>5.34396cm</Left>
           <Height>0.6cm</Height>
-          <Width>3.80937cm</Width>
+          <Width>4.47083cm</Width>
           <ZIndex>7</ZIndex>
           <Style>
             <Border>
@@ -939,7 +947,7 @@ Hẹn gặp lại quý khách! Xin cảm ơn.</Value>
           <Top>0.56029cm</Top>
           <Left>0.42333cm</Left>
           <Height>2.54909cm</Height>
-          <Width>8.73cm</Width>
+          <Width>9.365cm</Width>
           <Style>
             <Border>
               <Style>None</Style>

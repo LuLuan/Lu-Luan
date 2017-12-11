@@ -38,6 +38,49 @@ namespace DAO
       return ThaoTacDuLieu_DAO.ExecuteScalar("SELECT COUNT(*) FROM ChiTietBanPhanCong").ToString();
     }
 
+    public List<clsChiTietBanPhanCong_DTO> LayLichLamViec(string maNV, DateTime dtFrom, DateTime dtTo)
+    {
+      SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+      string query = "SELECT * FROM ChiTietBanPhanCong WHERE trang_thai != 6 AND ma_nhan_vien = @ma_nhan_vien";
+      if (dtFrom != DateTime.MinValue && dtTo != DateTime.MinValue)
+        query +=  " AND ngay_lam_viec >= @ngay_lam_viec_tu AND ngay_lam_viec <= @ngay_lam_viec_den";
+
+      SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
+      cmd.Parameters.AddWithValue("@ma_nhan_vien",maNV);
+      cmd.Parameters.AddWithValue("@ngay_lam_viec_tu", dtFrom.ToString("yyyy-MM-dd"));
+      cmd.Parameters.AddWithValue("@ngay_lam_viec_den", dtTo.ToString("yyyy-MM-dd"));
+
+      List<clsChiTietBanPhanCong_DTO> lstCTBPC = new List<clsChiTietBanPhanCong_DTO>();
+      SqlDataReader reader = cmd.ExecuteReader();
+      while (reader.Read())
+      {
+        clsChiTietBanPhanCong_DTO CTBPC = new clsChiTietBanPhanCong_DTO();
+        if (!reader.IsDBNull(0))
+          CTBPC.MaBanGhi = (string)reader["ma_ban_ghi"];
+        if (!reader.IsDBNull(1))
+          CTBPC.MaNhanVien = (string)reader["ma_nhan_vien"];
+        if (!reader.IsDBNull(2))
+          CTBPC.MaCaLamViec = (string)reader["ma_ca_lam_viec"];
+        if (!reader.IsDBNull(3))
+          CTBPC.NgayLamViec = (DateTime)reader["ngay_lam_viec"];
+        if (!reader.IsDBNull(4))
+          CTBPC.NhanVienTao = (string)reader["nhan_vien_tao"];
+        if (!reader.IsDBNull(5))
+          CTBPC.NgayThem = (DateTime)reader["ngay_them"];
+        if (!reader.IsDBNull(6))
+          CTBPC.CoMat = (Boolean)reader["co_mat"];
+        if (!reader.IsDBNull(7))
+          CTBPC.NghiCoPhep = (Boolean)reader["nghi_co_phep"];
+        if (!reader.IsDBNull(8))
+          CTBPC.TrangThai = (int)reader["trang_thai"];
+
+        lstCTBPC.Add(CTBPC);
+      }
+      ThaoTacDuLieu_DAO.DongKetNoi(con);
+      return lstCTBPC;
+
+    }
+
 
     // urcDanhSachPhanCong
     public List<clsChiTietBanPhanCong_DTO> LayDSPCTheoNgayVaCa(DateTime ngay, string ca, string loaiNgay)

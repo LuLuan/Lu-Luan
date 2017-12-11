@@ -646,6 +646,20 @@
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Cancel_35px_2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8_Search_35px.png" />
+    <None Include="Resources\icons8_Sunset_35px1.png" />
+    <None Include="Resources\icons8_Sunrise_35px1.png" />
+    <None Include="Resources\icons8_CCleaner_35px_21.png" />
+    <None Include="Resources\icons8_CCleaner_35px_2.png" />
+    <None Include="Resources\icons8_Print_30px.png" />
+    <None Include="Resources\icons8_Save_30px.png" />
+    <None Include="Resources\icons8_CCleaner_30px.png" />
+    <None Include="Resources\UnLockIOS10_35px.png" />
+    <None Include="Resources\LockIOS10_35px.png" />
+    <None Include="Resources\UnLock_35px.png" />
+    <None Include="Resources\Lock_35px.png" />
+    <None Include="Resources\icons8_Sunset_35px.png" />
+    <None Include="Resources\icons8_Sunrise_35px.png" />
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Delete_52px.png" />
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Receipt_25px.png" />
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Paycheque_25px.png" />

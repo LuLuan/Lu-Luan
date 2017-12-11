@@ -188,9 +188,9 @@ namespace GUI
                 string MaKichThuocCu = "";
                 DataGridViewRow dtvr = dgvDSSP.SelectedRows[0];
                 MaKichThuocCu = dtvr.Cells[4].Value.ToString();
-               
-                //
-                if (DuongDanAnhMonAn == "" || txtMaMonAn.Text == "" || txtGia.Text == "" || cbbKichThuoc.SelectedValue.ToString() == "" || txtTenMonAn.Text == "" || cbbDonViTinh.SelectedValue.ToString() == "" || cbbLoaiMonAn.SelectedValue.ToString() == "")
+
+                //|| cbbKichThuoc.SelectedValue.ToString() == ""
+                if (DuongDanAnhMonAn == "" || txtMaMonAn.Text == "" || txtGia.Text == ""  || txtTenMonAn.Text == "" || cbbDonViTinh.SelectedValue.ToString() == "" || cbbLoaiMonAn.SelectedValue.ToString() == "")
                 {
                     MessageBox.Show("Thao tác sai. Vui lòng thao tác lại");
                     isEnabledControls(true);
@@ -320,12 +320,13 @@ namespace GUI
 
         private void btnAddSP_Click_1(object sender, EventArgs e)
         {
-          
+            
             btnAddSP.Visible = false;
             isEnabledControls(true);
             picAnhDaiDien.Image = null;
             Utilities.ResetAllControls(grbThongTinSP);
             btnChinhSua.Enabled = false;
+            cbbKichThuoc.Enabled = false;
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
@@ -334,7 +335,7 @@ namespace GUI
            
             //  if (txtMaMonAn.Text == "") return;
             if (txtGia.Text == "") return;
-            if (cbbKichThuoc.SelectedValue == null) return;
+           // if (cbbKichThuoc.SelectedValue == null) return;
             if (txtTenMonAn.Text == "") return;
             if (cbbDonViTinh.SelectedValue == null) return;
             if (cbbLoaiMonAn.SelectedValue == null) return;
@@ -346,7 +347,7 @@ namespace GUI
             //Thông tin sản phẩm
             string MaMon = txtMaMonAn.Text;
             string Gia = txtGia.Text;
-            string MaKichThuoc = cbbKichThuoc.SelectedValue.ToString();
+            //string MaKichThuoc = cbbKichThuoc.SelectedValue.ToString();
             string TenMon = txtTenMonAn.Text;
             string MaDonViTinh = cbbDonViTinh.SelectedValue.ToString();
             string MaLoaiMonAn = cbbLoaiMonAn.SelectedValue.ToString();
@@ -363,7 +364,7 @@ namespace GUI
             clsChiTietMonAn_DTO itemChiTietMonAn = new clsChiTietMonAn_DTO();
             itemChiTietMonAn.MaMonAn = itemMonAn.MaMonAn;
             itemChiTietMonAn.GiaBan = float.Parse(Gia);
-            itemChiTietMonAn.MaKichThuoc = MaKichThuoc;
+           // itemChiTietMonAn.MaKichThuoc = MaKichThuoc;
             itemChiTietMonAn.TrangThai = true;
             //   MessageBox.Show(itemChiTietMonAn.MaMonAn + "+" + itemChiTietMonAn.MaKichThuoc + "+" + itemChiTietMonAn.GiaBan.ToString() + "+" + itemChiTietMonAn.TrangThai.ToString()); return;
             //

@@ -470,6 +470,7 @@ namespace GUI
         if (ctr is PictureBox)
         {
           PictureBox PictureBox = (PictureBox)ctr;
+          PictureBox.Enabled = false;
           PictureBox.Image = null;
         }
         if (ctr is TextBox)
@@ -589,42 +590,7 @@ namespace GUI
     }
 
 
-    // Biến toàn cục, để khi click chọn 1 row trong DataGridView lưu lại mã nhân viên => Cập nhật nhân viên
-    private void dgvDSNV_CellClick(object sender, DataGridViewCellEventArgs e)
-    {
-
-      //if (dgvDSNV.SelectedRows.Count > 0)
-      //{
-      //  DataGridViewRow r = dgvDSNV.SelectedRows[0];
-
-      //  picAnhDaiDien.Image = Image.FromFile(r.Cells["colAnhNhanVien"].Value.ToString());
-      //  //picAnhDaiDien.Image.name
-      //  lblMaNV.Text = r.Cells["colMaNV"].Value.ToString();
-
-      //  txtHoTen.Text = r.Cells["colHoTen"].Value.ToString();
-      //  txtSoDienThoai.Text = r.Cells["colSDT"].Value.ToString().Trim();
-      //  txtDiaChi.Text = r.Cells["colDiaChi"].Value.ToString();
-
-      //  if (Convert.ToBoolean(r.Cells["colGioiTinh"].Value.ToString()))
-      //    rdbNam.Checked = true;
-      //  else rdbNu.Checked = true;
-
-      //  cboChucVu.SelectedValue = r.Cells["colChucVu"].Value.ToString();
-      //  cboTrangThai.SelectedValue = r.Cells["colTrangThai"].Value.ToString();
-      //  cboTrangThai.SelectedValue = Convert.ToInt32(r.Cells["colTrangThai"].Value.ToString());
-
-      //  DateTime ngaySinh = DateTime.Parse(r.Cells["colNgaySinh"].Value.ToString());
-      //  LayNgayTrongDataGridViewLenDateTimePicker(dtpNgaySinh, ngaySinh);
-      //  DateTime ngayVaoLam = DateTime.Parse(r.Cells["colNgayVaoLam"].Value.ToString());
-      //  LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayVaoLam, ngayVaoLam);
-      //  DateTime ngayThoiViec = DateTime.Parse(r.Cells["colNgayThoiViec"].Value.ToString());
-      //  LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayThoiViec, ngayThoiViec);
-
-      //  TrangThaiKhiChonMotNhanVien();
-      //}
-
-
-    }
+    
 
 
 
@@ -643,6 +609,12 @@ namespace GUI
       btnThemAnh.Enabled = btnCapNhat.Enabled = btnInThe.Enabled = true;
       foreach (Control ctr in grbTTNhanVien.Controls)
       {
+
+        if (ctr is PictureBox)
+        {
+          PictureBox PictureBox = (PictureBox)ctr;
+          PictureBox.Enabled = true;
+        }
         if (ctr is TextBox)
         {
           TextBox TextBox = (TextBox)ctr;
@@ -1053,6 +1025,8 @@ namespace GUI
         }
       }
     }
+
+   
 
 
 

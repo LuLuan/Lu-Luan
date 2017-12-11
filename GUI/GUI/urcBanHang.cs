@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -22,7 +22,7 @@ namespace GUI
         public static float tongtien = 0;
         public static DataTable dt = new DataTable();
         List<clsKichThuocMonAn_DTO> lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
-        List<clsMonAn_DTO> lstMonAn = BUS.MonAn_BUS.DSMonAn("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = 'NMA02'");
+        List<clsMonAn_DTO> lstMonAn = BUS.MonAn_BUS.DSMonAn("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where  MonAn.trang_thai =N'True' and MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = 'NMA02'");
         ListView.SelectedListViewItemCollection ItemDuocChon;
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -126,42 +126,14 @@ namespace GUI
             lswMonAn.View = View.Tile;
         }
 
-        private void lswThucUong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            if (lswThucUong.SelectedItems.Count > 0) // Xử lý khi có item được chọn
-            {
-                txtSoLuong.Enabled = true;
-
-               ItemDuocChon = lswThucUong.SelectedItems;
-                picAnhMonAn.ImageLocation = ItemDuocChon[0].ImageKey;
-                txtTenMon.Text = ItemDuocChon[0].Text;
-                txtSoLuong.Text = "1";
-
-                cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;
-                cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
-                cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
-                cbbKichThuocMonAn.SelectedIndex = 0;
-
-                giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString()); // String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))));  //
-                txtGia.Text = String.Format("{0:C0}", giatien);
-            }
-            else
-            {
-                picAnhMonAn.ImageLocation = "";
-                txtTenMon.Clear();
-                txtSoLuong.Clear();
-                txtGia.Clear();
-              
-                txtSoLuong.Enabled = false;
-            }
-        }
+       
 
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
         {
             
             if (txtSoLuong.Text!="")
             {
+              //laasy gias mons awn chi tietst
                 txtGia.Text = (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString(); //String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text)))); 
             } 
         }
@@ -358,7 +330,19 @@ namespace GUI
             // NMA02 thức uống
             // NMA03 TOPPING
              if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab)==0)
-            {
+            {//
+              picAnhMonAn.ImageLocation = "";
+              txtTenMon.Clear();
+              txtSoLuong.Clear();
+              txtGia.Clear();
+              txtSoLuong.Enabled = false;
+              cbbKichThuocMonAn.DataSource = null;
+              lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
+              cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;
+              cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
+              cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
+              cbbKichThuocMonAn.SelectedIndex = 0;
+             //  
                 lswThucUong.Items.Clear();
                 Task1_TimKiem_TextChange("NMA02", "");
                 LoadDulieuLenListView(lswThucUong);
@@ -368,6 +352,19 @@ namespace GUI
             }
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 1)
             {
+              //
+              picAnhMonAn.ImageLocation = "";
+              txtTenMon.Clear();
+              txtSoLuong.Clear();
+              txtGia.Clear();
+              txtSoLuong.Enabled = false;
+              cbbKichThuocMonAn.DataSource = null;
+              lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
+              cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;
+              cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
+              cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
+              cbbKichThuocMonAn.SelectedIndex = 0;
+              //  
                 lswTopping.Items.Clear();
                 Task1_TimKiem_TextChange("NMA03", "");
                 LoadDulieuLenListView(lswTopping);
@@ -378,6 +375,19 @@ namespace GUI
             }
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 2)
             {
+              //
+              picAnhMonAn.ImageLocation = "";
+              txtTenMon.Clear();
+              txtSoLuong.Clear();
+              txtGia.Clear();
+              txtSoLuong.Enabled = false;
+              cbbKichThuocMonAn.DataSource = null;
+              lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
+              cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;
+              cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
+              cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
+              cbbKichThuocMonAn.SelectedIndex = 0;
+              //  
                 lswMonAn.Items.Clear();
                 Task1_TimKiem_TextChange("NMA01", "");
                 LoadDulieuLenListView(lswMonAn);
@@ -415,11 +425,11 @@ namespace GUI
             string query = "";
             if (cbbLoaiTimKiem.SelectedIndex==0)
             {
-                 query = string.Format("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = '{0}' AND ten_mon_an LIKE N'%{1}%'  ", _MaNhomMonAn, strTimKiem);
+              query = string.Format("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = '{0}' AND  MonAn.trang_thai =N'True' AND ten_mon_an LIKE N'%{1}%'  ", _MaNhomMonAn, strTimKiem);
             }
             else
             {
-                query = string.Format("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = '{0}' AND ma_mon_an LIKE N'%{1}%'  ", _MaNhomMonAn, strTimKiem);
+              query = string.Format("select MonAn.ma_mon_an, MonAn.ten_mon_an, MonAn.anh_mon_an, MonAn.ghi_chu, MonAn.ma_loai_mon_an, MonAn.ma_don_vi_tinh, MonAn.trang_thai from MonAn,LoaiMonAn,NhomMonAn where MonAn.ma_loai_mon_an = LoaiMonAn.ma_loai_mon_an and LoaiMonAn.ma_nhom_mon_an = NhomMonAn.ma_nhom_mon_an and NhomMonAn.ma_nhom_mon_an = '{0}' AND  MonAn.trang_thai =N'True' AND ma_mon_an LIKE N'%{1}%'  ", _MaNhomMonAn, strTimKiem);
             }
            
             lstMonAn = BUS.MonAn_BUS.DSMonAn(query);
@@ -436,6 +446,110 @@ namespace GUI
         private void cbbKichThuocMonAn_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lswTopping_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
+          if (lswTopping.SelectedItems.Count > 0) // Xử lý khi có item được chọn
+          {
+            ItemDuocChon = lswTopping.SelectedItems;
+           lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.LaydsKichThuocTheoMaSanPham(ItemDuocChon[0].SubItems[1].Text, true);
+            txtSoLuong.Enabled = true;
+
+           
+            picAnhMonAn.ImageLocation = ItemDuocChon[0].ImageKey;
+            txtTenMon.Text = ItemDuocChon[0].Text;
+            txtSoLuong.Text = "1";
+
+
+
+            cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;// lstKichThuocMonAn;
+            cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
+            cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
+            cbbKichThuocMonAn.SelectedIndex = 0;
+
+            giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString()); // String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))));  //
+            txtGia.Text = String.Format("{0:C0}", giatien);
+          }
+          else
+          {
+            picAnhMonAn.ImageLocation = "";
+            txtTenMon.Clear();
+            txtSoLuong.Clear();
+            txtGia.Clear();
+
+            txtSoLuong.Enabled = false;
+          }
+        }
+
+        private void lswMonAn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
+          if (lswMonAn.SelectedItems.Count > 0) // Xử lý khi có item được chọn
+          {
+            ItemDuocChon = lswMonAn.SelectedItems;
+           lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.LaydsKichThuocTheoMaSanPham(ItemDuocChon[0].SubItems[1].Text, true);
+            txtSoLuong.Enabled = true;
+
+            
+            picAnhMonAn.ImageLocation = ItemDuocChon[0].ImageKey;
+            txtTenMon.Text = ItemDuocChon[0].Text;
+            txtSoLuong.Text = "1";
+
+
+
+            cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;// lstKichThuocMonAn;
+            cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
+            cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
+            cbbKichThuocMonAn.SelectedIndex = 0;
+
+            giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString()); // String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))));  //
+            txtGia.Text = String.Format("{0:C0}", giatien);
+          }
+          else
+          {
+            picAnhMonAn.ImageLocation = "";
+            txtTenMon.Clear();
+            txtSoLuong.Clear();
+            txtGia.Clear();
+
+            txtSoLuong.Enabled = false;
+          }
+        }
+
+        private void lswThucUong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
+          if (lswThucUong.SelectedItems.Count > 0) // Xử lý khi có item được chọn
+          {
+            ItemDuocChon = lswThucUong.SelectedItems;
+            lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.LaydsKichThuocTheoMaSanPham(ItemDuocChon[0].SubItems[1].Text, true);
+
+            txtSoLuong.Enabled = true;
+
+           
+            picAnhMonAn.ImageLocation = ItemDuocChon[0].ImageKey;
+            txtTenMon.Text = ItemDuocChon[0].Text;
+            txtSoLuong.Text = "1";
+
+            cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;// lstKichThuocMonAn;
+            cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
+            cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
+            cbbKichThuocMonAn.SelectedIndex = 0;
+
+            giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString()); // String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))));  //
+            txtGia.Text = String.Format("{0:C0}", giatien);
+          }
+          else
+          {
+            picAnhMonAn.ImageLocation = "";
+            txtTenMon.Clear();
+            txtSoLuong.Clear();
+            txtGia.Clear();
+
+            txtSoLuong.Enabled = false;
+          }
         }
 
     }

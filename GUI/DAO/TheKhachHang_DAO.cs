@@ -14,7 +14,9 @@ namespace DAO
     {
       List<clsTheKhachHang> lstTheKH = new List<clsTheKhachHang>();
       SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-      string query = string.Format("SELECT ma_the, TheKhachHang.ma_khach_hang, TheKhachHang.ma_loai_the, ngay_dang_ky, TheKhachHang.trang_thai FROM TheKhachHang, KhachHang WHERE TheKhachHang.ma_khach_hang = KhachHang.ma_khach_hang AND KhachHang.trang_thai != 'false' AND ma_the LIKE '%{0}%' AND ten_khach_hang LIKE N'%{1}%'", maThe, tenKH);
+      string query = string.Format("SELECT ma_the, TheKhachHang.ma_khach_hang, TheKhachHang.ma_loai_the, ngay_dang_ky, TheKhachHang.trang_thai FROM TheKhachHang, KhachHang WHERE TheKhachHang.ma_khach_hang = KhachHang.ma_khach_hang AND KhachHang.trang_thai != 'false' AND (ma_the LIKE '%{0}%' OR ten_khach_hang LIKE N'%{1}%')", maThe, tenKH);
+      //if(tenKH != "-1")
+      //  query += string.Format(" OR ten_khach_hang LIKE N'%{0}%'", tenKH);
       //AND KhachHang.trang_thai != 'false'
       //string query = "SELECT * FROM TheKhachHang";
       SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
