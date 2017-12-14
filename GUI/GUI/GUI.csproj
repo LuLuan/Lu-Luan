@@ -180,6 +180,12 @@
     <Compile Include="urcQLKhachHang.Designer.cs">
       <DependentUpon>urcQLKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="urcQLDoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcQLDoanhThu.Designer.cs">
+      <DependentUpon>urcQLDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="urcQLKhoNguyenLieu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -328,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="urcQLKhachHang.resx">
       <DependentUpon>urcQLKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcQLDoanhThu.resx">
+      <DependentUpon>urcQLDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="urcQLKhoNguyenLieu.resx">
       <DependentUpon>urcQLKhoNguyenLieu.cs</DependentUpon>

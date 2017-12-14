@@ -350,6 +350,7 @@ namespace GUI
                 vitritabcu = tabControl1.TabPages.IndexOf(tabControl1.SelectedTab);
                 txtTimKiem.Text = timkiem[vitritabcu].ToString();
             }
+          
             if (tabControl1.TabPages.IndexOf(tabControl1.SelectedTab) == 1)
             {
               //
@@ -396,7 +397,20 @@ namespace GUI
                 txtTimKiem.Text = timkiem[vitritabcu].ToString();
             }
         }
-
+        private void ResetAllConttrolTTSP() //reset grp thông tin sản phẩm
+        {
+          picAnhMonAn.ImageLocation = "";
+          txtTenMon.Clear();
+          txtSoLuong.Clear();
+          txtGia.Clear();
+          txtSoLuong.Enabled = false;
+          cbbKichThuocMonAn.DataSource = null;
+          lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
+          cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;
+          cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
+          cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
+          cbbKichThuocMonAn.SelectedIndex = 0;
+        }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             string ChuoiTimKiem = timkiem[vitritabcu].ToString();
@@ -450,26 +464,16 @@ namespace GUI
 
         private void lswTopping_SelectedIndexChanged(object sender, EventArgs e)
         {
-          lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
           if (lswTopping.SelectedItems.Count > 0) // Xử lý khi có item được chọn
           {
             ItemDuocChon = lswTopping.SelectedItems;
            lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.LaydsKichThuocTheoMaSanPham(ItemDuocChon[0].SubItems[1].Text, true);
             txtSoLuong.Enabled = true;
-
-           
+            LoadCBBKichThuoc();
             picAnhMonAn.ImageLocation = ItemDuocChon[0].ImageKey;
             txtTenMon.Text = ItemDuocChon[0].Text;
             txtSoLuong.Text = "1";
-
-
-
-            cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;// lstKichThuocMonAn;
-            cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
-            cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
-            cbbKichThuocMonAn.SelectedIndex = 0;
-
-            giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString()); // String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))));  //
+            giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString());
             txtGia.Text = String.Format("{0:C0}", giatien);
           }
           else
@@ -485,26 +489,17 @@ namespace GUI
 
         private void lswMonAn_SelectedIndexChanged(object sender, EventArgs e)
         {
-          lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
           if (lswMonAn.SelectedItems.Count > 0) // Xử lý khi có item được chọn
           {
             ItemDuocChon = lswMonAn.SelectedItems;
            lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.LaydsKichThuocTheoMaSanPham(ItemDuocChon[0].SubItems[1].Text, true);
             txtSoLuong.Enabled = true;
-
+            LoadCBBKichThuoc();
             
             picAnhMonAn.ImageLocation = ItemDuocChon[0].ImageKey;
             txtTenMon.Text = ItemDuocChon[0].Text;
             txtSoLuong.Text = "1";
-
-
-
-            cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;// lstKichThuocMonAn;
-            cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
-            cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
-            cbbKichThuocMonAn.SelectedIndex = 0;
-
-            giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString()); // String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))));  //
+            giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString()); 
             txtGia.Text = String.Format("{0:C0}", giatien);
           }
           else
@@ -517,28 +512,26 @@ namespace GUI
             txtSoLuong.Enabled = false;
           }
         }
-
+        
+      private void LoadCBBKichThuoc()
+        {
+          cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;// lstKichThuocMonAn;
+          cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
+          cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
+          cbbKichThuocMonAn.SelectedIndex = 0;
+        }
         private void lswThucUong_SelectedIndexChanged(object sender, EventArgs e)
         {
-          lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.DSKichThuoc();
           if (lswThucUong.SelectedItems.Count > 0) // Xử lý khi có item được chọn
           {
             ItemDuocChon = lswThucUong.SelectedItems;
             lstKichThuocMonAn = BUS.KichThuocMonAn_BUS.LaydsKichThuocTheoMaSanPham(ItemDuocChon[0].SubItems[1].Text, true);
-
             txtSoLuong.Enabled = true;
-
-           
+            LoadCBBKichThuoc();
             picAnhMonAn.ImageLocation = ItemDuocChon[0].ImageKey;
             txtTenMon.Text = ItemDuocChon[0].Text;
             txtSoLuong.Text = "1";
-
-            cbbKichThuocMonAn.DataSource = lstKichThuocMonAn;// lstKichThuocMonAn;
-            cbbKichThuocMonAn.DisplayMember = "TenKichThuoc";
-            cbbKichThuocMonAn.ValueMember = "MaKichThuoc";
-            cbbKichThuocMonAn.SelectedIndex = 0;
-
-            giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString()); // String.Format("{0:C0}", (BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))));  //
+            giatien = int.Parse((BUS.MonAn_BUS.GiaMonAnChiTiet(ItemDuocChon[0].SubItems[1].Text, cbbKichThuocMonAn.SelectedValue.ToString()) * (float.Parse(txtSoLuong.Text))).ToString());
             txtGia.Text = String.Format("{0:C0}", giatien);
           }
           else

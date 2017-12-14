@@ -284,3 +284,4 @@ D:\GitHub-Reposities\Lu-Luan\GUI\GUI\bin\Debug\DAO.pdb
 D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.exe
 D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.pdb
 D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcXemLichLamViec.resources
+D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcQLDoanhThu.resources
