@@ -80,7 +80,6 @@ namespace DTO
     }
 
 
-
     private bool _CoMat;
 
     public bool CoMat

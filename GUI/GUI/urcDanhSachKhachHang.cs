@@ -49,22 +49,22 @@ namespace GUI
 
 
 
-    private clsTheKhachHang TaoDoiTuongTheKhachHang()
-    {
-      string maThe = TuPhatSinhMaTheKhachHang();
-      string maKH = txtMaKH.Text;
-      string maLoaiThe = "1234567890";
-      DateTime ngayDK = DateTime.Now;
-      bool trangThai = true;
+    //private clsTheKhachHang TaoDoiTuongTheKhachHang()
+    //{
+    //  string maThe = TuPhatSinhMaTheKhachHang();
+    //  string maKH = txtMaKH.Text;
+    //  string maLoaiThe = "1234567890";
+    //  DateTime ngayDK = DateTime.Now;
+    //  bool trangThai = true;
 
-      return utl.TaoDoiThuongTheKhachHang(maThe, maKH, maLoaiThe, ngayDK, trangThai);
-    }
+    //  return utl.TaoDoiThuongTheKhachHang(maThe, maKH, maLoaiThe, ngayDK, trangThai);
+    //}
 
-    private string TuPhatSinhMaTheKhachHang()
-    {
-      TheKhachHang_BUS bus = new TheKhachHang_BUS();
-      return bus.LayMaTheKhachHang();
-    }
+    //private string TuPhatSinhMaTheKhachHang()
+    //{
+    //  TheKhachHang_BUS bus = new TheKhachHang_BUS();
+    //  return bus.LayMaTheKhachHang();
+    //}
 
 
 
@@ -126,7 +126,7 @@ namespace GUI
       DateTime ngaySinh = dtpNgaySinh.Value;
       string SDT = txtSoDienThoai.Text;
       string diaChi = txtDiaChi.Text;
-      bool trangThai = true;
+      bool trangThai = (rdbTrangThaiCoSan.Checked ? true : false);
 
       return utl.TaoDoiTuongKhachHang(maKH, tenKH, gioiTinh, ngaySinh, SDT, diaChi, trangThai);
     }

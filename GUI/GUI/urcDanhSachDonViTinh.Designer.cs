@@ -233,7 +233,7 @@
       this.btnHuyBoChinhSua.Enabled = false;
       this.btnHuyBoChinhSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnHuyBoChinhSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnHuyBoChinhSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+      this.btnHuyBoChinhSua.ForeColor = System.Drawing.Color.Green;
       this.btnHuyBoChinhSua.Image = global::GUI.Properties.Resources.icons8_Cancel_35px_2;
       this.btnHuyBoChinhSua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.btnHuyBoChinhSua.Location = new System.Drawing.Point(237, 177);
@@ -253,7 +253,7 @@
       this.btnHuyBoThemMoi.Enabled = false;
       this.btnHuyBoThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnHuyBoThemMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnHuyBoThemMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+      this.btnHuyBoThemMoi.ForeColor = System.Drawing.Color.Green;
       this.btnHuyBoThemMoi.Image = global::GUI.Properties.Resources.icons8_Cancel_35px_2;
       this.btnHuyBoThemMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.btnHuyBoThemMoi.Location = new System.Drawing.Point(237, 126);
@@ -272,7 +272,7 @@
       this.btnChinhSuaLoaiNL.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btnChinhSuaLoaiNL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnChinhSuaLoaiNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnChinhSuaLoaiNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+      this.btnChinhSuaLoaiNL.ForeColor = System.Drawing.Color.Green;
       this.btnChinhSuaLoaiNL.Image = global::GUI.Properties.Resources.icons8_Edit_File_35px_1;
       this.btnChinhSuaLoaiNL.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.btnChinhSuaLoaiNL.Location = new System.Drawing.Point(237, 177);
@@ -309,7 +309,7 @@
       this.btnThemLoaiNL.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btnThemLoaiNL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnThemLoaiNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnThemLoaiNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+      this.btnThemLoaiNL.ForeColor = System.Drawing.Color.Green;
       this.btnThemLoaiNL.Image = global::GUI.Properties.Resources.icons8_Add_35px;
       this.btnThemLoaiNL.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.btnThemLoaiNL.Location = new System.Drawing.Point(237, 126);

@@ -41,5 +41,12 @@ namespace BUS
       return dao.Update(maBanGhi, trangThai);
     }
 
+
+    public List<clsChiTietBanPhanCong_DTO> LayLichLamViec(string maNV, DateTime dtFrom, DateTime dtTo)
+    {
+      ChiTietBanPhanCong_DAO dao = new ChiTietBanPhanCong_DAO();
+      return dao.LayLichLamViec(maNV, dtFrom, dtTo);
+    }
+
   }
 }
