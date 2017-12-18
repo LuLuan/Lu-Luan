@@ -14,6 +14,11 @@ namespace BUS
         {
             return DAO.MonAn_DAO.LayDSMonAn(ChuoiTimKiem);
         }
+        //Lấy 1 món ăn
+        public static List<clsMonAn_DTO> LayMotMonAn(string ChuoiTimKiem)
+        {
+            return DAO.MonAn_DAO.LayMotMonAn(ChuoiTimKiem);
+        }
         //Đếm số sản phẩm
         public static int SoLuongMonAn()
         {

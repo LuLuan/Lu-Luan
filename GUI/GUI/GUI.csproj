@@ -62,6 +62,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsChiTietHoaDon.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmChiTietSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietSanPham.Designer.cs">
+      <DependentUpon>frmChiTietSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     <Compile Include="Utilities.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="frmChiTietSanPham.resx">
+      <DependentUpon>frmChiTietSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>

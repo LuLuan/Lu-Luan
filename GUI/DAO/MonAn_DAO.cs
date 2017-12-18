@@ -43,6 +43,36 @@ namespace DAO
             ThaoTacDuLieu_DAO.DongKetNoi(con);
             return dsMonAn;
         }
+        //Lấy 1 món ăn
+        public static List<clsMonAn_DTO> LayMotMonAn(string ChuoiTimKiem)
+        {
+            string query = string.Format("select * from MonAn where trang_thai='TRUE' and ma_mon_an = '{0}'",ChuoiTimKiem);
+            List<clsMonAn_DTO> dsMonAn = new List<clsMonAn_DTO>();
+            SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+            SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
+            SqlDataReader rddtMA = cmd.ExecuteReader();
+            while (rddtMA.Read())
+            {
+                clsMonAn_DTO itemMonAn = new clsMonAn_DTO();
+                if (!rddtMA.IsDBNull(0))
+                    itemMonAn.MaMonAn = (string)rddtMA[0];
+                if (!rddtMA.IsDBNull(1))
+                    itemMonAn.TenMonAn = (string)rddtMA[1];
+                if (!rddtMA.IsDBNull(2))
+                    itemMonAn.AnhMonAn = (string)rddtMA[2];
+                // if (!rddtMA.IsDBNull(3))
+                //      itemMonAn.GhiChu = (string)rddtMA[3];
+                if (!rddtMA.IsDBNull(4))
+                    itemMonAn.MaLoaiMon = (string)rddtMA[4];
+                if (!rddtMA.IsDBNull(5))
+                    itemMonAn.MaDonViTinh = (string)rddtMA[5];
+                if (!rddtMA.IsDBNull(6))
+                    itemMonAn.TrangThai = (bool)rddtMA[6];
+                dsMonAn.Add(itemMonAn);
+            }
+            ThaoTacDuLieu_DAO.DongKetNoi(con);
+            return dsMonAn;
+        }
         //Đếm số lượng món ăn
         public static int SoLuongMonAn()
         {
