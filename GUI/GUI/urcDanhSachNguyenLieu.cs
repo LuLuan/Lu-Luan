@@ -34,6 +34,7 @@ namespace GUI
 
     private void urcDanhSachNguyenLieu_Load(object sender, EventArgs e)
     {
+        dgvDSNguyenLieu.AutoGenerateColumns = false;
       LoadCbbTrangThai();
       LoadTatCaCBB();
       UpdatenewLstNL();
@@ -109,7 +110,7 @@ namespace GUI
 
     public void isEnableControls(bool isEnable)
     {
-      txtDonGiaNL.Enabled = isEnable;
+      //txtDonGiaNL.Enabled = isEnable;
       txtSoLuongNL.Enabled = isEnable;
       txtTenNL.Enabled = isEnable;
       cbbDVTinhNL.Enabled = isEnable;
@@ -131,7 +132,7 @@ namespace GUI
       //
       txtTenNL.Enabled = true;
       txtSoLuongNL.Enabled = true;
-      txtDonGiaNL.Enabled = true;
+      //txtDonGiaNL.Enabled = true;
       cbbDVTinhNL.Enabled = true;
       cbbLoaiNL.Enabled = true;
     }
@@ -276,11 +277,11 @@ namespace GUI
       }
       NguyenLieu.TenNguyenLieu = txtTenNL.Text;
 
-      if (txtDonGiaNL.Text == "")
-      {
-        MessageBox.Show("Thiếu dữ liệu đơn giá "); return;
-      }
-      NguyenLieu.DonGia = float.Parse(txtDonGiaNL.Text);
+      //if (txtDonGiaNL.Text == "")
+      //{
+      //  MessageBox.Show("Thiếu dữ liệu đơn giá "); return;
+      //}
+     // NguyenLieu.DonGia = float.Parse(txtDonGiaNL.Text);
       if (cbbDVTinhNL.SelectedValue == null)
       {
         MessageBox.Show("Thiếu dữ liệu đơn vị tính"); return;
@@ -342,7 +343,7 @@ namespace GUI
         _NguyenLieuUP.TenNguyenLieu = dvrSelected.Cells["colTenNguyenLieu"].Value.ToString();
         _NguyenLieuUP.TongSoLuong = soluongsp;
         _NguyenLieuUP.DonViTinh = dvrSelected.Cells["colDonViTinh"].Value.ToString();
-        _NguyenLieuUP.DonGia = float.Parse(dvrSelected.Cells["colDonGia"].Value.ToString());
+       // _NguyenLieuUP.DonGia = float.Parse(dvrSelected.Cells["colDonGia"].Value.ToString());
         _NguyenLieuUP.MaLoaiNguyenLieu = dvrSelected.Cells["colLoaiNguyenLieu"].Value.ToString();
         _NguyenLieuUP.TrangThai = true; // bool.Parse(dvrSelected.Cells["colTrangThai"].Value.ToString());
 
@@ -375,7 +376,7 @@ namespace GUI
         nguyenLieu.TenNguyenLieu = txtTenNL.Text;
         nguyenLieu.TongSoLuong = float.Parse(txtSoLuongNL.Text);
         nguyenLieu.DonViTinh = cbbDVTinhNL.SelectedValue.ToString();
-        nguyenLieu.DonGia = float.Parse(txtDonGiaNL.Text);
+       // nguyenLieu.DonGia = float.Parse(txtDonGiaNL.Text);
         nguyenLieu.MaLoaiNguyenLieu = cbbLoaiNL.SelectedValue.ToString();
         nguyenLieu.TrangThai = true;
 
@@ -414,7 +415,7 @@ namespace GUI
 
           txtTenNL.Text = dvrSelected.Cells["colTenNguyenLieu"].Value.ToString();
           txtSoLuongNL.Text = dvrSelected.Cells["colTongSoLuongCon"].Value.ToString();
-          txtDonGiaNL.Text = dvrSelected.Cells["colDonGia"].Value.ToString();
+          //txtDonGiaNL.Text = dvrSelected.Cells["colDonGia"].Value.ToString();
           cbbDVTinhNL.SelectedValue = dvrSelected.Cells["colDonViTinh"].Value.ToString();
 
           cbbLoaiNL.SelectedValue = dvrSelected.Cells["colLoaiNguyenLieu"].Value.ToString();

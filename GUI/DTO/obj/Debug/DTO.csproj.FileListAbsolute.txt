@@ -25,7 +25,6 @@ D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\obj\Debug\DTO.dll
 D:\GitHub-Reposities\WF_11112017_0607\Lu-Luan\GUI\DTO\obj\Debug\DTO.pdb
 C:\DA_WF\Lu-Luan\GUI\DTO\bin\Debug\DTO.dll
 C:\DA_WF\Lu-Luan\GUI\DTO\bin\Debug\DTO.pdb
-C:\DA_WF\Lu-Luan\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\DA_WF\Lu-Luan\GUI\DTO\obj\Debug\DTO.dll
 C:\DA_WF\Lu-Luan\GUI\DTO\obj\Debug\DTO.pdb
 D:\GitHub-Reposities\Lu-Luan\GUI\DTO\bin\Debug\DTO.dll
@@ -33,3 +32,4 @@ D:\GitHub-Reposities\Lu-Luan\GUI\DTO\bin\Debug\DTO.pdb
 D:\GitHub-Reposities\Lu-Luan\GUI\DTO\obj\Debug\DTO.dll
 D:\GitHub-Reposities\Lu-Luan\GUI\DTO\obj\Debug\DTO.pdb
 D:\GitHub-Reposities\Lu-Luan\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\DA_WF\Lu-Luan\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache

@@ -545,5 +545,26 @@ namespace GUI
           }
         }
 
+        private void lswThucUong_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ItemDuocChon = lswThucUong.SelectedItems;
+            frmChiTietSanPham frmCTSP = new frmChiTietSanPham(ItemDuocChon[0].SubItems[1].Text);
+            frmCTSP.Show();
+        }
+
+        private void lswTopping_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ItemDuocChon = lswTopping.SelectedItems;
+            frmChiTietSanPham frmCTSP = new frmChiTietSanPham(ItemDuocChon[0].SubItems[1].Text);
+            frmCTSP.Show();
+        }
+
+        private void lswMonAn_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ItemDuocChon = lswMonAn.SelectedItems;
+            frmChiTietSanPham frmCTSP = new frmChiTietSanPham(ItemDuocChon[0].SubItems[1].Text);
+            frmCTSP.Show();
+        }
+
     }
 }

@@ -19,7 +19,7 @@ namespace GUI
             InitializeComponent();
         }
         float TienTraLai = 0;
-        float TienKhachDua = 0;
+       // float TienKhachDua = 0;
         public static string MaHD;
         string MaNhanVien = urcDangNhap.strMaNhanVien;
         public delegate void XuLyUI(bool isApear);

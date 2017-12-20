@@ -19,7 +19,7 @@ namespace GUI
       InitializeComponent();
     }
 
-    DataGridViewRow dtvr;
+   // DataGridViewRow dtvr;
     private string ChuoiTimKiemNL = "";
     private string MaDuocChon = urcDanhSachSanPham.MaMonAnDuocChon.ToString();
     private List<clsMonAn_DTO> lstMonAnTP = urcDanhSachSanPham.lstMonAn;
@@ -34,11 +34,13 @@ namespace GUI
     }
     private void urcCongThucMonAn_Load(object sender, EventArgs e)
     {
+        dgvThanhPhanCT.AutoGenerateColumns = false;
+        dgvDSTongSoNL.AutoGenerateColumns = false;
       lstThanhPhanTP = BUS.ThanhPhanMonAn_BUS.LayCacThanhPhanCuaMon(MaDuocChon);
       LoadDgvThanhPhan();
       //dgv tất cả nguyên liệu
       lstTongNguyenLieu = BUS.NguyenLieu_BUS.DSNguyenLieu(ChuoiTimKiemNL);
-      dgvDSTongSoNL.AutoGenerateColumns = false;
+      
       dgvDSTongSoNL.DataSource = lstTongNguyenLieu;
     }
     public void LoadDgvThanhPhan()
@@ -219,6 +221,23 @@ namespace GUI
         clsNguyenLieu_DTO dtoNguyenLieu = lstNguyenLieu.First(u => u.MaNguyenLieu == e.Value.ToString());
         e.Value = dtoNguyenLieu.TenNguyenLieu;
       }
+    }
+
+    private void dgvThanhPhanCT_KeyPress(object sender, KeyPressEventArgs e)
+    {
+
+    }
+
+    private void dgvThanhPhanCT_KeyUp(object sender, KeyEventArgs e)
+    {
+        if (dgvThanhPhanCT.Rows.Count > 0)
+        {
+            DataGridViewRow row = dgvThanhPhanCT.SelectedRows[0];
+            if (e.KeyCode == Keys.Delete)
+            {
+                MessageBox.Show("!");
+            }
+        }
     }
 
 
