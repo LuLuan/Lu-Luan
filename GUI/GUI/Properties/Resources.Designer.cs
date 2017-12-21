@@ -333,9 +333,29 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Add_List_35px__3_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Add_List_35px (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Add_List_64px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Add_List_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Add_New_25px_1__3_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Add_New_25px_1 (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

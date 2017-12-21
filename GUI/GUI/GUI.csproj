@@ -708,6 +708,8 @@
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Edit_File_35px_1 %282%29.png" />
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Cancel_35px %283%29.png" />
     <None Include="bin\Debug\HinhAnh\AnhNguyenLieu\logo-comebuy.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_List_35px %283%29.png" />
+    <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Add_New_25px_1 %283%29.png" />
     <Content Include="Resources\COMEBUY-logo.png" />
     <Content Include="Resources\customer-card.png" />
   </ItemGroup>
