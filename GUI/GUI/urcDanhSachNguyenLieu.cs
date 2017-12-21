@@ -16,34 +16,34 @@ namespace GUI
 {
   public partial class urcDanhSachNguyenLieu : UserControl
   {
-      public static DataTable dt = new DataTable();
-      float fTongtien = 0;
-      bool flag = true;
-      bool chinhsua = false;
-      bool nhaphang = false;
-      bool themmoi = false;
+    public static DataTable dt = new DataTable();
+    float fTongtien = 0;
+    bool flag = true;
+    bool chinhsua = false;
+    bool nhaphang = false;
+    bool themmoi = false;
     public urcDanhSachNguyenLieu()
     {
       InitializeComponent();
     }
-       void TaoDataTable()
-        {
-            DataColumn dc = new DataColumn("colMaNguyenLieuNhap", typeof(String));
-            dt.Columns.Add(dc);
+    void TaoDataTable()
+    {
+      DataColumn dc = new DataColumn("colMaNguyenLieuNhap", typeof(String));
+      dt.Columns.Add(dc);
 
-            dc = new DataColumn("colTenNguyenLieuNhap", typeof(String));
-            dt.Columns.Add(dc);
+      dc = new DataColumn("colTenNguyenLieuNhap", typeof(String));
+      dt.Columns.Add(dc);
 
-            dc = new DataColumn("colTongSoLuongNhap", typeof(String));
-            dt.Columns.Add(dc);
+      dc = new DataColumn("colTongSoLuongNhap", typeof(String));
+      dt.Columns.Add(dc);
 
-            dc = new DataColumn("colDonViTinhNhap", typeof(String));
-            dt.Columns.Add(dc);
-            dc = new DataColumn("colDonGiaNhap", typeof(String));
-            dt.Columns.Add(dc);
-            dc = new DataColumn("colMaNhaCungCapNhap", typeof(String));
-            dt.Columns.Add(dc);
-        }
+      dc = new DataColumn("colDonViTinhNhap", typeof(String));
+      dt.Columns.Add(dc);
+      dc = new DataColumn("colDonGiaNhap", typeof(String));
+      dt.Columns.Add(dc);
+      dc = new DataColumn("colMaNhaCungCapNhap", typeof(String));
+      dt.Columns.Add(dc);
+    }
     DataGridViewRow dvrSelected;
     private string MaMonAnDuocChon = "";
     private string ChuoiTimKiem = "";
@@ -59,13 +59,13 @@ namespace GUI
 
     private void urcDanhSachNguyenLieu_Load(object sender, EventArgs e)
     {
-        if (flag)
-        {
-            TaoDataTable();
-            flag = false;
-        }
-        dgvGioHangNhap.AutoGenerateColumns = false;
-        dgvDSNguyenLieu.AutoGenerateColumns = false;
+      if (flag)
+      {
+        TaoDataTable();
+        flag = false;
+      }
+      dgvGioHangNhap.AutoGenerateColumns = false;
+      dgvDSNguyenLieu.AutoGenerateColumns = false;
       LoadCbbTrangThai();
       LoadTatCaCBB();
       UpdatenewLstNL();
@@ -147,7 +147,7 @@ namespace GUI
       txtTenNL.Enabled = isEnable;
       cbbDVTinhNL.Enabled = isEnable;
       cbbLoaiNL.Enabled = isEnable;
-     // cbbTrangThai.Enabled = isEnable;
+      // cbbTrangThai.Enabled = isEnable;
 
 
 
@@ -155,7 +155,7 @@ namespace GUI
 
     private void btnChinhSuaNL_Click(object sender, EventArgs e)
     {
-        chinhsua = true;
+      chinhsua = true;
       btnHuyBoChinhSua.Visible = true;
       btnNhapNL.Enabled = false;
       btnThemMoiNL.Enabled = false;
@@ -172,55 +172,55 @@ namespace GUI
 
 
 
-      private void XuLyKhiNhanNhapHang(bool isClick)
+    private void XuLyKhiNhanNhapHang(bool isClick)
     {
-        if (isClick)
-        {
-            grbThongTinSP.Size = new Size(898, 285);
-            dgvGioHangNhap.Visible = isClick;
-            lbNCC.Visible = isClick;
-            cbbNCC.Visible = isClick;
-            picAddNhaCungCap.Visible = isClick;
-            grbDSNL.Location = new Point(22,312);
-            grbDSNL.Size = new Size(898, 200);
-            dgvDSNguyenLieu.Size = new Size(886, 175);
-            lblGia.Visible = isClick;
-            txtGia.Visible = isClick;
-            txtThemNhap.Visible = isClick;
-        }
-          else
-            {
-                grbThongTinSP.Size = new Size(898, 220);
-                dgvGioHangNhap.Visible = isClick;
-                lbNCC.Visible = isClick;
-                cbbNCC.Visible = isClick;
-                picAddNhaCungCap.Visible = isClick;
-                grbDSNL.Location = new Point(22, 250);
-                grbDSNL.Size = new Size(898, 250);
-                dgvDSNguyenLieu.Size = new Size(886, 225);
-                lblGia.Visible = isClick;
-                txtGia.Visible = isClick;
-                txtThemNhap.Visible = isClick;
-            
-            }
-        
+      if (isClick)
+      {
+        grbThongTinSP.Size = new Size(898, 285);
+        dgvGioHangNhap.Visible = isClick;
+        lbNCC.Visible = isClick;
+        cbbNCC.Visible = isClick;
+        picAddNhaCungCap.Visible = isClick;
+        grbDSNL.Location = new Point(22, 312);
+        grbDSNL.Size = new Size(898, 200);
+        dgvDSNguyenLieu.Size = new Size(886, 175);
+        lblGia.Visible = isClick;
+        txtGia.Visible = isClick;
+        txtThemNhap.Visible = isClick;
+      }
+      else
+      {
+        grbThongTinSP.Size = new Size(898, 220);
+        dgvGioHangNhap.Visible = isClick;
+        lbNCC.Visible = isClick;
+        cbbNCC.Visible = isClick;
+        picAddNhaCungCap.Visible = isClick;
+        grbDSNL.Location = new Point(22, 250);
+        grbDSNL.Size = new Size(898, 250);
+        dgvDSNguyenLieu.Size = new Size(886, 225);
+        lblGia.Visible = isClick;
+        txtGia.Visible = isClick;
+        txtThemNhap.Visible = isClick;
+
+      }
+
     }
     private void btnNhapNL_Click(object sender, EventArgs e)
     {
-        nhaphang = true;
+      nhaphang = true;
       btnHuyBoNhapHang.Visible = true;
       btnChinhSuaNL.Enabled = false;
       btnThemMoiNL.Enabled = false;
       btnLuu.Enabled = true;
       txtSoLuongNL.Enabled = true;
       txtSoLuongNL.Text = "";
-     // dgvDSNguyenLieu.Enabled = false;
+      // dgvDSNguyenLieu.Enabled = false;
       XuLyKhiNhanNhapHang(true);
     }
 
     private void btnThemMoiNL_Click(object sender, EventArgs e)
     {
-        themmoi = true;
+      themmoi = true;
       AnhNguyenLieu = "";
       btnHuyBoThemMoi.Visible = true;
       btnChinhSuaNL.Enabled = false;
@@ -238,7 +238,7 @@ namespace GUI
 
     private void btnHuyBoThemMoi_Click(object sender, EventArgs e)
     {
-        themmoi = false;
+      themmoi = false;
       btnHuyBoThemMoi.Visible = false;
       btnChinhSuaNL.Enabled = true;
       btnNhapNL.Enabled = true;
@@ -251,7 +251,7 @@ namespace GUI
 
     private void btnHuyBoNhapHang_Click(object sender, EventArgs e)
     {
-        nhaphang = false;
+      nhaphang = false;
       txtSoLuongNL.Enabled = false;
       btnHuyBoNhapHang.Visible = false;
       btnChinhSuaNL.Enabled = true;
@@ -265,24 +265,24 @@ namespace GUI
     }
     private void HuyBoGioHangTinhToan()
     {
-        while (dgvGioHangNhap.Rows.Count>0)
+      while (dgvGioHangNhap.Rows.Count > 0)
+      {
+        foreach (DataGridViewRow row in dgvGioHangNhap.Rows)
         {
-            foreach (DataGridViewRow row in dgvGioHangNhap.Rows)
-            {
-                try
-                {
-                    dgvGioHangNhap.Rows.Remove(row);
-                }
-                catch (Exception) { }
-            }
+          try
+          {
+            dgvGioHangNhap.Rows.Remove(row);
+          }
+          catch (Exception) { }
         }
-        
-        fTongtien = 0;
+      }
+
+      fTongtien = 0;
     }
 
     private void btnHuyBoChinhSua_Click(object sender, EventArgs e)
     {
-        chinhsua = false;
+      chinhsua = false;
       btnHuyBoChinhSua.Visible = false;
       btnNhapNL.Enabled = true;
       btnThemMoiNL.Enabled = true;
@@ -349,28 +349,28 @@ namespace GUI
     }
     private string TaoRaMaMoi(int iSoLuongMa)
     {
-        string MaNL = "";
-        iSoLuongMa += 1;
+      string MaNL = "";
+      iSoLuongMa += 1;
 
-        // int DoDaiSoThuTu = iSoLuongMa.ToString().Length;
-        if (iSoLuongMa < 10)
-            MaNL = "HDN000000" + iSoLuongMa.ToString();
-        else if (iSoLuongMa < 100)
-            MaNL = "HDN00000" + iSoLuongMa.ToString();
-        else if (iSoLuongMa < 1000)
-            MaNL = "HDN0000" + iSoLuongMa.ToString();
-        else if (iSoLuongMa < 10000)
-            MaNL = "HDN000" + iSoLuongMa.ToString();
-        else if (iSoLuongMa < 100000)
-            MaNL = "HDN00" + iSoLuongMa.ToString();
-        else if (iSoLuongMa < 1000000)
-            MaNL = "HDN0" + iSoLuongMa.ToString();
-        else if (iSoLuongMa < 10000000)
-            MaNL = "HDN" + iSoLuongMa.ToString();
-        else if (iSoLuongMa >= 9999999)
-            MessageBox.Show("Tràn mã nguyên liệu, xin liên hệ hãy liên hệ adm Lu : 01634699175");
+      // int DoDaiSoThuTu = iSoLuongMa.ToString().Length;
+      if (iSoLuongMa < 10)
+        MaNL = "HDN000000" + iSoLuongMa.ToString();
+      else if (iSoLuongMa < 100)
+        MaNL = "HDN00000" + iSoLuongMa.ToString();
+      else if (iSoLuongMa < 1000)
+        MaNL = "HDN0000" + iSoLuongMa.ToString();
+      else if (iSoLuongMa < 10000)
+        MaNL = "HDN000" + iSoLuongMa.ToString();
+      else if (iSoLuongMa < 100000)
+        MaNL = "HDN00" + iSoLuongMa.ToString();
+      else if (iSoLuongMa < 1000000)
+        MaNL = "HDN0" + iSoLuongMa.ToString();
+      else if (iSoLuongMa < 10000000)
+        MaNL = "HDN" + iSoLuongMa.ToString();
+      else if (iSoLuongMa >= 9999999)
+        MessageBox.Show("Tràn mã nguyên liệu, xin liên hệ hãy liên hệ adm Lu : 01634699175");
 
-        return MaNL;
+      return MaNL;
     }
     private void btnLuu_Click(object sender, EventArgs e)
     {
@@ -399,8 +399,8 @@ namespace GUI
       NguyenLieu.TrangThai = true; // tạm thời để là true chưa sửa 
       if (themmoi)// Đang thêm mới
       {
-          #region thêm mới nguyên liệu
-          if (BUS.NguyenLieu_BUS.InsertNguyenLieu(NguyenLieu))
+        #region thêm mới nguyên liệu
+        if (BUS.NguyenLieu_BUS.InsertNguyenLieu(NguyenLieu))
         {
           MessageBox.Show("Đã thêm thành công nguyên liệu");
           urcDanhSachNguyenLieu_Load(sender, e);
@@ -411,9 +411,9 @@ namespace GUI
         }
         else
         {
-            MessageBox.Show("Thêm thất bại vui lòng thử lại"); return;
+          MessageBox.Show("Thêm thất bại vui lòng thử lại"); return;
         }
-          #endregion thêm mới nguyên liệu
+        #endregion thêm mới nguyên liệu
       }
       if (txtSoLuongNL.Text == "")
       {
@@ -422,50 +422,50 @@ namespace GUI
       NguyenLieu.TongSoLuong = float.Parse(txtSoLuongNL.Text);
       if (nhaphang)//Đang nhập hàng thêm vào
       {
-          if (dt.Rows.Count > 0)
+        if (dt.Rows.Count > 0)
+        {
+          for (int i = 0; i < dt.Rows.Count; i++)
           {
-              for (int i = 0; i < dt.Rows.Count; i++)
+            for (int j = 0; j < dgvDSNguyenLieu.Rows.Count; j++)
+            {
+              if (dt.Rows[i][0].ToString() == dgvDSNguyenLieu.Rows[j].Cells[0].Value.ToString())
               {
-                  for (int j = 0; j < dgvDSNguyenLieu.Rows.Count; j++)
-                  {
-                      if (dt.Rows[i][0].ToString() == dgvDSNguyenLieu.Rows[j].Cells[0].Value.ToString())
-                      {
-                          int soluongsp = int.Parse(dgvDSNguyenLieu.Rows[j].Cells[3].Value.ToString()) + int.Parse(dt.Rows[i][2].ToString());
-                          MessageBox.Show(dt.Rows[i][0].ToString());
-                          clsNguyenLieu_DTO _NguyenLieuUP = new clsNguyenLieu_DTO();
-                          _NguyenLieuUP = TaoRaMotDoiTuongNguyenLieu(soluongsp,dgvDSNguyenLieu,j);
-                          BUS.NguyenLieu_BUS.UpdateNguyenLieu(_NguyenLieuUP);
-                          urcDanhSachNguyenLieu_Load(sender, e);
-                          dgvDSNguyenLieu_SelectionChanged(sender, e);
-                          // đối tượng hóa đơn nhập để add vào hóa đơn nhập
-                      }
-                     
-                  }
+                int soluongsp = int.Parse(dgvDSNguyenLieu.Rows[j].Cells[3].Value.ToString()) + int.Parse(dt.Rows[i][2].ToString());
+                //MessageBox.Show(dt.Rows[i][0].ToString());
+                clsNguyenLieu_DTO _NguyenLieuUP = new clsNguyenLieu_DTO();
+                _NguyenLieuUP = TaoRaMotDoiTuongNguyenLieu(soluongsp, dgvDSNguyenLieu, j);
+                BUS.NguyenLieu_BUS.UpdateNguyenLieu(_NguyenLieuUP);
+                urcDanhSachNguyenLieu_Load(sender, e);
+                dgvDSNguyenLieu_SelectionChanged(sender, e);
+                // đối tượng hóa đơn nhập để add vào hóa đơn nhập
               }
-             //  tao hoa don nhap
-              clsHoaDonNhap_DTO hdn = new clsHoaDonNhap_DTO();
-              hdn.MaHoaDon = TaoRaMaMoi(BUS.HoaDonNhap_BUS.SoLuongHoaDonNhap());
-              hdn.MaNhanVien = urcDangNhap.strMaNhanVien;
-              hdn.NgayTaoHoaDon = DateTime.Now;
-              hdn.TongTien = fTongtien;
-              hdn.TrangThai = true;
-              MessageBox.Show(hdn.TongTien.ToString() + "-" + hdn.NgayTaoHoaDon.ToString() + "-" + hdn.MaNhanVien.ToString() + "-" + hdn.MaHoaDon.ToString()+"-"+hdn.TrangThai.ToString());
-              BUS.HoaDonNhap_BUS.AddHoaDonNhap(hdn);
-                // xuất hóa đơn
-              frmHoaDonNhap frmhdh = new frmHoaDonNhap();
-              frmhdh.Show();
-              Thread.Sleep(900);
-              btnHuyBoNhapHang_Click(sender, e);
+
+            }
           }
-          else
-          { 
-              MessageBox.Show("Trong danh sách chưa có nguyên liệu nào"); return;
-          }
+          //  tao hoa don nhap
+          clsHoaDonNhap_DTO hdn = new clsHoaDonNhap_DTO();
+          hdn.MaHoaDon = TaoRaMaMoi(BUS.HoaDonNhap_BUS.SoLuongHoaDonNhap());
+          hdn.MaNhanVien = urcDangNhap.strMaNhanVien;
+          hdn.NgayTaoHoaDon = DateTime.Now;
+          hdn.TongTien = fTongtien;
+          hdn.TrangThai = true;
+          MessageBox.Show(hdn.TongTien.ToString() + "-" + hdn.NgayTaoHoaDon.ToString() + "-" + hdn.MaNhanVien.ToString() + "-" + hdn.MaHoaDon.ToString() + "-" + hdn.TrangThai.ToString());
+          BUS.HoaDonNhap_BUS.AddHoaDonNhap(hdn);
+          // xuất hóa đơn
+          frmHoaDonNhap frmhdh = new frmHoaDonNhap();
+          frmhdh.Show();
+          Thread.Sleep(3000);
+          btnHuyBoNhapHang_Click(sender, e);
+        }
+        else
+        {
+          MessageBox.Show("Trong danh sách chưa có nguyên liệu nào"); return;
+        }
       }
       if (chinhsua)//Đang chỉnh sửa thông tin nguyên liệu
       {
-          #region chỉnh sửa nguyên liệu
-          DataGridViewRow r = dgvDSNguyenLieu.SelectedRows[0];
+        #region chỉnh sửa nguyên liệu
+        DataGridViewRow r = dgvDSNguyenLieu.SelectedRows[0];
 
         clsNguyenLieu_DTO nguyenLieu = new clsNguyenLieu_DTO();
         nguyenLieu.MaNguyenLieu = r.Cells[0].Value.ToString();
@@ -473,11 +473,11 @@ namespace GUI
         nguyenLieu.TenNguyenLieu = txtTenNL.Text;
         nguyenLieu.TongSoLuong = float.Parse(txtSoLuongNL.Text);
         nguyenLieu.DonViTinh = cbbDVTinhNL.SelectedValue.ToString();
-       // nguyenLieu.DonGia = float.Parse(txtDonGiaNL.Text);
+        // nguyenLieu.DonGia = float.Parse(txtDonGiaNL.Text);
         nguyenLieu.MaLoaiNguyenLieu = cbbLoaiNL.SelectedValue.ToString();
         nguyenLieu.TrangThai = true;
 
-        if(BUS.NguyenLieu_BUS.UpdateNguyenLieu(nguyenLieu))
+        if (BUS.NguyenLieu_BUS.UpdateNguyenLieu(nguyenLieu))
         {
           MessageBox.Show("Cập nhật thành công");
           urcDanhSachNguyenLieu_Load(sender, e);
@@ -485,21 +485,21 @@ namespace GUI
           dgvDSNguyenLieu.Enabled = true;
 
         }
-          #endregion chỉnh sửa nguyên liệu
+        #endregion chỉnh sửa nguyên liệu
       }
     }
-      private clsNguyenLieu_DTO TaoRaMotDoiTuongNguyenLieu(int soluongsp, DataGridView dgv, int chisodong)
+    private clsNguyenLieu_DTO TaoRaMotDoiTuongNguyenLieu(int soluongsp, DataGridView dgv, int chisodong)
     {
-        //soluongsp += int.Parse(txtSoLuongNL.Text);
-        clsNguyenLieu_DTO _NguyenLieuUP = new clsNguyenLieu_DTO();
-        _NguyenLieuUP.MaNguyenLieu = dgv.Rows[chisodong].Cells["colMaNguyenLieu"].Value.ToString();
-        _NguyenLieuUP.AnhNguyenLieu = dgv.Rows[chisodong].Cells["colAnhNguyenLieu"].Value.ToString();
-        _NguyenLieuUP.TenNguyenLieu = dgv.Rows[chisodong].Cells["colTenNguyenLieu"].Value.ToString();
-        _NguyenLieuUP.TongSoLuong = soluongsp;
-        _NguyenLieuUP.DonViTinh = dgv.Rows[chisodong].Cells["colDonViTinh"].Value.ToString();
-        _NguyenLieuUP.MaLoaiNguyenLieu = dgv.Rows[chisodong].Cells["colLoaiNguyenLieu"].Value.ToString();
-        _NguyenLieuUP.TrangThai = true;
-        return _NguyenLieuUP;
+      //soluongsp += int.Parse(txtSoLuongNL.Text);
+      clsNguyenLieu_DTO _NguyenLieuUP = new clsNguyenLieu_DTO();
+      _NguyenLieuUP.MaNguyenLieu = dgv.Rows[chisodong].Cells["colMaNguyenLieu"].Value.ToString();
+      _NguyenLieuUP.AnhNguyenLieu = dgv.Rows[chisodong].Cells["colAnhNguyenLieu"].Value.ToString();
+      _NguyenLieuUP.TenNguyenLieu = dgv.Rows[chisodong].Cells["colTenNguyenLieu"].Value.ToString();
+      _NguyenLieuUP.TongSoLuong = soluongsp;
+      _NguyenLieuUP.DonViTinh = dgv.Rows[chisodong].Cells["colDonViTinh"].Value.ToString();
+      _NguyenLieuUP.MaLoaiNguyenLieu = dgv.Rows[chisodong].Cells["colLoaiNguyenLieu"].Value.ToString();
+      _NguyenLieuUP.TrangThai = true;
+      return _NguyenLieuUP;
     }
 
     private void dgvDSNguyenLieu_SelectionChanged(object sender, EventArgs e)
@@ -516,9 +516,9 @@ namespace GUI
           txtTenNL.Text = dvrSelected.Cells["colTenNguyenLieu"].Value.ToString();
           if (!nhaphang)
           {
-              txtSoLuongNL.Text = dvrSelected.Cells["colTongSoLuongCon"].Value.ToString();
+            txtSoLuongNL.Text = dvrSelected.Cells["colTongSoLuongCon"].Value.ToString();
           }
-        
+
           //txtDonGiaNL.Text = dvrSelected.Cells["colDonGia"].Value.ToString();
           cbbDVTinhNL.SelectedValue = dvrSelected.Cells["colDonViTinh"].Value.ToString();
 
@@ -541,7 +541,7 @@ namespace GUI
           else
           {
             picAnhNguyenLieu.Image = new Bitmap(@"HinhAnh\AnhMonAn\no_picture.gif");
-             AnhNguyenLieu =@"HinhAnh\AnhMonAn\no_picture.gif";
+            AnhNguyenLieu = @"HinhAnh\AnhMonAn\no_picture.gif";
           }
 
         }
@@ -596,37 +596,37 @@ namespace GUI
 
     private void txtThemNhap_Click(object sender, EventArgs e)
     {
-        if (txtSoLuongNL.Text=="" || txtGia.Text =="")
-        {
-            return;
-        }
+      if (txtSoLuongNL.Text == "" || txtGia.Text == "")
+      {
+        return;
+      }
 
-        bool bflag = true;
+      bool bflag = true;
 
-        for (int i = 0; i < dt.Rows.Count; i++)
+      for (int i = 0; i < dt.Rows.Count; i++)
+      {
+        if (dt.Rows[i][0] == dvrSelected.Cells["colMaNguyenLieu"].Value.ToString())
         {
-            if (dt.Rows[i][0]==dvrSelected.Cells["colMaNguyenLieu"].Value.ToString())
-            {
-                bflag = false;
-                dt.Rows[i][2] = int.Parse(dt.Rows[i][2].ToString()) + int.Parse(txtSoLuongNL.Text);
-                fTongtien += float.Parse(txtSoLuongNL.Text) * float.Parse(dt.Rows[i][4].ToString());
-            }
+          bflag = false;
+          dt.Rows[i][2] = int.Parse(dt.Rows[i][2].ToString()) + int.Parse(txtSoLuongNL.Text);
+          fTongtien += float.Parse(txtSoLuongNL.Text) * float.Parse(dt.Rows[i][4].ToString());
         }
+      }
 
-        if (bflag)
-        {
-            DataRow dr = dt.NewRow();
-            dr[0] = dvrSelected.Cells["colMaNguyenLieu"].Value.ToString();
-            dr[1] = dvrSelected.Cells["colTenNguyenLieu"].Value.ToString();
-            dr[2] = txtSoLuongNL.Text;
-            dr[3] = dvrSelected.Cells["colDonViTinh"].Value.ToString();
-            dr[4] = txtGia.Text;
-            // dr[5] = cbbNCC.SelectedValue.ToString();
-            dt.Rows.Add(dr);
-            dgvGioHangNhap.DataSource = dt;
-            fTongtien += (float.Parse(dr[2].ToString()) * float.Parse(dr[4].ToString()));
-        }
-        MessageBox.Show(fTongtien.ToString());
+      if (bflag)
+      {
+        DataRow dr = dt.NewRow();
+        dr[0] = dvrSelected.Cells["colMaNguyenLieu"].Value.ToString();
+        dr[1] = dvrSelected.Cells["colTenNguyenLieu"].Value.ToString();
+        dr[2] = txtSoLuongNL.Text;
+        dr[3] = dvrSelected.Cells["colDonViTinh"].Value.ToString();
+        dr[4] = txtGia.Text;
+        // dr[5] = cbbNCC.SelectedValue.ToString();
+        dt.Rows.Add(dr);
+        dgvGioHangNhap.DataSource = dt;
+        fTongtien += (float.Parse(dr[2].ToString()) * float.Parse(dr[4].ToString()));
+      }
+      MessageBox.Show(fTongtien.ToString());
     }
 
 

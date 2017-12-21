@@ -47,13 +47,13 @@
       this.colKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dtFrom = new System.Windows.Forms.DateTimePicker();
       this.dtTo = new System.Windows.Forms.DateTimePicker();
-      this.btnTim = new System.Windows.Forms.Button();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.groupBox2 = new System.Windows.Forms.GroupBox();
-      this.txtTongTien = new System.Windows.Forms.TextBox();
-      this.label2 = new System.Windows.Forms.Label();
-      this.label3 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
+      this.txtTongTien = new System.Windows.Forms.TextBox();
+      this.groupBox2 = new System.Windows.Forms.GroupBox();
+      this.btnTim = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
@@ -191,6 +191,69 @@
       this.dtTo.Size = new System.Drawing.Size(200, 27);
       this.dtTo.TabIndex = 2;
       // 
+      // groupBox1
+      // 
+      this.groupBox1.Controls.Add(this.label1);
+      this.groupBox1.Controls.Add(this.label3);
+      this.groupBox1.Controls.Add(this.label2);
+      this.groupBox1.Controls.Add(this.txtTongTien);
+      this.groupBox1.Controls.Add(this.dtFrom);
+      this.groupBox1.Controls.Add(this.btnTim);
+      this.groupBox1.Controls.Add(this.dtTo);
+      this.groupBox1.Location = new System.Drawing.Point(27, 28);
+      this.groupBox1.Name = "groupBox1";
+      this.groupBox1.Size = new System.Drawing.Size(873, 149);
+      this.groupBox1.TabIndex = 70;
+      this.groupBox1.TabStop = false;
+      this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.label1.Location = new System.Drawing.Point(19, 88);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(119, 20);
+      this.label1.TabIndex = 74;
+      this.label1.Text = "Tổng tiền bán";
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.label3.Location = new System.Drawing.Point(390, 47);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(76, 20);
+      this.label3.TabIndex = 73;
+      this.label3.Text = "Tới ngày";
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.label2.Location = new System.Drawing.Point(66, 47);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(72, 20);
+      this.label2.TabIndex = 72;
+      this.label2.Text = "Từ ngày";
+      // 
+      // txtTongTien
+      // 
+      this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.txtTongTien.Location = new System.Drawing.Point(144, 85);
+      this.txtTongTien.Name = "txtTongTien";
+      this.txtTongTien.Size = new System.Drawing.Size(200, 27);
+      this.txtTongTien.TabIndex = 70;
+      // 
+      // groupBox2
+      // 
+      this.groupBox2.Controls.Add(this.dgvDSHD);
+      this.groupBox2.Location = new System.Drawing.Point(27, 183);
+      this.groupBox2.Name = "groupBox2";
+      this.groupBox2.Size = new System.Drawing.Size(873, 369);
+      this.groupBox2.TabIndex = 71;
+      this.groupBox2.TabStop = false;
+      // 
       // btnTim
       // 
       this.btnTim.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -208,71 +271,6 @@
       this.btnTim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.btnTim.UseVisualStyleBackColor = true;
       this.btnTim.Click += new System.EventHandler(this.btnLuu_Click);
-      // 
-      // groupBox1
-      // 
-      this.groupBox1.Controls.Add(this.label1);
-      this.groupBox1.Controls.Add(this.label3);
-      this.groupBox1.Controls.Add(this.label2);
-      this.groupBox1.Controls.Add(this.txtTongTien);
-      this.groupBox1.Controls.Add(this.dtFrom);
-      this.groupBox1.Controls.Add(this.btnTim);
-      this.groupBox1.Controls.Add(this.dtTo);
-      this.groupBox1.Location = new System.Drawing.Point(27, 28);
-      this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(873, 149);
-      this.groupBox1.TabIndex = 70;
-      this.groupBox1.TabStop = false;
-      this.groupBox1.Text = "groupBox1";
-      this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-      // 
-      // groupBox2
-      // 
-      this.groupBox2.Controls.Add(this.dgvDSHD);
-      this.groupBox2.Location = new System.Drawing.Point(27, 183);
-      this.groupBox2.Name = "groupBox2";
-      this.groupBox2.Size = new System.Drawing.Size(873, 369);
-      this.groupBox2.TabIndex = 71;
-      this.groupBox2.TabStop = false;
-      this.groupBox2.Text = "groupBox2";
-      // 
-      // txtTongTien
-      // 
-      this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.txtTongTien.Location = new System.Drawing.Point(144, 85);
-      this.txtTongTien.Name = "txtTongTien";
-      this.txtTongTien.Size = new System.Drawing.Size(200, 27);
-      this.txtTongTien.TabIndex = 70;
-      // 
-      // label2
-      // 
-      this.label2.AutoSize = true;
-      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.label2.Location = new System.Drawing.Point(66, 47);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(72, 20);
-      this.label2.TabIndex = 72;
-      this.label2.Text = "Từ ngày";
-      // 
-      // label3
-      // 
-      this.label3.AutoSize = true;
-      this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.label3.Location = new System.Drawing.Point(390, 47);
-      this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(76, 20);
-      this.label3.TabIndex = 73;
-      this.label3.Text = "Tới ngày";
-      // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.label1.Location = new System.Drawing.Point(19, 88);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(119, 20);
-      this.label1.TabIndex = 74;
-      this.label1.Text = "Tổng tiền bán";
       // 
       // urcXemLichSuBan
       // 

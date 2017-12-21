@@ -104,22 +104,22 @@ namespace GUI
 
     private void urcDangNhap_Load(object sender, EventArgs e)
     {
-      txtMatKhau.Text = "123";
-      txtTaiKhoan.Text = "N00001";
+      //txtMatKhau.Text = "123";
+      //txtTaiKhoan.Text = "N00001";
 
       //Quản lý
       //txtMatKhau.Text = "ql123";
       //txtTaiKhoan.Text = "N00022";
 
       //Nhân viên
-      //txtMatKhau.Text = "N00005";
-      //txtTaiKhoan.Text = "@Luan1";
+      txtTaiKhoan.Text = "N00005";
+      txtMatKhau.Text = "@Luan1";
     }
 
     private void linkLabelDoiMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      frmDoiMatKhau frm = new frmDoiMatKhau();
-      frm.ShowDialog();
+      //frmDoiMatKhau frm = new frmDoiMatKhau();
+      //frm.ShowDialog();
     }
 
     

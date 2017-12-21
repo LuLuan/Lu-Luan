@@ -44,6 +44,15 @@ namespace DAO
     }
 
 
+    public string LayTenKhacHangQuaMaThe(string maThe)
+    {
+      SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+      string query = string.Format("SELECT ten_khach_hang FROM KhachHang, TheKhachHang WHERE KhachHang.ma_khach_hang = TheKhachHang.ma_khach_hang AND ma_the = '{0}'", maThe);
+      SqlCommand cmd = new SqlCommand(query, con);
+      return (string)cmd.ExecuteScalar();
+    }
+
+
 
     public string LayMaTheKhachHang()
     {

@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaLamViec_BUS.cs" />
     <Compile Include="ChiTietBanPhanCong_BUS.cs" />
     <Compile Include="ChiTietHoaDonBan_BUS.cs" />
     <Compile Include="ChiTietMonAn_BUS.cs" />

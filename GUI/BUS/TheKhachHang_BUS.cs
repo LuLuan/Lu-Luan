@@ -16,6 +16,12 @@ namespace BUS
       return dao.LayDanhSachTheKHH(maThe, tenKH);
     }
 
+    public string LayTenKhacHangQuaMaThe(string maThe)
+    {
+      TheKhachHang_DAO dao = new TheKhachHang_DAO();
+      return dao.LayTenKhacHangQuaMaThe(maThe);
+    }
+
 
     public string LayMaTheKhachHang()
     {

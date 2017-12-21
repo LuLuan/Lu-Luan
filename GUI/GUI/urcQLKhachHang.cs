@@ -23,7 +23,10 @@ namespace GUI
 
     urcDanhSachKhachHang urcDanhSachKhachHang = new urcDanhSachKhachHang();
     urcDanhSachTheKhachHang urcDanhSachTheKhachHang = new urcDanhSachTheKhachHang();
+
+
     urcThemKhachHang urcThemKhachHang = new urcThemKhachHang();
+
     private void CaiDatPanelMenu(Button btn)
     {
 

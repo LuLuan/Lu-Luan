@@ -32,8 +32,8 @@ namespace GUI
       DateTime dtFrom = DateTime.MinValue;
       DateTime dtTo = DateTime.MinValue;
 
-      if(chbDateFrom.Checked)
-      { 
+      if (chbDateFrom.Checked)
+      {
         dtFrom = dtpFrom.Value;
         dtTo = dtpTo.Value;
       }
@@ -49,17 +49,30 @@ namespace GUI
 
     List<clsNhanVien_DTO> lstNV = BUS.NhanVien_BUS.LayNhanVienTheoMa("");
     clsNhanVien_DTO dtoNV;
-    
+
+    List<clsCaLamViec_DTO> lstCa = BUS.CaLamViec_BUS.LayDanhSachCaLamViec();
+    clsCaLamViec_DTO dtoCa;
+
     private void dgvLichLamViec_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
-      if(dgvLichLamViec.Columns[e.ColumnIndex].Name == "colHoTen")
+      if (dgvLichLamViec.Rows.Count > 0)
       {
-        
-        dtoNV = lstNV.First(u=> u.MaNhanVien == e.Value.ToString());
-        e.Value = dtoNV.HoTen;
+        if (dgvLichLamViec.Columns[e.ColumnIndex].Name == "colHoTen")
+        {
+
+          dtoNV = lstNV.First(u => u.MaNhanVien == e.Value.ToString());
+          e.Value = dtoNV.HoTen;
+        }
+
+        if (dgvLichLamViec.Columns[e.ColumnIndex].Name == "colCa")
+        {
+
+          dtoCa = lstCa.First(u => u.MaCaLamViec == e.Value.ToString());
+          e.Value = dtoCa.TenCaLamViec;
+        }
       }
     }
 
-    
+
   }
 }

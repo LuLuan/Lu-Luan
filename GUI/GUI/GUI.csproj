@@ -285,6 +285,12 @@
     <Compile Include="urcXemLichSuBan.Designer.cs">
       <DependentUpon>urcXemLichSuBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="urcXemLichSuNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urcXemLichSuNhap.Designer.cs">
+      <DependentUpon>urcXemLichSuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -404,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="urcXemLichSuBan.resx">
       <DependentUpon>urcXemLichSuBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urcXemLichSuNhap.resx">
+      <DependentUpon>urcXemLichSuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dtsChiTietHoaDon.xsc">
       <DependentUpon>dtsChiTietHoaDon.xsd</DependentUpon>
@@ -694,6 +703,7 @@
     <None Include="bin\Debug\HinhAnh\AnhChucNangMenu\icons8_Cancel_35px_2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8_Tick_Box_30px_1.png" />
     <None Include="Resources\icons8_Search_35px.png" />
     <None Include="Resources\icons8_Sunset_35px1.png" />
     <None Include="Resources\icons8_Sunrise_35px1.png" />

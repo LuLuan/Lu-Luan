@@ -24,13 +24,17 @@ namespace GUI
     //urcDanhSachNguyenLieu urcDanhSachNguyenLieu = new urcDanhSachNguyenLieu();
     //urcDanhSachLoaiNguyenLieu urcDanhSachLoaiNguyenLieu = new urcDanhSachLoaiNguyenLieu();
 
+    //urcXemLichSuBan urcXemLichSuBan = new urcXemLichSuBan();
+
     urcXemLichSuBan urcXemLichSuBan = new urcXemLichSuBan();
+    urcXemLichSuNhap urcXemLichSuNhap = new urcXemLichSuNhap();
+
     private void CaiDatPanelMenu(Button btn)
     {
       if (btn.Name == btnXemDSNV.Name)
       {
-        //urcDanhSachNguyenLieu.Visible = false;
-        if (!pnlContainer.Controls.ContainsKey("urcDanhSachNguyenLieu"))
+        urcXemLichSuNhap.Visible = false;
+        if (!pnlContainer.Controls.ContainsKey("urcXemLichSuBan"))
         {
           pnlContainer.Controls.Add(urcXemLichSuBan);
           urcXemLichSuBan.Visible = true;
@@ -42,21 +46,21 @@ namespace GUI
         }
       }
 
-      //else if (btn.Name == btnXemDSTK.Name)
-      //{
-      //  urcDanhSachNguyenLieu.Visible = false;
-      //  urcDanhSachLoaiNguyenLieu.Visible = true;
-      //  if (!pnlContainer.Controls.ContainsKey("urcDanhSachLoaiNguyenLieu"))
-      //  {
-      //    pnlContainer.Controls.Add(urcDanhSachLoaiNguyenLieu);
-      //    urcDanhSachLoaiNguyenLieu.Visible = true;
-      //    urcDanhSachLoaiNguyenLieu.Dock = DockStyle.Fill;
-      //  }
-      //  else
-      //  {
-      //    urcDanhSachLoaiNguyenLieu.Visible = true;
-      //  }
-      //}
+      else if (btn.Name == btnXemDSTK.Name)
+      {
+        urcXemLichSuBan.Visible = false;
+        urcXemLichSuNhap.Visible = true;
+        if (!pnlContainer.Controls.ContainsKey("urcXemLichSuNhap"))
+        {
+          pnlContainer.Controls.Add(urcXemLichSuNhap);
+          urcXemLichSuNhap.Visible = true;
+          urcXemLichSuNhap.Dock = DockStyle.Fill;
+        }
+        else
+        {
+          urcXemLichSuNhap.Visible = true;
+        }
+      }
     }
 
     private void urcQLNhanVien_Load(object sender, EventArgs e)
@@ -73,13 +77,13 @@ namespace GUI
         btnMoMenu_Click(sender, e);
     }
 
-    //private void btnXemDSTK_Click(object sender, EventArgs e)
-    //{
-    //  CaiDatPanelMenu(btnXemDSTK);
-    //  urcDanhSachLoaiNguyenLieu.BringToFront();
-    //  if (isClickedbtnMoMenu == true)
-    //    btnMoMenu_Click(sender, e);
-    //}
+    private void btnXemDSTK_Click(object sender, EventArgs e)
+    {
+      CaiDatPanelMenu(btnXemDSTK);
+      urcXemLichSuNhap.BringToFront();
+      if (isClickedbtnMoMenu == true)
+        btnMoMenu_Click(sender, e);
+    }
 
     //private void btnThemNhanVien_Click(object sender, EventArgs e)
     //{
