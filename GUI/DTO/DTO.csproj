@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsCaLamViec_DTO.cs" />
     <Compile Include="clsChiTietBanPhanCong_DTO.cs" />
     <Compile Include="clsChiTietHoaDonBan_DTO.cs" />
     <Compile Include="clsChiTietMonAn_DTO.cs" />

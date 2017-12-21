@@ -47,12 +47,15 @@ namespace GUI
       HienThiLichLamViec();
     }
 
+    List<clsNhanVien_DTO> lstNV = BUS.NhanVien_BUS.LayNhanVienTheoMa("");
+    clsNhanVien_DTO dtoNV;
+    
     private void dgvLichLamViec_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
       if(dgvLichLamViec.Columns[e.ColumnIndex].Name == "colHoTen")
       {
-        List<clsNhanVien_DTO> lstNV = BUS.NhanVien_BUS.LayNhanVienTheoMa("");
-        clsNhanVien_DTO dtoNV = lstNV.First(u=> u.MaNhanVien == e.Value.ToString());
+        
+        dtoNV = lstNV.First(u=> u.MaNhanVien == e.Value.ToString());
         e.Value = dtoNV.HoTen;
       }
     }
