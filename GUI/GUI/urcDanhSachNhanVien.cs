@@ -463,7 +463,7 @@ namespace GUI
     private void TrangThaiBanDau()
     {
 
-      btnThemAnh.Enabled = btnCapNhat.Enabled = btnInThe.Enabled = false;
+      btnThemAnh.Enabled = btnCapNhat.Enabled = btnInThe.Enabled = btnHuyThaoTac.Enabled = false;
       lblMaNV.Text = "";
       foreach (Control ctr in grbTTNhanVien.Controls)
       {
@@ -535,7 +535,15 @@ namespace GUI
     {
       if (dgvDSNV.Columns[e.ColumnIndex].Name == "colAnhNhanVien")
       {
-        e.Value = new Bitmap(e.Value.ToString());
+        try
+        {
+          e.Value = new Bitmap(e.Value.ToString());
+        }
+        catch
+        {
+          
+        }
+        
       }
 
 
@@ -606,7 +614,7 @@ namespace GUI
 
     private void TrangThaiKhiChonMotNhanVien()
     {
-      btnThemAnh.Enabled = btnCapNhat.Enabled = btnInThe.Enabled = true;
+      btnThemAnh.Enabled = btnCapNhat.Enabled = btnInThe.Enabled = btnHuyThaoTac.Enabled =  true;
       foreach (Control ctr in grbTTNhanVien.Controls)
       {
 
@@ -1025,6 +1033,7 @@ namespace GUI
         }
       }
     }
+
 
    
 

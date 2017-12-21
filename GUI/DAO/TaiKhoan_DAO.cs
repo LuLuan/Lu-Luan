@@ -22,6 +22,18 @@ namespace DAO
       return false;
     }
 
+    public static bool DoiMatKhau(string maDangNhap, string matKhauMoi)
+    {
+      SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+      string Query = string.Format("UPDATE TaiKhoan SET mat_khau = '{1}' WHERE ma_dang_nhap = '{0}'", maDangNhap, matKhauMoi);
+      SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(Query, con);
+      int KiemTra = cmd.ExecuteNonQuery();
+      ThaoTacDuLieu_DAO.DongKetNoi(con);
+      if (KiemTra == 1)
+        return true;
+      return false;
+    }
+
     public List<clsTaiKhoan_DTO> LayDanhSachTaiKhoan(string hoTenNV)
     {
       List<clsTaiKhoan_DTO> lstTaiKhoan = new List<clsTaiKhoan_DTO>();
@@ -54,23 +66,6 @@ namespace DAO
 
     #region THÊM - XÓA - SỬA
 
-    //public bool ThemTaiKhoan(clsTaiKhoan_DTO taiKhoan)
-    //{
-    //  SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-    //  string query = "INSERT INTO TaiKhoan(ma_dang_nhap, mat_khau, ngay_tao, ma_quyen_dang_nhap, ma_khan_cap, trang_thai)"
-    //    +" VALUES(@ma_dang_nhap, @mat_khau, @ngay_tao, @ma_quyen_dang_nhap, @ma_khan_cap, @trang_thai)";
-      
-    //  SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
-    //  cmd.Parameters.AddWithValue("@ma_dang_nhap", taiKhoan.MaDangNhap);
-    //  cmd.Parameters.AddWithValue("@mat_khau", taiKhoan.MatKhau);
-    //  cmd.Parameters.AddWithValue("@ngay_tao", taiKhoan.NgayTao);
-    //  cmd.Parameters.AddWithValue("@ma_quyen_dang_nhap", taiKhoan.MaQuyenDangNhap);
-    //  cmd.Parameters.AddWithValue("@ma_khan_cap", taiKhoan.MaKhanCap);
-    //  cmd.Parameters.AddWithValue("@trang_thai", taiKhoan.TrangThai);
-
-    //  //ThaoTacDuLieu_DAO.DongKetNoi(con);
-    //  return (cmd.ExecuteNonQuery() > 0);
-    //}
 
     public bool ThaoTacVoiTaiKhoan(clsTaiKhoan_DTO TK, string command)
     {
@@ -78,11 +73,11 @@ namespace DAO
       string query = "";
       if (command == "Add")
       {
-        query = "INSERT INTO TaiKhoan(ma_dang_nhap, mat_khau, ngay_tao, ma_quyen_dang_nhap, ma_khan_cap, trang_thai)"
-        + " VALUES(@ma_dang_nhap, @mat_khau, @ngay_tao, @ma_quyen_dang_nhap, @ma_khan_cap, @trang_thai)";
+        query = "INSERT INTO TaiKhoan(ma_dang_nhap, mat_khau, ngay_tao, trang_thai)"
+        + " VALUES(@ma_dang_nhap, @mat_khau, @ngay_tao, @trang_thai)";
       }
       else if (command == "Update")
-        query = "UPDATE TaiKhoan SET mat_khau = @mat_khau, ngay_tao = @ngay_tao, ma_quyen_dang_nhap = @ma_quyen_dang_nhap, ma_khan_cap = @ma_khan_cap, trang_thai = @trang_thai WHERE ma_dang_nhap = @ma_dang_nhap";
+        query = "UPDATE TaiKhoan SET mat_khau = @mat_khau, ngay_tao = @ngay_tao, trang_thai = @trang_thai WHERE ma_dang_nhap = @ma_dang_nhap";
       else if (command == "Delete")
         query = string.Format("UPDATE TaiKhoan SET trang_thai = {0} WHERE ma_dang_nhap = '{1}'", TK.TrangThai, TK.MaDangNhap);
 
@@ -93,8 +88,8 @@ namespace DAO
         cmd.Parameters.AddWithValue("@ma_dang_nhap", TK.MaDangNhap);
         cmd.Parameters.AddWithValue("@mat_khau", TK.MatKhau);
         cmd.Parameters.AddWithValue("@ngay_tao", TK.NgayTao);
-        cmd.Parameters.AddWithValue("@ma_quyen_dang_nhap", TK.MaQuyenDangNhap);
-        cmd.Parameters.AddWithValue("@ma_khan_cap", TK.MaKhanCap);
+        //cmd.Parameters.AddWithValue("@ma_quyen_dang_nhap", TK.MaQuyenDangNhap);
+        //cmd.Parameters.AddWithValue("@ma_khan_cap", TK.MaKhanCap);
         cmd.Parameters.AddWithValue("@trang_thai", TK.TrangThai);
       }
       return (cmd.ExecuteNonQuery() > 0);

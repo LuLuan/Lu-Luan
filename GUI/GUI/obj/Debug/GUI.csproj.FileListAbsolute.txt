@@ -292,3 +292,5 @@ D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcQLDoanhThu.resources
 C:\DA_WF\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcQLDoanhThu.resources
 C:\DA_WF\Lu-Luan\GUI\GUI\obj\Debug\GUI.frmChiTietSanPham.resources
 D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.frmChiTietSanPham.resources
+D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.urcDoiMatKhau.resources
+D:\GitHub-Reposities\Lu-Luan\GUI\GUI\obj\Debug\GUI.frmDoiMatKhau.resources

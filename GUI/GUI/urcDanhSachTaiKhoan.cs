@@ -47,10 +47,10 @@ namespace GUI
       //dtoQuyenDangNhap.MaQuyenDangNhap = "";
       //dtoQuyenDangNhap.TenQuyenDangNhap = "Quyền đăng nhập";
       //lstQuyenDangNhap.Insert(0, dtoQuyenDangNhap);
-      cboQuyenDangNhap.DataSource = lstQuyenDangNhap;
-      cboQuyenDangNhap.DisplayMember = "TenQuyenDangNhap";
-      cboQuyenDangNhap.ValueMember = "MaQuyenDangNhap";
-      cboQuyenDangNhap.SelectedIndex = 0;
+      //cboQuyenDangNhap.DataSource = lstQuyenDangNhap;
+      //cboQuyenDangNhap.DisplayMember = "TenQuyenDangNhap";
+      //cboQuyenDangNhap.ValueMember = "MaQuyenDangNhap";
+      //cboQuyenDangNhap.SelectedIndex = 0;
     }
 
     private void HienThiDSTrangThaiTaiKhoan()
@@ -111,13 +111,13 @@ namespace GUI
         e.Value = DateTime.Parse(e.Value.ToString()).ToShortDateString();
       }
 
-      if (dgvDSTK.Columns[e.ColumnIndex].Name == "colQuyenDangNhap")
-      {
-        QuyenDangNhap_BUS bus = new QuyenDangNhap_BUS();
-        List<clsQuyenDangNhap_DTO> lstQDN = bus.LayQuyenDangNhapTheoMaQDN("");
-        clsQuyenDangNhap_DTO dtoQDN = lstQDN.First(u => u.MaQuyenDangNhap == e.Value.ToString());
-        e.Value = dtoQDN.TenQuyenDangNhap;
-      }
+      //if (dgvDSTK.Columns[e.ColumnIndex].Name == "colQuyenDangNhap")
+      //{
+      //  QuyenDangNhap_BUS bus = new QuyenDangNhap_BUS();
+      //  List<clsQuyenDangNhap_DTO> lstQDN = bus.LayQuyenDangNhapTheoMaQDN("");
+      //  clsQuyenDangNhap_DTO dtoQDN = lstQDN.First(u => u.MaQuyenDangNhap == e.Value.ToString());
+      //  e.Value = dtoQDN.TenQuyenDangNhap;
+      //}
 
       if (dgvDSTK.Columns[e.ColumnIndex].Name == "colTrangThai")
       {
@@ -171,7 +171,7 @@ namespace GUI
     {
       HienThiDSTaiKhoan();
       TrangThaiBanDau();
-      cboQuyenDangNhap.SelectedIndex = 0;
+      //cboQuyenDangNhap.SelectedIndex = 0;
       cboTrangThai.SelectedIndex = 0;
     }
     #endregion
@@ -182,8 +182,8 @@ namespace GUI
       string maDN = txtMaDangNhap.Text;
       string matKhau = txtMatKhau.Text;
       DateTime ngayTao = dtpNgayDangKy.Value;
-      string maQDN = cboQuyenDangNhap.SelectedValue.ToString();
-      string maKhanCap = txtMaKhanCap.Text;
+      string maQDN = null;
+      string maKhanCap = null;
       bool trangThai = (cboTrangThai.SelectedIndex == 0 ? true : false);
       return utl.TaoDoiTuongTaiKhoanNhanVien(maDN, matKhau, ngayTao, maQDN, maKhanCap, trangThai);
     }
@@ -297,11 +297,11 @@ namespace GUI
         {
           DataGridViewRow row = dgvDSTK.SelectedRows[0];
 
-          cboQuyenDangNhap.SelectedValue = row.Cells["colQuyenDangNhap"].Value.ToString();
+          //cboQuyenDangNhap.SelectedValue = row.Cells["colQuyenDangNhap"].Value.ToString();
           cboTrangThai.SelectedValue = row.Cells["colTrangThai"].Value.ToString();
           txtMaDangNhap.Text = row.Cells["colMaDangNhap"].Value.ToString().Trim();
           txtMatKhau.Text = row.Cells["colMatKhau"].Value.ToString().Trim();
-          txtMaKhanCap.Text = row.Cells["colMaKhanCap"].Value.ToString().Trim();
+          //txtMaKhanCap.Text = row.Cells["colMaKhanCap"].Value.ToString().Trim();
 
           DateTime dtNgayDangKy = DateTime.Parse(row.Cells["colNgayTao"].Value.ToString());
           LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayDangKy, dtNgayDangKy);
@@ -328,12 +328,12 @@ namespace GUI
       else txtMatKhau.ForeColor = Color.Red;
     }
 
-    private void txtMaKhanCap_TextChanged(object sender, EventArgs e)
-    {
-      if (KiemTraMaKhanCap())
-        txtMaKhanCap.ForeColor = Color.Black;
-      else txtMaKhanCap.ForeColor = Color.Red;
-    }
+    //private void txtMaKhanCap_TextChanged(object sender, EventArgs e)
+    //{
+    //  if (KiemTraMaKhanCap())
+    //    txtMaKhanCap.ForeColor = Color.Black;
+    //  else txtMaKhanCap.ForeColor = Color.Red;
+    //}
 
 
     private bool KiemTraDuLieuHopLe()
@@ -346,11 +346,11 @@ namespace GUI
         strError += " *Mật khẩu phải dài từ 5 tới 20 kí tự, có ít nhất 1 chữ cái thường, 1 chữ cái in hoa, 1 chữ số và 1 kí tự đặc biệt (\" * \"  hoặc \" @ \" hoặc \" _ \")\n";
       }
 
-      if(!KiemTraMaKhanCap())
-      {
-        flag = false;
-        strError += " *Mã khẩn cấp phải đủ 6 kí tự là những chữ số (từ 0 tới 9)\n";
-      }
+      //if(!KiemTraMaKhanCap())
+      //{
+      //  flag = false;
+      //  strError += " *Mã khẩn cấp phải đủ 6 kí tự là những chữ số (từ 0 tới 9)\n";
+      //}
 
       return flag;
     }
@@ -360,10 +360,15 @@ namespace GUI
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQMatKhau(), txtMatKhau);
     }
 
-    private bool KiemTraMaKhanCap()
+    private void txtMaKhanCap_TextChanged(object sender, EventArgs e)
     {
-      return utl.KiemTraBieuThucChinhQuy(utl.BTCQMaKhanCap(), txtMaKhanCap);
+
     }
+
+    //private bool KiemTraMaKhanCap()
+    //{
+    //  return utl.KiemTraBieuThucChinhQuy(utl.BTCQMaKhanCap(), txtMaKhanCap);
+    //}
 
 
 

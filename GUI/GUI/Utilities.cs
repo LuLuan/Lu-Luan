@@ -216,7 +216,10 @@ namespace GUI
     {
       return (chb.Checked ? true : false);
     }
-
+    public string BTCQMaDangNhap(int min, int max)
+    {
+      return @"^(([0-9A-Z]){" + min + "," + max + "})$";
+    }
 
 
     public string BTCQMatKhau()
@@ -224,10 +227,12 @@ namespace GUI
       return @"^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[_|*|@])([a-zA-Z0-9*_@]){5,20})$";
     }
 
-    public string BTCQMaKhanCap()
+    /// ///////////////// Có min max
+    public string BTCQMatKhau(int min, int max)
     {
-      return @"^(([0-9]){6,6})$";
+      return @"^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[_|*|@])([a-zA-Z0-9*_@]){" + min + "," + max + "})$";
     }
+
 
     public string BTCQHoTen()
     {
@@ -244,15 +249,12 @@ namespace GUI
     {
       return @"^(([0-9]){" + min + "," + max + "})$";
     }
-    public string BTCQDiaChi()
-    {
-      return @"^((?!.*[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\""|\;|\:]).{15,250})$";
-    }
+
 
     /// ///////////////// Có min max
     public string BTCQDiaChi(int min, int max)
     {
-      return @"^((?!.*[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\""|\;|\:]).{"+min+","+max+"})$";
+      return @"^((?!.*[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\""|\;|\:]).{" + min + "," + max + "})$";
     }
 
 
@@ -282,7 +284,7 @@ namespace GUI
 
     #region UserControl Phân Công / Chấm Công
 
-    
+
 
     public clsChiTietBanPhanCong_DTO TaoDoiTuongChiTietBanPhanCong(string maCTBPC, string maNV, string maCa, DateTime ngayLamViec, string nhanVienTao, DateTime ngayThem, bool coMat, bool nghiCoPhep, int trangThai)
     {
