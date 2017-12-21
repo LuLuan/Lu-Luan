@@ -30,13 +30,13 @@ namespace GUI
        
         private void frmChiTietSanPham_Load(object sender, EventArgs e)
         {
-            dgvThanhPhanMonAn.AutoGenerateColumns = false;
-            List<clsMonAn_DTO> MonAn = BUS.MonAn_BUS.LayMotMonAn(maspp);
-            List<clsThanhPhanMonAn_DTO> lstThanhPhan = BUS.ThanhPhanMonAn_BUS.LayCacThanhPhanCuaMon(maspp);
-            dgvThanhPhanMonAn.DataSource = lstThanhPhan;
-            txtMaMonAn.Text = maspp;
-            txtTenMonAn.Text = MonAn[0].TenMonAn.ToString();
-            picAnhMonAn.Image = Image.FromFile(MonAn[0].AnhMonAn.ToString());
+            //dgvThanhPhanMonAn.AutoGenerateColumns = false;
+            //List<clsMonAn_DTO> MonAn = BUS.MonAn_BUS.LayMotMonAn(maspp);
+            //List<clsThanhPhanMonAn_DTO> lstThanhPhan = BUS.ThanhPhanMonAn_BUS.LayCacThanhPhanCuaMon(maspp);
+            //dgvThanhPhanMonAn.DataSource = lstThanhPhan;
+            //txtMaMonAn.Text = maspp;
+            //txtTenMonAn.Text = MonAn[0].TenMonAn.ToString();
+            //picAnhMonAn.Image = Image.FromFile(MonAn[0].AnhMonAn.ToString());
         }
         List<clsNguyenLieu_DTO> lstNguyenLieu = BUS.NguyenLieu_BUS.DSNguyenLieu("");
 

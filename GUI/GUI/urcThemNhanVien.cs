@@ -28,7 +28,7 @@ namespace GUI
     {
       TrangThaiBanDau();
       HienThiDSChucVu();
-      HienThiDSQuyenDangNhap();
+      //HienThiDSQuyenDangNhap();
       TuPhatSinhMaNhanVien();
       if (this.Focused)
         TuPhatSinhMaNhanVien();
@@ -291,7 +291,8 @@ namespace GUI
       string maDN = txtMaNhanVien.Text;
       string matKhau = txtMatKhau.Text.Trim();
       DateTime ngayTao = DateTime.Now;
-      string maQuyenDangNhap = cboQuyenDangNhap.SelectedValue.ToString().Trim();
+      //string maQuyenDangNhap = cboQuyenDangNhap.SelectedValue.ToString().Trim();
+      string maQuyenDangNhap = null;
       string maKhanCap = txtMaKhanCap.Text;
       bool trangThai = (chbKichHoatTK.Checked ? true : false);
 
@@ -299,6 +300,7 @@ namespace GUI
     }
 
 
+    #region Kiểm tra dữ liệu hợp lệ
     private bool KiemTraDuLieuHopLe()
     {
       bool flag = true;
@@ -373,6 +375,7 @@ namespace GUI
       return flag;
     }
 
+    #endregion
 
     private void txtMatKhau_TextChanged(object sender, EventArgs e)
     {
@@ -442,54 +445,32 @@ namespace GUI
 
     private bool KiemTraMatKhau()
     {
-      //string str = @"^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[_|*|@])([a-zA-Z0-9*_@]){5,20})$";
 
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQMatKhau(), txtMatKhau);
     }
 
     private bool KiemTraMaKhanCap()
     {
-      //string str = @"^(([0-9]){6,6})$";
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQMaKhanCap(), txtMaKhanCap);
     }
 
     private bool KiemTraHoTen()
     {
-      //string str = @"^((?!.*[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:])(?!.*[\d]).{5,50})$";
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQHoTen(), txtHoTen);
     }
 
     private bool KiemTraSDT(int min, int max)
     {
-      //string str = @"^(([0-9]){10,13})$";
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQSoDienThoai(min, max), txtSoDienThoai);
     }
     private bool KiemTraDiaChi(int min, int max)
     {
-      //string str = @"^((?!.*[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\""|\;|\:]).{15,250})$";
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQDiaChi(min, max), txtDiaChi);
     }
 
 
 
-    //private bool KiemTraBieuThucChinhQuy(string bieuThuc, Control ctr)
-    //{
-    //  bool flag = true;
-    //  Regex regex = new Regex(bieuThuc);
-    //  if (ctr is TextBox)
-    //  {
-    //    TextBox txt = (TextBox)ctr;
-    //    if (!regex.IsMatch(txt.Text))
-    //    {
-    //      flag = false;
-    //    }
-    //    else
-    //    {
-    //      flag = true;
-    //    }
-    //  }
-    //  return flag;
-    //}
+    
 
     #endregion
 
