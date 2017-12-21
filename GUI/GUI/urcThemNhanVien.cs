@@ -58,22 +58,22 @@ namespace GUI
       cboChucVu.DataSource = lstChucVu;
     }
 
-    private void HienThiDSQuyenDangNhap()
-    {
-      QuyenDangNhap_BUS bus = new QuyenDangNhap_BUS();
-      List<clsQuyenDangNhap_DTO> lstQDN = bus.LayQuyenDangNhapTheoMaQDN("");
+    //private void HienThiDSQuyenDangNhap()
+    //{
+    //  QuyenDangNhap_BUS bus = new QuyenDangNhap_BUS();
+    //  List<clsQuyenDangNhap_DTO> lstQDN = bus.LayQuyenDangNhapTheoMaQDN("");
 
-      clsQuyenDangNhap_DTO dtoQDN = new clsQuyenDangNhap_DTO();
-      dtoQDN.TenQuyenDangNhap = "Quyền đăng nhập";
-      dtoQDN.MaQuyenDangNhap = "";
+    //  clsQuyenDangNhap_DTO dtoQDN = new clsQuyenDangNhap_DTO();
+    //  dtoQDN.TenQuyenDangNhap = "Quyền đăng nhập";
+    //  dtoQDN.MaQuyenDangNhap = "";
 
-      cboQuyenDangNhap.DisplayMember = "TenQuyenDangNhap";
-      cboQuyenDangNhap.ValueMember = "MaQuyenDangNhap";
+    //  cboQuyenDangNhap.DisplayMember = "TenQuyenDangNhap";
+    //  cboQuyenDangNhap.ValueMember = "MaQuyenDangNhap";
 
-      lstQDN.Insert(0, dtoQDN);
+    //  lstQDN.Insert(0, dtoQDN);
 
-      cboQuyenDangNhap.DataSource = lstQDN;
-    }
+    //  cboQuyenDangNhap.DataSource = lstQDN;
+    //}
 
     #endregion
 
@@ -293,7 +293,7 @@ namespace GUI
       DateTime ngayTao = DateTime.Now;
       //string maQuyenDangNhap = cboQuyenDangNhap.SelectedValue.ToString().Trim();
       string maQuyenDangNhap = null;
-      string maKhanCap = txtMaKhanCap.Text;
+      string maKhanCap = null;
       bool trangThai = (chbKichHoatTK.Checked ? true : false);
 
       return utl.TaoDoiTuongTaiKhoanNhanVien(maDN, matKhau, ngayTao, maQuyenDangNhap, maKhanCap, trangThai);
@@ -310,11 +310,11 @@ namespace GUI
         strError += " *Mật khẩu phải dài từ 5 tới 20 kí tự, có ít nhất 1 chữ cái thường, 1 chữ cái in hoa, 1 chữ số và 1 kí tự đặc biệt (\" * \"  hoặc \" @ \" hoặc \" _ \")\n";
       }
 
-      if (!KiemTraMaKhanCap())
-      {
-        flag = false;
-        strError += " *Mã khẩn cấp phải đủ 6 kí tự là những chữ số (từ 0 tới 9)\n";
-      }
+      //if (!KiemTraMaKhanCap())
+      //{
+      //  flag = false;
+      //  strError += " *Mã khẩn cấp phải đủ 6 kí tự là những chữ số (từ 0 tới 9)\n";
+      //}
       if (!KiemTraHoTen())
       {
         flag = false;
@@ -349,11 +349,11 @@ namespace GUI
         flag = false;
         strError += " *Không được để trống chức vụ\n";
       }
-      if (!KiemTraComboBoxQuyenDangNhap())
-      {
-        flag = false;
-        strError += " *Không được để trống quyền đăng nhập\n";
-      }
+      //if (!KiemTraComboBoxQuyenDangNhap())
+      //{
+      //  flag = false;
+      //  strError += " *Không được để trống quyền đăng nhập\n";
+      //}
 
       if(!KiemTraCheckBoxKichHoatTaiKhoan())
       {
@@ -384,12 +384,12 @@ namespace GUI
       else txtMatKhau.ForeColor = Color.Red;
     }
 
-    private void txtMaKhanCap_TextChanged(object sender, EventArgs e)
-    {
-      if (KiemTraMaKhanCap())
-        txtMaKhanCap.ForeColor = Color.Black;
-      else txtMaKhanCap.ForeColor = Color.Red;
-    }
+    //private void txtMaKhanCap_TextChanged(object sender, EventArgs e)
+    //{
+    //  if (KiemTraMaKhanCap())
+    //    txtMaKhanCap.ForeColor = Color.Black;
+    //  else txtMaKhanCap.ForeColor = Color.Red;
+    //}
     private void txtHoTen_TextChanged(object sender, EventArgs e)
     {
       if (KiemTraHoTen())
@@ -418,10 +418,10 @@ namespace GUI
       return (utl.KiemTraFileDialog(fd) && utl.KiemTraPictuerBox(picAnhDaiDien));
       //return (utl.KiemTraFileDialog(fd));
     }
-    private bool KiemTraComboBoxQuyenDangNhap()
-    {
-      return utl.KiemTraComboBox(cboQuyenDangNhap);
-    }
+    //private bool KiemTraComboBoxQuyenDangNhap()
+    //{
+    //  return utl.KiemTraComboBox(cboQuyenDangNhap);
+    //}
 
     private bool KiemTraComboBoxChucVu()
     {
@@ -449,10 +449,10 @@ namespace GUI
       return utl.KiemTraBieuThucChinhQuy(utl.BTCQMatKhau(), txtMatKhau);
     }
 
-    private bool KiemTraMaKhanCap()
-    {
-      return utl.KiemTraBieuThucChinhQuy(utl.BTCQMaKhanCap(), txtMaKhanCap);
-    }
+    //private bool KiemTraMaKhanCap()
+    //{
+    //  return utl.KiemTraBieuThucChinhQuy(utl.BTCQMaKhanCap(), txtMaKhanCap);
+    //}
 
     private bool KiemTraHoTen()
     {

@@ -34,6 +34,7 @@
       this.txtMatKhau = new System.Windows.Forms.TextBox();
       this.lbQuenMatKhau = new System.Windows.Forms.Label();
       this.lbMKSai = new System.Windows.Forms.Label();
+      this.linkLabelDoiMatKhau = new System.Windows.Forms.LinkLabel();
       this.btnDangNhap = new System.Windows.Forms.Button();
       this.loGo1 = new GUI.LoGo();
       this.SuspendLayout();
@@ -111,6 +112,20 @@
       this.lbMKSai.Text = "Tài khoản hoặc mật khẩu sai!";
       this.lbMKSai.Visible = false;
       // 
+      // linkLabelDoiMatKhau
+      // 
+      this.linkLabelDoiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.linkLabelDoiMatKhau.ForeColor = System.Drawing.SystemColors.Highlight;
+      this.linkLabelDoiMatKhau.LinkColor = System.Drawing.SystemColors.Highlight;
+      this.linkLabelDoiMatKhau.Location = new System.Drawing.Point(80, 343);
+      this.linkLabelDoiMatKhau.Name = "linkLabelDoiMatKhau";
+      this.linkLabelDoiMatKhau.Size = new System.Drawing.Size(181, 23);
+      this.linkLabelDoiMatKhau.TabIndex = 6;
+      this.linkLabelDoiMatKhau.TabStop = true;
+      this.linkLabelDoiMatKhau.Text = "Đổi mật khẩu";
+      this.linkLabelDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.linkLabelDoiMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDoiMatKhau_LinkClicked);
+      // 
       // btnDangNhap
       // 
       this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -141,6 +156,7 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.White;
+      this.Controls.Add(this.linkLabelDoiMatKhau);
       this.Controls.Add(this.lbMKSai);
       this.Controls.Add(this.lbQuenMatKhau);
       this.Controls.Add(this.txtMatKhau);
@@ -167,5 +183,6 @@
         private System.Windows.Forms.Label lbQuenMatKhau;
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Label lbMKSai;
+        private System.Windows.Forms.LinkLabel linkLabelDoiMatKhau;
     }
 }
