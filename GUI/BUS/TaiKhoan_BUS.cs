@@ -14,10 +14,6 @@ namespace BUS
     {
       return DAO.TaiKhoan_DAO.KiemTraDangNhap_DAO(TaiKhoan, MatKhau);
     }
-    public static bool DoiMatKhau(string maDangNhap, string matKhauMoi)
-    {
-      return DAO.TaiKhoan_DAO.DoiMatKhau(maDangNhap, matKhauMoi);
-    }
 
     public List<clsTaiKhoan_DTO> LayDanhSachTaiKhoan(string hoTenNV)
     {

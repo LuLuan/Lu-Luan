@@ -47,6 +47,7 @@
     <Compile Include="clsChucVu_DTO.cs" />
     <Compile Include="clsCuaHang_DTO.cs" />
     <Compile Include="clsHoaDonBan.cs" />
+    <Compile Include="clsHoaDonNhap_DTO.cs" />
     <Compile Include="clsLoaiNguyenLieu_DTO.cs" />
     <Compile Include="clsLoaiTheKhachHang.cs" />
     <Compile Include="clsNhaCungCap_DTO.cs" />
