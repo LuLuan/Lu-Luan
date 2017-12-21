@@ -158,10 +158,7 @@ namespace GUI
             {
 
                 float tienkhachdua = float.Parse(txtTienKhachDua.Text);
-
-
               //  float tienkhachdua = TienKhachDua;
-
               //  txtTienKhachDua.Text = String.Format("{0:C0}", tienkhachdua);
               //  txtTienKhachDua.TextChanged -= txtTienKhachDua_TextChanged;
                 TienTraLai = (float.Parse(String.Format("{0,0}",tienkhachdua)) - tongtien);

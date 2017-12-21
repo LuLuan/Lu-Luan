@@ -10,12 +10,13 @@ using System.Windows.Forms;
 using DTO;
 using BUS;
 using System.IO;
+using System.Threading;
 
 namespace GUI
 {
   public partial class urcDanhSachNguyenLieu : UserControl
   {
-      DataTable dt = new DataTable();
+      public static DataTable dt = new DataTable();
       float fTongtien = 0;
       bool flag = true;
       bool chinhsua = false;
@@ -63,7 +64,7 @@ namespace GUI
             TaoDataTable();
             flag = false;
         }
-       
+        dgvGioHangNhap.AutoGenerateColumns = false;
         dgvDSNguyenLieu.AutoGenerateColumns = false;
       LoadCbbTrangThai();
       LoadTatCaCBB();
@@ -346,7 +347,31 @@ namespace GUI
       }
       urcLoaiNguyenLieu.BringToFront();
     }
+    private string TaoRaMaMoi(int iSoLuongMa)
+    {
+        string MaNL = "";
+        iSoLuongMa += 1;
 
+        // int DoDaiSoThuTu = iSoLuongMa.ToString().Length;
+        if (iSoLuongMa < 10)
+            MaNL = "HDN000000" + iSoLuongMa.ToString();
+        else if (iSoLuongMa < 100)
+            MaNL = "HDN00000" + iSoLuongMa.ToString();
+        else if (iSoLuongMa < 1000)
+            MaNL = "HDN0000" + iSoLuongMa.ToString();
+        else if (iSoLuongMa < 10000)
+            MaNL = "HDN000" + iSoLuongMa.ToString();
+        else if (iSoLuongMa < 100000)
+            MaNL = "HDN00" + iSoLuongMa.ToString();
+        else if (iSoLuongMa < 1000000)
+            MaNL = "HDN0" + iSoLuongMa.ToString();
+        else if (iSoLuongMa < 10000000)
+            MaNL = "HDN" + iSoLuongMa.ToString();
+        else if (iSoLuongMa >= 9999999)
+            MessageBox.Show("Tràn mã nguyên liệu, xin liên hệ hãy liên hệ adm Lu : 01634699175");
+
+        return MaNL;
+    }
     private void btnLuu_Click(object sender, EventArgs e)
     {
       clsNguyenLieu_DTO NguyenLieu = new clsNguyenLieu_DTO();
@@ -397,7 +422,6 @@ namespace GUI
       NguyenLieu.TongSoLuong = float.Parse(txtSoLuongNL.Text);
       if (nhaphang)//Đang nhập hàng thêm vào
       {
-          MessageBox.Show(fTongtien.ToString());
           if (dt.Rows.Count > 0)
           {
               for (int i = 0; i < dt.Rows.Count; i++)
@@ -413,14 +437,30 @@ namespace GUI
                           BUS.NguyenLieu_BUS.UpdateNguyenLieu(_NguyenLieuUP);
                           urcDanhSachNguyenLieu_Load(sender, e);
                           dgvDSNguyenLieu_SelectionChanged(sender, e);
-                          
+                          // đối tượng hóa đơn nhập để add vào hóa đơn nhập
                       }
                      
                   }
               }
+             //  tao hoa don nhap
+              clsHoaDonNhap_DTO hdn = new clsHoaDonNhap_DTO();
+              hdn.MaHoaDon = TaoRaMaMoi(BUS.HoaDonNhap_BUS.SoLuongHoaDonNhap());
+              hdn.MaNhanVien = urcDangNhap.strMaNhanVien;
+              hdn.NgayTaoHoaDon = DateTime.Now;
+              hdn.TongTien = fTongtien;
+              hdn.TrangThai = true;
+              MessageBox.Show(hdn.TongTien.ToString() + "-" + hdn.NgayTaoHoaDon.ToString() + "-" + hdn.MaNhanVien.ToString() + "-" + hdn.MaHoaDon.ToString()+"-"+hdn.TrangThai.ToString());
+              BUS.HoaDonNhap_BUS.AddHoaDonNhap(hdn);
+                // xuất hóa đơn
+              frmHoaDonNhap frmhdh = new frmHoaDonNhap();
+              frmhdh.Show();
+              Thread.Sleep(900);
+              btnHuyBoNhapHang_Click(sender, e);
           }
           else
+          { 
               MessageBox.Show("Trong danh sách chưa có nguyên liệu nào"); return;
+          }
       }
       if (chinhsua)//Đang chỉnh sửa thông tin nguyên liệu
       {
@@ -560,16 +600,33 @@ namespace GUI
         {
             return;
         }
-        DataRow dr = dt.NewRow();
-        dr[0] = dvrSelected.Cells["colMaNguyenLieu"].Value.ToString();
-        dr[1] = dvrSelected.Cells["colTenNguyenLieu"].Value.ToString();
-        dr[2] = txtSoLuongNL.Text;
-        dr[3] = dvrSelected.Cells["colDonViTinh"].Value.ToString();
-        dr[4] = txtGia.Text;
-        dr[5] = cbbNCC.SelectedValue.ToString();
-        dt.Rows.Add(dr);
-        dgvGioHangNhap.DataSource = dt;
-        fTongtien +=( float.Parse(dr[2].ToString()) * float.Parse(dr[4].ToString()));
+
+        bool bflag = true;
+
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            if (dt.Rows[i][0]==dvrSelected.Cells["colMaNguyenLieu"].Value.ToString())
+            {
+                bflag = false;
+                dt.Rows[i][2] = int.Parse(dt.Rows[i][2].ToString()) + int.Parse(txtSoLuongNL.Text);
+                fTongtien += float.Parse(txtSoLuongNL.Text) * float.Parse(dt.Rows[i][4].ToString());
+            }
+        }
+
+        if (bflag)
+        {
+            DataRow dr = dt.NewRow();
+            dr[0] = dvrSelected.Cells["colMaNguyenLieu"].Value.ToString();
+            dr[1] = dvrSelected.Cells["colTenNguyenLieu"].Value.ToString();
+            dr[2] = txtSoLuongNL.Text;
+            dr[3] = dvrSelected.Cells["colDonViTinh"].Value.ToString();
+            dr[4] = txtGia.Text;
+            // dr[5] = cbbNCC.SelectedValue.ToString();
+            dt.Rows.Add(dr);
+            dgvGioHangNhap.DataSource = dt;
+            fTongtien += (float.Parse(dr[2].ToString()) * float.Parse(dr[4].ToString()));
+        }
+        MessageBox.Show(fTongtien.ToString());
     }
 
 

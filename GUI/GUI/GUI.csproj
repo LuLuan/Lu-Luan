@@ -62,11 +62,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsChiTietHoaDon.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dtsChiTietHoaDonNhap.cs">
+      <DependentUpon>dtsChiTietHoaDonNhap.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dtsChiTietHoaDonNhap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsChiTietHoaDonNhap.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmChiTietSanPham.Designer.cs">
       <DependentUpon>frmChiTietSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoaDonNhap.Designer.cs">
+      <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -276,6 +291,9 @@
     <EmbeddedResource Include="frmChiTietSanPham.resx">
       <DependentUpon>frmChiTietSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHoaDonNhap.resx">
+      <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +313,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rptHoaDonNhap.rdlc" />
     <EmbeddedResource Include="rptPhieuHoaDon.rdlc" />
     <EmbeddedResource Include="urcBanHang.resx">
       <DependentUpon>urcBanHang.cs</DependentUpon>
@@ -396,6 +415,17 @@
     </None>
     <None Include="dtsChiTietHoaDon.xss">
       <DependentUpon>dtsChiTietHoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="dtsChiTietHoaDonNhap.xsc">
+      <DependentUpon>dtsChiTietHoaDonNhap.xsd</DependentUpon>
+    </None>
+    <None Include="dtsChiTietHoaDonNhap.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsChiTietHoaDonNhap.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dtsChiTietHoaDonNhap.xss">
+      <DependentUpon>dtsChiTietHoaDonNhap.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

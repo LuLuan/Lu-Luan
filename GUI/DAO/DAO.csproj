@@ -47,6 +47,7 @@
     <Compile Include="ChucVu_DAO.cs" />
     <Compile Include="CuaHang_DAO.cs" />
     <Compile Include="HoaDonBan_DAO.cs" />
+    <Compile Include="HoaDonNhap_DAO.cs" />
     <Compile Include="KhachHang_DAO.cs" />
     <Compile Include="LoaiNguyenLieu_DAO.cs" />
     <Compile Include="LoaiTheKhachHang_DAO.cs" />
