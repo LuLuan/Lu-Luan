@@ -205,6 +205,7 @@
       this.colGiamGia.HeaderText = "Giảm Giá";
       this.colGiamGia.Name = "colGiamGia";
       this.colGiamGia.ReadOnly = true;
+      this.colGiamGia.Visible = false;
       this.colGiamGia.Width = 92;
       // 
       // colDonViGiamGia
@@ -214,6 +215,7 @@
       this.colDonViGiamGia.HeaderText = "Đơn Vị Giảm Giá";
       this.colDonViGiamGia.Name = "colDonViGiamGia";
       this.colDonViGiamGia.ReadOnly = true;
+      this.colDonViGiamGia.Visible = false;
       this.colDonViGiamGia.Width = 117;
       // 
       // colTrangThai

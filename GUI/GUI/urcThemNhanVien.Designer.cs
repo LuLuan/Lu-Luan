@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
       this.panel1 = new System.Windows.Forms.Panel();
+      this.btnDongCuaSo = new System.Windows.Forms.Button();
       this.label1 = new System.Windows.Forms.Label();
       this.label8 = new System.Windows.Forms.Label();
       this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
@@ -52,7 +53,6 @@
       this.btnDongY = new System.Windows.Forms.Button();
       this.btnThemAnh = new System.Windows.Forms.Button();
       this.picAnhDaiDien = new System.Windows.Forms.PictureBox();
-      this.btnDongCuaSo = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.picAnhDaiDien)).BeginInit();
       this.SuspendLayout();
@@ -67,6 +67,21 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(573, 40);
       this.panel1.TabIndex = 0;
+      // 
+      // btnDongCuaSo
+      // 
+      this.btnDongCuaSo.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnDongCuaSo.Dock = System.Windows.Forms.DockStyle.Right;
+      this.btnDongCuaSo.FlatAppearance.BorderSize = 0;
+      this.btnDongCuaSo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnDongCuaSo.Image = global::GUI.Properties.Resources.white_close2;
+      this.btnDongCuaSo.Location = new System.Drawing.Point(526, 0);
+      this.btnDongCuaSo.Name = "btnDongCuaSo";
+      this.btnDongCuaSo.Size = new System.Drawing.Size(47, 40);
+      this.btnDongCuaSo.TabIndex = 1;
+      this.btnDongCuaSo.UseVisualStyleBackColor = true;
+      this.btnDongCuaSo.Click += new System.EventHandler(this.btnDongCuaSo_Click);
+      this.btnDongCuaSo.MouseEnter += new System.EventHandler(this.btnDongCuaSo_MouseEnter);
       // 
       // label1
       // 
@@ -257,6 +272,7 @@
       // 
       // dtpNgayVaoLam
       // 
+      this.dtpNgayVaoLam.Enabled = false;
       this.dtpNgayVaoLam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
       this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
       this.dtpNgayVaoLam.Location = new System.Drawing.Point(154, 278);
@@ -316,21 +332,6 @@
       this.picAnhDaiDien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
       this.picAnhDaiDien.TabIndex = 83;
       this.picAnhDaiDien.TabStop = false;
-      // 
-      // btnDongCuaSo
-      // 
-      this.btnDongCuaSo.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btnDongCuaSo.Dock = System.Windows.Forms.DockStyle.Right;
-      this.btnDongCuaSo.FlatAppearance.BorderSize = 0;
-      this.btnDongCuaSo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnDongCuaSo.Image = global::GUI.Properties.Resources.white_close2;
-      this.btnDongCuaSo.Location = new System.Drawing.Point(526, 0);
-      this.btnDongCuaSo.Name = "btnDongCuaSo";
-      this.btnDongCuaSo.Size = new System.Drawing.Size(47, 40);
-      this.btnDongCuaSo.TabIndex = 1;
-      this.btnDongCuaSo.UseVisualStyleBackColor = true;
-      this.btnDongCuaSo.Click += new System.EventHandler(this.btnDongCuaSo_Click);
-      this.btnDongCuaSo.MouseEnter += new System.EventHandler(this.btnDongCuaSo_MouseEnter);
       // 
       // urcThemNhanVien
       // 

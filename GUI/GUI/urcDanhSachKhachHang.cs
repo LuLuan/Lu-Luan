@@ -76,7 +76,7 @@ namespace GUI
     {
       if (KiemTraDuLieuHopLe())
       {
-        string strThongBao = "Cập nhật khách hàng  " + txtHoTen.Text;
+        string strThongBao = "Cập nhật khách hàng " + txtHoTen.Text;
         MessageBoxIcon MBIcon = MessageBoxIcon.Question;
         MessageBoxButtons MBButton = MessageBoxButtons.OK;
 
@@ -249,7 +249,7 @@ namespace GUI
             HienThiDSKhachHang();
           }
         }
-        else MessageBox.Show("Hủy thao tác");
+        //else MessageBox.Show("Hủy thao tác");
       }
     }
 
@@ -372,10 +372,10 @@ namespace GUI
     {
       string hoTen = txtHoTen_TK.Text;
       int trangThai = -1;
-      if (rdbTrangThaiCoSan_TK.Checked)
-        trangThai = 1;
-      else if (rdbTrangThaiDaXoa_TK.Checked)
-        trangThai = 0;
+      //if (rdbTrangThaiCoSan_TK.Checked)
+      //  trangThai = 1;
+      //else if (rdbTrangThaiDaXoa_TK.Checked)
+      //  trangThai = 0;
       KhachHang_BUS bus = new KhachHang_BUS();
       List<clsKhachHang_DTO> lstKH = bus.LayDanhSachKhachHang(hoTen, trangThai);
       dgvDSKH.AutoGenerateColumns = false;

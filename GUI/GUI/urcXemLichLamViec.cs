@@ -19,7 +19,7 @@ namespace GUI
       InitializeComponent();
     }
 
-    private void urcXemLichLamViec_Load(object sender, EventArgs e)
+    public void urcXemLichLamViec_Load(object sender, EventArgs e)
     {
 
     }
@@ -29,14 +29,8 @@ namespace GUI
       ChiTietBanPhanCong_BUS bus = new ChiTietBanPhanCong_BUS();
 
       string keyword = txtTimKiem.Text;
-      DateTime dtFrom = DateTime.MinValue;
-      DateTime dtTo = DateTime.MinValue;
-
-      if (chbDateFrom.Checked)
-      {
-        dtFrom = dtpFrom.Value;
-        dtTo = dtpTo.Value;
-      }
+      DateTime dtFrom = dtpFrom.Value;
+      DateTime dtTo = dtpTo.Value;
       List<clsChiTietBanPhanCong_DTO> lstLichLamViec = bus.LayLichLamViec(keyword, dtFrom, dtTo);
       dgvLichLamViec.AutoGenerateColumns = false;
       dgvLichLamViec.DataSource = lstLichLamViec;
@@ -52,6 +46,10 @@ namespace GUI
 
     List<clsCaLamViec_DTO> lstCa = BUS.CaLamViec_BUS.LayDanhSachCaLamViec();
     clsCaLamViec_DTO dtoCa;
+
+    List<clsTrangThaiBanPhanCong_DTO> lstTTBanPhanCong = BUS.TrangThaiBanPhanCong_BUS.LayDSTrangThaiBPC();
+    clsTrangThaiBanPhanCong_DTO dtoTTBanPhanCong;
+    
 
     private void dgvLichLamViec_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
@@ -70,6 +68,14 @@ namespace GUI
           dtoCa = lstCa.First(u => u.MaCaLamViec == e.Value.ToString());
           e.Value = dtoCa.TenCaLamViec;
         }
+
+        if (dgvLichLamViec.Columns[e.ColumnIndex].Name == "colTrangThai")
+        {
+          dtoTTBanPhanCong = lstTTBanPhanCong.First(u=>u.MaTrangThaiBanPhanCong == (int)e.Value);
+          e.Value = dtoTTBanPhanCong.TenTrangThaiBanPhanCong;
+          
+        }
+
       }
     }
 

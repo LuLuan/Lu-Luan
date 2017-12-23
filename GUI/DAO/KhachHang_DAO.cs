@@ -63,6 +63,7 @@ namespace DAO
 
       if (command == "Add")
         query = "INSERT INTO KhachHang (ma_khach_hang, ten_khach_hang, gioi_tinh, ngay_sinh, so_dien_thoai, dia_chi, trang_thai) VALUES (@ma, @ten, @gioiTinh, @ngaySinh, @sdt, @diaChi, @trangThai)";
+
       else if (command == "Update")
         query = "UPDATE KhachHang SET ten_khach_hang = @ten, gioi_tinh = @gioiTinh, ngay_sinh = @ngaySinh, so_dien_thoai = @sdt, dia_chi = @diaChi, trang_thai = @trangThai WHERE ma_khach_hang = @ma";
       //else if (command == "Delete")

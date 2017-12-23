@@ -108,10 +108,10 @@ namespace GUI
           catch (Exception){}
 
         }
-        else
-        {
-          MessageBox.Show("Hủy thao tác");
-        }
+        //else
+        //{
+        //  //MessageBox.Show("Hủy thao tác");
+        //}
 
       }
       else MessageBox.Show(strError, "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error );

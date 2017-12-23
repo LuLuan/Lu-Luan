@@ -23,6 +23,12 @@ namespace BUS
       return dao.LayDanhSachNhanVienCoChonLoc(hoTen, maChucVu, gioiTinh, trangThai, trangThai2);
     }
 
+    public List<clsNhanVien_DTO> LayDanhSachNhanVienTrongPhanCong(string keyword)
+    {
+      NhanVien_DAO dao = new NhanVien_DAO();
+      return dao.LayDanhSachNhanVienTrongPhanCong(keyword);
+    }
+
     public string LayMaNhanVien()
     {
       NhanVien_DAO dao = new NhanVien_DAO();

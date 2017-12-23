@@ -113,13 +113,13 @@ namespace GUI
 
       //Nhân viên
       txtTaiKhoan.Text = "N00005";
-      txtMatKhau.Text = "@Luan1";
+      txtMatKhau.Text = "Luan@1";
     }
 
     private void linkLabelDoiMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      //frmDoiMatKhau frm = new frmDoiMatKhau();
-      //frm.ShowDialog();
+      frmDoiMatKhau frm = new frmDoiMatKhau();
+      frm.ShowDialog();
     }
 
     

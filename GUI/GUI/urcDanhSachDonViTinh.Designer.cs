@@ -35,9 +35,6 @@
       this.label1 = new System.Windows.Forms.Label();
       this.txtTimKiem = new System.Windows.Forms.TextBox();
       this.dgvDSDonViTinh = new System.Windows.Forms.DataGridView();
-      this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colTenLoaiNguyenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.grbDSLoaiNL = new System.Windows.Forms.GroupBox();
       this.picExit = new System.Windows.Forms.PictureBox();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -51,6 +48,9 @@
       this.btnThemLoaiNL = new System.Windows.Forms.Button();
       this.lbTenDonViTinh = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
+      this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colTenLoaiNguyenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.dgvDSDonViTinh)).BeginInit();
       this.grbDSLoaiNL.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
@@ -67,6 +67,7 @@
       this.label1.Size = new System.Drawing.Size(132, 29);
       this.label1.TabIndex = 68;
       this.label1.Text = "Tìm Kiếm:";
+      this.label1.Visible = false;
       // 
       // txtTimKiem
       // 
@@ -78,6 +79,7 @@
       this.txtTimKiem.Name = "txtTimKiem";
       this.txtTimKiem.Size = new System.Drawing.Size(299, 36);
       this.txtTimKiem.TabIndex = 69;
+      this.txtTimKiem.Visible = false;
       // 
       // dgvDSDonViTinh
       // 
@@ -127,32 +129,6 @@
       this.dgvDSDonViTinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.dgvDSDonViTinh.Size = new System.Drawing.Size(432, 370);
       this.dgvDSDonViTinh.TabIndex = 0;
-      // 
-      // Column6
-      // 
-      this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.Column6.DataPropertyName = "MaDonViTinh";
-      this.Column6.HeaderText = "Mã đơn vị";
-      this.Column6.Name = "Column6";
-      this.Column6.ReadOnly = true;
-      this.Column6.Width = 103;
-      // 
-      // colTenLoaiNguyenLieu
-      // 
-      this.colTenLoaiNguyenLieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.colTenLoaiNguyenLieu.DataPropertyName = "TenDonViTinh";
-      this.colTenLoaiNguyenLieu.HeaderText = "Tên đơn vị tính";
-      this.colTenLoaiNguyenLieu.Name = "colTenLoaiNguyenLieu";
-      this.colTenLoaiNguyenLieu.ReadOnly = true;
-      // 
-      // colTrangThai
-      // 
-      this.colTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colTrangThai.DataPropertyName = "TrangThai";
-      this.colTrangThai.HeaderText = "Trạng thái";
-      this.colTrangThai.Name = "colTrangThai";
-      this.colTrangThai.ReadOnly = true;
-      this.colTrangThai.Width = 108;
       // 
       // grbDSLoaiNL
       // 
@@ -214,6 +190,7 @@
       this.cbbDVTinhNL.Name = "cbbDVTinhNL";
       this.cbbDVTinhNL.Size = new System.Drawing.Size(273, 28);
       this.cbbDVTinhNL.TabIndex = 89;
+      this.cbbDVTinhNL.Visible = false;
       // 
       // label2
       // 
@@ -226,6 +203,7 @@
       this.label2.Size = new System.Drawing.Size(83, 17);
       this.label2.TabIndex = 88;
       this.label2.Text = "Trạng thái";
+      this.label2.Visible = false;
       // 
       // btnHuyBoChinhSua
       // 
@@ -345,6 +323,33 @@
       this.label3.TabIndex = 58;
       this.label3.Text = "ĐƠN VỊ TÍNH";
       // 
+      // Column6
+      // 
+      this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.Column6.DataPropertyName = "MaDonViTinh";
+      this.Column6.HeaderText = "Mã đơn vị";
+      this.Column6.Name = "Column6";
+      this.Column6.ReadOnly = true;
+      this.Column6.Width = 103;
+      // 
+      // colTenLoaiNguyenLieu
+      // 
+      this.colTenLoaiNguyenLieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.colTenLoaiNguyenLieu.DataPropertyName = "TenDonViTinh";
+      this.colTenLoaiNguyenLieu.HeaderText = "Tên đơn vị tính";
+      this.colTenLoaiNguyenLieu.Name = "colTenLoaiNguyenLieu";
+      this.colTenLoaiNguyenLieu.ReadOnly = true;
+      // 
+      // colTrangThai
+      // 
+      this.colTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colTrangThai.DataPropertyName = "TrangThai";
+      this.colTrangThai.HeaderText = "Trạng thái";
+      this.colTrangThai.Name = "colTrangThai";
+      this.colTrangThai.ReadOnly = true;
+      this.colTrangThai.Visible = false;
+      this.colTrangThai.Width = 108;
+      // 
       // urcDanhSachDonViTinh
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,9 +390,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbbDVTinhNL;
         private System.Windows.Forms.TextBox txtTenDonViTinh;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenLoaiNguyenLieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.Label label3;
     }
 }

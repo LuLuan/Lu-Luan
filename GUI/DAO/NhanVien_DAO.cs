@@ -38,6 +38,16 @@ namespace DAO
 
       return ThaoTacDuLieu_DAO.LayDanhSachNhanVien(query, con);
     }
+
+    //Phân công
+    public List<clsNhanVien_DTO> LayDanhSachNhanVienTrongPhanCong(string keyword)
+    {
+      List<clsNhanVien_DTO> lstNhanVien = new List<clsNhanVien_DTO>();
+
+      SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
+      string query = string.Format("SELECT * FROM NhanVien WHERE ma_trang_thai_nhan_vien = {2} AND ma_chuc_vu = '{0}' AND (ho_ten LIKE N'%{1}%' OR ma_nhan_vien = '{1}' )", "CV002", keyword, 1);
+      return ThaoTacDuLieu_DAO.LayDanhSachNhanVien(query, con);
+    }
     
 
 
@@ -55,7 +65,7 @@ namespace DAO
     {
       List<clsNhanVien_DTO> lstNhanVien = new List<clsNhanVien_DTO>();
       SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-      string query = string.Format("select * from NhanVien where ho_ten LIKE N'%{0}%' OR ma_nhan_vien ='{1}' ", ten, ma);
+      string query = string.Format("SELECT * FROM NhanVien WHERE ho_ten LIKE N'%{0}%' OR ma_nhan_vien ='{1}' ", ten, ma);
       return ThaoTacDuLieu_DAO.LayDanhSachNhanVien(query, con);
     }
 

@@ -10,24 +10,29 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmHoaDonNhap : Form
+  public partial class frmHoaDonNhap : Form
+  {
+    public frmHoaDonNhap()
     {
-        public frmHoaDonNhap()
-        {
-            InitializeComponent();
-        }
-
-        private void frmHoaDonNhap_Load(object sender, EventArgs e)
-        {
-            DataTable dt = urcDanhSachNguyenLieu.dt;
-            rptHoaDonNhap.LocalReport.ReportEmbeddedResource = "GUI.rptHoaDonNhap.rdlc";
-            rptHoaDonNhap.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("dsHoaDonNhap", dt));
-            this.rptHoaDonNhap.RefreshReport();
-        }
-
-        private void rptHoaDonNhap_Load(object sender, EventArgs e)
-        {
-
-        }
+      InitializeComponent();
     }
+
+    private void frmHoaDonNhap_Load(object sender, EventArgs e)
+    {
+      string maNhanVien = urcDangNhap.maNhanVien;
+      
+      DataTable dt = urcDanhSachNguyenLieu.dt;
+      rptHoaDonNhap.LocalReport.ReportEmbeddedResource = "GUI.rptHoaDonNhap.rdlc";
+      rptHoaDonNhap.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("dsHoaDonNhap", dt));
+
+      //rptHoaDonNhap.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paramMaNhanVien", maNhanVien));
+
+      this.rptHoaDonNhap.RefreshReport();
+    }
+
+    private void rptHoaDonNhap_Load(object sender, EventArgs e)
+    {
+
+    }
+  }
 }

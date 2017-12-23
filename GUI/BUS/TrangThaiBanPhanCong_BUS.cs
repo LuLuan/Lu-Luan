@@ -10,7 +10,7 @@ namespace BUS
 {
   public class TrangThaiBanPhanCong_BUS
   {
-    public List<clsTrangThaiBanPhanCong_DTO> LayDSTrangThaiBPC()
+    public static List<clsTrangThaiBanPhanCong_DTO> LayDSTrangThaiBPC()
     {
       TrangThaiBanPhanCong_DAO dao = new TrangThaiBanPhanCong_DAO();
       return dao.LayDSTrangThaiBPC();

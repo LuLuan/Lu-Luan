@@ -21,7 +21,7 @@ namespace GUI
 
     Utilities utl = new Utilities();
 
-    private void urcDanhSachPhanCong_Load(object sender, EventArgs e)
+    public void urcDanhSachPhanCong_Load(object sender, EventArgs e)
     {
       HienThiListViewNhanVien();
       cboKhungNhin.SelectedIndex = 0;
@@ -41,7 +41,7 @@ namespace GUI
     {
       listviewNhanVien.Items.Clear();
       NhanVien_BUS bus = new NhanVien_BUS();
-      List<clsNhanVien_DTO> listNhanVien = bus.LayDanhSachNhanVienCoChonLoc("", "", -1, 1, 3);
+      List<clsNhanVien_DTO> listNhanVien = bus.LayDanhSachNhanVienTrongPhanCong("");
 
       foreach (clsNhanVien_DTO nhanVien in listNhanVien)
         ThemNhanVienVaoListViewNhanVien(nhanVien);
@@ -118,7 +118,7 @@ namespace GUI
       listviewNhanVien.Items.Clear();
       NhanVien_BUS bus = new NhanVien_BUS();
 
-      List<clsNhanVien_DTO> listNhanVien = bus.LayNhanVienTheoTenHoacMaa(txtTimKiem.Text, txtTimKiem.Text);
+      List<clsNhanVien_DTO> listNhanVien = bus.LayDanhSachNhanVienTrongPhanCong(txtTimKiem.Text.Trim());
 
       foreach (clsNhanVien_DTO nhanVien in listNhanVien)
         ThemNhanVienVaoListViewNhanVien(nhanVien);

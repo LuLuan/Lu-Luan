@@ -70,6 +70,7 @@
       this.label1.Size = new System.Drawing.Size(132, 29);
       this.label1.TabIndex = 68;
       this.label1.Text = "Tìm Kiếm:";
+      this.label1.Visible = false;
       // 
       // txtTimKiem
       // 
@@ -81,6 +82,7 @@
       this.txtTimKiem.Name = "txtTimKiem";
       this.txtTimKiem.Size = new System.Drawing.Size(406, 36);
       this.txtTimKiem.TabIndex = 69;
+      this.txtTimKiem.Visible = false;
       // 
       // comboBox1
       // 
@@ -91,6 +93,7 @@
       this.comboBox1.Name = "comboBox1";
       this.comboBox1.Size = new System.Drawing.Size(101, 37);
       this.comboBox1.TabIndex = 70;
+      this.comboBox1.Visible = false;
       // 
       // txtSoDienThoaiNCC
       // 

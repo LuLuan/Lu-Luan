@@ -28,15 +28,15 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       this.pnlContainer = new System.Windows.Forms.Panel();
       this.pnlTieuDe = new System.Windows.Forms.Panel();
       this.lblTieuDe = new System.Windows.Forms.Label();
       this.pnlMenu = new System.Windows.Forms.Panel();
       this.btnHome = new System.Windows.Forms.Button();
       this.btnMoMenu = new System.Windows.Forms.Button();
-      this.btnThemNhanVien = new System.Windows.Forms.Button();
-      this.btnPhanCong = new System.Windows.Forms.Button();
-      this.btnChamCong = new System.Windows.Forms.Button();
+      this.btnXemLichLamViec = new System.Windows.Forms.Button();
+      this.timerMenu = new System.Windows.Forms.Timer(this.components);
       this.pnlTieuDe.SuspendLayout();
       this.pnlMenu.SuspendLayout();
       this.SuspendLayout();
@@ -48,7 +48,6 @@
       this.pnlContainer.Name = "pnlContainer";
       this.pnlContainer.Size = new System.Drawing.Size(931, 530);
       this.pnlContainer.TabIndex = 4;
-      this.pnlContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainer_Paint);
       // 
       // pnlTieuDe
       // 
@@ -75,9 +74,7 @@
       this.pnlMenu.BackColor = System.Drawing.Color.Black;
       this.pnlMenu.Controls.Add(this.btnHome);
       this.pnlMenu.Controls.Add(this.btnMoMenu);
-      this.pnlMenu.Controls.Add(this.btnThemNhanVien);
-      this.pnlMenu.Controls.Add(this.btnPhanCong);
-      this.pnlMenu.Controls.Add(this.btnChamCong);
+      this.pnlMenu.Controls.Add(this.btnXemLichLamViec);
       this.pnlMenu.Location = new System.Drawing.Point(930, 0);
       this.pnlMenu.Name = "pnlMenu";
       this.pnlMenu.Size = new System.Drawing.Size(40, 570);
@@ -107,57 +104,30 @@
       this.btnMoMenu.Size = new System.Drawing.Size(20, 20);
       this.btnMoMenu.TabIndex = 5;
       this.btnMoMenu.UseVisualStyleBackColor = true;
+      this.btnMoMenu.Click += new System.EventHandler(this.btnMoMenu_Click);
       // 
-      // btnThemNhanVien
+      // btnXemLichLamViec
       // 
-      this.btnThemNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btnThemNhanVien.FlatAppearance.BorderSize = 0;
-      this.btnThemNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnThemNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnThemNhanVien.ForeColor = System.Drawing.Color.White;
-      this.btnThemNhanVien.Image = global::GUI.Properties.Resources.add_user_20px;
-      this.btnThemNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnThemNhanVien.Location = new System.Drawing.Point(7, 143);
-      this.btnThemNhanVien.Name = "btnThemNhanVien";
-      this.btnThemNhanVien.Size = new System.Drawing.Size(209, 34);
-      this.btnThemNhanVien.TabIndex = 4;
-      this.btnThemNhanVien.Text = "    Thêm nhân viên";
-      this.btnThemNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.btnThemNhanVien.UseVisualStyleBackColor = true;
+      this.btnXemLichLamViec.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnXemLichLamViec.FlatAppearance.BorderSize = 0;
+      this.btnXemLichLamViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnXemLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.btnXemLichLamViec.ForeColor = System.Drawing.Color.White;
+      this.btnXemLichLamViec.Image = global::GUI.Properties.Resources.list_20px;
+      this.btnXemLichLamViec.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnXemLichLamViec.Location = new System.Drawing.Point(6, 72);
+      this.btnXemLichLamViec.Name = "btnXemLichLamViec";
+      this.btnXemLichLamViec.Size = new System.Drawing.Size(209, 34);
+      this.btnXemLichLamViec.TabIndex = 4;
+      this.btnXemLichLamViec.Text = "    Lịch làm việc";
+      this.btnXemLichLamViec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.btnXemLichLamViec.UseVisualStyleBackColor = true;
+      this.btnXemLichLamViec.Click += new System.EventHandler(this.btnXemLichLamViec_Click);
       // 
-      // btnPhanCong
+      // timerMenu
       // 
-      this.btnPhanCong.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btnPhanCong.FlatAppearance.BorderSize = 0;
-      this.btnPhanCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnPhanCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnPhanCong.ForeColor = System.Drawing.Color.White;
-      this.btnPhanCong.Image = global::GUI.Properties.Resources.list_20px;
-      this.btnPhanCong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnPhanCong.Location = new System.Drawing.Point(6, 72);
-      this.btnPhanCong.Name = "btnPhanCong";
-      this.btnPhanCong.Size = new System.Drawing.Size(209, 34);
-      this.btnPhanCong.TabIndex = 4;
-      this.btnPhanCong.Text = "    Phân công";
-      this.btnPhanCong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.btnPhanCong.UseVisualStyleBackColor = true;
-      // 
-      // btnChamCong
-      // 
-      this.btnChamCong.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btnChamCong.FlatAppearance.BorderSize = 0;
-      this.btnChamCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnChamCong.ForeColor = System.Drawing.Color.White;
-      this.btnChamCong.Image = global::GUI.Properties.Resources.list_20px;
-      this.btnChamCong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnChamCong.Location = new System.Drawing.Point(6, 106);
-      this.btnChamCong.Name = "btnChamCong";
-      this.btnChamCong.Size = new System.Drawing.Size(209, 34);
-      this.btnChamCong.TabIndex = 4;
-      this.btnChamCong.Text = "    Chi tiết phân công";
-      this.btnChamCong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.btnChamCong.UseVisualStyleBackColor = true;
+      this.timerMenu.Interval = 10;
+      this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
       // 
       // urcQLLichLamViec
       // 
@@ -183,8 +153,7 @@
     private System.Windows.Forms.Panel pnlMenu;
     private System.Windows.Forms.Button btnHome;
     private System.Windows.Forms.Button btnMoMenu;
-    private System.Windows.Forms.Button btnThemNhanVien;
-    private System.Windows.Forms.Button btnPhanCong;
-    private System.Windows.Forms.Button btnChamCong;
+    private System.Windows.Forms.Button btnXemLichLamViec;
+    private System.Windows.Forms.Timer timerMenu;
   }
 }

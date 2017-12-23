@@ -17,7 +17,7 @@ namespace GUI
   public partial class urcDanhSachNguyenLieu : UserControl
   {
     public static DataTable dt = new DataTable();
-    float fTongtien = 0;
+    public static float fTongtien = 0;
     bool flag = true;
     bool chinhsua = false;
     bool nhaphang = false;
@@ -626,7 +626,7 @@ namespace GUI
         dgvGioHangNhap.DataSource = dt;
         fTongtien += (float.Parse(dr[2].ToString()) * float.Parse(dr[4].ToString()));
       }
-      MessageBox.Show(fTongtien.ToString());
+      
     }
 
 

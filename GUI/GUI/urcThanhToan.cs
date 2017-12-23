@@ -103,8 +103,10 @@ namespace GUI
         HoaDon.GiaoHang = false;
 
       if (!ckbKhachHangVangLai.Checked && txtMaTheKhachHang.Text != "")
-        //HoaDon.MaKhachHang = "!!!!!";
-        MessageBox.Show(txtMaTheKhachHang.Text.Trim());
+        HoaDon.MaKhachHang = txtMaTheKhachHang.Text.Trim();
+      else
+        HoaDon.MaKhachHang = "!!!!!";
+      //  MessageBox.Show(txtMaTheKhachHang.Text.Trim());
 
       HoaDon.TrangThai = true;
       //

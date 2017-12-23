@@ -110,6 +110,7 @@ namespace GUI
     private void btnPhanCong_Click(object sender, EventArgs e)
     {
       CaiDatPanelMenu(btnPhanCong);
+      urcDanhSachPhanCong.urcDanhSachPhanCong_Load(sender, e);
       if (isClickedbtnMoMenu == true)
         btnMoMenu_Click(sender, e);
     }
@@ -117,6 +118,7 @@ namespace GUI
     private void btnChamCong_Click(object sender, EventArgs e)
     {
       CaiDatPanelMenu(btnChamCong);
+      urcChiTietPhanCong.urcChiTietBanPhanCong_Load(sender, e);
       if (isClickedbtnMoMenu == true)
         btnMoMenu_Click(sender, e);
     }

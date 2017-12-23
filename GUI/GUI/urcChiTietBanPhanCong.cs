@@ -19,7 +19,7 @@ namespace GUI
       InitializeComponent();
     }
 
-    private void urcChiTietBanPhanCong_Load(object sender, EventArgs e)
+    public void urcChiTietBanPhanCong_Load(object sender, EventArgs e)
     {
       TrangThaiBanDau();
       HienThiDSPhanCongLlenDataGridView(dgvDSNVCaSang, "Ca001");
@@ -72,6 +72,8 @@ namespace GUI
       }
     }
 
+    //List<clsTrangThaiBanPhanCong_DTO> lstTTBanPhanCong = BUS.TrangThaiBanPhanCong_BUS.LayDSTrangThaiBPC();
+    //clsTrangThaiBanPhanCong_DTO dtoTTBanPhanCong;
 
     private void dgvDSNVCaSang_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
@@ -87,9 +89,8 @@ namespace GUI
 
         if (dgvDSNVCaSang.Columns[e.ColumnIndex].Name == "colTrangThaiSang")
         {
-          TrangThaiBanPhanCong_BUS bus = new TrangThaiBanPhanCong_BUS();
-          List<clsTrangThaiBanPhanCong_DTO> listTTBPC = bus.LayDSTrangThaiBPC();
-          clsTrangThaiBanPhanCong_DTO dtoTTBPC = listTTBPC.Find(u => u.MaTrangThaiBanPhanCong == (int)e.Value);
+
+          dtoTTBPC = listTTBPC.Find(u => u.MaTrangThaiBanPhanCong == (int)e.Value);
           e.Value = dtoTTBPC.TenTrangThaiBanPhanCong;
         }
 
@@ -158,7 +159,8 @@ namespace GUI
       }
     }
 
-
+    List<clsTrangThaiBanPhanCong_DTO> listTTBPC = BUS.TrangThaiBanPhanCong_BUS.LayDSTrangThaiBPC();
+    clsTrangThaiBanPhanCong_DTO dtoTTBPC;
     private void dgvDSNVCaChieu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
       if (dgvDSNVCaChieu.Rows.Count > 0)
@@ -173,9 +175,8 @@ namespace GUI
 
         if (dgvDSNVCaChieu.Columns[e.ColumnIndex].Name == "colTrangThaiChieu")
         {
-          TrangThaiBanPhanCong_BUS bus = new TrangThaiBanPhanCong_BUS();
-          List<clsTrangThaiBanPhanCong_DTO> listTTBPC = bus.LayDSTrangThaiBPC();
-          clsTrangThaiBanPhanCong_DTO dtoTTBPC = listTTBPC.Find(u => u.MaTrangThaiBanPhanCong == (int)e.Value);
+
+          dtoTTBPC = listTTBPC.Find(u => u.MaTrangThaiBanPhanCong == (int)e.Value);
           e.Value = dtoTTBPC.TenTrangThaiBanPhanCong;
         }
 

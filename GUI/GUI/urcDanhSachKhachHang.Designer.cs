@@ -32,25 +32,16 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.grbDSKhachHang = new System.Windows.Forms.GroupBox();
-      this.rdbTrangThaiCoSan_TK = new System.Windows.Forms.RadioButton();
-      this.rdbTrangThaiDaXoa_TK = new System.Windows.Forms.RadioButton();
-      this.label8 = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
       this.txtHoTen_TK = new System.Windows.Forms.TextBox();
       this.dgvDSKH = new System.Windows.Forms.DataGridView();
-      this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.grbTTKhachHang = new System.Windows.Forms.GroupBox();
       this.panel1 = new System.Windows.Forms.Panel();
       this.rdbTrangThaiCoSan = new System.Windows.Forms.RadioButton();
       this.rdbNu = new System.Windows.Forms.RadioButton();
       this.rdbNam = new System.Windows.Forms.RadioButton();
+      this.btnCapNhat = new System.Windows.Forms.Button();
+      this.btnHuyThaoTac = new System.Windows.Forms.Button();
       this.label4 = new System.Windows.Forms.Label();
       this.label5 = new System.Windows.Forms.Label();
       this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -63,8 +54,14 @@
       this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
       this.label2 = new System.Windows.Forms.Label();
       this.txtHoTen = new System.Windows.Forms.TextBox();
-      this.btnCapNhat = new System.Windows.Forms.Button();
-      this.btnHuyThaoTac = new System.Windows.Forms.Button();
+      this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.grbDSKhachHang.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvDSKH)).BeginInit();
       this.grbTTKhachHang.SuspendLayout();
@@ -73,9 +70,6 @@
       // 
       // grbDSKhachHang
       // 
-      this.grbDSKhachHang.Controls.Add(this.rdbTrangThaiCoSan_TK);
-      this.grbDSKhachHang.Controls.Add(this.rdbTrangThaiDaXoa_TK);
-      this.grbDSKhachHang.Controls.Add(this.label8);
       this.grbDSKhachHang.Controls.Add(this.label7);
       this.grbDSKhachHang.Controls.Add(this.txtHoTen_TK);
       this.grbDSKhachHang.Controls.Add(this.dgvDSKH);
@@ -86,45 +80,6 @@
       this.grbDSKhachHang.TabIndex = 1;
       this.grbDSKhachHang.TabStop = false;
       this.grbDSKhachHang.Text = "Danh sách khách hàng";
-      // 
-      // rdbTrangThaiCoSan_TK
-      // 
-      this.rdbTrangThaiCoSan_TK.AutoSize = true;
-      this.rdbTrangThaiCoSan_TK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.rdbTrangThaiCoSan_TK.Location = new System.Drawing.Point(499, 29);
-      this.rdbTrangThaiCoSan_TK.Name = "rdbTrangThaiCoSan_TK";
-      this.rdbTrangThaiCoSan_TK.Size = new System.Drawing.Size(76, 21);
-      this.rdbTrangThaiCoSan_TK.TabIndex = 90;
-      this.rdbTrangThaiCoSan_TK.TabStop = true;
-      this.rdbTrangThaiCoSan_TK.Text = "Có sẵn";
-      this.rdbTrangThaiCoSan_TK.UseVisualStyleBackColor = true;
-      this.rdbTrangThaiCoSan_TK.Visible = false;
-      this.rdbTrangThaiCoSan_TK.CheckedChanged += new System.EventHandler(this.rdbTrangThaiCoSan_TK_CheckedChanged);
-      // 
-      // rdbTrangThaiDaXoa_TK
-      // 
-      this.rdbTrangThaiDaXoa_TK.AutoSize = true;
-      this.rdbTrangThaiDaXoa_TK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.rdbTrangThaiDaXoa_TK.Location = new System.Drawing.Point(581, 29);
-      this.rdbTrangThaiDaXoa_TK.Name = "rdbTrangThaiDaXoa_TK";
-      this.rdbTrangThaiDaXoa_TK.Size = new System.Drawing.Size(76, 21);
-      this.rdbTrangThaiDaXoa_TK.TabIndex = 91;
-      this.rdbTrangThaiDaXoa_TK.TabStop = true;
-      this.rdbTrangThaiDaXoa_TK.Text = "Đã xóa";
-      this.rdbTrangThaiDaXoa_TK.UseVisualStyleBackColor = true;
-      this.rdbTrangThaiDaXoa_TK.Visible = false;
-      this.rdbTrangThaiDaXoa_TK.CheckedChanged += new System.EventHandler(this.rdbTrangThaiDaXoa_TK_CheckedChanged);
-      // 
-      // label8
-      // 
-      this.label8.AutoSize = true;
-      this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.label8.Location = new System.Drawing.Point(401, 31);
-      this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(83, 17);
-      this.label8.TabIndex = 89;
-      this.label8.Text = "Trạng thái";
-      this.label8.Visible = false;
       // 
       // label7
       // 
@@ -189,80 +144,6 @@
       this.dgvDSKH.SelectionChanged += new System.EventHandler(this.dgvDSKH_SelectionChanged);
       this.dgvDSKH.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDSKH_KeyUp);
       // 
-      // colMaKH
-      // 
-      this.colMaKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colMaKH.DataPropertyName = "MaKhachHang";
-      this.colMaKH.HeaderText = "Mã KH";
-      this.colMaKH.Name = "colMaKH";
-      this.colMaKH.ReadOnly = true;
-      this.colMaKH.Width = 80;
-      // 
-      // colTenKH
-      // 
-      this.colTenKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.colTenKH.DataPropertyName = "TenKhachHang";
-      this.colTenKH.HeaderText = "Tên KH";
-      this.colTenKH.Name = "colTenKH";
-      this.colTenKH.ReadOnly = true;
-      // 
-      // colNgaySinh
-      // 
-      this.colNgaySinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colNgaySinh.DataPropertyName = "NgaySinh";
-      this.colNgaySinh.HeaderText = "Ngày sinh";
-      this.colNgaySinh.Name = "colNgaySinh";
-      this.colNgaySinh.ReadOnly = true;
-      this.colNgaySinh.Width = 105;
-      // 
-      // colGioiTinh
-      // 
-      this.colGioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colGioiTinh.DataPropertyName = "GioiTinh";
-      this.colGioiTinh.HeaderText = "Giới Tính";
-      this.colGioiTinh.Name = "colGioiTinh";
-      this.colGioiTinh.ReadOnly = true;
-      this.colGioiTinh.Width = 99;
-      // 
-      // colDiaChi
-      // 
-      this.colDiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.colDiaChi.DataPropertyName = "DiaChi";
-      this.colDiaChi.HeaderText = "Địa Chỉ";
-      this.colDiaChi.Name = "colDiaChi";
-      this.colDiaChi.ReadOnly = true;
-      // 
-      // colEmail
-      // 
-      this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colEmail.DataPropertyName = "Email";
-      this.colEmail.HeaderText = "Email";
-      this.colEmail.Name = "colEmail";
-      this.colEmail.ReadOnly = true;
-      this.colEmail.Visible = false;
-      this.colEmail.Width = 72;
-      // 
-      // colSDT
-      // 
-      this.colSDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colSDT.DataPropertyName = "SoDienThoai";
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.colSDT.DefaultCellStyle = dataGridViewCellStyle2;
-      this.colSDT.HeaderText = "Điện  Thoại";
-      this.colSDT.Name = "colSDT";
-      this.colSDT.ReadOnly = true;
-      this.colSDT.Width = 117;
-      // 
-      // colTrangThai
-      // 
-      this.colTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.colTrangThai.DataPropertyName = "TrangThai";
-      this.colTrangThai.HeaderText = "Trạng Thái";
-      this.colTrangThai.Name = "colTrangThai";
-      this.colTrangThai.ReadOnly = true;
-      this.colTrangThai.Visible = false;
-      this.colTrangThai.Width = 113;
-      // 
       // grbTTKhachHang
       // 
       this.grbTTKhachHang.Controls.Add(this.panel1);
@@ -295,7 +176,7 @@
       this.panel1.Controls.Add(this.rdbTrangThaiCoSan);
       this.panel1.Location = new System.Drawing.Point(499, 105);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(158, 18);
+      this.panel1.Size = new System.Drawing.Size(158, 19);
       this.panel1.TabIndex = 96;
       // 
       // rdbTrangThaiCoSan
@@ -304,10 +185,10 @@
       this.rdbTrangThaiCoSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
       this.rdbTrangThaiCoSan.Location = new System.Drawing.Point(0, -1);
       this.rdbTrangThaiCoSan.Name = "rdbTrangThaiCoSan";
-      this.rdbTrangThaiCoSan.Size = new System.Drawing.Size(76, 21);
+      this.rdbTrangThaiCoSan.Size = new System.Drawing.Size(77, 21);
       this.rdbTrangThaiCoSan.TabIndex = 86;
       this.rdbTrangThaiCoSan.TabStop = true;
-      this.rdbTrangThaiCoSan.Text = "Có sẵn";
+      this.rdbTrangThaiCoSan.Text = "Tồn tại";
       this.rdbTrangThaiCoSan.UseVisualStyleBackColor = true;
       // 
       // rdbNu
@@ -331,6 +212,44 @@
       this.rdbNam.TabStop = true;
       this.rdbNam.Text = "Nam";
       this.rdbNam.UseVisualStyleBackColor = true;
+      // 
+      // btnCapNhat
+      // 
+      this.btnCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnCapNhat.FlatAppearance.BorderSize = 0;
+      this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.btnCapNhat.ForeColor = System.Drawing.Color.Green;
+      this.btnCapNhat.Image = global::GUI.Properties.Resources.icons8_Save_30px;
+      this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnCapNhat.Location = new System.Drawing.Point(688, 44);
+      this.btnCapNhat.Name = "btnCapNhat";
+      this.btnCapNhat.Size = new System.Drawing.Size(155, 37);
+      this.btnCapNhat.TabIndex = 90;
+      this.btnCapNhat.Text = "  Cập nhật";
+      this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnCapNhat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.btnCapNhat.UseVisualStyleBackColor = true;
+      this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+      // 
+      // btnHuyThaoTac
+      // 
+      this.btnHuyThaoTac.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnHuyThaoTac.FlatAppearance.BorderSize = 0;
+      this.btnHuyThaoTac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnHuyThaoTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+      this.btnHuyThaoTac.ForeColor = System.Drawing.Color.Green;
+      this.btnHuyThaoTac.Image = global::GUI.Properties.Resources.icons8_CCleaner_30px;
+      this.btnHuyThaoTac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnHuyThaoTac.Location = new System.Drawing.Point(689, 87);
+      this.btnHuyThaoTac.Name = "btnHuyThaoTac";
+      this.btnHuyThaoTac.Size = new System.Drawing.Size(154, 37);
+      this.btnHuyThaoTac.TabIndex = 89;
+      this.btnHuyThaoTac.Text = "  Hủy thao tác";
+      this.btnHuyThaoTac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnHuyThaoTac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.btnHuyThaoTac.UseVisualStyleBackColor = true;
+      this.btnHuyThaoTac.Click += new System.EventHandler(this.btnHuyThaoTac_Click);
       // 
       // label4
       // 
@@ -453,43 +372,80 @@
       this.txtHoTen.TabIndex = 68;
       this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
       // 
-      // btnCapNhat
+      // colMaKH
       // 
-      this.btnCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btnCapNhat.FlatAppearance.BorderSize = 0;
-      this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnCapNhat.ForeColor = System.Drawing.Color.Green;
-      this.btnCapNhat.Image = global::GUI.Properties.Resources.icons8_Save_30px;
-      this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnCapNhat.Location = new System.Drawing.Point(688, 44);
-      this.btnCapNhat.Name = "btnCapNhat";
-      this.btnCapNhat.Size = new System.Drawing.Size(155, 37);
-      this.btnCapNhat.TabIndex = 90;
-      this.btnCapNhat.Text = "  Cập nhật";
-      this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnCapNhat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.btnCapNhat.UseVisualStyleBackColor = true;
-      this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+      this.colMaKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colMaKH.DataPropertyName = "MaKhachHang";
+      this.colMaKH.HeaderText = "Mã KH";
+      this.colMaKH.Name = "colMaKH";
+      this.colMaKH.ReadOnly = true;
+      this.colMaKH.Width = 80;
       // 
-      // btnHuyThaoTac
+      // colTenKH
       // 
-      this.btnHuyThaoTac.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btnHuyThaoTac.FlatAppearance.BorderSize = 0;
-      this.btnHuyThaoTac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnHuyThaoTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-      this.btnHuyThaoTac.ForeColor = System.Drawing.Color.Green;
-      this.btnHuyThaoTac.Image = global::GUI.Properties.Resources.icons8_CCleaner_30px;
-      this.btnHuyThaoTac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnHuyThaoTac.Location = new System.Drawing.Point(689, 87);
-      this.btnHuyThaoTac.Name = "btnHuyThaoTac";
-      this.btnHuyThaoTac.Size = new System.Drawing.Size(154, 37);
-      this.btnHuyThaoTac.TabIndex = 89;
-      this.btnHuyThaoTac.Text = "  Hủy thao tác";
-      this.btnHuyThaoTac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnHuyThaoTac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.btnHuyThaoTac.UseVisualStyleBackColor = true;
-      this.btnHuyThaoTac.Click += new System.EventHandler(this.btnHuyThaoTac_Click);
+      this.colTenKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.colTenKH.DataPropertyName = "TenKhachHang";
+      this.colTenKH.HeaderText = "Tên KH";
+      this.colTenKH.Name = "colTenKH";
+      this.colTenKH.ReadOnly = true;
+      // 
+      // colNgaySinh
+      // 
+      this.colNgaySinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colNgaySinh.DataPropertyName = "NgaySinh";
+      this.colNgaySinh.HeaderText = "Ngày sinh";
+      this.colNgaySinh.Name = "colNgaySinh";
+      this.colNgaySinh.ReadOnly = true;
+      this.colNgaySinh.Width = 105;
+      // 
+      // colGioiTinh
+      // 
+      this.colGioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colGioiTinh.DataPropertyName = "GioiTinh";
+      this.colGioiTinh.HeaderText = "Giới Tính";
+      this.colGioiTinh.Name = "colGioiTinh";
+      this.colGioiTinh.ReadOnly = true;
+      this.colGioiTinh.Width = 99;
+      // 
+      // colDiaChi
+      // 
+      this.colDiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colDiaChi.DataPropertyName = "DiaChi";
+      this.colDiaChi.HeaderText = "Địa Chỉ";
+      this.colDiaChi.Name = "colDiaChi";
+      this.colDiaChi.ReadOnly = true;
+      this.colDiaChi.Width = 85;
+      // 
+      // colEmail
+      // 
+      this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colEmail.DataPropertyName = "Email";
+      this.colEmail.HeaderText = "Email";
+      this.colEmail.Name = "colEmail";
+      this.colEmail.ReadOnly = true;
+      this.colEmail.Visible = false;
+      this.colEmail.Width = 72;
+      // 
+      // colSDT
+      // 
+      this.colSDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colSDT.DataPropertyName = "SoDienThoai";
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.colSDT.DefaultCellStyle = dataGridViewCellStyle2;
+      this.colSDT.HeaderText = "Điện  Thoại";
+      this.colSDT.Name = "colSDT";
+      this.colSDT.ReadOnly = true;
+      this.colSDT.Width = 117;
+      // 
+      // colTrangThai
+      // 
+      this.colTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colTrangThai.DataPropertyName = "TrangThai";
+      this.colTrangThai.HeaderText = "Trạng Thái";
+      this.colTrangThai.Name = "colTrangThai";
+      this.colTrangThai.ReadOnly = true;
+      this.colTrangThai.Visible = false;
+      this.colTrangThai.Width = 113;
       // 
       // urcDanhSachKhachHang
       // 
@@ -533,10 +489,7 @@
         private System.Windows.Forms.Button btnHuyThaoTac;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtHoTen_TK;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton rdbTrangThaiCoSan;
-        private System.Windows.Forms.RadioButton rdbTrangThaiCoSan_TK;
-        private System.Windows.Forms.RadioButton rdbTrangThaiDaXoa_TK;
         private System.Windows.Forms.RadioButton rdbNam;
         private System.Windows.Forms.RadioButton rdbNu;
         private System.Windows.Forms.Panel panel1;
