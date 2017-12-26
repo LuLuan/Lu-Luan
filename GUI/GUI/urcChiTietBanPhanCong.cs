@@ -23,12 +23,14 @@ namespace GUI
     {
       TrangThaiBanDau();
       HienThiDSPhanCongLlenDataGridView(dgvDSNVCaSang, "Ca001");
+      //HienThiDSPhanCongLlenDataGridView(dgvDSNVCaSang1, "Ca001");
       HienThiDSPhanCongLlenDataGridView(dgvDSNVCaChieu, "Ca002");
     }
 
     private void dtpNgayLam_ValueChanged(object sender, EventArgs e)
     {
       HienThiDSPhanCongLlenDataGridView(dgvDSNVCaSang, "Ca001");
+      //HienThiDSPhanCongLlenDataGridView(dgvDSNVCaSang1, "Ca001");
       HienThiDSPhanCongLlenDataGridView(dgvDSNVCaChieu, "Ca002");
     }
 
@@ -107,17 +109,17 @@ namespace GUI
 
     private void dgvDSNVCaSang_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
     {
-      var grid = sender as DataGridView;
-      var rowIdx = (e.RowIndex + 1).ToString();
+      //var grid = sender as DataGridView;
+      //var rowIdx = (e.RowIndex + 1).ToString();
 
-      var centerFormat = new StringFormat()
-      {
-        Alignment = StringAlignment.Center,
-        LineAlignment = StringAlignment.Center
-      };
+      //var centerFormat = new StringFormat()
+      //{
+      //  Alignment = StringAlignment.Center,
+      //  LineAlignment = StringAlignment.Center
+      //};
 
-      var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-      e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+      //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+      //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
     }
 
     private void dgvDSNVCaSang_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -191,18 +193,18 @@ namespace GUI
 
     private void dgvDSNVCaChieu_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
     {
-      var grid = sender as DataGridView;
-      var rowIdx = (e.RowIndex + 1).ToString();
+      //var grid = sender as DataGridView;
+      //var rowIdx = (e.RowIndex + 1).ToString();
 
-      var centerFormat = new StringFormat()
-      {
-        // right alignment might actually make more sense for numbers
-        Alignment = StringAlignment.Center,
-        LineAlignment = StringAlignment.Center
-      };
+      //var centerFormat = new StringFormat()
+      //{
+      //  // right alignment might actually make more sense for numbers
+      //  Alignment = StringAlignment.Center,
+      //  LineAlignment = StringAlignment.Center
+      //};
 
-      var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-      e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+      //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+      //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
     }
 
     private void dgvDSNVCaChieu_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

@@ -108,12 +108,12 @@ namespace GUI
       //txtTaiKhoan.Text = "N00001";
 
       //Quản lý
-      //txtMatKhau.Text = "ql123";
-      //txtTaiKhoan.Text = "N00022";
+      txtMatKhau.Text = "ql123";
+      txtTaiKhoan.Text = "N00022";
 
       //Nhân viên
-      txtTaiKhoan.Text = "N00005";
-      txtMatKhau.Text = "Luan@1";
+      //txtTaiKhoan.Text = "N00005";
+      //txtMatKhau.Text = "Luan@1";
     }
 
     private void linkLabelDoiMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
