@@ -637,14 +637,13 @@
       // 
       // colDiaChi
       // 
-      this.colDiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.colDiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
       this.colDiaChi.DataPropertyName = "DiaChi";
       dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
       this.colDiaChi.DefaultCellStyle = dataGridViewCellStyle4;
       this.colDiaChi.HeaderText = "Địa Chỉ";
       this.colDiaChi.Name = "colDiaChi";
       this.colDiaChi.ReadOnly = true;
-      this.colDiaChi.Width = 58;
       // 
       // colSDT
       // 

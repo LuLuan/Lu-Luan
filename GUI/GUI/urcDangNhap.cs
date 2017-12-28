@@ -104,12 +104,13 @@ namespace GUI
 
     private void urcDangNhap_Load(object sender, EventArgs e)
     {
-      //txtMatKhau.Text = "123";
-      //txtTaiKhoan.Text = "N00001";
+      //Giám đốc
+      txtMatKhau.Text = "Gd@123";
+      txtTaiKhoan.Text = "N00001";
 
       //Quản lý
-      txtMatKhau.Text = "ql123";
-      txtTaiKhoan.Text = "N00022";
+      //txtMatKhau.Text = "Ql@123";
+      //txtTaiKhoan.Text = "N00022";
 
       //Nhân viên
       //txtTaiKhoan.Text = "N00005";
@@ -121,6 +122,8 @@ namespace GUI
       frmDoiMatKhau frm = new frmDoiMatKhau();
       frm.ShowDialog();
     }
+
+   
 
     
   }

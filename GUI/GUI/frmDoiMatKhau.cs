@@ -91,7 +91,7 @@ namespace GUI
         }
       else
       {
-        MessageBox.Show(strError, "Thông báo lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+        MessageBox.Show(strError, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
         strError = "";
       }
     }

@@ -68,11 +68,11 @@ namespace GUI
         CH.MaCuaHang = lstCuaHang[0].MaCuaHang;
         if (BUS.CuaHang_BUS.UpdateCuaHang(CH))
         {
-          MessageBox.Show("Cập nhật thành công.");
+          MessageBox.Show("Cập nhật thành công.", "Thông báo thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
           TrangThaiControl(false);
         }
       }
-      else MessageBox.Show(strError);
+      else MessageBox.Show(strError, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
       strError = "";
 
     }

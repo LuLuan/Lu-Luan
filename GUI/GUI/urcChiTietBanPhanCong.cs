@@ -319,10 +319,10 @@ namespace GUI
 
         ChiTietBanPhanCong_BUS bus = new ChiTietBanPhanCong_BUS();
         if (bus.Update(Id, trangThai))
-          MessageBox.Show("Đã chấm công");
-        if (dgvDSNVCaSang.Enabled == true)
-          HienThiDSPhanCongLlenDataGridView(dgvDSNVCaSang, "Ca001");
-        else HienThiDSPhanCongLlenDataGridView(dgvDSNVCaChieu, "Ca002");
+          //MessageBox.Show("Đã chấm công");
+          if (dgvDSNVCaSang.Enabled == true)
+            HienThiDSPhanCongLlenDataGridView(dgvDSNVCaSang, "Ca001");
+          else HienThiDSPhanCongLlenDataGridView(dgvDSNVCaChieu, "Ca002");
 
         TrangThaiBanDau();
       }
