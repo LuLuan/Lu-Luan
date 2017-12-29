@@ -40,13 +40,6 @@ C:\DA_WF\Clone\1311_0438\GUI\DAO\bin\Debug\DTO.pdb
 C:\DA_WF\Clone\1311_0438\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\DA_WF\Clone\1311_0438\GUI\DAO\obj\Debug\DAO.dll
 C:\DA_WF\Clone\1311_0438\GUI\DAO\obj\Debug\DAO.pdb
-C:\DA_WF\Lu-Luan\GUI\DAO\bin\Debug\DAO.dll
-C:\DA_WF\Lu-Luan\GUI\DAO\bin\Debug\DAO.pdb
-C:\DA_WF\Lu-Luan\GUI\DAO\bin\Debug\DTO.dll
-C:\DA_WF\Lu-Luan\GUI\DAO\bin\Debug\DTO.pdb
-C:\DA_WF\Lu-Luan\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
-C:\DA_WF\Lu-Luan\GUI\DAO\obj\Debug\DAO.dll
-C:\DA_WF\Lu-Luan\GUI\DAO\obj\Debug\DAO.pdb
 D:\GitHub-Reposities\Lu-Luan\GUI\DAO\bin\Debug\DAO.dll
 D:\GitHub-Reposities\Lu-Luan\GUI\DAO\bin\Debug\DAO.pdb
 D:\GitHub-Reposities\Lu-Luan\GUI\DAO\bin\Debug\DTO.dll
@@ -54,3 +47,10 @@ D:\GitHub-Reposities\Lu-Luan\GUI\DAO\bin\Debug\DTO.pdb
 D:\GitHub-Reposities\Lu-Luan\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 D:\GitHub-Reposities\Lu-Luan\GUI\DAO\obj\Debug\DAO.dll
 D:\GitHub-Reposities\Lu-Luan\GUI\DAO\obj\Debug\DAO.pdb
+C:\DA_WF\Lu-Luan\GUI\DAO\bin\Debug\DAO.dll
+C:\DA_WF\Lu-Luan\GUI\DAO\bin\Debug\DAO.pdb
+C:\DA_WF\Lu-Luan\GUI\DAO\bin\Debug\DTO.dll
+C:\DA_WF\Lu-Luan\GUI\DAO\bin\Debug\DTO.pdb
+C:\DA_WF\Lu-Luan\GUI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\DA_WF\Lu-Luan\GUI\DAO\obj\Debug\DAO.dll
+C:\DA_WF\Lu-Luan\GUI\DAO\obj\Debug\DAO.pdb
