@@ -42,7 +42,6 @@
       this.grbDSNhanVienCoThePhanCong = new System.Windows.Forms.GroupBox();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.grbDanhSachNVDuocChon = new System.Windows.Forms.GroupBox();
-      this.btnCapNhat = new System.Windows.Forms.Button();
       this.btnLamMoi = new System.Windows.Forms.Button();
       this.btnThemBPC = new System.Windows.Forms.Button();
       this.label9 = new System.Windows.Forms.Label();
@@ -121,9 +120,9 @@
       this.cboKhungNhin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
       this.cboKhungNhin.FormattingEnabled = true;
       this.cboKhungNhin.Items.AddRange(new object[] {
-            "Large Icon",
-            "Detail",
-            "Tile"});
+            "Chế độ xem 01",
+            "Chế độ xem 02",
+            "Chế độ xem 03"});
       this.cboKhungNhin.Location = new System.Drawing.Point(5, 22);
       this.cboKhungNhin.Name = "cboKhungNhin";
       this.cboKhungNhin.Size = new System.Drawing.Size(321, 24);
@@ -166,7 +165,6 @@
       // 
       // grbDanhSachNVDuocChon
       // 
-      this.grbDanhSachNVDuocChon.Controls.Add(this.btnCapNhat);
       this.grbDanhSachNVDuocChon.Controls.Add(this.btnLamMoi);
       this.grbDanhSachNVDuocChon.Controls.Add(this.btnThemBPC);
       this.grbDanhSachNVDuocChon.Controls.Add(this.label9);
@@ -183,18 +181,9 @@
       this.grbDanhSachNVDuocChon.TabStop = false;
       this.grbDanhSachNVDuocChon.Text = "Phân công";
       // 
-      // btnCapNhat
-      // 
-      this.btnCapNhat.Location = new System.Drawing.Point(445, 74);
-      this.btnCapNhat.Name = "btnCapNhat";
-      this.btnCapNhat.Size = new System.Drawing.Size(95, 40);
-      this.btnCapNhat.TabIndex = 21;
-      this.btnCapNhat.Text = "Cập nhật";
-      this.btnCapNhat.UseVisualStyleBackColor = true;
-      // 
       // btnLamMoi
       // 
-      this.btnLamMoi.Location = new System.Drawing.Point(445, 126);
+      this.btnLamMoi.Location = new System.Drawing.Point(445, 77);
       this.btnLamMoi.Name = "btnLamMoi";
       this.btnLamMoi.Size = new System.Drawing.Size(95, 40);
       this.btnLamMoi.TabIndex = 20;
@@ -315,7 +304,6 @@
     private System.Windows.Forms.Label label10;
     private System.Windows.Forms.Button btnLamMoi;
     private System.Windows.Forms.Button btnThemBPC;
-    private System.Windows.Forms.Button btnCapNhat;
 
   }
 }

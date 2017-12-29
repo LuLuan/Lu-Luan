@@ -151,7 +151,7 @@ namespace GUI
           {
             if (bus.ThaoTacVoiTaiKhoan(TK, "Update"))
             {
-              MessageBox.Show("Cập nhật thành công");
+              //MessageBox.Show("Cập nhật thành công");
               HienThiDSTaiKhoan();
             }
             else MessageBox.Show("Cập nhật thất bại");

@@ -75,11 +75,11 @@ namespace GUI
 
     private void cboKhungNhin_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if (cboKhungNhin.SelectedItem.ToString() == "Large Icon")
+      if (cboKhungNhin.SelectedItem.ToString() == "Chế độ xem 01")
         listviewNhanVien.View = View.LargeIcon;
-      if (cboKhungNhin.SelectedItem.ToString() == "Detail")
+      if (cboKhungNhin.SelectedItem.ToString() == "Chế độ xem 02")
         listviewNhanVien.View = View.Details;
-      if (cboKhungNhin.SelectedItem.ToString() == "Tile")
+      if (cboKhungNhin.SelectedItem.ToString() == "Chế độ xem 03")
         listviewNhanVien.View = View.Tile;
     }
 
@@ -436,7 +436,7 @@ namespace GUI
           } /// Foreach duyệt qua từng nhân viên
           if (count > 0)
           {
-            //MessageBox.Show("Thêm thành công");
+            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             List<clsChiTietBanPhanCong_DTO> lstCTBPC = bus.LayDSPCTheoNgayVaCa(DateTime.Now, "", "ngayThem");
             //LayDSPCTheoNgay(DateTime ngay)
           }
@@ -447,22 +447,6 @@ namespace GUI
 
     }
 
-    private void dgvDSPCTrongNgay_CellContentClick(object sender, DataGridViewCellEventArgs e)
-    {
-
-    }
-
-    private void dgvDSPCTrongNgay_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-    {
-
-    }
-
-    private void dgvDSPCTrongNgay_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-    {
-
-    }
-
-    
 
 
 

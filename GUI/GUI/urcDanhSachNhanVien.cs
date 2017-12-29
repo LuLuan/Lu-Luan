@@ -42,8 +42,6 @@ namespace GUI
       HienThiDSTrangThai(cboTrangThai_TK);
       //delegate
       tnv.LoadLaiDSNhanVienDele = new urcThemNhanVien.LoadLaiDanhSachNhanVien(LoadLaiMain);
-
-      //MessageBox.Show(dtpNgayThoiViec.Value.ToShortDateString());
     }
 
 
@@ -91,12 +89,6 @@ namespace GUI
       cbo.DisplayMember = "TenTrangThaiNV";
       cbo.ValueMember = "MaTrangThaiNV";
 
-      //cbo.DataSource = null;
-      //cbo.Items.RemoveAt(cbo.Items.Count);
-      //cbo.DataSource = lstTrangThaiNV;
-      //MessageBox.Show(cbo.Items.Count.ToString());
-
-      //cbo.SelectedIndex = 0;
     }
 
 
@@ -190,7 +182,7 @@ namespace GUI
                 //File Dialog = fd
                 //destFileName = @"HinhAnh\AnhDaiDien\" + imageName;
                 File.Copy(fd.FileName, destFileName);
-              MessageBox.Show("Đã cập nhật nhân viên " + NV.HoTen);
+              MessageBox.Show("Đã cập nhật nhân viên " + NV.HoTen, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
               TrangThaiBanDau();
               HienThiDSNhanVien();
             }
@@ -201,23 +193,17 @@ namespace GUI
           //}
 
         }
-        else MessageBox.Show("Hủy thao tác");
+        //else MessageBox.Show("Hủy thao tác", "Thông báo");
       }
       else
       {
-        MessageBox.Show(strError, "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show(strError, "Lỗi nhập dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
       strError = "";
       strWarning = "";
       destFileName = "";
 
-
-      //if (fd.FileName == "")
-      //{
-      //  MessageBox.Show("Chưa có chọn ảnh mới");
-      //}
-      //else MessageBox.Show("Ảnh mới là" + fd.FileName);
     }
 
     private bool KiemTraDuLieuHopLe()
@@ -418,10 +404,11 @@ namespace GUI
             {
               if (busNV.ThaoTacVoiDoiTuongNhanVien(NV, "Delete") && (busTK.XoaTaiKhoanKhiXoaNhanVien(lblMaNV.Text)))
               {
-                MessageBox.Show("Đã xóa nhân viên " + txtHoTen.Text);
+                //MessageBox.Show("Đã xóa nhân viên " + txtHoTen.Text, "Thông báo xóa nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HienThiDSNhanVien();
                 TrangThaiBanDau();
               }
+              else MessageBox.Show("Không thể xóa nhân viên " + txtHoTen.Text, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception)
             {
@@ -598,12 +585,6 @@ namespace GUI
     }
 
 
-    
-
-
-
-
-
 
 
     #endregion Kết thúc các sự kiện của DataGridView dgvDSNV
@@ -716,7 +697,7 @@ namespace GUI
           cboTrangThai.SelectedValue = 3;
         else if (ngayThoiViecTrongDGV != null && dtpNgayVaoLam.Value >= ngayThoiViecTrongDGV)
         {
-          MessageBox.Show("Không thể chọn thời gian này vì nhân viên đã nghỉ việc");
+          MessageBox.Show("Không thể chọn thời gian này vì nhân viên đã nghỉ việc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
           dtpNgayVaoLam.Value = ngayVaoLamTrongDGV;
 
           if(ngayThoiViecTrongDGV <= DateTime.Now)
@@ -734,7 +715,7 @@ namespace GUI
           cboTrangThai.SelectedValue = 1;
         else if ((ngayThoiViecTrongDGV != null && dtpNgayVaoLam.Value >= ngayThoiViecTrongDGV))
         {
-          MessageBox.Show("Không thể chọn thời gian này vì nhân viên đã nghỉ việc từ " + ngayThoiViecTrongDGV.ToString());
+          MessageBox.Show("Không thể chọn thời gian này vì nhân viên đã nghỉ việc từ " + ngayThoiViecTrongDGV.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
           dtpNgayVaoLam.Value = ngayVaoLamTrongDGV;
           cboTrangThai.SelectedValue = 3;
         }
@@ -766,7 +747,8 @@ namespace GUI
         
         if (dtpNgayThoiViec.Value <= dtpNgayVaoLam.Value && dtpNgayThoiViec.Format != DateTimePickerFormat.Custom)
         {
-          MessageBox.Show("Nhân viên ĐÃ vào làm từ " + dtpNgayVaoLam.Value.ToShortDateString());
+          MessageBox.Show("Nhân viên đã vào làm từ " + dtpNgayVaoLam.Value.ToShortDateString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          cboTrangThai.SelectedValue = 2;
           if (ngayThoiViecTrongDGV == null)
           {
             dtpNgayThoiViec.Value = DateTime.Now;
@@ -794,12 +776,12 @@ namespace GUI
         //dtpNgayThoiViec.Format = DateTimePickerFormat.Short;
         if (dtpNgayThoiViec.Value <= dtpNgayVaoLam.Value && dtpNgayThoiViec.Format != DateTimePickerFormat.Custom)
         {
-          MessageBox.Show("Nhân viên SẼ vào làm từ " + dtpNgayVaoLam.Value.ToShortDateString());
+          MessageBox.Show("Nhân viên sẽ vào làm từ " + dtpNgayVaoLam.Value.ToShortDateString());
           if (ngayThoiViecTrongDGV == null)
           {
 
             //dtpNgayThoiViec.Value = DateTime.Now;
-            MessageBox.Show(dtpNgayThoiViec.Value.ToShortDateString());
+            //MessageBox.Show(dtpNgayThoiViec.Value.ToShortDateString());
             dtpNgayThoiViec.CustomFormat = " ";
             dtpNgayThoiViec.Format = DateTimePickerFormat.Custom;
           }
@@ -947,7 +929,6 @@ namespace GUI
             dtpNgayThoiViec.Value = DateTime.Now;
             dtpNgayThoiViec.CustomFormat = " ";
             dtpNgayThoiViec.Format = DateTimePickerFormat.Custom;
-            //MessageBox.Show(dtpNgayThoiViec.Value.ToShortDateString());
           }
           else
           {
@@ -957,9 +938,6 @@ namespace GUI
             ngayThoiViec2 = DateTime.Parse(r.Cells["colNgayThoiViec"].Value.ToString());
             LayNgayTrongDataGridViewLenDateTimePicker(dtpNgayThoiViec, ngayThoiViec2);
           }
-          //if (dtpNgayThoiViec.Format == DateTimePickerFormat.Custom)
-          //  MessageBox.Show("custom");
-          //else MessageBox.Show("Short");
 
 
 
@@ -1000,20 +978,7 @@ namespace GUI
 
     private void picAnhDaiDien_Click(object sender, EventArgs e)
     {
-      //fd.Title = "Chọn ảnh đại diện nhân viên";
-      //fd.Filter = "Image Only (*.jpg; *.jpeg; *.gif; *.png; *.bmp) | *.jpg; *.jpeg; *.gif; *.bmp; *.png";
-      //if (fd.ShowDialog() == DialogResult.OK)
-      //{
-      //  if (fd.CheckFileExists)
-      //  {
-      //    picAnhDaiDien.Image = Image.FromFile(fd.FileName);
-
-      //    //picAnhDaiDien.SizeMode = PictureBoxSizeMode.StretchImage;
-      //    //MessageBox.Show(Path.GetFileName(fd.FileName));
-
-      //    //File.Copy(Path.GetFileName(fd.FileName), "HinhAnh/AnhDaiDien/" + Path.GetFileName(fd.FileName)); //Lưu ảnh lại folder
-      //  }
-      //}
+      
     }
 
     private void picAnhDaiDien_DoubleClick(object sender, EventArgs e)

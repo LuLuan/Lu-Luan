@@ -79,6 +79,11 @@ namespace GUI
       }
     }
 
+    private void dgvLichLamViec_SelectionChanged(object sender, EventArgs e)
+    {
+
+    }
+
 
   }
 }

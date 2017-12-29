@@ -41,7 +41,7 @@ namespace DAO
     public List<clsChiTietBanPhanCong_DTO> LayLichLamViec(string maNV, DateTime dtFrom, DateTime dtTo)
     {
       SqlConnection con = ThaoTacDuLieu_DAO.TaoKetNoi();
-      string query = "SELECT * FROM ChiTietBanPhanCong WHERE trang_thai != 6 AND ma_nhan_vien = @ma_nhan_vien AND ngay_lam_viec >= @ngay_lam_viec_tu AND ngay_lam_viec <= @ngay_lam_viec_den";
+      string query = "SELECT * FROM ChiTietBanPhanCong WHERE trang_thai != 6 AND ma_nhan_vien = @ma_nhan_vien AND ngay_lam_viec >= @ngay_lam_viec_tu AND ngay_lam_viec <= @ngay_lam_viec_den ORDER BY ngay_lam_viec DESC, ma_ca_lam_viec";
 
       SqlCommand cmd = ThaoTacDuLieu_DAO.TruyVan(query, con);
       cmd.Parameters.AddWithValue("@ma_nhan_vien",maNV);

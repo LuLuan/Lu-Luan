@@ -101,6 +101,7 @@
       this.lbQuenMatKhau.TabIndex = 4;
       this.lbQuenMatKhau.Text = "Bạn đã lỡ quên mất mật khẩu?";
       this.lbQuenMatKhau.Visible = false;
+      //this.lbQuenMatKhau.Click += new System.EventHandler(this.lbQuenMatKhau_Click);
       // 
       // lbMKSai
       // 

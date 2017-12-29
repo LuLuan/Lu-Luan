@@ -49,26 +49,6 @@ namespace GUI
 
 
 
-    //private clsTheKhachHang TaoDoiTuongTheKhachHang()
-    //{
-    //  string maThe = TuPhatSinhMaTheKhachHang();
-    //  string maKH = txtMaKH.Text;
-    //  string maLoaiThe = "1234567890";
-    //  DateTime ngayDK = DateTime.Now;
-    //  bool trangThai = true;
-
-    //  return utl.TaoDoiThuongTheKhachHang(maThe, maKH, maLoaiThe, ngayDK, trangThai);
-    //}
-
-    //private string TuPhatSinhMaTheKhachHang()
-    //{
-    //  TheKhachHang_BUS bus = new TheKhachHang_BUS();
-    //  return bus.LayMaTheKhachHang();
-    //}
-
-
-
-
     private string strError = "";
     private string strWarning = "";
 
@@ -78,9 +58,9 @@ namespace GUI
       {
         string strThongBao = "Cập nhật khách hàng " + txtHoTen.Text;
         MessageBoxIcon MBIcon = MessageBoxIcon.Question;
-        MessageBoxButtons MBButton = MessageBoxButtons.OK;
+        MessageBoxButtons MBButton = MessageBoxButtons.YesNo;
 
-        if(strWarning != "")
+        if (strWarning != "")
         {
           strThongBao = strWarning + "\n Vẫn muốn tiếp tục?";
           MBIcon = MessageBoxIcon.Warning;
@@ -92,17 +72,17 @@ namespace GUI
 
           KhachHang_BUS bus = new KhachHang_BUS();
           clsKhachHang_DTO KH = TaoDoiTuongKhachHang();
-          if(bus.ThaoTacVoiKhachHang(KH, "Update"))
+          if (bus.ThaoTacVoiKhachHang(KH, "Update"))
           {
-            MessageBox.Show("Cập nhật thành công");
             TrangThaiBanDau();
             HienThiDSKhachHang();
           }
+          else MessageBox.Show("Cập nhật thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
         
       }
-      else MessageBox.Show(strError, "Dữ liệu không chính xác", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+      else MessageBox.Show(strError, "Dữ liệu không chính xác", MessageBoxButtons.OK, MessageBoxIcon.Error);
       strWarning = "";
       strError = "";
 
@@ -400,49 +380,8 @@ namespace GUI
 
     #endregion
 
-    private void dgvDSKH_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-    {
-      //var grid = sender as DataGridView;
-      //var rowIdx = (e.RowIndex + 1).ToString();
 
-      //var centerFormat = new StringFormat()
-      //{
-      //  Alignment = StringAlignment.Center,
-      //  LineAlignment = StringAlignment.Center
-      //};
-
-      //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-      //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
-    }
-
-
-    private void dgvDSKH_CellClick(object sender, DataGridViewCellEventArgs e)
-    {
-      //if (dgvDSKH.SelectedRows.Count > 0)
-      //{
-      //  DataGridViewRow r = dgvDSKH.SelectedRows[0];
-
-      //  txtMaKH.Text = r.Cells["colMaKH"].Value.ToString();
-      //  txtHoTen.Text = r.Cells["colTenKH"].Value.ToString();
-      //  txtDiaChi.Text = r.Cells["colDiaChi"].Value.ToString();
-      //  txtSoDienThoai.Text = r.Cells["colSDT"].Value.ToString();
-      //  if (r.Cells["colEmail"].Value != null)
-      //    txtEmail.Text = r.Cells["colEmail"].Value.ToString();
-
-      //  if (Convert.ToBoolean(r.Cells["colGioiTinh"].Value.ToString()) == true)
-      //    rdbGioiTinhNam.Checked = true;
-      //  else rdbGioiTinhNu.Checked = true;
-
-      //  if (Convert.ToBoolean(r.Cells["colTrangThai"].Value.ToString()) == true)
-      //    rdbTrangThaiCoSan.Checked = true;
-      //  else rdbTrangThaiDaXoa.Checked = true;
-
-      //  DateTime dtNgaySinh = DateTime.Parse(r.Cells["colNgaySinh"].Value.ToString());
-      //  LayNgayTrongDataGridViewLenDateTimePicker(dtpNgaySinh, dtNgaySinh);
-
-      //  TrangThaiKhiChonMotKhachHang();
-      //}
-    }
+    
 
 
     private void dgvDSKH_SelectionChanged(object sender, EventArgs e)
@@ -458,12 +397,14 @@ namespace GUI
         txtHoTen.Text = r.Cells["colTenKH"].Value.ToString();
         txtDiaChi.Text = r.Cells["colDiaChi"].Value.ToString();
         txtSoDienThoai.Text = r.Cells["colSDT"].Value.ToString().Trim();
-        if (r.Cells["colEmail"].Value != null)
-          //txtEmail.Text = r.Cells["colEmail"].Value.ToString();
+        //if (r.Cells["colEmail"].Value != null)
+        //txtEmail.Text = r.Cells["colEmail"].Value.ToString();
 
         if (Convert.ToBoolean(r.Cells["colGioiTinh"].Value.ToString()) == true)
           rdbNam.Checked = true;
+          //MessageBox.Show("Nam");
         else rdbNu.Checked = true;
+        //else MessageBox.Show("Nữ");
 
         if (Convert.ToBoolean(r.Cells["colTrangThai"].Value.ToString()) == true)
           rdbTrangThaiCoSan.Checked = true;

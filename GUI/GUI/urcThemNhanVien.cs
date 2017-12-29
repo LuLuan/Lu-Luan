@@ -151,7 +151,7 @@ namespace GUI
           //File.Copy(fd.FileName, @"HinhAnh\AnhDaiDien\" + Path.GetFileName(fd.FileName)); //Lưu ảnh lại folder
         }
         else
-          MessageBox.Show("Đã xảy ra lỗi không xác định");
+          MessageBox.Show("Đã xảy ra lỗi không xác định", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
     }
 
@@ -234,7 +234,7 @@ namespace GUI
             {
               if(KiemTraHinhAnh())
                 File.Copy(fd.FileName, destFileName);
-              MessageBox.Show("Đã thên nhân viên mới");
+              //MessageBox.Show("Đã thên nhân viên mới");
               TuPhatSinhMaNhanVien();
               TrangThaiBanDau();
 
@@ -246,7 +246,7 @@ namespace GUI
         }
         else
         {
-          MessageBox.Show("Hủy thao tác");
+          //MessageBox.Show("Hủy thao tác");
         }
       }
       else
